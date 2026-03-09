@@ -1,0 +1,8 @@
+Prefix(ex:=<http://example.org#>)
+Ontology(
+    Declaration(Class(ex:Student))
+    Declaration(Class(ex:Professor))
+    SubClassOf(ex:PhDStudent ex:Student)
+    ClassAssertion(ex:Student ex:Alice)
+    ObjectPropertyAssertion(ex:enrolledIn ex:Alice ex:Math101)
+)

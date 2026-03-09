@@ -8,6 +8,7 @@ CMakeLists.txt.user*
 CMakeDoxyfile.in
 CMakeDoxygenDefaults.cmake
 CMakeLists_*.txt
+*error.txt
 
 # Fichiers générés par CHR++ (owl.cpp est commité volontairement - voir owlFunctional.chrpp)
 *.hh
@@ -30,7 +31,7 @@ ParserProject
 res_realisation
 res_classification
 sortie.txt
-output.txt
+
 
 # Fichiers temporaires
 *.log
