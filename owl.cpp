@@ -12,8 +12,12 @@ realisation<realisation(  )> { logicalName<logicalName( URIC, C )>, owlClassAsse
 classification<classification(  )> { logicalName<logicalName( URIX, X )>, owlSubclassOf<owlSubclassOf( X, Y )>, classification<classification(  )> } --> resultClassification<resultClassification( URIX, URIY )>
 owlOneOfLoop<owlOneOfLoop( C, IT, ITEND )> { owlOneOfLoop<owlOneOfLoop( C, IT, ITEND )> } --> owlOneOfLoop<owlOneOfLoop( C, ( std :: next( ( *IT ) ) ), ITEND )>, owlClassAssertion<owlClassAssertion( ( *( *IT ) ), C, true )>
 owlDataMaxCardinality<owlDataMaxCardinality( C, P, N )> { owlDataPropertyAssertion<owlDataPropertyAssertion( U, P, _ )>, owlClassAssertion<owlClassAssertion( U, C, true )>, owlDataMaxCardinality<owlDataMaxCardinality( C, P, N )> } -->
-owlHasKey<owlHasKey( C, P )> { owlClassAssertion<owlClassAssertion( X, C, true )> } --> owlHasKeyLoop<owlHasKeyLoop( X, Y, ( ( *P ) . begin )(  ), ( ( *P ) . end )(  ) )>
-owlUnionOfLoop<owlUnionOfLoop( C, ( ( *S ) . begin )(  ), ( ( *S ) . end )(  ) )> --> owlUnionOfLoop<owlUnionOfLoop( C, ( std :: next )( ( *IT ) ), ITEND )>, owlUnionClass<owlUnionClass( C, ( *( *IT ) ) )>
+<<<<<<< HEAD
+owlHasKey<owlHasKey( C, P, I, N )> { owlDataPropertyAssertion<owlDataPropertyAssertion( X, P, V )>, owlHasKeyCheck<owlHasKeyCheck( C, X, Y, I, N )>, owlObjectPropertyAssertion<owlObjectPropertyAssertion( X, P, V )>, owlClassAssertion<owlClassAssertion( X, C, true )>, owlHasKey<owlHasKey( C, P, I, N )> } --> owlHasKeyCheck<owlHasKeyCheck( C, X, Y, 0, N )>
+=======
+owlHasKey<owlHasKey( C, P )> { owlClassAssertion<owlClassAssertion( X, C, true )> } --> owlHasKeyLoop<owlHasKeyLoop( X, Y, ( ( *P ) . begin(  ) ), ( ( *P ) . end(  ) ) )>
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
+owlUnionOfLoop<owlUnionOfLoop( C, ( ( *S ) . begin(  ) ), ( ( *S ) . end(  ) ) )> --> owlUnionOfLoop<owlUnionOfLoop( C, ( std :: next( ( *IT ) ) ), ITEND )>, owlUnionClass<owlUnionClass( C, ( *( *IT ) ) )>
 owlObjectMaxCardinality<owlObjectMaxCardinality( C, P, N )> { owlObjectPropertyAssertion<owlObjectPropertyAssertion( U, P, _ )>, owlClassAssertion<owlClassAssertion( U, C, true )>, owlObjectMaxCardinality<owlObjectMaxCardinality( C, P, N )> } --> owlSameIndividual<owlSameIndividual( Y1, Y2 )>
 resultRealisation<resultRealisation( X, Y )> { resultRealisation<resultRealisation( X, Y )> } --> built-in<stockerRealisation( URIX, URIY )>
 queryEquivalentClassReal<queryEquivalentClassReal( I, X )> { queryEquivalentClassReal<queryEquivalentClassReal( I, X )> } -->
@@ -27,8 +31,11 @@ queryObjAssertion<queryObjAssertion( P, ID )> { logicalName<logicalName( URIX, X
 queryObjAssertionUri<queryObjAssertionUri( URIP )> { queryObjAssertionUri<queryObjAssertionUri( URIP )> } --> queryObjAssertionWithId<queryObjAssertionWithId( URIP, get_next_id(  ) )>
 owlIrreflexiveObjectProperty<owlIrreflexiveObjectProperty( P )> { owlObjectPropertyAssertion<owlObjectPropertyAssertion( X, P, X )>, owlIrreflexiveObjectProperty<owlIrreflexiveObjectProperty( P )> } -->
 owlSubObjectPropertyOf<owlSubObjectPropertyOf( A, B )> { owlSubclassOf<owlSubclassOf( Y1, Y2 )>, owlObjectSomeValuesFrom<owlObjectSomeValuesFrom( SV, P2, Y )>, owlHasValueObject<owlHasValueObject( C, P1, A )>, owlObjectPropertyAssertion<owlObjectPropertyAssertion( X, P2, Y )>, owlClassAssertion<owlClassAssertion( A, Y, true )>, owlObjectPropertyRange<owlObjectPropertyRange( P2, C )>, owlObjectPropertyDomain<owlObjectPropertyDomain( P2, C )>, owlSubObjectPropertyOf<owlSubObjectPropertyOf( A, B )> } --> owlSubclassOf<owlSubclassOf( C, SV )>, owlObjectPropertyAssertion<owlObjectPropertyAssertion( X, P1, Y )>, owlObjectPropertyRange<owlObjectPropertyRange( P1, C )>, owlEquivalentObjectProperty<owlEquivalentObjectProperty( A, B )>, owlObjectPropertyDomain<owlObjectPropertyDomain( P1, C )>, owlSubObjectPropertyOf<owlSubObjectPropertyOf( A, C )>
-owlHasKeyLoop<owlHasKeyLoop( X, Y, ( ( *P ) . begin )(  ), ( ( *P ) . end )(  ) )> { owlDataPropertyAssertion<owlDataPropertyAssertion( X, P, V1 )>, owlObjectPropertyAssertion<owlObjectPropertyAssertion( X, P, V1 )> } --> owlHasKeyLoop<owlHasKeyLoop( X, Y, ( std :: next )( ( *IT ) ), ITEND )>, owlSameIndividual<owlSameIndividual( X, Y )>
-logicalName<logicalName( URI, X )> { queryComplexStudents<queryComplexStudents( E, F, G, H, K, ID )>, queryEngineeringStudents<queryEngineeringStudents( E, F, G, H, K, ID )>, queryComplexStudentsWithId<queryComplexStudentsWithId( URIE, URIF, URIG, URIH, URIK, ID )>, querySubClassOf<querySubClassOf( X )>, querySuperClassOfUri<querySuperClassOfUri( URIC )>, queryInstances<queryInstances( C, ID )>, querySubClassOfUri<querySubClassOfUri( URIC )>, querySuperClassOf<querySuperClassOf( X )>, logicalName<logicalName( URI, X )>, owlEquivalentClass<owlEquivalentClass( X, Y )>, queryClassification<queryClassification( X )>, queryEquivalentClass<queryEquivalentClass( X )>, queryObjAssertion<queryObjAssertion( P, ID )>, queryClassificationUri<queryClassificationUri( URIX )>, owlObjectPropertyAssertion<owlObjectPropertyAssertion( U, P, W )>, owlClass<owlClass( C )>, owlSubclassOf<owlSubclassOf( Y, X )>, querySubjectByObject<querySubjectByObject( P, ID )>, queryInstanceURI<queryInstanceURI( URIX, URIC )>, classification<classification(  )>, queryDataAssertion<queryDataAssertion( P, ID )>, owlDataPropertyAssertion<owlDataPropertyAssertion( X, P, Y )>, querySubjectByObjectWithId<querySubjectByObjectWithId( URIP, ID )>, queryDataAssertionWithId<queryDataAssertionWithId( URIP, ID )>, queryInstancesWithId<queryInstancesWithId( URIC, ID )>, realisation<realisation(  )>, queryObjAssertionWithId<queryObjAssertionWithId( URIP, ID )>, queryObjAssertionSubject<queryObjAssertionSubject( P, O, ID )>, owlClassAssertion<owlClassAssertion( W, Y, true )>, queryEngineeringStudentsWithId<queryEngineeringStudentsWithId( URIE, URIF, URIG, URIH, URIK, ID )>, resultClassification<resultClassification( URIX, URIY )>, queryObjAssertionSubjectWithId<queryObjAssertionSubjectWithId( URIP, URIO, ID )> } --> queryComplexStudents<queryComplexStudents( E, F, G, H, K, ID )>, queryEngineeringStudents<queryEngineeringStudents( E, F, G, H, K, ID )>, queryObjAssertionSubject<queryObjAssertionSubject( P, O, ID )>, querySubjectByObject<querySubjectByObject( P, ID )>, owlSubclassOf<owlSubclassOf( C, OwlThingVar )>, resultRealisation<resultRealisation( URIX, URIC )>, querySuperClassOf<querySuperClassOf( X )>, res<res( ( std :: string )( "owl:Thing" ) )>, queryClassification<queryClassification( X )>, queryObjAssertion<queryObjAssertion( P, ID )>, queryEquivalentClass<queryEquivalentClass( X )>, queryInstance<queryInstance( X, C )>, resultClassification<resultClassification( URIX, URIY )>, ResultVec<ResultVec( makeVec( URIX, URIY ), ID )>, queryDataAssertion<queryDataAssertion( P, ID )>, querySubClassOf<querySubClassOf( X )>, queryInstances<queryInstances( C, ID )>
+<<<<<<< HEAD
+=======
+owlHasKeyLoop<owlHasKeyLoop( X, Y, ( ( *P ) . begin(  ) ), ( ( *P ) . end(  ) ) )> { owlDataPropertyAssertion<owlDataPropertyAssertion( X, P, V1 )>, owlObjectPropertyAssertion<owlObjectPropertyAssertion( X, P, V1 )> } --> owlHasKeyLoop<owlHasKeyLoop( X, Y, ( std :: next( ( *IT ) ) ), ITEND )>, owlSameIndividual<owlSameIndividual( X, Y )>
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
+logicalName<logicalName( URI, X )> { queryComplexStudents<queryComplexStudents( E, F, G, H, K, ID )>, queryEngineeringStudents<queryEngineeringStudents( E, F, G, H, K, ID )>, queryComplexStudentsWithId<queryComplexStudentsWithId( URIE, URIF, URIG, URIH, URIK, ID )>, querySubClassOf<querySubClassOf( X )>, querySuperClassOfUri<querySuperClassOfUri( URIC )>, queryInstances<queryInstances( C, ID )>, querySubClassOfUri<querySubClassOfUri( URIC )>, querySuperClassOf<querySuperClassOf( X )>, logicalName<logicalName( URI, X )>, owlEquivalentClass<owlEquivalentClass( X, Y )>, queryClassification<queryClassification( X )>, queryEquivalentClass<queryEquivalentClass( X )>, queryObjAssertion<queryObjAssertion( P, ID )>, queryClassificationUri<queryClassificationUri( URIX )>, owlObjectPropertyAssertion<owlObjectPropertyAssertion( U, P, W )>, owlClass<owlClass( C )>, owlSubclassOf<owlSubclassOf( Y, X )>, querySubjectByObject<querySubjectByObject( P, ID )>, queryInstanceURI<queryInstanceURI( URIX, URIC )>, classification<classification(  )>, queryDataAssertion<queryDataAssertion( P, ID )>, owlDataPropertyAssertion<owlDataPropertyAssertion( X, P, Y )>, querySubjectByObjectWithId<querySubjectByObjectWithId( URIP, ID )>, queryDataAssertionWithId<queryDataAssertionWithId( URIP, ID )>, queryInstancesWithId<queryInstancesWithId( URIC, ID )>, realisation<realisation(  )>, queryObjAssertionWithId<queryObjAssertionWithId( URIP, ID )>, queryObjAssertionSubject<queryObjAssertionSubject( P, O, ID )>, owlClassAssertion<owlClassAssertion( W, Y, true )>, queryEngineeringStudentsWithId<queryEngineeringStudentsWithId( URIE, URIF, URIG, URIH, URIK, ID )>, resultClassification<resultClassification( URIX, URIY )>, queryObjAssertionSubjectWithId<queryObjAssertionSubjectWithId( URIP, URIO, ID )> } --> queryComplexStudents<queryComplexStudents( E, F, G, H, K, ID )>, queryEngineeringStudents<queryEngineeringStudents( E, F, G, H, K, ID )>, queryObjAssertionSubject<queryObjAssertionSubject( P, O, ID )>, querySubjectByObject<querySubjectByObject( P, ID )>, owlSubclassOf<owlSubclassOf( C, OwlThingVar )>, resultRealisation<resultRealisation( URIX, URIC )>, querySuperClassOf<querySuperClassOf( X )>, res<res( ( std :: string( "owl:Thing" ) ) )>, queryClassification<queryClassification( X )>, queryObjAssertion<queryObjAssertion( P, ID )>, queryEquivalentClass<queryEquivalentClass( X )>, queryInstance<queryInstance( X, C )>, resultClassification<resultClassification( URIX, URIY )>, ResultVec<ResultVec( makeVec( URIX, URIY ), ID )>, queryDataAssertion<queryDataAssertion( P, ID )>, querySubClassOf<querySubClassOf( X )>, queryInstances<queryInstances( C, ID )>
 owlDataProperty<owlDataProperty( P )> { owlDataProperty<owlDataProperty( P )> } --> owlSubDataPropertyOf<owlSubDataPropertyOf( P, P )>, owlEquivalentDataProperty<owlEquivalentDataProperty( P, P )>
 owlDataValue<owlDataValue( V, S, T )> { owlDataPropertyAssertion<owlDataPropertyAssertion( U, P, W )>, owlDataValue<owlDataValue( V, S, T )> } -->
 ResultVec<ResultVec( S, ID )> { ResultVec<ResultVec( S, ID )> } --> built-in<stockerQueries( S, ID )>
@@ -60,14 +67,18 @@ owlSubDataPropertyOf<owlSubDataPropertyOf( A, B )> { owlDataPropertyAssertion<ow
 queryObjAssertionWithId<queryObjAssertionWithId( URIP, get_next_id(  ) )> { logicalName<logicalName( URIP, P )> } --> queryObjAssertion<queryObjAssertion( P, ID )>
 resultClassification<resultClassification( X, Y )> { logicalName<logicalName( URIX, X )>, owlEquivalentClass<owlEquivalentClass( X, Y )>, resultClassification<resultClassification( X, Y )> } --> built-in<stockerClassification( URIX, URIY )>
 owlDisjointObjectProperty<owlDisjointObjectProperty( A, B )> { owlObjectPropertyAssertion<owlObjectPropertyAssertion( X, A, Y )>, owlDisjointObjectProperty<owlDisjointObjectProperty( A, B )> } -->
-owlObjectPropertyAssertion<owlObjectPropertyAssertion( X, P, Y )> { queryComplexStudents<queryComplexStudents( E, F, G, H, K, ID )>, querySubjectByObject<querySubjectByObject( P, ID )>, queryObjAssertion<queryObjAssertion( P, ID )>, owlObjectPropertyChain<owlObjectPropertyChain( PC, P, 0, N )>, owlObjectMaxCardinality<owlObjectMaxCardinality( C, P, 0 )>, owlClassAssertion<owlClassAssertion( V, Y, true )>, owlObjectSomeValuesFrom<owlObjectSomeValuesFrom( C, P, Y )>, owlObjectPropertyAssertion<owlObjectPropertyAssertion( X, P, Y )>, owlSameIndividual<owlSameIndividual( X, Y )>, queryObjAssertionSubject<queryObjAssertionSubject( P, O, ID )>, owlHasKeyLoop<owlHasKeyLoop( X, Y, IT, ITEND )>, owlNegativeObjectAssertion<owlNegativeObjectAssertion( X, P, Y )>, owlReflexiveObjectProperty<owlReflexiveObjectProperty( P )>, owlFunctionalObjectProperty<owlFunctionalObjectProperty( P )>, logicalName<logicalName( URI, W )>, owlIrreflexiveObjectProperty<owlIrreflexiveObjectProperty( P )>, constructPropertyChain<constructPropertyChain( PC, I, X, Y, N )>, owlInverseObjectProperty<owlInverseObjectProperty( P1, P2 )>, queryEngineeringStudents<queryEngineeringStudents( E, F, G, H, K, ID )>, owlDisjointObjectProperty<owlDisjointObjectProperty( A, B )>, owlAsymmetricObjectProperty<owlAsymmetricObjectProperty( P )>, owlInverseFunctionalObjectProperty<owlInverseFunctionalObjectProperty( P )>, owlSubObjectPropertyOf<owlSubObjectPropertyOf( P2, P1 )>, owlHasValueObject<owlHasValueObject( C, P, Y )>, owlObjectPropertyDomain<owlObjectPropertyDomain( P, DP )>, owlObjectPropertyRange<owlObjectPropertyRange( P, DP )>, owlSymmetricObjectProperty<owlSymmetricObjectProperty( P )> } --> ResultVec<ResultVec( makeVec( URIX, URIY ), ID )>, owlNegativeObjectAssertion<owlNegativeObjectAssertion( Y, P, X )>, owlClassAssertion<owlClassAssertion( X, DP, true )>, owlHasKeyLoop<owlHasKeyLoop( X, Y, ( std :: next )( ( *IT ) ), ITEND )>, constructPropertyChain<constructPropertyChain( PC, 0, X, Y, N )>, owlSameIndividual<owlSameIndividual( Y, Z )>, owlObjectPropertyAssertion<owlObjectPropertyAssertion( X, P1, Y )>
+<<<<<<< HEAD
+owlObjectPropertyAssertion<owlObjectPropertyAssertion( X, P, Y )> { querySubjectByObject<querySubjectByObject( P, ID )>, queryObjAssertion<queryObjAssertion( P, ID )>, owlHasKeyCheck<owlHasKeyCheck( C, X, Y, I, N )>, queryComplexStudents<queryComplexStudents( E, F, G, H, K, ID )>, owlHasKey<owlHasKey( C, P, I, N )>, owlObjectPropertyChain<owlObjectPropertyChain( PC, P, 0, N )>, owlObjectMaxCardinality<owlObjectMaxCardinality( C, P, 0 )>, owlClassAssertion<owlClassAssertion( V, Y, true )>, owlObjectSomeValuesFrom<owlObjectSomeValuesFrom( C, P, Y )>, owlObjectPropertyAssertion<owlObjectPropertyAssertion( X, P, Y )>, owlSameIndividual<owlSameIndividual( X, Y )>, queryObjAssertionSubject<queryObjAssertionSubject( P, O, ID )>, owlNegativeObjectAssertion<owlNegativeObjectAssertion( X, P, Y )>, owlReflexiveObjectProperty<owlReflexiveObjectProperty( P )>, owlFunctionalObjectProperty<owlFunctionalObjectProperty( P )>, logicalName<logicalName( URI, W )>, owlIrreflexiveObjectProperty<owlIrreflexiveObjectProperty( P )>, constructPropertyChain<constructPropertyChain( PC, I, X, Y, N )>, owlInverseObjectProperty<owlInverseObjectProperty( P1, P2 )>, queryEngineeringStudents<queryEngineeringStudents( E, F, G, H, K, ID )>, owlDisjointObjectProperty<owlDisjointObjectProperty( A, B )>, owlAsymmetricObjectProperty<owlAsymmetricObjectProperty( P )>, owlInverseFunctionalObjectProperty<owlInverseFunctionalObjectProperty( P )>, owlSubObjectPropertyOf<owlSubObjectPropertyOf( P2, P1 )>, owlHasValueObject<owlHasValueObject( C, P, Y )>, owlObjectPropertyDomain<owlObjectPropertyDomain( P, DP )>, owlObjectPropertyRange<owlObjectPropertyRange( P, DP )>, owlSymmetricObjectProperty<owlSymmetricObjectProperty( P )> } --> owlHasKeyCheck<owlHasKeyCheck( C, X, Y, ( I + 1 ), N )>, ResultVec<ResultVec( makeVec( URIX, URIY ), ID )>, owlNegativeObjectAssertion<owlNegativeObjectAssertion( Y, P, X )>, owlClassAssertion<owlClassAssertion( X, DP, true )>, constructPropertyChain<constructPropertyChain( PC, 0, X, Y, N )>, owlSameIndividual<owlSameIndividual( Y, Z )>, owlObjectPropertyAssertion<owlObjectPropertyAssertion( X, P1, Y )>
+=======
+owlObjectPropertyAssertion<owlObjectPropertyAssertion( X, P, Y )> { queryComplexStudents<queryComplexStudents( E, F, G, H, K, ID )>, querySubjectByObject<querySubjectByObject( P, ID )>, queryObjAssertion<queryObjAssertion( P, ID )>, owlObjectPropertyChain<owlObjectPropertyChain( PC, P, 0, N )>, owlObjectMaxCardinality<owlObjectMaxCardinality( C, P, 0 )>, owlClassAssertion<owlClassAssertion( V, Y, true )>, owlObjectSomeValuesFrom<owlObjectSomeValuesFrom( C, P, Y )>, owlObjectPropertyAssertion<owlObjectPropertyAssertion( X, P, Y )>, owlSameIndividual<owlSameIndividual( X, Y )>, queryObjAssertionSubject<queryObjAssertionSubject( P, O, ID )>, owlHasKeyLoop<owlHasKeyLoop( X, Y, IT, ITEND )>, owlNegativeObjectAssertion<owlNegativeObjectAssertion( X, P, Y )>, owlReflexiveObjectProperty<owlReflexiveObjectProperty( P )>, owlFunctionalObjectProperty<owlFunctionalObjectProperty( P )>, logicalName<logicalName( URI, W )>, owlIrreflexiveObjectProperty<owlIrreflexiveObjectProperty( P )>, constructPropertyChain<constructPropertyChain( PC, I, X, Y, N )>, owlInverseObjectProperty<owlInverseObjectProperty( P1, P2 )>, queryEngineeringStudents<queryEngineeringStudents( E, F, G, H, K, ID )>, owlDisjointObjectProperty<owlDisjointObjectProperty( A, B )>, owlAsymmetricObjectProperty<owlAsymmetricObjectProperty( P )>, owlInverseFunctionalObjectProperty<owlInverseFunctionalObjectProperty( P )>, owlSubObjectPropertyOf<owlSubObjectPropertyOf( P2, P1 )>, owlHasValueObject<owlHasValueObject( C, P, Y )>, owlObjectPropertyDomain<owlObjectPropertyDomain( P, DP )>, owlObjectPropertyRange<owlObjectPropertyRange( P, DP )>, owlSymmetricObjectProperty<owlSymmetricObjectProperty( P )> } --> ResultVec<ResultVec( makeVec( URIX, URIY ), ID )>, owlNegativeObjectAssertion<owlNegativeObjectAssertion( Y, P, X )>, owlClassAssertion<owlClassAssertion( X, DP, true )>, owlHasKeyLoop<owlHasKeyLoop( X, Y, ( std :: next( ( *IT ) ) ), ITEND )>, constructPropertyChain<constructPropertyChain( PC, 0, X, Y, N )>, owlSameIndividual<owlSameIndividual( Y, Z )>, owlObjectPropertyAssertion<owlObjectPropertyAssertion( X, P1, Y )>
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
 owlSymmetricObjectProperty<owlSymmetricObjectProperty( P )> { owlObjectPropertyAssertion<owlObjectPropertyAssertion( X, P, Y )>, owlSymmetricObjectProperty<owlSymmetricObjectProperty( P )> } --> owlObjectPropertyAssertion<owlObjectPropertyAssertion( Y, P, X )>
 owlEquivalentDataProperty<owlEquivalentDataProperty( A, B )> { owlEquivalentDataProperty<owlEquivalentDataProperty( A, B )> } --> owlSubDataPropertyOf<owlSubDataPropertyOf( A, B )>
 owlEquivalentObjectProperty<owlEquivalentObjectProperty( A, B )> { owlEquivalentObjectProperty<owlEquivalentObjectProperty( A, B )> } --> owlSubObjectPropertyOf<owlSubObjectPropertyOf( A, B )>
 owlDifferentIndividual<owlDifferentIndividual( X, Y )> { owlSameIndividual<owlSameIndividual( X, Y )>, owlDifferentIndividual<owlDifferentIndividual( X, Y )> } -->
 queryFullUri<queryFullUri( X )> { queryFullUri<queryFullUri( X )> } -->
 querySubjectByObjectUri<querySubjectByObjectUri( URIP )> { querySubjectByObjectUri<querySubjectByObjectUri( URIP )> } --> querySubjectByObjectWithId<querySubjectByObjectWithId( URIP, get_next_id(  ) )>
-owlClassAssertion<owlClassAssertion( X, A, B )> { queryInstances<queryInstances( C, ID )>, realisation<realisation(  )>, queryInstance<queryInstance( X, C )>, queryClassification<queryClassification( X )>, owlSubObjectPropertyOf<owlSubObjectPropertyOf( P1, P2 )>, owlHasValueObject<owlHasValueObject( C, P, Y )>, owlDataMaxCardinality<owlDataMaxCardinality( C, P, 0 )>, owlObjectMaxCardinality<owlObjectMaxCardinality( C, P, 0 )>, owlDataPropertyAssertion<owlDataPropertyAssertion( U, P, _ )>, owlDisjointClass<owlDisjointClass( A, B )>, queryEngineeringStudents<queryEngineeringStudents( E, F, G, H, K, ID )>, owlCandidatsIntersection<owlCandidatsIntersection( X, C, I )>, owlComplementOf<owlComplementOf( A, NOTA )>, owlSameIndividual<owlSameIndividual( X, Y )>, owlObjectPropertyAssertion<owlObjectPropertyAssertion( U, P, V )>, owlClassAssertion<owlClassAssertion( X, A, B )>, owlDataSomeValuesFrom<owlDataSomeValuesFrom( C, P, DR )>, owlSubclassOf<owlSubclassOf( A, B )>, logicalName<logicalName( URI, W )>, queryComplexStudents<queryComplexStudents( E, F, G, H, K, ID )>, owlHasKey<owlHasKey( C, P )>, owlEquivalentClass<owlEquivalentClass( A, B )>, owlIntersectionClass<owlIntersectionClass( C, V, 0 )>, owlObjectProperty<owlObjectProperty( P )>, owlUnionClass<owlUnionClass( C, V )>, owlObjectSomeValuesFrom<owlObjectSomeValuesFrom( C, P, Y )> } --> ResultVec<ResultVec( makeVec( URIX, emptyString ), ID )>, resultRealisation<resultRealisation( URIX, URIC )>, built-in<afficher( "true" )>, owlClass<owlClass( C )>, owlClassAssertion<owlClassAssertion( X, B, true )>, owlNamedIndividual<owlNamedIndividual( X )>, owlCandidatsIntersection<owlCandidatsIntersection( X, C, 0 )>, owlObjectPropertyAssertion<owlObjectPropertyAssertion( U, P, V )>, owlSameIndividual<owlSameIndividual( Y1, Y2 )>, owlHasKeyLoop<owlHasKeyLoop( X, Y, ( ( *P ) . begin )(  ), ( ( *P ) . end )(  ) )>, querySuperClassOf<querySuperClassOf( C )>, logicalName<logicalName( emptyString, V )>, owlSubclassOf<owlSubclassOf( C, SV )>, owlDataPropertyAssertion<owlDataPropertyAssertion( U, P, createValue( emptyString, DR ) )>, res<res( URIC )>, queryEquivalentClass<queryEquivalentClass( C )>
+owlClassAssertion<owlClassAssertion( X, A, B )> { queryInstances<queryInstances( C, ID )>, realisation<realisation(  )>, queryInstance<queryInstance( X, C )>, queryClassification<queryClassification( X )>, owlSubObjectPropertyOf<owlSubObjectPropertyOf( P1, P2 )>, owlHasValueObject<owlHasValueObject( C, P, Y )>, owlDataMaxCardinality<owlDataMaxCardinality( C, P, 0 )>, owlObjectMaxCardinality<owlObjectMaxCardinality( C, P, 0 )>, owlDataPropertyAssertion<owlDataPropertyAssertion( U, P, _ )>, owlDisjointClass<owlDisjointClass( A, B )>, queryEngineeringStudents<queryEngineeringStudents( E, F, G, H, K, ID )>, owlCandidatsIntersection<owlCandidatsIntersection( X, C, I )>, owlComplementOf<owlComplementOf( A, NOTA )>, owlSameIndividual<owlSameIndividual( X, Y )>, owlObjectPropertyAssertion<owlObjectPropertyAssertion( U, P, V )>, owlClassAssertion<owlClassAssertion( X, A, B )>, owlDataSomeValuesFrom<owlDataSomeValuesFrom( C, P, DR )>, owlSubclassOf<owlSubclassOf( A, B )>, logicalName<logicalName( URI, W )>, queryComplexStudents<queryComplexStudents( E, F, G, H, K, ID )>, owlHasKey<owlHasKey( C, P )>, owlEquivalentClass<owlEquivalentClass( A, B )>, owlIntersectionClass<owlIntersectionClass( C, V, 0 )>, owlObjectProperty<owlObjectProperty( P )>, owlUnionClass<owlUnionClass( C, V )>, owlObjectSomeValuesFrom<owlObjectSomeValuesFrom( C, P, Y )> } --> ResultVec<ResultVec( makeVec( URIX, emptyString ), ID )>, resultRealisation<resultRealisation( URIX, URIC )>, built-in<afficher( "true" )>, owlClass<owlClass( C )>, owlClassAssertion<owlClassAssertion( X, B, true )>, owlNamedIndividual<owlNamedIndividual( X )>, owlCandidatsIntersection<owlCandidatsIntersection( X, C, 0 )>, owlObjectPropertyAssertion<owlObjectPropertyAssertion( U, P, V )>, owlSameIndividual<owlSameIndividual( Y1, Y2 )>, owlHasKeyLoop<owlHasKeyLoop( X, Y, ( ( *P ) . begin(  ) ), ( ( *P ) . end(  ) ) )>, querySuperClassOf<querySuperClassOf( C )>, logicalName<logicalName( emptyString, V )>, owlSubclassOf<owlSubclassOf( C, SV )>, owlDataPropertyAssertion<owlDataPropertyAssertion( U, P, createValue( emptyString, DR ) )>, res<res( URIC )>, queryEquivalentClass<queryEquivalentClass( C )>
 queryObjAssertionClassUri<queryObjAssertionClassUri( URIP, URIC )> { queryObjAssertionClassUri<queryObjAssertionClassUri( URIP, URIC )> } -->
 owlDataPropertyDomain<owlDataPropertyDomain( P, C )> { owlDataPropertyAssertion<owlDataPropertyAssertion( X, P, _ )>, owlSubDataPropertyOf<owlSubDataPropertyOf( P1, P2 )>, owlDataPropertyDomain<owlDataPropertyDomain( P, C )> } --> owlClassAssertion<owlClassAssertion( X, DP, true )>, owlDataPropertyDomain<owlDataPropertyDomain( P1, C )>
 owlTransitiveObjectProperty<owlTransitiveObjectProperty( P )> { owlTransitiveObjectProperty<owlTransitiveObjectProperty( P )> } -->
@@ -100,7 +111,11 @@ queryClassificationUri<queryClassificationUri( URI )> { logicalName<logicalName(
 queryClassificationTempUri<queryClassificationTempUri( URI )> { queryClassificationTempUri<queryClassificationTempUri( URI )> } -->
 queryInstanceURI<queryInstanceURI( URIX, URIC )> { logicalName<logicalName( URIC, C )>, queryInstanceURI<queryInstanceURI( URIX, URIC )> } --> queryInstance<queryInstance( X, C )>
 queryComplexStudentsWithId<queryComplexStudentsWithId( URIE, URIF, URIG, URIH, URIK, get_next_id(  ) )> { logicalName<logicalName( URIE, E )> } --> queryComplexStudents<queryComplexStudents( E, F, G, H, K, ID )>
-owlDataPropertyAssertion<owlDataPropertyAssertion( X, P, Y )> { logicalName<logicalName( URIX, X )>, queryDataAssertion<queryDataAssertion( P, ID )>, owlDataPropertyAssertion<owlDataPropertyAssertion( X, P, Y )>, owlDisjointDataProperty<owlDisjointDataProperty( A, B )>, owlSameIndividual<owlSameIndividual( X, Y )>, owlHasKeyLoop<owlHasKeyLoop( X, Y, IT, ITEND )>, owlNegativeDataAssertion<owlNegativeDataAssertion( X, P, Y )>, owlDataValue<owlDataValue( W, ValW, TypeW )>, owlDataPropertyRange<owlDataPropertyRange( P, DR )>, owlSubDataPropertyOf<owlSubDataPropertyOf( P2, P1 )>, owlFunctionalDataProperty<owlFunctionalDataProperty( P )>, owlDataMaxCardinality<owlDataMaxCardinality( C, P, 0 )>, owlDataSomeValuesFrom<owlDataSomeValuesFrom( C, P, DR )>, owlDataPropertyDomain<owlDataPropertyDomain( P, DP )>, owlClassAssertion<owlClassAssertion( U, C, true )> } --> owlHasKeyLoop<owlHasKeyLoop( X, Y, ( std :: next )( ( *IT ) ), ITEND )>, owlDataValue<owlDataValue( Y, ( ( *Y ) . val ), ( ( *Y ) . typeVal ) )>, ResultVec<ResultVec( makeVec( URIX, valueToString( Y ) ), ID )>, owlDataPropertyAssertion<owlDataPropertyAssertion( X, P1, Y )>, owlClassAssertion<owlClassAssertion( X, DP, true )>
+<<<<<<< HEAD
+owlDataPropertyAssertion<owlDataPropertyAssertion( X, P, Y )> { logicalName<logicalName( URIX, X )>, queryDataAssertion<queryDataAssertion( P, ID )>, owlDataPropertyAssertion<owlDataPropertyAssertion( X, P, Y )>, owlDisjointDataProperty<owlDisjointDataProperty( A, B )>, owlSameIndividual<owlSameIndividual( X, Y )>, owlDataValue<owlDataValue( W, ValW, TypeW )>, owlDataPropertyRange<owlDataPropertyRange( P, DR )>, owlSubDataPropertyOf<owlSubDataPropertyOf( P2, P1 )>, owlHasKeyCheck<owlHasKeyCheck( C, X, Y, I, N )>, owlFunctionalDataProperty<owlFunctionalDataProperty( P )>, owlDataMaxCardinality<owlDataMaxCardinality( C, P, 0 )>, owlDataSomeValuesFrom<owlDataSomeValuesFrom( C, P, DR )>, owlDataPropertyDomain<owlDataPropertyDomain( P, DP )>, owlClassAssertion<owlClassAssertion( U, C, true )>, owlNegativeDataAssertion<owlNegativeDataAssertion( X, P, Y )>, owlHasKey<owlHasKey( C, P, I, N )> } --> owlHasKeyCheck<owlHasKeyCheck( C, X, Y, ( I + 1 ), N )>, owlDataValue<owlDataValue( Y, ( ( *Y ) . val ), ( ( *Y ) . typeVal ) )>, ResultVec<ResultVec( makeVec( URIX, valueToString( Y ) ), ID )>, owlDataPropertyAssertion<owlDataPropertyAssertion( X, P1, Y )>, owlClassAssertion<owlClassAssertion( X, DP, true )>
+=======
+owlDataPropertyAssertion<owlDataPropertyAssertion( X, P, Y )> { logicalName<logicalName( URIX, X )>, queryDataAssertion<queryDataAssertion( P, ID )>, owlDataPropertyAssertion<owlDataPropertyAssertion( X, P, Y )>, owlDisjointDataProperty<owlDisjointDataProperty( A, B )>, owlSameIndividual<owlSameIndividual( X, Y )>, owlHasKeyLoop<owlHasKeyLoop( X, Y, IT, ITEND )>, owlNegativeDataAssertion<owlNegativeDataAssertion( X, P, Y )>, owlDataValue<owlDataValue( W, ValW, TypeW )>, owlDataPropertyRange<owlDataPropertyRange( P, DR )>, owlSubDataPropertyOf<owlSubDataPropertyOf( P2, P1 )>, owlFunctionalDataProperty<owlFunctionalDataProperty( P )>, owlDataMaxCardinality<owlDataMaxCardinality( C, P, 0 )>, owlDataSomeValuesFrom<owlDataSomeValuesFrom( C, P, DR )>, owlDataPropertyDomain<owlDataPropertyDomain( P, DP )>, owlClassAssertion<owlClassAssertion( U, C, true )> } --> owlHasKeyLoop<owlHasKeyLoop( X, Y, ( std :: next( ( *IT ) ) ), ITEND )>, owlDataValue<owlDataValue( Y, ( ( *Y ) . val ), ( ( *Y ) . typeVal ) )>, ResultVec<ResultVec( makeVec( URIX, valueToString( Y ) ), ID )>, owlDataPropertyAssertion<owlDataPropertyAssertion( X, P1, Y )>, owlClassAssertion<owlClassAssertion( X, DP, true )>
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
 queryInstance<queryInstance( X, C )> { owlClassAssertion<owlClassAssertion( X, C, true )>, queryInstance<queryInstance( X, C )> } --> built-in<afficher( "true" )>
 queryInstances<queryInstances( C, ID )> { logicalName<logicalName( URIX, X )>, owlClassAssertion<owlClassAssertion( X, C, true )>, queryInstances<queryInstances( C, ID )> } --> ResultVec<ResultVec( makeVec( URIX, emptyString ), ID )>
 
@@ -390,10 +405,19 @@ queryInstances<queryInstances( C, ID )> { logicalName<logicalName( URIX, X )>, o
 (rule) ObjectPropertyChain @ owlObjectPropertyChain( PC, P, 0, N ), owlObjectPropertyAssertion( X, P, Y ) ==> constructPropertyChain( PC, 0, X, Y, N ) ;;
 (rule) chainStep @ owlObjectPropertyAssertion( Y, P, Z ), owlObjectPropertyChain( PC, P, J, N ), constructPropertyChain( PC, I, X, Y, N ) ==> ( ( I < N ) && equalIncrement( J, I ) ) | constructPropertyChain( PC, ( I + 1 ), X, Z, N ) ;;
 (rule) finalChain @ constructPropertyChain( PC, N, X, Y, N ) <=> owlObjectPropertyAssertion( X, PC, Y ) ;;
-(rule) owlHasKey( C, P ), owlClassAssertion( X, C, true ), owlClassAssertion( Y, C, true ) ==> ( !( X == Y ) ) | owlHasKeyLoop( X, Y, ( ( *P ) . begin )(  ), ( ( *P ) . end )(  ) ) ;;
+<<<<<<< HEAD
+(rule) owlHasKey( C, P, I, N ) \ owlHasKey( C, P, I, N ) <=> true ;;
+(rule) owlHasKeyCheck( C, X, Y, I, N ) \ owlHasKeyCheck( C, X, Y, I, N ) <=> true ;;
+(rule) owlHasKey( C, P, 0, N ), owlClassAssertion( X, C, true ), owlClassAssertion( Y, C, true ) ==> ( !( X == Y ) ) | owlHasKeyCheck( C, X, Y, 0, N ) ;;
+(rule) owlObjectPropertyAssertion( X, P, V ), owlObjectPropertyAssertion( Y, P, V ), owlHasKey( C, P, I, N ) \ owlHasKeyCheck( C, X, Y, I, N ) <=> owlHasKeyCheck( C, X, Y, ( I + 1 ), N ) ;;
+(rule) owlDataPropertyAssertion( X, P, V ), owlDataPropertyAssertion( Y, P, V ), owlHasKey( C, P, I, N ) \ owlHasKeyCheck( C, X, Y, I, N ) <=> owlHasKeyCheck( C, X, Y, ( I + 1 ), N ) ;;
+(rule) owlHasKeyCheck( C, X, Y, N, N ) <=> owlSameIndividual( X, Y ) ;;
+=======
+(rule) owlHasKey( C, P ), owlClassAssertion( X, C, true ), owlClassAssertion( Y, C, true ) ==> ( !( X == Y ) ) | owlHasKeyLoop( X, Y, ( ( *P ) . begin(  ) ), ( ( *P ) . end(  ) ) ) ;;
 (rule) owlHasKeyLoop( X, Y, ITEND, ITEND ) <=> owlSameIndividual( X, Y ) ;;
-(rule) owlObjectPropertyAssertion( X, P, V1 ), owlObjectPropertyAssertion( Y, P, V1 ) \ owlHasKeyLoop( X, Y, IT, ITEND ) <=> ( P == ( *( *IT ) ) ) | owlHasKeyLoop( X, Y, ( std :: next )( ( *IT ) ), ITEND ) ;;
-(rule) owlDataPropertyAssertion( X, P, V1 ), owlDataPropertyAssertion( Y, P, V1 ) \ owlHasKeyLoop( X, Y, IT, ITEND ) <=> ( P == ( *( *IT ) ) ) | owlHasKeyLoop( X, Y, ( std :: next )( ( *IT ) ), ITEND ) ;;
+(rule) owlObjectPropertyAssertion( X, P, V1 ), owlObjectPropertyAssertion( Y, P, V1 ) \ owlHasKeyLoop( X, Y, IT, ITEND ) <=> ( P == ( *( *IT ) ) ) | owlHasKeyLoop( X, Y, ( std :: next( ( *IT ) ) ), ITEND ) ;;
+(rule) owlDataPropertyAssertion( X, P, V1 ), owlDataPropertyAssertion( Y, P, V1 ) \ owlHasKeyLoop( X, Y, IT, ITEND ) <=> ( P == ( *( *IT ) ) ) | owlHasKeyLoop( X, Y, ( std :: next( ( *IT ) ) ), ITEND ) ;;
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
 (rule) res( URIC ) ==> afficher( URIC ) ;;
 (rule) querySuperClassOfUri( URIC ), logicalName( URIC, X ) ==> ( querySuperClassOf( X ), res( ( std :: string( "owl:Thing" ) ) ) ) ;;
 (rule) querySuperClassOf( X ), logicalName( URIC, X ) ==> res( URIC ) ;;
@@ -507,8 +531,19 @@ queryInstances<queryInstances( C, ID )> { logicalName<logicalName( URIX, X )>, o
 (occ rule) hasValueSubsumptionClass @ [+owlClassAssertion( A, Y1, true )#28][+owlHasValueObject( C, P, A )<idx#1>, +owlSubclassOf( Y1, Y2 )<idx#1>, +owlObjectSomeValuesFrom( SV, P, Y2 )<idx#2>] --> owlSubclassOf( C, SV ) ;;
 (occ rule) hasValueSubsumptionProp @ [+owlClassAssertion( A, Y, true )#29][+owlHasValueObject( C, P1, A )<idx#1>, +owlSubObjectPropertyOf( P1, P2 )<idx#0>, +owlObjectSomeValuesFrom( SV, P2, Y )<idx#2>] --> owlSubclassOf( C, SV ) ;;
 (occ rule) hasValueSubsumptionPropClass @ [+owlClassAssertion( A, Y1, true )#30][+owlHasValueObject( C, P1, A )<idx#1>, +owlSubObjectPropertyOf( P1, P2 )<idx#0>, +owlSubclassOf( Y1, Y2 )<idx#1>, +owlObjectSomeValuesFrom( SV, P2, Y2 )<idx#2>] --> owlSubclassOf( C, SV ) ;;
-(occ rule) [+owlClassAssertion( X, C, true )#31][+owlClassAssertion( Y, C, true )<idx#1>, ( !( X == Y ) ), +owlHasKey( C, P )<idx#0>] --> owlHasKeyLoop( X, Y, ( ( *P ) . begin )(  ), ( ( *P ) . end )(  ) ) ;;
-(occ rule) [+owlClassAssertion( Y, C, true )#32][+owlClassAssertion( X, C, true )<idx#1>, ( !( X == Y ) ), +owlHasKey( C, P )<idx#0>] --> owlHasKeyLoop( X, Y, ( ( *P ) . begin )(  ), ( ( *P ) . end )(  ) ) ;;
+<<<<<<< HEAD
+(occ rule) [+owlClassAssertion( X, C, true )#31][+owlHasKey( C, P, 0, N )<idx#0>, +owlClassAssertion( Y, C, true )<idx#1>, ( !( X == Y ) )] --> owlHasKeyCheck( C, X, Y, 0, N ) ;;
+(occ rule) [+owlClassAssertion( Y, C, true )#32][+owlHasKey( C, P, 0, N )<idx#0>, +owlClassAssertion( X, C, true )<idx#1>, ( !( X == Y ) )] --> owlHasKeyCheck( C, X, Y, 0, N ) ;;
+(occ rule) r_queryClassification1 @ [+owlClassAssertion( X, C, true )#33][+queryClassification( X )<idx#0>, +logicalName( URIC, C )<idx#1>#passive] --> ( res( URIC ), querySuperClassOf( C ), queryEquivalentClass( C ) ) ;;
+(occ rule) realisation @ [+owlClassAssertion( X, C, true )#35][+logicalName( URIC, C )<idx#1>#passive, +logicalName( URIX, X )<idx#1>#passive, +realisation(  )] --> resultRealisation( URIX, URIC ) ;;
+(occ rule) realisationPunning @ [+owlClassAssertion( X, X, true )#36][+logicalName( URI, X )<idx#1>#passive, +realisation(  )] --> resultRealisation( URI, URI ) ;;
+(occ rule) [+owlClassAssertion( X, C, true )#37][+queryInstances( C, ID )<idx#0>, +logicalName( URIX, X )<idx#1>#passive] --> ResultVec( makeVec( URIX, emptyString ), ID ) ;;
+(occ rule) [+owlClassAssertion( X, E, true )#38][+queryEngineeringStudents( E, F, G, H, K, ID )<idx#0>, +owlObjectPropertyAssertion( X, F, Y )<idx#0>, +owlObjectPropertyAssertion( Y, G, Z )<idx#0>, +owlObjectPropertyAssertion( Z, H, K )<idx#2>, +logicalName( URIX, X )<idx#1>#passive, +logicalName( URIY, Y )<idx#1>#passive] --> ResultVec( makeVec( URIX, URIY ), ID ) ;;
+(occ rule) [+owlClassAssertion( S, E, true )#39][+owlClassAssertion( X, F, true )<idx#3>, +queryComplexStudents( E, F, G, H, K, ID )<idx#0>, +owlObjectPropertyAssertion( X, G, Z )<idx#0>, +owlObjectPropertyAssertion( Z, H, C )<idx#0>, +owlObjectPropertyAssertion( S, K, C )<idx#2>, +logicalName( URIS, S )<idx#1>#passive, +logicalName( URIC, C )<idx#1>#passive] --> ResultVec( makeVec( URIS, URIC ), ID ) ;;
+(occ rule) [+owlClassAssertion( X, F, true )#40][+owlClassAssertion( S, E, true )<idx#3>, +queryComplexStudents( E, F, G, H, K, ID )<idx#0>, +owlObjectPropertyAssertion( X, G, Z )<idx#0>, +owlObjectPropertyAssertion( Z, H, C )<idx#0>, +owlObjectPropertyAssertion( S, K, C )<idx#2>, +logicalName( URIS, S )<idx#1>#passive, +logicalName( URIC, C )<idx#1>#passive] --> ResultVec( makeVec( URIS, URIC ), ID ) ;;
+=======
+(occ rule) [+owlClassAssertion( X, C, true )#31][+owlClassAssertion( Y, C, true )<idx#1>, ( !( X == Y ) ), +owlHasKey( C, P )<idx#0>] --> owlHasKeyLoop( X, Y, ( ( *P ) . begin(  ) ), ( ( *P ) . end(  ) ) ) ;;
+(occ rule) [+owlClassAssertion( Y, C, true )#32][+owlClassAssertion( X, C, true )<idx#1>, ( !( X == Y ) ), +owlHasKey( C, P )<idx#0>] --> owlHasKeyLoop( X, Y, ( ( *P ) . begin(  ) ), ( ( *P ) . end(  ) ) ) ;;
 (occ rule) r_queryClassification1 @ [+owlClassAssertion( X, C, true )#33][+queryClassification( X )<idx#0>, +logicalName( URIC, C )<idx#0>#passive] --> ( res( URIC ), querySuperClassOf( C ), queryEquivalentClass( C ) ) ;;
 (occ rule) realisation @ [+owlClassAssertion( X, C, true )#35][+logicalName( URIC, C )<idx#0>#passive, +logicalName( URIX, X )<idx#0>#passive, +realisation(  )] --> resultRealisation( URIX, URIC ) ;;
 (occ rule) realisationPunning @ [+owlClassAssertion( X, X, true )#36][+logicalName( URI, X )<idx#0>#passive, +realisation(  )] --> resultRealisation( URI, URI ) ;;
@@ -516,6 +551,7 @@ queryInstances<queryInstances( C, ID )> { logicalName<logicalName( URIX, X )>, o
 (occ rule) [+owlClassAssertion( X, E, true )#38][+queryEngineeringStudents( E, F, G, H, K, ID )<idx#0>, +owlObjectPropertyAssertion( X, F, Y )<idx#0>, +owlObjectPropertyAssertion( Y, G, Z )<idx#0>, +owlObjectPropertyAssertion( Z, H, K )<idx#2>, +logicalName( URIX, X )<idx#0>#passive, +logicalName( URIY, Y )<idx#0>#passive] --> ResultVec( makeVec( URIX, URIY ), ID ) ;;
 (occ rule) [+owlClassAssertion( S, E, true )#39][+owlClassAssertion( X, F, true )<idx#3>, +queryComplexStudents( E, F, G, H, K, ID )<idx#0>, +owlObjectPropertyAssertion( X, G, Z )<idx#0>, +owlObjectPropertyAssertion( Z, H, C )<idx#0>, +owlObjectPropertyAssertion( S, K, C )<idx#2>, +logicalName( URIS, S )<idx#0>#passive, +logicalName( URIC, C )<idx#0>#passive] --> ResultVec( makeVec( URIS, URIC ), ID ) ;;
 (occ rule) [+owlClassAssertion( X, F, true )#40][+owlClassAssertion( S, E, true )<idx#3>, +queryComplexStudents( E, F, G, H, K, ID )<idx#0>, +owlObjectPropertyAssertion( X, G, Z )<idx#0>, +owlObjectPropertyAssertion( Z, H, C )<idx#0>, +owlObjectPropertyAssertion( S, K, C )<idx#2>, +logicalName( URIS, S )<idx#0>#passive, +logicalName( URIC, C )<idx#0>#passive] --> ResultVec( makeVec( URIS, URIC ), ID ) ;;
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
 (occ rule) [-owlComplementOf( A, NOTA )#0][+owlComplementOf( A, NOTA )<idx#0>#passive] --> true ;;
 (occ rule) complementOf @ [-owlComplementOf( A, NOTA )#1][-owlClassAssertion( X, A, true )<idx#1>, -owlClassAssertion( X, NOTA, true )<idx#2>] --> failure ;;
 (occ rule) [+owlComplementOf( A, NOTA )#2][+owlNamedIndividual( X )] --> owlClassAssertion( X, NOTA, false ) ;;
@@ -543,9 +579,15 @@ queryInstances<queryInstances( C, ID )> { logicalName<logicalName( URIX, X )>, o
 (occ rule) [-owlDataPropertyAssertion( U, P, _ )#14][-owlDataMaxCardinality( C, P, 0 )<idx#2>, -owlClassAssertion( U, C, true )<idx#2>] --> failure ;;
 (occ rule) [-owlDataPropertyAssertion( U, P, Y1 )#15][-owlDataMaxCardinality( C, P, 1 )<idx#2>, -owlClassAssertion( U, C, true )<idx#2>, -owlDataPropertyAssertion( U, P, Y2 )<idx#1>, ( !( Y1 == Y2 ) )] --> failure ;;
 (occ rule) [-owlDataPropertyAssertion( U, P, Y2 )#16][-owlDataMaxCardinality( C, P, 1 )<idx#2>, -owlClassAssertion( U, C, true )<idx#2>, -owlDataPropertyAssertion( U, P, Y1 )<idx#1>, ( !( Y1 == Y2 ) )] --> failure ;;
-(occ rule) [+owlDataPropertyAssertion( X, P, V1 )#17][+owlDataPropertyAssertion( Y, P, V1 )<idx#4>, -owlHasKeyLoop( X, Y, IT, ITEND )<idx#0>, ( P == ( *( *IT ) ) )] --> owlHasKeyLoop( X, Y, ( std :: next )( ( *IT ) ), ITEND ) ;;
-(occ rule) [+owlDataPropertyAssertion( Y, P, V1 )#18][+owlDataPropertyAssertion( X, P, V1 )<idx#4>, -owlHasKeyLoop( X, Y, IT, ITEND )<idx#0>, ( P == ( *( *IT ) ) )] --> owlHasKeyLoop( X, Y, ( std :: next )( ( *IT ) ), ITEND ) ;;
+<<<<<<< HEAD
+(occ rule) [+owlDataPropertyAssertion( X, P, V )#17][+owlDataPropertyAssertion( Y, P, V )<idx#4>, -owlHasKeyCheck( C, X, Y, I, N )<idx#0>, +owlHasKey( C, P, I, N )<idx#1>] --> owlHasKeyCheck( C, X, Y, ( I + 1 ), N ) ;;
+(occ rule) [+owlDataPropertyAssertion( Y, P, V )#18][+owlDataPropertyAssertion( X, P, V )<idx#4>, -owlHasKeyCheck( C, X, Y, I, N )<idx#0>, +owlHasKey( C, P, I, N )<idx#1>] --> owlHasKeyCheck( C, X, Y, ( I + 1 ), N ) ;;
+(occ rule) [+owlDataPropertyAssertion( X, P, Y )#19][+queryDataAssertion( P, ID )<idx#0>, +logicalName( URIX, X )<idx#1>] --> ResultVec( makeVec( URIX, valueToString( Y ) ), ID ) ;;
+=======
+(occ rule) [+owlDataPropertyAssertion( X, P, V1 )#17][+owlDataPropertyAssertion( Y, P, V1 )<idx#4>, -owlHasKeyLoop( X, Y, IT, ITEND )<idx#0>, ( P == ( *( *IT ) ) )] --> owlHasKeyLoop( X, Y, ( std :: next( ( *IT ) ) ), ITEND ) ;;
+(occ rule) [+owlDataPropertyAssertion( Y, P, V1 )#18][+owlDataPropertyAssertion( X, P, V1 )<idx#4>, -owlHasKeyLoop( X, Y, IT, ITEND )<idx#0>, ( P == ( *( *IT ) ) )] --> owlHasKeyLoop( X, Y, ( std :: next( ( *IT ) ) ), ITEND ) ;;
 (occ rule) [+owlDataPropertyAssertion( X, P, Y )#19][+queryDataAssertion( P, ID )<idx#0>, +logicalName( URIX, X )<idx#0>] --> ResultVec( makeVec( URIX, valueToString( Y ) ), ID ) ;;
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
 (occ rule) [-owlDataPropertyDomain( P, C )#0][+owlDataPropertyDomain( P, C )<idx#1>#passive] --> true ;;
 (occ rule) [+owlDataPropertyDomain( P2, C )#1][+owlSubDataPropertyOf( P1, P2 )<idx#1>, ( !( P1 == P2 ) )] --> owlDataPropertyDomain( P1, C ) ;;
 (occ rule) DataPropertyDomain @ [+owlDataPropertyDomain( P, DP )#2][+owlDataPropertyAssertion( X, P, _ )<idx#5>] --> owlClassAssertion( X, DP, true ) ;;
@@ -579,10 +621,21 @@ queryInstances<queryInstances( C, ID )> { logicalName<logicalName( URIX, X )>, o
 (occ rule) functionalDataProperty @ [-owlFunctionalDataProperty( P )#1][-owlDataPropertyAssertion( X, P, Y )<idx#5>, -owlDataPropertyAssertion( X, P, Z )<idx#1>, ( !( Y == Z ) )] --> failure ;;
 (occ rule) [-owlFunctionalObjectProperty( P )#0][+owlFunctionalObjectProperty( P )<idx#0>#passive] --> true ;;
 (occ rule) functionalObjProperty @ [+owlFunctionalObjectProperty( P )#1][+owlObjectPropertyAssertion( X, P, Y )<idx#3>, +owlObjectPropertyAssertion( X, P, Z )<idx#0>, ( !( Y == Z ) )] --> owlSameIndividual( Y, Z ) ;;
-(occ rule) [+owlHasKey( C, P )#0][+owlClassAssertion( X, C, true )<idx#1>, +owlClassAssertion( Y, C, true )<idx#1>, ( !( X == Y ) )] --> owlHasKeyLoop( X, Y, ( ( *P ) . begin )(  ), ( ( *P ) . end )(  ) ) ;;
+<<<<<<< HEAD
+(occ rule) [-owlHasKey( C, P, I, N )#0][+owlHasKey( C, P, I, N )<idx#1>#passive] --> true ;;
+(occ rule) [+owlHasKey( C, P, 0, N )#1][+owlClassAssertion( X, C, true )<idx#1>, +owlClassAssertion( Y, C, true )<idx#1>, ( !( X == Y ) )] --> owlHasKeyCheck( C, X, Y, 0, N ) ;;
+(occ rule) [+owlHasKey( C, P, I, N )#2][-owlHasKeyCheck( C, X, Y, I, N )<idx#1>, +owlObjectPropertyAssertion( X, P, V )<idx#0>, +owlObjectPropertyAssertion( Y, P, V )<idx#2>] --> owlHasKeyCheck( C, X, Y, ( I + 1 ), N ) ;;
+(occ rule) [+owlHasKey( C, P, I, N )#3][-owlHasKeyCheck( C, X, Y, I, N )<idx#1>, +owlDataPropertyAssertion( X, P, V )<idx#1>, +owlDataPropertyAssertion( Y, P, V )<idx#2>] --> owlHasKeyCheck( C, X, Y, ( I + 1 ), N ) ;;
+(occ rule) [-owlHasKeyCheck( C, X, Y, I, N )#0][+owlHasKeyCheck( C, X, Y, I, N )<idx#2>#passive] --> true ;;
+(occ rule) [-owlHasKeyCheck( C, X, Y, I, N )#1][+owlHasKey( C, P, I, N )<idx#2>, +owlObjectPropertyAssertion( Y, P, V )<idx#0>, +owlObjectPropertyAssertion( X, P, V )<idx#2>] --> owlHasKeyCheck( C, X, Y, ( I + 1 ), N ) ;;
+(occ rule) [-owlHasKeyCheck( C, X, Y, I, N )#2][+owlHasKey( C, P, I, N )<idx#2>, +owlDataPropertyAssertion( Y, P, V )<idx#1>, +owlDataPropertyAssertion( X, P, V )<idx#2>] --> owlHasKeyCheck( C, X, Y, ( I + 1 ), N ) ;;
+(occ rule) [-owlHasKeyCheck( C, X, Y, N, N )#3][] --> owlSameIndividual( X, Y ) ;;
+=======
+(occ rule) [+owlHasKey( C, P )#0][+owlClassAssertion( X, C, true )<idx#1>, +owlClassAssertion( Y, C, true )<idx#1>, ( !( X == Y ) )] --> owlHasKeyLoop( X, Y, ( ( *P ) . begin(  ) ), ( ( *P ) . end(  ) ) ) ;;
 (occ rule) [-owlHasKeyLoop( X, Y, ITEND, ITEND )#0][] --> owlSameIndividual( X, Y ) ;;
-(occ rule) [-owlHasKeyLoop( X, Y, IT, ITEND )#1][+owlObjectPropertyAssertion( X, P, V1 )<idx#5>, ( P == ( *( *IT ) ) ), +owlObjectPropertyAssertion( Y, P, V1 )<idx#2>] --> owlHasKeyLoop( X, Y, ( std :: next )( ( *IT ) ), ITEND ) ;;
-(occ rule) [-owlHasKeyLoop( X, Y, IT, ITEND )#2][+owlDataPropertyAssertion( X, P, V1 )<idx#0>, ( P == ( *( *IT ) ) ), +owlDataPropertyAssertion( Y, P, V1 )<idx#2>] --> owlHasKeyLoop( X, Y, ( std :: next )( ( *IT ) ), ITEND ) ;;
+(occ rule) [-owlHasKeyLoop( X, Y, IT, ITEND )#1][+owlObjectPropertyAssertion( X, P, V1 )<idx#5>, ( P == ( *( *IT ) ) ), +owlObjectPropertyAssertion( Y, P, V1 )<idx#2>] --> owlHasKeyLoop( X, Y, ( std :: next( ( *IT ) ) ), ITEND ) ;;
+(occ rule) [-owlHasKeyLoop( X, Y, IT, ITEND )#2][+owlDataPropertyAssertion( X, P, V1 )<idx#0>, ( P == ( *( *IT ) ) ), +owlDataPropertyAssertion( Y, P, V1 )<idx#2>] --> owlHasKeyLoop( X, Y, ( std :: next( ( *IT ) ) ), ITEND ) ;;
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
 (occ rule) [-owlHasValueObject( C, P, Y )#0][+owlHasValueObject( C, P, Y )<idx#2>#passive] --> true ;;
 (occ rule) [+owlHasValueObject( C, P, Y )#1][+owlClassAssertion( U, C, true )<idx#1>, +owlObjectProperty( P )<idx#0>] --> owlObjectPropertyAssertion( U, P, Y ) ;;
 (occ rule) [+owlHasValueObject( C, P, Y )#2][+owlObjectPropertyAssertion( U, P, Y )<idx#4>] --> owlClassAssertion( U, C, true ) ;;
@@ -650,8 +703,22 @@ queryInstances<queryInstances( C, ID )> { logicalName<logicalName( URIX, X )>, o
 (occ rule) [+owlObjectPropertyAssertion( U, P, Y )#24][+owlHasValueObject( C, P, Y )<idx#4>] --> owlClassAssertion( U, C, true ) ;;
 (occ rule) ObjectPropertyChain @ [+owlObjectPropertyAssertion( X, P, Y )#25][+owlObjectPropertyChain( PC, P, 0, N )<idx#1>] --> constructPropertyChain( PC, 0, X, Y, N ) ;;
 (occ rule) chainStep @ [+owlObjectPropertyAssertion( Y, P, Z )#26][+owlObjectPropertyChain( PC, P, J, N )<idx#2>, +constructPropertyChain( PC, I, X, Y, N )<idx#1>, ( I < N ), equalIncrement( J, I )] --> constructPropertyChain( PC, ( I + 1 ), X, Z, N ) ;;
-(occ rule) [+owlObjectPropertyAssertion( X, P, V1 )#27][+owlObjectPropertyAssertion( Y, P, V1 )<idx#4>, -owlHasKeyLoop( X, Y, IT, ITEND )<idx#0>, ( P == ( *( *IT ) ) )] --> owlHasKeyLoop( X, Y, ( std :: next )( ( *IT ) ), ITEND ) ;;
-(occ rule) [+owlObjectPropertyAssertion( Y, P, V1 )#28][+owlObjectPropertyAssertion( X, P, V1 )<idx#4>, -owlHasKeyLoop( X, Y, IT, ITEND )<idx#0>, ( P == ( *( *IT ) ) )] --> owlHasKeyLoop( X, Y, ( std :: next )( ( *IT ) ), ITEND ) ;;
+<<<<<<< HEAD
+(occ rule) [+owlObjectPropertyAssertion( X, P, V )#27][+owlObjectPropertyAssertion( Y, P, V )<idx#4>, -owlHasKeyCheck( C, X, Y, I, N )<idx#0>, +owlHasKey( C, P, I, N )<idx#1>] --> owlHasKeyCheck( C, X, Y, ( I + 1 ), N ) ;;
+(occ rule) [+owlObjectPropertyAssertion( Y, P, V )#28][+owlObjectPropertyAssertion( X, P, V )<idx#4>, -owlHasKeyCheck( C, X, Y, I, N )<idx#0>, +owlHasKey( C, P, I, N )<idx#1>] --> owlHasKeyCheck( C, X, Y, ( I + 1 ), N ) ;;
+(occ rule) [+owlObjectPropertyAssertion( X, P, Y )#29][+queryObjAssertion( P, ID )<idx#0>, +logicalName( URIX, X )<idx#1>#passive, +logicalName( URIY, Y )<idx#1>#passive] --> ResultVec( makeVec( URIX, URIY ), ID ) ;;
+(occ rule) [+owlObjectPropertyAssertion( X, P, X )#30][+queryObjAssertion( P, ID )<idx#0>, +logicalName( URIX, X )<idx#1>#passive] --> ResultVec( makeVec( URIX, URIX ), ID ) ;;
+(occ rule) [+owlObjectPropertyAssertion( X, P, O )#31][+queryObjAssertionSubject( P, O, ID )<idx#0>, +logicalName( URIX, X )<idx#1>#passive] --> ResultVec( makeVec( URIX, emptyString ), ID ) ;;
+(occ rule) [+owlObjectPropertyAssertion( X, P, Y )#32][+querySubjectByObject( P, ID )<idx#0>, +logicalName( URIX, X )<idx#1>#passive, +logicalName( URIY, Y )<idx#1>#passive] --> ResultVec( makeVec( URIX, URIY ), ID ) ;;
+(occ rule) [+owlObjectPropertyAssertion( X, F, Y )#33][+owlClassAssertion( X, E, true )<idx#0>, +queryEngineeringStudents( E, F, G, H, K, ID )<idx#1>, +owlObjectPropertyAssertion( Y, G, Z )<idx#0>, +owlObjectPropertyAssertion( Z, H, K )<idx#2>, +logicalName( URIX, X )<idx#1>#passive, +logicalName( URIY, Y )<idx#1>#passive] --> ResultVec( makeVec( URIX, URIY ), ID ) ;;
+(occ rule) [+owlObjectPropertyAssertion( Y, G, Z )#34][+owlClassAssertion( X, E, true )<idx#3>, +queryEngineeringStudents( E, F, G, H, K, ID )<idx#2>, +owlObjectPropertyAssertion( X, F, Y )<idx#2>, +owlObjectPropertyAssertion( Z, H, K )<idx#2>, +logicalName( URIX, X )<idx#1>#passive, +logicalName( URIY, Y )<idx#1>#passive] --> ResultVec( makeVec( URIX, URIY ), ID ) ;;
+(occ rule) [+owlObjectPropertyAssertion( Z, H, K )#35][+owlClassAssertion( X, E, true )<idx#3>, +queryEngineeringStudents( E, F, G, H, K, ID )<idx#3>, +owlObjectPropertyAssertion( X, F, Y )<idx#0>, +owlObjectPropertyAssertion( Y, G, Z )<idx#2>, +logicalName( URIX, X )<idx#1>#passive, +logicalName( URIY, Y )<idx#1>#passive] --> ResultVec( makeVec( URIX, URIY ), ID ) ;;
+(occ rule) [+owlObjectPropertyAssertion( X, G, Z )#36][+owlClassAssertion( X, F, true )<idx#0>, +owlClassAssertion( S, E, true )<idx#3>, +queryComplexStudents( E, F, G, H, K, ID )<idx#1>, +owlObjectPropertyAssertion( Z, H, C )<idx#0>, +owlObjectPropertyAssertion( S, K, C )<idx#2>, +logicalName( URIS, S )<idx#1>#passive, +logicalName( URIC, C )<idx#1>#passive] --> ResultVec( makeVec( URIS, URIC ), ID ) ;;
+(occ rule) [+owlObjectPropertyAssertion( Z, H, C )#37][+owlClassAssertion( S, E, true )<idx#3>, +owlClassAssertion( X, F, true )<idx#3>, +queryComplexStudents( E, F, G, H, K, ID )<idx#2>, +owlObjectPropertyAssertion( X, G, Z )<idx#2>, +owlObjectPropertyAssertion( S, K, C )<idx#2>, +logicalName( URIS, S )<idx#1>#passive, +logicalName( URIC, C )<idx#1>#passive] --> ResultVec( makeVec( URIS, URIC ), ID ) ;;
+(occ rule) [+owlObjectPropertyAssertion( S, K, C )#38][+owlClassAssertion( S, E, true )<idx#0>, +owlClassAssertion( X, F, true )<idx#3>, +queryComplexStudents( E, F, G, H, K, ID )<idx#3>, +owlObjectPropertyAssertion( X, G, Z )<idx#0>, +owlObjectPropertyAssertion( Z, H, C )<idx#2>, +logicalName( URIS, S )<idx#1>#passive, +logicalName( URIC, C )<idx#1>#passive] --> ResultVec( makeVec( URIS, URIC ), ID ) ;;
+=======
+(occ rule) [+owlObjectPropertyAssertion( X, P, V1 )#27][+owlObjectPropertyAssertion( Y, P, V1 )<idx#4>, -owlHasKeyLoop( X, Y, IT, ITEND )<idx#0>, ( P == ( *( *IT ) ) )] --> owlHasKeyLoop( X, Y, ( std :: next( ( *IT ) ) ), ITEND ) ;;
+(occ rule) [+owlObjectPropertyAssertion( Y, P, V1 )#28][+owlObjectPropertyAssertion( X, P, V1 )<idx#4>, -owlHasKeyLoop( X, Y, IT, ITEND )<idx#0>, ( P == ( *( *IT ) ) )] --> owlHasKeyLoop( X, Y, ( std :: next( ( *IT ) ) ), ITEND ) ;;
 (occ rule) [+owlObjectPropertyAssertion( X, P, Y )#29][+queryObjAssertion( P, ID )<idx#0>, +logicalName( URIX, X )<idx#0>#passive, +logicalName( URIY, Y )<idx#0>#passive] --> ResultVec( makeVec( URIX, URIY ), ID ) ;;
 (occ rule) [+owlObjectPropertyAssertion( X, P, X )#30][+queryObjAssertion( P, ID )<idx#0>, +logicalName( URIX, X )<idx#0>#passive] --> ResultVec( makeVec( URIX, URIX ), ID ) ;;
 (occ rule) [+owlObjectPropertyAssertion( X, P, O )#31][+queryObjAssertionSubject( P, O, ID )<idx#0>, +logicalName( URIX, X )<idx#0>#passive] --> ResultVec( makeVec( URIX, emptyString ), ID ) ;;
@@ -662,6 +729,7 @@ queryInstances<queryInstances( C, ID )> { logicalName<logicalName( URIX, X )>, o
 (occ rule) [+owlObjectPropertyAssertion( X, G, Z )#36][+owlClassAssertion( X, F, true )<idx#0>, +owlClassAssertion( S, E, true )<idx#3>, +queryComplexStudents( E, F, G, H, K, ID )<idx#1>, +owlObjectPropertyAssertion( Z, H, C )<idx#0>, +owlObjectPropertyAssertion( S, K, C )<idx#2>, +logicalName( URIS, S )<idx#0>#passive, +logicalName( URIC, C )<idx#0>#passive] --> ResultVec( makeVec( URIS, URIC ), ID ) ;;
 (occ rule) [+owlObjectPropertyAssertion( Z, H, C )#37][+owlClassAssertion( S, E, true )<idx#3>, +owlClassAssertion( X, F, true )<idx#3>, +queryComplexStudents( E, F, G, H, K, ID )<idx#2>, +owlObjectPropertyAssertion( X, G, Z )<idx#2>, +owlObjectPropertyAssertion( S, K, C )<idx#2>, +logicalName( URIS, S )<idx#0>#passive, +logicalName( URIC, C )<idx#0>#passive] --> ResultVec( makeVec( URIS, URIC ), ID ) ;;
 (occ rule) [+owlObjectPropertyAssertion( S, K, C )#38][+owlClassAssertion( S, E, true )<idx#0>, +owlClassAssertion( X, F, true )<idx#3>, +queryComplexStudents( E, F, G, H, K, ID )<idx#3>, +owlObjectPropertyAssertion( X, G, Z )<idx#0>, +owlObjectPropertyAssertion( Z, H, C )<idx#2>, +logicalName( URIS, S )<idx#0>#passive, +logicalName( URIC, C )<idx#0>#passive] --> ResultVec( makeVec( URIS, URIC ), ID ) ;;
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
 (occ rule) ObjectPropertyChain @ [+owlObjectPropertyChain( PC, P, 0, N )#0][+owlObjectPropertyAssertion( X, P, Y )<idx#3>] --> constructPropertyChain( PC, 0, X, Y, N ) ;;
 (occ rule) chainStep @ [+owlObjectPropertyChain( PC, P, J, N )#1][+constructPropertyChain( PC, I, X, Y, N )<idx#2>, ( I < N ), equalIncrement( J, I ), +owlObjectPropertyAssertion( Y, P, Z )<idx#0>] --> constructPropertyChain( PC, ( I + 1 ), X, Z, N ) ;;
 (occ rule) [-owlObjectPropertyDomain( P, C )#0][+owlObjectPropertyDomain( P, C )<idx#1>#passive] --> true ;;
@@ -814,9 +882,15 @@ queryInstances<queryInstances( C, ID )> { logicalName<logicalName( URIX, X )>, o
 (occ rule) [+querySuperClassOf( X )#2][+owlSubclassOf( X, Y )<idx#1>, ( !( X == Y ) )] --> ( querySuperClassOf( Y ), queryEquivalentClass( X ) ) ;;
 (occ rule) [-querySuperClassOfReal( I, C )#0][+querySuperClassOfReal( I, C )<idx#0>#passive] --> true ;;
 (occ rule) [-querySuperClassOfUri( URI )#0][+querySuperClassOfUri( URI )<idx#0>#passive] --> true ;;
-(occ rule) [+querySuperClassOfUri( URIC )#1][+logicalName( URIC, X )<idx#2>#passive] --> ( querySuperClassOf( X ), res( ( std :: string )( "owl:Thing" ) ) ) ;;
+<<<<<<< HEAD
+(occ rule) [+querySuperClassOfUri( URIC )#1][+logicalName( URIC, X )<idx#0>#passive] --> ( querySuperClassOf( X ), res( ( std :: string( "owl:Thing" ) ) ) ) ;;
+(occ rule) realisation @ [+realisation(  )#0][+owlClassAssertion( X, C, true )<idx#3>, +logicalName( URIC, C )<idx#1>#passive, +logicalName( URIX, X )<idx#1>#passive] --> resultRealisation( URIX, URIC ) ;;
+(occ rule) realisationPunning @ [+realisation(  )#1][+owlClassAssertion( X, X, true )<idx#3>, +logicalName( URI, X )<idx#1>#passive] --> resultRealisation( URI, URI ) ;;
+=======
+(occ rule) [+querySuperClassOfUri( URIC )#1][+logicalName( URIC, X )<idx#2>#passive] --> ( querySuperClassOf( X ), res( ( std :: string( "owl:Thing" ) ) ) ) ;;
 (occ rule) realisation @ [+realisation(  )#0][+owlClassAssertion( X, C, true )<idx#3>, +logicalName( URIC, C )<idx#0>#passive, +logicalName( URIX, X )<idx#0>#passive] --> resultRealisation( URIX, URIC ) ;;
 (occ rule) realisationPunning @ [+realisation(  )#1][+owlClassAssertion( X, X, true )<idx#3>, +logicalName( URI, X )<idx#0>#passive] --> resultRealisation( URI, URI ) ;;
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
 (occ rule) [-res( X )#0][+res( X )<idx#0>#passive] --> true ;;
 (occ rule) [+res( URIC )#1][] --> afficher( URIC ) ;;
 (occ rule) [-resultClassification( X, Y )#0][+resultClassification( X, Y )<idx#1>#passive] --> true ;;
@@ -1960,7 +2034,11 @@ If empty store owlClassAssertion( Y, C, true ) Then goto owlClassAssertion_32
 			Then guard
 				If history <owlClassAssertion( X, C, true ),owlHasKey( C, P, 0, N ),owlClassAssertion( Y, C, true )> Then
 					store constraint owlClassAssertion( X, C, true )
-					owlHasKeyLoop( X, Y, ( ( *P ) . begin )(  ), ( ( *P ) . end )(  ) )
+<<<<<<< HEAD
+					owlHasKeyCheck( C, X, Y, 0, N )
+=======
+					owlHasKeyLoop( X, Y, ( ( *P ) . begin(  ) ), ( ( *P ) . end(  ) ) )
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
 					If not alived owlClassAssertion( X, C, true ) Then goto next goal constraint
 					If not alived owlHasKey( C, P, 0, N ) Then goto next matching of owlHasKey( C, P, 0, N )
 					goto next matching of owlClassAssertion( Y, C, true )
@@ -1981,7 +2059,11 @@ If empty store owlClassAssertion( X, C, true ) Then goto owlClassAssertion_33
 			Then guard
 				If history <owlClassAssertion( Y, C, true ),owlHasKey( C, P, 0, N ),owlClassAssertion( X, C, true )> Then
 					store constraint owlClassAssertion( Y, C, true )
-					owlHasKeyLoop( X, Y, ( ( *P ) . begin )(  ), ( ( *P ) . end )(  ) )
+<<<<<<< HEAD
+					owlHasKeyCheck( C, X, Y, 0, N )
+=======
+					owlHasKeyLoop( X, Y, ( ( *P ) . begin(  ) ), ( ( *P ) . end(  ) ) )
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
 					If not alived owlClassAssertion( Y, C, true ) Then goto next goal constraint
 					If not alived owlHasKey( C, P, 0, N ) Then goto next matching of owlHasKey( C, P, 0, N )
 					goto next matching of owlClassAssertion( X, C, true )
@@ -2692,20 +2774,33 @@ If empty store owlHasKey( C, P, I, N ) Then goto owlDataPropertyAssertion_18
 		If guard
 			( owlDataPropertyAssertion( Y, P, V ) != owlDataPropertyAssertion( X, P, V ) )
 		Then guard
+<<<<<<< HEAD
+			Matching partner owlHasKeyCheck( C, X, Y, I, N ) with idx#0<X,Y>
+				Matching partner owlHasKey( C, P, I, N ) with idx#1<C,P,I,N>
+					store constraint owlDataPropertyAssertion( X, P, V )
+					remove constraint owlHasKeyCheck( C, X, Y, I, N )
+					owlHasKeyCheck( C, X, Y, ( I + 1 ), N )
+					If not alived owlDataPropertyAssertion( X, P, V ) Then goto next goal constraint
+					If not alived owlDataPropertyAssertion( Y, P, V ) Then goto next matching of owlDataPropertyAssertion( Y, P, V )
+					goto next matching of owlHasKeyCheck( C, X, Y, I, N )
+				End matching partner owlHasKey( C, P, I, N )
+			End matching partner owlHasKeyCheck( C, X, Y, I, N )
+=======
 			Matching partner owlHasKeyLoop( X, Y, IT, ITEND ) with idx#0<X,Y>
 				If guard
 					( P == ( *( *IT ) ) )
 				Then guard
 					store constraint owlDataPropertyAssertion( X, P, V1 )
 					remove constraint owlHasKeyLoop( X, Y, IT, ITEND )
-					owlHasKeyLoop( X, Y, ( std :: next )( ( *IT ) ), ITEND )
+					owlHasKeyLoop( X, Y, ( std :: next( ( *IT ) ) ), ITEND )
 					If not alived owlDataPropertyAssertion( X, P, V1 ) Then goto next goal constraint
 					If not alived owlDataPropertyAssertion( Y, P, V1 ) Then goto next matching of owlDataPropertyAssertion( Y, P, V1 )
 					goto next matching of owlHasKeyLoop( X, Y, IT, ITEND )
 				End guard
 			End matching partner owlHasKeyLoop( X, Y, IT, ITEND )
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
 		End guard
-	End matching partner owlDataPropertyAssertion( Y, P, V1 )
+	End matching partner owlDataPropertyAssertion( Y, P, V )
 End
 // Rule NO_NAME, active constraint owlDataPropertyAssertion( Y, P, V ), occurrence 18
 Begin owlDataPropertyAssertion_18
@@ -2716,20 +2811,33 @@ If empty store owlHasKey( C, P, I, N ) Then goto owlDataPropertyAssertion_19
 		If guard
 			( owlDataPropertyAssertion( X, P, V ) != owlDataPropertyAssertion( Y, P, V ) )
 		Then guard
+<<<<<<< HEAD
+			Matching partner owlHasKeyCheck( C, X, Y, I, N ) with idx#0<X,Y>
+				Matching partner owlHasKey( C, P, I, N ) with idx#1<C,P,I,N>
+					store constraint owlDataPropertyAssertion( Y, P, V )
+					remove constraint owlHasKeyCheck( C, X, Y, I, N )
+					owlHasKeyCheck( C, X, Y, ( I + 1 ), N )
+					If not alived owlDataPropertyAssertion( Y, P, V ) Then goto next goal constraint
+					If not alived owlDataPropertyAssertion( X, P, V ) Then goto next matching of owlDataPropertyAssertion( X, P, V )
+					goto next matching of owlHasKeyCheck( C, X, Y, I, N )
+				End matching partner owlHasKey( C, P, I, N )
+			End matching partner owlHasKeyCheck( C, X, Y, I, N )
+=======
 			Matching partner owlHasKeyLoop( X, Y, IT, ITEND ) with idx#0<X,Y>
 				If guard
 					( P == ( *( *IT ) ) )
 				Then guard
 					store constraint owlDataPropertyAssertion( Y, P, V1 )
 					remove constraint owlHasKeyLoop( X, Y, IT, ITEND )
-					owlHasKeyLoop( X, Y, ( std :: next )( ( *IT ) ), ITEND )
+					owlHasKeyLoop( X, Y, ( std :: next( ( *IT ) ) ), ITEND )
 					If not alived owlDataPropertyAssertion( Y, P, V1 ) Then goto next goal constraint
 					If not alived owlDataPropertyAssertion( X, P, V1 ) Then goto next matching of owlDataPropertyAssertion( X, P, V1 )
 					goto next matching of owlHasKeyLoop( X, Y, IT, ITEND )
 				End guard
 			End matching partner owlHasKeyLoop( X, Y, IT, ITEND )
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
 		End guard
-	End matching partner owlDataPropertyAssertion( X, P, V1 )
+	End matching partner owlDataPropertyAssertion( X, P, V )
 End
 // Rule NO_NAME, active constraint owlDataPropertyAssertion( X, P, Y ), occurrence 19
 Begin owlDataPropertyAssertion_19
@@ -3363,10 +3471,17 @@ If empty store owlClassAssertion( Y, C, true ) Then goto owlHasKey_2
 				( !( X == Y ) )
 				&& ( owlClassAssertion( Y, C, true ) != owlClassAssertion( X, C, true ) )
 			Then guard
+<<<<<<< HEAD
+				If history <owlHasKey( C, P, 0, N ),owlClassAssertion( X, C, true ),owlClassAssertion( Y, C, true )> Then
+					store constraint owlHasKey( C, P, 0, N )
+					owlHasKeyCheck( C, X, Y, 0, N )
+					If not alived owlHasKey( C, P, 0, N ) Then goto next goal constraint
+=======
 				If history <owlHasKey( C, P ),owlClassAssertion( X, C, true ),owlClassAssertion( Y, C, true )> Then
 					store constraint owlHasKey( C, P )
-					owlHasKeyLoop( X, Y, ( ( *P ) . begin )(  ), ( ( *P ) . end )(  ) )
+					owlHasKeyLoop( X, Y, ( ( *P ) . begin(  ) ), ( ( *P ) . end(  ) ) )
 					If not alived owlHasKey( C, P ) Then goto next goal constraint
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
 					If not alived owlClassAssertion( X, C, true ) Then goto next matching of owlClassAssertion( X, C, true )
 					goto next matching of owlClassAssertion( Y, C, true )
 				End history
@@ -3481,6 +3596,49 @@ Begin owlHasKeyCheck_3
 	owlSameIndividual( X, Y )
 	goto next goal constraint
 End
+<<<<<<< HEAD
+=======
+// Rule NO_NAME, active constraint owlHasKeyLoop( X, Y, IT, ITEND ), occurrence 1
+Begin owlHasKeyLoop_1
+If empty store owlObjectPropertyAssertion( X, P, V1 ) Then goto owlHasKeyLoop_2
+If empty store owlObjectPropertyAssertion( Y, P, V1 ) Then goto owlHasKeyLoop_2
+	Matching partner owlObjectPropertyAssertion( X, P, V1 ) with idx#5<X>
+		If guard
+			( P == ( *( *IT ) ) )
+		Then guard
+			Matching partner owlObjectPropertyAssertion( Y, P, V1 ) with idx#2<Y,P,V1>
+				If guard
+					( owlObjectPropertyAssertion( Y, P, V1 ) != owlObjectPropertyAssertion( X, P, V1 ) )
+				Then guard
+					remove constraint owlHasKeyLoop( X, Y, IT, ITEND )
+					owlHasKeyLoop( X, Y, ( std :: next( ( *IT ) ) ), ITEND )
+					goto next goal constraint
+				End guard
+			End matching partner owlObjectPropertyAssertion( Y, P, V1 )
+		End guard
+	End matching partner owlObjectPropertyAssertion( X, P, V1 )
+End
+// Rule NO_NAME, active constraint owlHasKeyLoop( X, Y, IT, ITEND ), occurrence 2
+Begin owlHasKeyLoop_2
+If empty store owlDataPropertyAssertion( X, P, V1 ) Then goto owlHasKeyLoop_store
+If empty store owlDataPropertyAssertion( Y, P, V1 ) Then goto owlHasKeyLoop_store
+	Matching partner owlDataPropertyAssertion( X, P, V1 ) with idx#0<X>
+		If guard
+			( P == ( *( *IT ) ) )
+		Then guard
+			Matching partner owlDataPropertyAssertion( Y, P, V1 ) with idx#2<Y,P,V1>
+				If guard
+					( owlDataPropertyAssertion( Y, P, V1 ) != owlDataPropertyAssertion( X, P, V1 ) )
+				Then guard
+					remove constraint owlHasKeyLoop( X, Y, IT, ITEND )
+					owlHasKeyLoop( X, Y, ( std :: next( ( *IT ) ) ), ITEND )
+					goto next goal constraint
+				End guard
+			End matching partner owlDataPropertyAssertion( Y, P, V1 )
+		End guard
+	End matching partner owlDataPropertyAssertion( X, P, V1 )
+End
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
 // Fail through
 Begin owlHasKeyCheck_store
 	Store constraint owlHasKeyCheck
@@ -4598,20 +4756,33 @@ If empty store owlHasKey( C, P, I, N ) Then goto owlObjectPropertyAssertion_28
 		If guard
 			( owlObjectPropertyAssertion( Y, P, V ) != owlObjectPropertyAssertion( X, P, V ) )
 		Then guard
+<<<<<<< HEAD
+			Matching partner owlHasKeyCheck( C, X, Y, I, N ) with idx#0<X,Y>
+				Matching partner owlHasKey( C, P, I, N ) with idx#1<C,P,I,N>
+					store constraint owlObjectPropertyAssertion( X, P, V )
+					remove constraint owlHasKeyCheck( C, X, Y, I, N )
+					owlHasKeyCheck( C, X, Y, ( I + 1 ), N )
+					If not alived owlObjectPropertyAssertion( X, P, V ) Then goto next goal constraint
+					If not alived owlObjectPropertyAssertion( Y, P, V ) Then goto next matching of owlObjectPropertyAssertion( Y, P, V )
+					goto next matching of owlHasKeyCheck( C, X, Y, I, N )
+				End matching partner owlHasKey( C, P, I, N )
+			End matching partner owlHasKeyCheck( C, X, Y, I, N )
+=======
 			Matching partner owlHasKeyLoop( X, Y, IT, ITEND ) with idx#0<X,Y>
 				If guard
 					( P == ( *( *IT ) ) )
 				Then guard
 					store constraint owlObjectPropertyAssertion( X, P, V1 )
 					remove constraint owlHasKeyLoop( X, Y, IT, ITEND )
-					owlHasKeyLoop( X, Y, ( std :: next )( ( *IT ) ), ITEND )
+					owlHasKeyLoop( X, Y, ( std :: next( ( *IT ) ) ), ITEND )
 					If not alived owlObjectPropertyAssertion( X, P, V1 ) Then goto next goal constraint
 					If not alived owlObjectPropertyAssertion( Y, P, V1 ) Then goto next matching of owlObjectPropertyAssertion( Y, P, V1 )
 					goto next matching of owlHasKeyLoop( X, Y, IT, ITEND )
 				End guard
 			End matching partner owlHasKeyLoop( X, Y, IT, ITEND )
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
 		End guard
-	End matching partner owlObjectPropertyAssertion( Y, P, V1 )
+	End matching partner owlObjectPropertyAssertion( Y, P, V )
 End
 // Rule NO_NAME, active constraint owlObjectPropertyAssertion( Y, P, V ), occurrence 28
 Begin owlObjectPropertyAssertion_28
@@ -4622,20 +4793,33 @@ If empty store owlHasKey( C, P, I, N ) Then goto owlObjectPropertyAssertion_29
 		If guard
 			( owlObjectPropertyAssertion( X, P, V ) != owlObjectPropertyAssertion( Y, P, V ) )
 		Then guard
+<<<<<<< HEAD
+			Matching partner owlHasKeyCheck( C, X, Y, I, N ) with idx#0<X,Y>
+				Matching partner owlHasKey( C, P, I, N ) with idx#1<C,P,I,N>
+					store constraint owlObjectPropertyAssertion( Y, P, V )
+					remove constraint owlHasKeyCheck( C, X, Y, I, N )
+					owlHasKeyCheck( C, X, Y, ( I + 1 ), N )
+					If not alived owlObjectPropertyAssertion( Y, P, V ) Then goto next goal constraint
+					If not alived owlObjectPropertyAssertion( X, P, V ) Then goto next matching of owlObjectPropertyAssertion( X, P, V )
+					goto next matching of owlHasKeyCheck( C, X, Y, I, N )
+				End matching partner owlHasKey( C, P, I, N )
+			End matching partner owlHasKeyCheck( C, X, Y, I, N )
+=======
 			Matching partner owlHasKeyLoop( X, Y, IT, ITEND ) with idx#0<X,Y>
 				If guard
 					( P == ( *( *IT ) ) )
 				Then guard
 					store constraint owlObjectPropertyAssertion( Y, P, V1 )
 					remove constraint owlHasKeyLoop( X, Y, IT, ITEND )
-					owlHasKeyLoop( X, Y, ( std :: next )( ( *IT ) ), ITEND )
+					owlHasKeyLoop( X, Y, ( std :: next( ( *IT ) ) ), ITEND )
 					If not alived owlObjectPropertyAssertion( Y, P, V1 ) Then goto next goal constraint
 					If not alived owlObjectPropertyAssertion( X, P, V1 ) Then goto next matching of owlObjectPropertyAssertion( X, P, V1 )
 					goto next matching of owlHasKeyLoop( X, Y, IT, ITEND )
 				End guard
 			End matching partner owlHasKeyLoop( X, Y, IT, ITEND )
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
 		End guard
-	End matching partner owlObjectPropertyAssertion( X, P, V1 )
+	End matching partner owlObjectPropertyAssertion( X, P, V )
 End
 // Rule NO_NAME, active constraint owlObjectPropertyAssertion( X, P, Y ), occurrence 29
 Begin owlObjectPropertyAssertion_29
@@ -9414,7 +9598,11 @@ public:
 			Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it) : _space(space), _it( std::move(it) ) { assert((space != nullptr) && _it.alive()); _it.lock(); }
 			Constraint_callback(const Constraint_callback&) =delete;
 			void operator=(const Constraint_callback&) =delete;
-			~Constraint_callback() { if (!_space.expired() && _space->owlHasKeyLoop_constraint_store) _it.unlock(); }
+<<<<<<< HEAD
+			~Constraint_callback() { if (!_space.expired() && _space->owlHasKeyCheck_constraint_store && _space->owlHasKeyCheck_constraint_store->depth() >= chr::Backtrack::depth()) _it.unlock(); }
+=======
+			~Constraint_callback() { if (!_space.expired() && _space->owlHasKeyLoop_constraint_store && _space->owlHasKeyLoop_constraint_store->depth() >= chr::Backtrack::depth()) _it.unlock(); }
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
 			unsigned char run() override {
 				if (_space.expired()) return 0;
 				if (!_it.alive()) return 0;
@@ -11433,7 +11621,12 @@ chr::ES_CHR OWL2::do_classification(typename classification::Type c_args, typena
 				auto X(std::get<2>(*it1_1));
 				// Begin guard
 				if (
-					( !( URIX == owlNothing ) )
+<<<<<<< HEAD
+					( std::get<0>(*it1_1) != std::get<0>(*it1_0) )
+					&& (!( URIX == owlNothing ) )
+=======
+					(!( URIX == owlNothing ) )
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
 				) {
 					TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","classification",1, std::make_tuple("New partner constraint for classification", c_args, " found: logicalName", *it1_1)); )
 					auto it1_2 = logicalName_constraint_store->begin();
@@ -11446,40 +11639,76 @@ chr::ES_CHR OWL2::do_classification(typename classification::Type c_args, typena
 							&& ( std::get<0>(*it1_2) != std::get<0>(*it1_1) )
 						) {
 							TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","classification",1, std::make_tuple("New partner constraint for classification", c_args, " found: logicalName", *it1_2)); )
-							TRACE( chr::Log::trace_constraint(chr::Log::HISTORY,"","classification",1, std::make_tuple("History check triggered by: classification", c_args)); )
-							// Check history
-							if (_history.rule_204->check( {{std::get<0>(c_args),std::get<0>(*it1_0),std::get<0>(*it1_1),std::get<0>(*it1_2)}} )) {
-								TRACE( chr::Log::trace_constraint(chr::Log::COMMIT,"","classification",1, std::make_tuple("Commit rule with: classification", c_args,", owlSubclassOf",*it1_0,", logicalName",*it1_1,", logicalName",*it1_2)); )
-								it1_0.lock();
-								it1_1.lock();
-								it1_2.lock();
-								if (!c_stored_before) {
-									TRACE( chr::Log::trace_constraint(chr::Log::INSERT,"","classification",1, std::make_tuple("New constraint inserted: classification", c_args)); )
-									c_it = classification_constraint_store->add(c_args);
-									c_stored_before = true;
-								}
-								c_it.lock();
-								// Body
-								chr::Statistics::inc_nb_rules();
-								if (chr::ES_CHR::FAILURE == resultClassification( URIX, URIY )) return chr::ES_CHR::FAILURE;
-								assert(c_stored_before);
-								if (!c_it.alive()) {
+							auto it1_3 = owlSubclassOf_constraint_store->template begin<0>(X,Y);
+							while ( !it1_3.at_end() ) {
+								TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","classification",1, std::make_tuple("New partner constraint for classification", c_args, " found: owlSubclassOf", *it1_3)); )
+								TRACE( chr::Log::trace_constraint(chr::Log::HISTORY,"","classification",1, std::make_tuple("History check triggered by: classification", c_args)); )
+								// Check history
+								if (_history.rule_206->check( {{std::get<0>(c_args),std::get<0>(*it1_0),std::get<0>(*it1_1),std::get<0>(*it1_2),std::get<0>(*it1_3)}} )) {
+									TRACE( chr::Log::trace_constraint(chr::Log::COMMIT,"","classification",1, std::make_tuple("Commit rule with: classification", c_args,", logicalName",*it1_0,", logicalName",*it1_1,", logicalName",*it1_2,", owlSubclassOf",*it1_3)); )
+									it1_0.lock();
+									it1_1.lock();
+									it1_2.lock();
+									it1_3.lock();
+									if (!c_stored_before) {
+										TRACE( chr::Log::trace_constraint(chr::Log::INSERT,"","classification",1, std::make_tuple("New constraint inserted: classification", c_args)); )
+										c_it = classification_constraint_store->add(c_args);
+										c_stored_before = true;
+									}
+									c_it.lock();
+									// Body
+									chr::Statistics::inc_nb_rules();
+									if (chr::ES_CHR::FAILURE == resultClassification( URIX, URIY )) return chr::ES_CHR::FAILURE;
+									assert(c_stored_before);
+									if (!c_it.alive()) {
+										c_it.unlock();
+										it1_0.unlock();
+										it1_1.unlock();
+										it1_2.unlock();
+										it1_3.unlock();
+										TRACE( chr::Log::trace_constraint(chr::Log::EXIT,"","classification",1, std::make_tuple("Exit constraint: classification", c_args)); )
+										return chr::ES_CHR::SUCCESS;
+									}
 									c_it.unlock();
+									if (!it1_0.alive()) {
+										it1_1.unlock();
+										it1_2.unlock();
+										it1_3.unlock();
+										it1_0.next_and_unlock();
+										goto it1_0_next;
+									}
 									it1_0.unlock();
+									if (!it1_1.alive()) {
+										it1_2.unlock();
+										it1_3.unlock();
+										it1_1.next_and_unlock();
+										goto it1_1_next;
+									}
 									it1_1.unlock();
+									if (!it1_2.alive()) {
+										it1_3.unlock();
+										it1_2.next_and_unlock();
+										goto it1_2_next;
+									}
 									it1_2.unlock();
-									TRACE( chr::Log::trace_constraint(chr::Log::EXIT,"","classification",1, std::make_tuple("Exit constraint: classification", c_args)); )
-									return chr::ES_CHR::SUCCESS;
+									it1_3.next_and_unlock();
+								} // End history
+								else {
+									++it1_3;
 								}
+<<<<<<< HEAD
+=======
 								c_it.unlock();
 								if (!it1_0.alive()) {
 									it1_1.unlock();
 									it1_2.unlock();
+									it1_0.next_and_unlock();
 									goto it1_0_next;
 								}
 								it1_0.unlock();
 								if (!it1_1.alive()) {
 									it1_2.unlock();
+									it1_1.next_and_unlock();
 									goto it1_1_next;
 								}
 								it1_1.unlock();
@@ -11489,6 +11718,7 @@ chr::ES_CHR OWL2::do_classification(typename classification::Type c_args, typena
 							else {
 								++it1_2;
 								goto it1_2_next;
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
 							}
 						} // End guard
 						++it1_2;
@@ -14299,17 +14529,32 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 		if (std::get<3>(c_args) != true) goto owlClassAssertion_32;
 		auto it31_0 = owlHasKey_constraint_store->template begin<0>(C,0);
 		while ( !it31_0.at_end() ) {
+<<<<<<< HEAD
+			auto P(std::get<2>(*it31_0));
+			auto N(std::get<4>(*it31_0));
+			TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlClassAssertion",31, std::make_tuple("New partner constraint for owlClassAssertion", c_args, " found: owlHasKey", *it31_0)); )
+			auto it31_1 = owlClassAssertion_constraint_store->template begin<1>(C,true);
+			while ( !it31_1.at_end() ) {
+				auto Y(std::get<1>(*it31_1));
+				// Begin guard
+				if (
+					( std::get<0>(*it31_1) != std::get<0>(c_args) )
+					&& (!( X == Y ) )
+				) {
+					TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlClassAssertion",31, std::make_tuple("New partner constraint for owlClassAssertion", c_args, " found: owlClassAssertion", *it31_1)); )
+=======
 			auto Y(std::get<1>(*it31_0));
 			// Begin guard
 			if (
 				( std::get<0>(*it31_0) != std::get<0>(c_args) )
-				&& ( !( X == Y ) )
+				&& (!( X == Y ) )
 			) {
 				TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlClassAssertion",31, std::make_tuple("New partner constraint for owlClassAssertion", c_args, " found: owlClassAssertion", *it31_0)); )
 				auto it31_1 = owlHasKey_constraint_store->template begin<0>(C);
 				while ( !it31_1.at_end() ) {
 					auto P(std::get<2>(*it31_1));
 					TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlClassAssertion",31, std::make_tuple("New partner constraint for owlClassAssertion", c_args, " found: owlHasKey", *it31_1)); )
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
 					TRACE( chr::Log::trace_constraint(chr::Log::HISTORY,"","owlClassAssertion",31, std::make_tuple("History check triggered by: owlClassAssertion", c_args)); )
 					// Check history
 					if (_history.rule_185->check( {{std::get<0>(c_args),std::get<0>(*it31_0),std::get<0>(*it31_1)}} )) {
@@ -14370,17 +14615,32 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 		if (std::get<3>(c_args) != true) goto owlClassAssertion_33;
 		auto it32_0 = owlHasKey_constraint_store->template begin<0>(C,0);
 		while ( !it32_0.at_end() ) {
+<<<<<<< HEAD
+			auto P(std::get<2>(*it32_0));
+			auto N(std::get<4>(*it32_0));
+			TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlClassAssertion",32, std::make_tuple("New partner constraint for owlClassAssertion", c_args, " found: owlHasKey", *it32_0)); )
+			auto it32_1 = owlClassAssertion_constraint_store->template begin<1>(C,true);
+			while ( !it32_1.at_end() ) {
+				auto X(std::get<1>(*it32_1));
+				// Begin guard
+				if (
+					( std::get<0>(*it32_1) != std::get<0>(c_args) )
+					&& (!( X == Y ) )
+				) {
+					TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlClassAssertion",32, std::make_tuple("New partner constraint for owlClassAssertion", c_args, " found: owlClassAssertion", *it32_1)); )
+=======
 			auto X(std::get<1>(*it32_0));
 			// Begin guard
 			if (
 				( std::get<0>(*it32_0) != std::get<0>(c_args) )
-				&& ( !( X == Y ) )
+				&& (!( X == Y ) )
 			) {
 				TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlClassAssertion",32, std::make_tuple("New partner constraint for owlClassAssertion", c_args, " found: owlClassAssertion", *it32_0)); )
 				auto it32_1 = owlHasKey_constraint_store->template begin<0>(C);
 				while ( !it32_1.at_end() ) {
 					auto P(std::get<2>(*it32_1));
 					TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlClassAssertion",32, std::make_tuple("New partner constraint for owlClassAssertion", c_args, " found: owlHasKey", *it32_1)); )
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
 					TRACE( chr::Log::trace_constraint(chr::Log::HISTORY,"","owlClassAssertion",32, std::make_tuple("History check triggered by: owlClassAssertion", c_args)); )
 					// Check history
 					if (_history.rule_185->check( {{std::get<0>(c_args),std::get<0>(*it32_0),std::get<0>(*it32_1)}} )) {
@@ -16450,14 +16710,25 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 				TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlDataPropertyAssertion",17, std::make_tuple("New partner constraint for owlDataPropertyAssertion", c_args, " found: owlDataPropertyAssertion", *it17_0)); )
 				auto it17_1 = owlHasKeyCheck_constraint_store->template begin<0>(X,Y);
 				while ( !it17_1.at_end() ) {
+<<<<<<< HEAD
+					auto C(std::get<1>(*it17_1));
+					auto I(std::get<4>(*it17_1));
+					auto N(std::get<5>(*it17_1));
+					TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlDataPropertyAssertion",17, std::make_tuple("New partner constraint for owlDataPropertyAssertion", c_args, " found: owlHasKeyCheck", *it17_1)); )
+					auto it17_2 = owlHasKey_constraint_store->template begin<1>(C,P,I,N);
+					while ( !it17_2.at_end() ) {
+						TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlDataPropertyAssertion",17, std::make_tuple("New partner constraint for owlDataPropertyAssertion", c_args, " found: owlHasKey", *it17_2)); )
+						TRACE( chr::Log::trace_constraint(chr::Log::COMMIT,"","owlDataPropertyAssertion",17, std::make_tuple("Commit rule with: owlDataPropertyAssertion", c_args,", owlDataPropertyAssertion",*it17_0,", owlHasKeyCheck",*it17_1,", owlHasKey",*it17_2)); )
+=======
 					auto IT(std::get<3>(*it17_1));
 					auto ITEND(std::get<4>(*it17_1));
 					// Begin guard
 					if (
-						( P == ( *( *IT ) ) )
+						( P == (*(*IT ) ) )
 					) {
 						TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlDataPropertyAssertion",17, std::make_tuple("New partner constraint for owlDataPropertyAssertion", c_args, " found: owlHasKeyLoop", *it17_1)); )
 						TRACE( chr::Log::trace_constraint(chr::Log::COMMIT,"","owlDataPropertyAssertion",17, std::make_tuple("Commit rule with: owlDataPropertyAssertion", c_args,", owlDataPropertyAssertion",*it17_0,", owlHasKeyLoop",*it17_1)); )
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
 						it17_0.lock();
 						it17_1.lock();
 						if (!c_stored_before) {
@@ -16473,7 +16744,11 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 						it17_1.kill();
 						// Body
 						chr::Statistics::inc_nb_rules();
-						if (chr::ES_CHR::FAILURE == owlHasKeyLoop( X, Y, ( std :: next )( (*IT ) ), ITEND )) return chr::ES_CHR::FAILURE;
+<<<<<<< HEAD
+						if (chr::ES_CHR::FAILURE == owlHasKeyCheck( C, X, Y, ( I + 1 ), N )) return chr::ES_CHR::FAILURE;
+=======
+						if (chr::ES_CHR::FAILURE == owlHasKeyLoop( X, Y, ( std :: next( (*IT ) ) ), ITEND )) return chr::ES_CHR::FAILURE;
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
 						assert(c_stored_before);
 						if (!c_it.alive()) {
 							c_it.unlock();
@@ -16521,14 +16796,25 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 				TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlDataPropertyAssertion",18, std::make_tuple("New partner constraint for owlDataPropertyAssertion", c_args, " found: owlDataPropertyAssertion", *it18_0)); )
 				auto it18_1 = owlHasKeyCheck_constraint_store->template begin<0>(X,Y);
 				while ( !it18_1.at_end() ) {
+<<<<<<< HEAD
+					auto C(std::get<1>(*it18_1));
+					auto I(std::get<4>(*it18_1));
+					auto N(std::get<5>(*it18_1));
+					TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlDataPropertyAssertion",18, std::make_tuple("New partner constraint for owlDataPropertyAssertion", c_args, " found: owlHasKeyCheck", *it18_1)); )
+					auto it18_2 = owlHasKey_constraint_store->template begin<1>(C,P,I,N);
+					while ( !it18_2.at_end() ) {
+						TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlDataPropertyAssertion",18, std::make_tuple("New partner constraint for owlDataPropertyAssertion", c_args, " found: owlHasKey", *it18_2)); )
+						TRACE( chr::Log::trace_constraint(chr::Log::COMMIT,"","owlDataPropertyAssertion",18, std::make_tuple("Commit rule with: owlDataPropertyAssertion", c_args,", owlDataPropertyAssertion",*it18_0,", owlHasKeyCheck",*it18_1,", owlHasKey",*it18_2)); )
+=======
 					auto IT(std::get<3>(*it18_1));
 					auto ITEND(std::get<4>(*it18_1));
 					// Begin guard
 					if (
-						( P == ( *( *IT ) ) )
+						( P == (*(*IT ) ) )
 					) {
 						TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlDataPropertyAssertion",18, std::make_tuple("New partner constraint for owlDataPropertyAssertion", c_args, " found: owlHasKeyLoop", *it18_1)); )
 						TRACE( chr::Log::trace_constraint(chr::Log::COMMIT,"","owlDataPropertyAssertion",18, std::make_tuple("Commit rule with: owlDataPropertyAssertion", c_args,", owlDataPropertyAssertion",*it18_0,", owlHasKeyLoop",*it18_1)); )
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
 						it18_0.lock();
 						it18_1.lock();
 						if (!c_stored_before) {
@@ -16544,7 +16830,11 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 						it18_1.kill();
 						// Body
 						chr::Statistics::inc_nb_rules();
-						if (chr::ES_CHR::FAILURE == owlHasKeyLoop( X, Y, ( std :: next )( (*IT ) ), ITEND )) return chr::ES_CHR::FAILURE;
+<<<<<<< HEAD
+						if (chr::ES_CHR::FAILURE == owlHasKeyCheck( C, X, Y, ( I + 1 ), N )) return chr::ES_CHR::FAILURE;
+=======
+						if (chr::ES_CHR::FAILURE == owlHasKeyLoop( X, Y, ( std :: next( (*IT ) ) ), ITEND )) return chr::ES_CHR::FAILURE;
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
 						assert(c_stored_before);
 						if (!c_it.alive()) {
 							c_it.unlock();
@@ -18219,15 +18509,51 @@ chr::ES_CHR OWL2::do_owlHasKey(typename owlHasKey::Type c_args, typename owlHasK
 		auto& N = std::get<4>(c_args);
 		auto it0_0 = owlHasKey_constraint_store->template begin<1>(C,P,I,N);
 		while ( !it0_0.at_end() ) {
-			auto X(std::get<1>(*it0_0));
-			TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlHasKey",0, std::make_tuple("New partner constraint for owlHasKey", c_args, " found: owlClassAssertion", *it0_0)); )
-			auto it0_1 = owlClassAssertion_constraint_store->template begin<1>(C,true);
-			while ( !it0_1.at_end() ) {
-				auto Y(std::get<1>(*it0_1));
+			// Begin guard
+			if (
+				( std::get<0>(*it0_0) != std::get<0>(c_args) )
+			) {
+				TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlHasKey",0, std::make_tuple("New partner constraint for owlHasKey", c_args, " found: owlHasKey", *it0_0)); )
+				TRACE( chr::Log::trace_constraint(chr::Log::COMMIT,"","owlHasKey",0, std::make_tuple("Commit rule with: owlHasKey", c_args,", owlHasKey",*it0_0)); )
+				if (c_stored_before) {
+					TRACE( chr::Log::trace_constraint(chr::Log::REMOVE,"","owlHasKey",0, std::make_tuple("Remove constraint: owlHasKey", c_args)); )
+					c_it.kill();
+				}
+				// Body
+				chr::Statistics::inc_nb_rules();
+				CHECK_ES( true );
+				TRACE( chr::Log::trace_constraint(chr::Log::EXIT,"","owlHasKey",0, std::make_tuple("Exit constraint: owlHasKey", c_args)); )
+				return chr::ES_CHR::SUCCESS;
+			} // End guard
+			++it0_0;
+		}
+	}
+	// ***************************************************
+	// owlHasKey_1 <=> Rule NO_NAME, active constraint owlHasKey( C, P, 0, N ), occurrence 2
+	[[maybe_unused]] owlHasKey_1:
+	{
+		TRACE( chr::Log::trace_constraint(chr::Log::TRY,"","owlHasKey",1, std::make_tuple("Try occurrence 2 for active constraint: owlHasKey", c_args)); )
+		if (owlClassAssertion_constraint_store->empty()) goto owlHasKey_2;
+		if (owlClassAssertion_constraint_store->empty()) goto owlHasKey_2;
+		auto& C = std::get<1>(c_args);
+		auto& P = std::get<2>(c_args);
+		if (std::get<3>(c_args) != 0) goto owlHasKey_2;
+		auto& N = std::get<4>(c_args);
+		auto it1_0 = owlClassAssertion_constraint_store->template begin<1>(C,true);
+		while ( !it1_0.at_end() ) {
+			auto X(std::get<1>(*it1_0));
+			TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlHasKey",1, std::make_tuple("New partner constraint for owlHasKey", c_args, " found: owlClassAssertion", *it1_0)); )
+			auto it1_1 = owlClassAssertion_constraint_store->template begin<1>(C,true);
+			while ( !it1_1.at_end() ) {
+				auto Y(std::get<1>(*it1_1));
 				// Begin guard
 				if (
+<<<<<<< HEAD
+					( std::get<0>(*it1_1) != std::get<0>(*it1_0) )
+=======
 					( std::get<0>(*it0_1) != std::get<0>(*it0_0) )
-					&& ( !( X == Y ) )
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
+					&& (!( X == Y ) )
 				) {
 					TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlHasKey",1, std::make_tuple("New partner constraint for owlHasKey", c_args, " found: owlClassAssertion", *it1_1)); )
 					TRACE( chr::Log::trace_constraint(chr::Log::HISTORY,"","owlHasKey",1, std::make_tuple("History check triggered by: owlHasKey", c_args)); )
@@ -18257,9 +18583,17 @@ chr::ES_CHR OWL2::do_owlHasKey(typename owlHasKey::Type c_args, typename owlHasK
 							return chr::ES_CHR::SUCCESS;
 						}
 						c_it.unlock();
+<<<<<<< HEAD
+						if (!it1_0.alive()) {
+							it1_1.unlock();
+							it1_0.next_and_unlock();
+							goto it1_0_next;
+=======
 						if (!it0_0.alive()) {
 							it0_1.unlock();
+							it0_0.next_and_unlock();
 							goto it0_0_next;
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
 						}
 						it1_0.unlock();
 						it1_1.next_and_unlock();
@@ -18573,6 +18907,103 @@ chr::ES_CHR OWL2::do_owlHasKeyCheck(typename owlHasKeyCheck::Type c_args, typena
 		TRACE( chr::Log::trace_constraint(chr::Log::EXIT,"","owlHasKeyCheck",3, std::make_tuple("Exit constraint: owlHasKeyCheck", c_args)); )
 		return chr::ES_CHR::SUCCESS;
 	}
+<<<<<<< HEAD
+=======
+	// ***************************************************
+	// owlHasKeyLoop_1 <=> Rule NO_NAME, active constraint owlHasKeyLoop( X, Y, IT, ITEND ), occurrence 2
+	[[maybe_unused]] owlHasKeyLoop_1:
+	{
+		TRACE( chr::Log::trace_constraint(chr::Log::TRY,"","owlHasKeyLoop",1, std::make_tuple("Try occurrence 2 for active constraint: owlHasKeyLoop", c_args)); )
+		if (owlObjectPropertyAssertion_constraint_store->empty()) goto owlHasKeyLoop_2;
+		if (owlObjectPropertyAssertion_constraint_store->empty()) goto owlHasKeyLoop_2;
+		auto& X = std::get<1>(c_args);
+		auto& Y = std::get<2>(c_args);
+		auto& IT = std::get<3>(c_args);
+		auto& ITEND = std::get<4>(c_args);
+		auto it1_0 = owlObjectPropertyAssertion_constraint_store->template begin<5>(X);
+		while ( !it1_0.at_end() ) {
+			auto P(std::get<2>(*it1_0));
+			auto V1(std::get<3>(*it1_0));
+			// Begin guard
+			if (
+				( P == (*(*IT ) ) )
+			) {
+				TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlHasKeyLoop",1, std::make_tuple("New partner constraint for owlHasKeyLoop", c_args, " found: owlObjectPropertyAssertion", *it1_0)); )
+				auto it1_1 = owlObjectPropertyAssertion_constraint_store->template begin<2>(Y,P,V1);
+				while ( !it1_1.at_end() ) {
+					// Begin guard
+					if (
+						( std::get<0>(*it1_1) != std::get<0>(*it1_0) )
+					) {
+						TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlHasKeyLoop",1, std::make_tuple("New partner constraint for owlHasKeyLoop", c_args, " found: owlObjectPropertyAssertion", *it1_1)); )
+						TRACE( chr::Log::trace_constraint(chr::Log::COMMIT,"","owlHasKeyLoop",1, std::make_tuple("Commit rule with: owlHasKeyLoop", c_args,", owlObjectPropertyAssertion",*it1_0,", owlObjectPropertyAssertion",*it1_1)); )
+						if (c_stored_before) {
+							TRACE( chr::Log::trace_constraint(chr::Log::REMOVE,"","owlHasKeyLoop",1, std::make_tuple("Remove constraint: owlHasKeyLoop", c_args)); )
+							c_it.kill();
+						}
+						// Body
+						chr::Statistics::inc_nb_rules();
+						c_args = std::make_tuple(next_free_constraint_id++, X, Y, ( std :: next( (*IT ) ) ), ITEND);
+						c_stored_before = false;
+						goto owlHasKeyLoop_call;
+
+						TRACE( chr::Log::trace_constraint(chr::Log::EXIT,"","owlHasKeyLoop",1, std::make_tuple("Exit constraint: owlHasKeyLoop", c_args)); )
+						return chr::ES_CHR::SUCCESS;
+					} // End guard
+					++it1_1;
+				}
+			} // End guard
+			++it1_0;
+		}
+	}
+	// ***************************************************
+	// owlHasKeyLoop_2 <=> Rule NO_NAME, active constraint owlHasKeyLoop( X, Y, IT, ITEND ), occurrence 3
+	[[maybe_unused]] owlHasKeyLoop_2:
+	{
+		TRACE( chr::Log::trace_constraint(chr::Log::TRY,"","owlHasKeyLoop",2, std::make_tuple("Try occurrence 3 for active constraint: owlHasKeyLoop", c_args)); )
+		if (owlDataPropertyAssertion_constraint_store->empty()) goto owlHasKeyLoop_store;
+		if (owlDataPropertyAssertion_constraint_store->empty()) goto owlHasKeyLoop_store;
+		auto& X = std::get<1>(c_args);
+		auto& Y = std::get<2>(c_args);
+		auto& IT = std::get<3>(c_args);
+		auto& ITEND = std::get<4>(c_args);
+		auto it2_0 = owlDataPropertyAssertion_constraint_store->template begin<0>(X);
+		while ( !it2_0.at_end() ) {
+			auto P(std::get<2>(*it2_0));
+			auto V1(std::get<3>(*it2_0));
+			// Begin guard
+			if (
+				( P == (*(*IT ) ) )
+			) {
+				TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlHasKeyLoop",2, std::make_tuple("New partner constraint for owlHasKeyLoop", c_args, " found: owlDataPropertyAssertion", *it2_0)); )
+				auto it2_1 = owlDataPropertyAssertion_constraint_store->template begin<2>(Y,P,V1);
+				while ( !it2_1.at_end() ) {
+					// Begin guard
+					if (
+						( std::get<0>(*it2_1) != std::get<0>(*it2_0) )
+					) {
+						TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlHasKeyLoop",2, std::make_tuple("New partner constraint for owlHasKeyLoop", c_args, " found: owlDataPropertyAssertion", *it2_1)); )
+						TRACE( chr::Log::trace_constraint(chr::Log::COMMIT,"","owlHasKeyLoop",2, std::make_tuple("Commit rule with: owlHasKeyLoop", c_args,", owlDataPropertyAssertion",*it2_0,", owlDataPropertyAssertion",*it2_1)); )
+						if (c_stored_before) {
+							TRACE( chr::Log::trace_constraint(chr::Log::REMOVE,"","owlHasKeyLoop",2, std::make_tuple("Remove constraint: owlHasKeyLoop", c_args)); )
+							c_it.kill();
+						}
+						// Body
+						chr::Statistics::inc_nb_rules();
+						c_args = std::make_tuple(next_free_constraint_id++, X, Y, ( std :: next( (*IT ) ) ), ITEND);
+						c_stored_before = false;
+						goto owlHasKeyLoop_call;
+
+						TRACE( chr::Log::trace_constraint(chr::Log::EXIT,"","owlHasKeyLoop",2, std::make_tuple("Exit constraint: owlHasKeyLoop", c_args)); )
+						return chr::ES_CHR::SUCCESS;
+					} // End guard
+					++it2_1;
+				}
+			} // End guard
+			++it2_0;
+		}
+	}
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
 	// Store constraint
 	[[maybe_unused]] owlHasKeyCheck_store:
 		TRACE( chr::Log::trace_constraint(chr::Log::EXIT,"","",-1, std::make_tuple("Exit constraint: owlHasKeyCheck", c_args)); )
@@ -21948,14 +22379,25 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 				TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlObjectPropertyAssertion",27, std::make_tuple("New partner constraint for owlObjectPropertyAssertion", c_args, " found: owlObjectPropertyAssertion", *it27_0)); )
 				auto it27_1 = owlHasKeyCheck_constraint_store->template begin<0>(X,Y);
 				while ( !it27_1.at_end() ) {
+<<<<<<< HEAD
+					auto C(std::get<1>(*it27_1));
+					auto I(std::get<4>(*it27_1));
+					auto N(std::get<5>(*it27_1));
+					TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlObjectPropertyAssertion",27, std::make_tuple("New partner constraint for owlObjectPropertyAssertion", c_args, " found: owlHasKeyCheck", *it27_1)); )
+					auto it27_2 = owlHasKey_constraint_store->template begin<1>(C,P,I,N);
+					while ( !it27_2.at_end() ) {
+						TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlObjectPropertyAssertion",27, std::make_tuple("New partner constraint for owlObjectPropertyAssertion", c_args, " found: owlHasKey", *it27_2)); )
+						TRACE( chr::Log::trace_constraint(chr::Log::COMMIT,"","owlObjectPropertyAssertion",27, std::make_tuple("Commit rule with: owlObjectPropertyAssertion", c_args,", owlObjectPropertyAssertion",*it27_0,", owlHasKeyCheck",*it27_1,", owlHasKey",*it27_2)); )
+=======
 					auto IT(std::get<3>(*it27_1));
 					auto ITEND(std::get<4>(*it27_1));
 					// Begin guard
 					if (
-						( P == ( *( *IT ) ) )
+						( P == (*(*IT ) ) )
 					) {
 						TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlObjectPropertyAssertion",27, std::make_tuple("New partner constraint for owlObjectPropertyAssertion", c_args, " found: owlHasKeyLoop", *it27_1)); )
 						TRACE( chr::Log::trace_constraint(chr::Log::COMMIT,"","owlObjectPropertyAssertion",27, std::make_tuple("Commit rule with: owlObjectPropertyAssertion", c_args,", owlObjectPropertyAssertion",*it27_0,", owlHasKeyLoop",*it27_1)); )
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
 						it27_0.lock();
 						it27_1.lock();
 						if (!c_stored_before) {
@@ -21972,7 +22414,11 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 						it27_1.kill();
 						// Body
 						chr::Statistics::inc_nb_rules();
-						if (chr::ES_CHR::FAILURE == owlHasKeyLoop( X, Y, ( std :: next )( (*IT ) ), ITEND )) return chr::ES_CHR::FAILURE;
+<<<<<<< HEAD
+						if (chr::ES_CHR::FAILURE == owlHasKeyCheck( C, X, Y, ( I + 1 ), N )) return chr::ES_CHR::FAILURE;
+=======
+						if (chr::ES_CHR::FAILURE == owlHasKeyLoop( X, Y, ( std :: next( (*IT ) ) ), ITEND )) return chr::ES_CHR::FAILURE;
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
 						assert(c_stored_before);
 						if (!c_it.alive()) {
 							c_it.unlock();
@@ -22020,14 +22466,25 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 				TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlObjectPropertyAssertion",28, std::make_tuple("New partner constraint for owlObjectPropertyAssertion", c_args, " found: owlObjectPropertyAssertion", *it28_0)); )
 				auto it28_1 = owlHasKeyCheck_constraint_store->template begin<0>(X,Y);
 				while ( !it28_1.at_end() ) {
+<<<<<<< HEAD
+					auto C(std::get<1>(*it28_1));
+					auto I(std::get<4>(*it28_1));
+					auto N(std::get<5>(*it28_1));
+					TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlObjectPropertyAssertion",28, std::make_tuple("New partner constraint for owlObjectPropertyAssertion", c_args, " found: owlHasKeyCheck", *it28_1)); )
+					auto it28_2 = owlHasKey_constraint_store->template begin<1>(C,P,I,N);
+					while ( !it28_2.at_end() ) {
+						TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlObjectPropertyAssertion",28, std::make_tuple("New partner constraint for owlObjectPropertyAssertion", c_args, " found: owlHasKey", *it28_2)); )
+						TRACE( chr::Log::trace_constraint(chr::Log::COMMIT,"","owlObjectPropertyAssertion",28, std::make_tuple("Commit rule with: owlObjectPropertyAssertion", c_args,", owlObjectPropertyAssertion",*it28_0,", owlHasKeyCheck",*it28_1,", owlHasKey",*it28_2)); )
+=======
 					auto IT(std::get<3>(*it28_1));
 					auto ITEND(std::get<4>(*it28_1));
 					// Begin guard
 					if (
-						( P == ( *( *IT ) ) )
+						( P == (*(*IT ) ) )
 					) {
 						TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlObjectPropertyAssertion",28, std::make_tuple("New partner constraint for owlObjectPropertyAssertion", c_args, " found: owlHasKeyLoop", *it28_1)); )
 						TRACE( chr::Log::trace_constraint(chr::Log::COMMIT,"","owlObjectPropertyAssertion",28, std::make_tuple("Commit rule with: owlObjectPropertyAssertion", c_args,", owlObjectPropertyAssertion",*it28_0,", owlHasKeyLoop",*it28_1)); )
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
 						it28_0.lock();
 						it28_1.lock();
 						if (!c_stored_before) {
@@ -22044,7 +22501,11 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 						it28_1.kill();
 						// Body
 						chr::Statistics::inc_nb_rules();
-						if (chr::ES_CHR::FAILURE == owlHasKeyLoop( X, Y, ( std :: next )( (*IT ) ), ITEND )) return chr::ES_CHR::FAILURE;
+<<<<<<< HEAD
+						if (chr::ES_CHR::FAILURE == owlHasKeyCheck( C, X, Y, ( I + 1 ), N )) return chr::ES_CHR::FAILURE;
+=======
+						if (chr::ES_CHR::FAILURE == owlHasKeyLoop( X, Y, ( std :: next( (*IT ) ) ), ITEND )) return chr::ES_CHR::FAILURE;
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
 						assert(c_stored_before);
 						if (!c_it.alive()) {
 							c_it.unlock();
@@ -27160,10 +27621,65 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 		auto& Y = std::get<2>(c_args);
 		auto it17_0 = logicalName_constraint_store->template begin<0>(owlNothing);
 		while ( !it17_0.at_end() ) {
+<<<<<<< HEAD
+			auto OwlNothingVar(std::get<2>(*it17_0));
+			TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlSubclassOf",17, std::make_tuple("New partner constraint for owlSubclassOf", c_args, " found: logicalName", *it17_0)); )
+			auto it17_1 = logicalName_constraint_store->template begin<1>(X);
+			while ( !it17_1.at_end() ) {
+				auto URIX(std::get<1>(*it17_1));
+				// Begin guard
+				if (
+					( std::get<0>(*it17_1) != std::get<0>(*it17_0) )
+					&& (!( URIX == owlNothing ) )
+				) {
+					TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlSubclassOf",17, std::make_tuple("New partner constraint for owlSubclassOf", c_args, " found: logicalName", *it17_1)); )
+					auto it17_2 = logicalName_constraint_store->template begin<1>(Y);
+					while ( !it17_2.at_end() ) {
+						auto URIY(std::get<1>(*it17_2));
+						// Begin guard
+						if (
+							( std::get<0>(*it17_2) != std::get<0>(*it17_0) )
+							&& ( std::get<0>(*it17_2) != std::get<0>(*it17_1) )
+						) {
+							TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlSubclassOf",17, std::make_tuple("New partner constraint for owlSubclassOf", c_args, " found: logicalName", *it17_2)); )
+							auto it17_3 = classification_constraint_store->begin();
+							while ( !it17_3.at_end() ) {
+								TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlSubclassOf",17, std::make_tuple("New partner constraint for owlSubclassOf", c_args, " found: classification", *it17_3)); )
+								TRACE( chr::Log::trace_constraint(chr::Log::HISTORY,"","owlSubclassOf",17, std::make_tuple("History check triggered by: owlSubclassOf", c_args)); )
+								// Check history
+								if (_history.rule_206->check( {{std::get<0>(c_args),std::get<0>(*it17_0),std::get<0>(*it17_1),std::get<0>(*it17_2),std::get<0>(*it17_3)}} )) {
+									TRACE( chr::Log::trace_constraint(chr::Log::COMMIT,"","owlSubclassOf",17, std::make_tuple("Commit rule with: owlSubclassOf", c_args,", logicalName",*it17_0,", logicalName",*it17_1,", logicalName",*it17_2,", classification",*it17_3)); )
+									it17_0.lock();
+									it17_1.lock();
+									it17_2.lock();
+									it17_3.lock();
+									if (!c_stored_before) {
+										TRACE( chr::Log::trace_constraint(chr::Log::INSERT,"","owlSubclassOf",17, std::make_tuple("New constraint inserted: owlSubclassOf", c_args)); )
+										c_it = owlSubclassOf_constraint_store->add(c_args);
+										auto ccb = chr::Shared_x_obj< chr::Logical_var_imp_observer_constraint >(new typename owlSubclassOf::Constraint_callback(this,c_it));
+										chr::schedule_constraint_callback(std::get<1>(c_args), ccb);
+										chr::schedule_constraint_callback(std::get<2>(c_args), ccb);
+										c_stored_before = true;
+									}
+									c_it.lock();
+									// Body
+									chr::Statistics::inc_nb_rules();
+									if (chr::ES_CHR::FAILURE == resultClassification( URIX, URIY )) return chr::ES_CHR::FAILURE;
+									assert(c_stored_before);
+									if (!c_it.alive()) {
+										c_it.unlock();
+										it17_0.unlock();
+										it17_1.unlock();
+										it17_2.unlock();
+										it17_3.unlock();
+										TRACE( chr::Log::trace_constraint(chr::Log::EXIT,"","owlSubclassOf",17, std::make_tuple("Exit constraint: owlSubclassOf", c_args)); )
+										return chr::ES_CHR::SUCCESS;
+									}
+=======
 			auto URIX(std::get<1>(*it17_0));
 			// Begin guard
 			if (
-				( !( URIX == owlNothing ) )
+				(!( URIX == owlNothing ) )
 			) {
 				TRACE( chr::Log::trace_constraint(chr::Log::PARTNER,"","owlSubclassOf",17, std::make_tuple("New partner constraint for owlSubclassOf", c_args, " found: logicalName", *it17_0)); )
 				auto it17_1 = logicalName_constraint_store->template begin<0>(Y);
@@ -27198,22 +27714,47 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 								if (chr::ES_CHR::FAILURE == resultClassification( URIX, URIY )) return chr::ES_CHR::FAILURE;
 								assert(c_stored_before);
 								if (!c_it.alive()) {
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
 									c_it.unlock();
+									if (!it17_0.alive()) {
+										it17_1.unlock();
+										it17_2.unlock();
+										it17_3.unlock();
+										it17_0.next_and_unlock();
+										goto it17_0_next;
+									}
 									it17_0.unlock();
+									if (!it17_1.alive()) {
+										it17_2.unlock();
+										it17_3.unlock();
+										it17_1.next_and_unlock();
+										goto it17_1_next;
+									}
 									it17_1.unlock();
+									if (!it17_2.alive()) {
+										it17_3.unlock();
+										it17_2.next_and_unlock();
+										goto it17_2_next;
+									}
 									it17_2.unlock();
-									TRACE( chr::Log::trace_constraint(chr::Log::EXIT,"","owlSubclassOf",17, std::make_tuple("Exit constraint: owlSubclassOf", c_args)); )
-									return chr::ES_CHR::SUCCESS;
+									it17_3.next_and_unlock();
+								} // End history
+								else {
+									++it17_3;
 								}
+<<<<<<< HEAD
+=======
 								c_it.unlock();
 								if (!it17_0.alive()) {
 									it17_1.unlock();
 									it17_2.unlock();
+									it17_0.next_and_unlock();
 									goto it17_0_next;
 								}
 								it17_0.unlock();
 								if (!it17_1.alive()) {
 									it17_2.unlock();
+									it17_1.next_and_unlock();
 									goto it17_1_next;
 								}
 								it17_1.unlock();
@@ -27221,13 +27762,16 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 							} // End history
 							else {
 								++it17_2;
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
 							}
-						}
-					} // End guard
-					++it17_1;
-					it17_1_next:;
-				}
-			} // End guard
+						} // End guard
+						++it17_2;
+						it17_2_next:;
+					}
+				} // End guard
+				++it17_1;
+				it17_1_next:;
+			}
 			++it17_0;
 			it17_0_next:;
 		}
@@ -31231,8 +31775,11 @@ int main(int argc, char* argv[])
      std::ofstream fileReal(output_file_Real);
      std::ofstream fileClassif(output_file_Classif);
      std::ofstream fileQueries(output_file_Queries);
+     std::ofstream fileQueries(output_file_Queries);
      
    // Déterminer le fichier à utiliser
+    //std::string filename = "results/OWL2RL-1.ofn"; // Valeur par défaut
+    std::string filename = "results/OWL2RL-1.ofn"; 
     //std::string filename = "results/OWL2RL-1.ofn"; // Valeur par défaut
     std::string filename = "results/OWL2RL-1.ofn"; 
     if (argc > 1) {
@@ -31251,8 +31798,9 @@ int main(int argc, char* argv[])
 
 
     space->realisation();
-   // space->classification();
-   /* space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#isMemberOf"));
+    space->classification();
+<<<<<<< HEAD
+    space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#isMemberOf"));
     space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#isPartOf"));
     space->queryDataAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasAge"));
     space->queryInstancesURI(std::string("https://kracr.iiitd.edu.in/OWL2Bench#T20CricketFan"));
@@ -31270,15 +31818,29 @@ int main(int argc, char* argv[])
      space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasSameHomeTownWith"));
     space->queryEngineeringStudentsUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#Student"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#isStudentOf"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#isPartOf"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasCollegeDiscipline"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#Engineering"));
     space->queryComplexStudentsUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#Student"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#Organization"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasDean"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#teachesCourse"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#takesCourse"));
-    */
+=======
+    //space->querySuperClassOfUri(std::string("http://schema.org/Person"));
+    space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#isMemberOf"));
+//     space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#isPartOf"));
+//     space->queryDataAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasAge"));
+//     space->queryInstancesURI(std::string("https://kracr.iiitd.edu.in/OWL2Bench#T20CricketFan"));
+//     space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasAlumnus"));
+//     space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#isAffiliatedOrganizationOf"));
+//     space->queryObjAssertionSubjectUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasCollegeDiscipline"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#NonScience"));
+//    space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasCollaborationWith"));
+//     space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#isAdvisedBy"));
+//     space->queryInstancesURI(std::string("https://kracr.iiitd.edu.in/OWL2Bench#Person"));
+//     space->queryInstancesURI(std::string("https://kracr.iiitd.edu.in/OWL2Bench#WomanCollege"));
+//     space->queryInstancesURI(std::string("https://kracr.iiitd.edu.in/OWL2Bench#LeisureStudent"));
+//     space->querySubjectByObjectUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#isHeadOf"));
+//     space->querySubjectByObjectUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasHead"));
+//     space->queryInstancesURI(std::string("https://kracr.iiitd.edu.in/OWL2Bench#Faculty"));
+//      space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasSameHomeTownWith"));
+//     space->queryEngineeringStudentsUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#Student"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#isStudentOf"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#isPartOf"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasCollegeDiscipline"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#Engineering"));
+//     space->queryComplexStudentsUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#Student"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#Organization"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasDean"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#teachesCourse"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#takesCourse"));
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
+    
 
-    /* STATISTIQUES APRÈS INFÉRENCE - Compte total via itérateur */
-    /*
-    int totalConstraints = 0;
-    auto it = space->chr_store_begin();
-    while (!it.at_end()) { ++totalConstraints; ++it; }
-    std::cout << "   STATISTIQUES APRÈS INFÉRENCE : " << totalConstraints << std::endl;
-    */
  )
     auto end = std::chrono::steady_clock::now();
     std::chrono::duration<double> elapsed = end - start;

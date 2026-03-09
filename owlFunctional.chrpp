@@ -993,6 +993,7 @@ int main(int argc, char* argv[])
 
     space->realisation();
     space->classification();
+<<<<<<< HEAD
     space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#isMemberOf"));
     space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#isPartOf"));
     space->queryDataAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasAge"));
@@ -1011,6 +1012,27 @@ int main(int argc, char* argv[])
     space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasSameHomeTownWith"));
     space->queryEngineeringStudentsUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#Student"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#isStudentOf"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#isPartOf"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasCollegeDiscipline"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#Engineering"));
     space->queryComplexStudentsUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#Student"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#Organization"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasDean"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#teachesCourse"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#takesCourse"));
+=======
+    //space->querySuperClassOfUri(std::string("http://schema.org/Person"));
+    space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#isMemberOf"));
+//     space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#isPartOf"));
+//     space->queryDataAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasAge"));
+//     space->queryInstancesURI(std::string("https://kracr.iiitd.edu.in/OWL2Bench#T20CricketFan"));
+//     space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasAlumnus"));
+//     space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#isAffiliatedOrganizationOf"));
+//     space->queryObjAssertionSubjectUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasCollegeDiscipline"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#NonScience"));
+//    space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasCollaborationWith"));
+//     space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#isAdvisedBy"));
+//     space->queryInstancesURI(std::string("https://kracr.iiitd.edu.in/OWL2Bench#Person"));
+//     space->queryInstancesURI(std::string("https://kracr.iiitd.edu.in/OWL2Bench#WomanCollege"));
+//     space->queryInstancesURI(std::string("https://kracr.iiitd.edu.in/OWL2Bench#LeisureStudent"));
+//     space->querySubjectByObjectUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#isHeadOf"));
+//     space->querySubjectByObjectUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasHead"));
+//     space->queryInstancesURI(std::string("https://kracr.iiitd.edu.in/OWL2Bench#Faculty"));
+//      space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasSameHomeTownWith"));
+//     space->queryEngineeringStudentsUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#Student"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#isStudentOf"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#isPartOf"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasCollegeDiscipline"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#Engineering"));
+//     space->queryComplexStudentsUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#Student"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#Organization"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasDean"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#teachesCourse"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#takesCourse"));
+>>>>>>> f1f59a9 (Add example ontologies and update main functionality)
     
 
  )

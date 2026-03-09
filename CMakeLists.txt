@@ -54,11 +54,15 @@ if(EXISTS ${CHRPP_COMPILER})
     # Inclut le runtime CHR++ (nécessaire pour compiler owl.cpp)
     include_directories(${CHRPP_RUNTIME})
     # Cible explicite pour régénérer owl.cpp dans la racine du projet
-    add_custom_target(generate_owl_cpp
+    add_custom_command(
+        OUTPUT ${OWL_CPP}
         COMMAND ${CHRPP_COMPILER} ${CHR_FILE} -t -sout > ${OWL_CPP}
         DEPENDS ${CHR_FILE}
-        COMMENT "Régénération de owl.cpp depuis owlFunctional.chrpp"
->>>>>>> c92672c (Revert " fix cmakelist")
+        COMMENT "Génération / régénération de owl.cpp depuis owlFunctional.chrpp"
+    )
+
+    add_custom_target(generate_owl_cpp
+        DEPENDS ${OWL_CPP}
     )
 else()
     message(STATUS "chrppc non trouvé - utilisation de owl.cpp pré-généré (lecture seule)")
