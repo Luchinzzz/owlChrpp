@@ -1,0 +1,20 @@
+Prefix(j.0:=<http://www.w3.org/ns/>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(
+Declaration(AnnotationProperty(j.0:odrl.jsonldconstraint))
+Declaration(AnnotationProperty(j.0:odrl.jsonldleftOperand))
+Declaration(AnnotationProperty(j.0:odrl.jsonldoperator))
+Declaration(AnnotationProperty(j.0:odrl.jsonldrightOperand))
+
+
+AnnotationAssertion(j.0:odrl.jsonldleftOperand _:genid2147483650 "foaf:age")
+AnnotationAssertion(j.0:odrl.jsonldoperator _:genid2147483650 "odrl:eq")
+AnnotationAssertion(j.0:odrl.jsonldrightOperand _:genid2147483650 "18"^^xsd:integer)
+AnnotationAssertion(j.0:odrl.jsonldconstraint _:genid2147483651 _:genid2147483650)
+)

@@ -1,0 +1,37 @@
+Prefix(:=<http://example.org/policy#>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+
+Ontology(<http://example.org/policy#Policy_001>
+
+  ## ── Dichiarazioni ──
+  Declaration(Class(:Policy_001))
+  Declaration(DataProperty(:foaf_age))
+  Declaration(NamedIndividual(:Alice))
+
+
+  FunctionalDataProperty(:foaf_age)
+
+  ## ── Constraint: foaf_age <= 18 ──
+  SubClassOf(
+    :Policy_001
+    DataAllValuesFrom(
+      :foaf_age
+      DatatypeRestriction(
+        xsd:integer
+        xsd:maxInclusive "18"^^xsd:integer
+      )
+    )
+  )
+  SubClassOf(
+    :Policy_001
+    DataMinCardinality(1 :foaf_age xsd:integer)
+  )
+
+  ## ── Alice: 18 anni ──
+  DataPropertyAssertion(:foaf_age :Alice "18"^^xsd:integer)
+
+  ## ── Alice è dichiarata membro di Policy_001 ──
+  ClassAssertion(:Policy_001 :Alice)
+
+)

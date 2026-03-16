@@ -1,0 +1,1633 @@
+Prefix(:=<http://www.w3.org/ns/odrl/2/>)
+Prefix(vs:=<http://www.w3.org/2003/06/sw-vocab-status/ns#>)
+Prefix(dct:=<http://purl.org/dc/terms/>)
+Prefix(ont:=<http://purl.org/net/ns/ontology-annot#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(foaf:=<http://xmlns.com/foaf/0.1/>)
+Prefix(odrl:=<http://www.w3.org/ns/odrl/2/>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+Prefix(skos:=<http://www.w3.org/2004/02/skos/core#>)
+Prefix(vann:=<http://purl.org/vocab/vann/>)
+Prefix(voaf:=<http://purl.org/vocommons/voaf#>)
+Prefix(dcmit:=<http://purl.org/dc/dcmitype/>)
+
+
+Ontology(<http://www.w3.org/ns/odrl/2/>
+Annotation(dct:contributor "ODRL Community Group")
+Annotation(dct:creator "Mo McRoberts (BBC)")
+Annotation(dct:creator "Víctor Rodríguez Doncel (OEG-UPM)")
+Annotation(dct:description "The Open Digital Rights Language (ODRL) provides flexible and interoperable mechanisms to support transparent and innovative use of digital content in publishing, distribution, and consumption of of digital media across all sectors and communities. The ODRL Policy model is broad enough to support traditional rights expressions for commercial transaction, open access expressions for publicly distributed content, and privacy expressions for social media."@en)
+Annotation(dct:issued "2014-05-12"^^xsd:date)
+Annotation(vann:example odrl:Asset)
+Annotation(vann:preferredNamespacePrefix "odrl")
+Annotation(vann:preferredNamespaceUri <http://w3.org/ns/odrl/2/>)
+Annotation(rdfs:label "Open Digital Rights Language (ODRL) Ontology"@en)
+Annotation(owl:versionInfo "2.0")
+
+Declaration(Class(dcmit:Text))
+Declaration(Class(voaf:Vocabulary))
+Declaration(Class(rdfs:Resource))
+Declaration(Class(xsd:dateTime))
+Declaration(Class(skos:Concept))
+Declaration(Class(skos:ConceptScheme))
+Declaration(Class(odrl:Action))
+Declaration(Class(odrl:Agreement))
+Declaration(Class(odrl:All))
+Declaration(Class(odrl:All2ndConnections))
+Declaration(Class(odrl:AllConnections))
+Declaration(Class(odrl:AllGroups))
+Declaration(Class(odrl:Asset))
+Declaration(Class(odrl:ConflictTerm))
+Declaration(Class(odrl:Constraint))
+Declaration(Class(odrl:Duty))
+Declaration(Class(odrl:Group))
+Declaration(Class(odrl:Individual))
+Declaration(Class(odrl:Offer))
+Declaration(Class(odrl:Operator))
+Declaration(Class(odrl:Party))
+Declaration(Class(odrl:Permission))
+Declaration(Class(odrl:Policy))
+Declaration(Class(odrl:Privacy))
+Declaration(Class(odrl:Prohibition))
+Declaration(Class(odrl:Request))
+Declaration(Class(odrl:Rule))
+Declaration(Class(odrl:Set))
+Declaration(Class(odrl:Ticket))
+Declaration(Class(odrl:UndefinedTerm))
+Declaration(ObjectProperty(odrl:action))
+Declaration(ObjectProperty(odrl:assignee))
+Declaration(ObjectProperty(odrl:assigner))
+Declaration(ObjectProperty(odrl:attributedParty))
+Declaration(ObjectProperty(odrl:conflict))
+Declaration(ObjectProperty(odrl:consentingParty))
+Declaration(ObjectProperty(odrl:constraint))
+Declaration(ObjectProperty(odrl:deliveryChannel))
+Declaration(ObjectProperty(odrl:device))
+Declaration(ObjectProperty(odrl:duty))
+Declaration(ObjectProperty(odrl:event))
+Declaration(ObjectProperty(odrl:fileFormat))
+Declaration(ObjectProperty(odrl:function))
+Declaration(ObjectProperty(odrl:informedParty))
+Declaration(ObjectProperty(odrl:inheritFrom))
+Declaration(ObjectProperty(odrl:operator))
+Declaration(ObjectProperty(odrl:output))
+Declaration(ObjectProperty(odrl:payeeParty))
+Declaration(ObjectProperty(odrl:permission))
+Declaration(ObjectProperty(odrl:prohibition))
+Declaration(ObjectProperty(odrl:purpose))
+Declaration(ObjectProperty(odrl:recipient))
+Declaration(ObjectProperty(odrl:relation))
+Declaration(ObjectProperty(odrl:target))
+Declaration(ObjectProperty(odrl:trackingParty))
+Declaration(ObjectProperty(odrl:undefined))
+Declaration(ObjectProperty(odrl:unit))
+Declaration(ObjectProperty(odrl:version))
+Declaration(ObjectProperty(odrl:virtualLocation))
+Declaration(DataProperty(odrl:absolutePosition))
+Declaration(DataProperty(odrl:absoluteSize))
+Declaration(DataProperty(odrl:count))
+Declaration(DataProperty(odrl:dateTime))
+Declaration(DataProperty(odrl:elapsedTime))
+Declaration(DataProperty(odrl:industry))
+Declaration(DataProperty(odrl:inheritAllowed))
+Declaration(DataProperty(odrl:language))
+Declaration(DataProperty(odrl:media))
+Declaration(DataProperty(odrl:meteredTime))
+Declaration(DataProperty(odrl:payAmount))
+Declaration(DataProperty(odrl:percentage))
+Declaration(DataProperty(odrl:product))
+Declaration(DataProperty(odrl:proximity))
+Declaration(DataProperty(odrl:relativePosition))
+Declaration(DataProperty(odrl:relativeSize))
+Declaration(DataProperty(odrl:resolution))
+Declaration(DataProperty(odrl:rightOperand))
+Declaration(DataProperty(odrl:spatial))
+Declaration(DataProperty(odrl:system))
+Declaration(DataProperty(odrl:timeInterval))
+Declaration(DataProperty(odrl:timedCount))
+Declaration(NamedIndividual(<http://www.w3.org/ns/odrl/2/>))
+Declaration(NamedIndividual(odrl:acceptTracking))
+Declaration(NamedIndividual(odrl:actions))
+Declaration(NamedIndividual(odrl:adHocShare))
+Declaration(NamedIndividual(odrl:aggregate))
+Declaration(NamedIndividual(odrl:annotate))
+Declaration(NamedIndividual(odrl:anonymize))
+Declaration(NamedIndividual(odrl:append))
+Declaration(NamedIndividual(odrl:archive))
+Declaration(NamedIndividual(odrl:attachPolicy))
+Declaration(NamedIndividual(odrl:attachSource))
+Declaration(NamedIndividual(odrl:attribute))
+Declaration(NamedIndividual(odrl:commercialize))
+Declaration(NamedIndividual(odrl:concurrentUse))
+Declaration(NamedIndividual(odrl:copy))
+Declaration(NamedIndividual(odrl:delete))
+Declaration(NamedIndividual(odrl:derive))
+Declaration(NamedIndividual(odrl:display))
+Declaration(NamedIndividual(odrl:distribute))
+Declaration(NamedIndividual(odrl:ensureExclusivity))
+Declaration(NamedIndividual(odrl:eq))
+Declaration(NamedIndividual(odrl:execute))
+Declaration(NamedIndividual(odrl:export))
+Declaration(NamedIndividual(odrl:extract))
+Declaration(NamedIndividual(odrl:extractChar))
+Declaration(NamedIndividual(odrl:extractPage))
+Declaration(NamedIndividual(odrl:extractWord))
+Declaration(NamedIndividual(odrl:give))
+Declaration(NamedIndividual(odrl:gt))
+Declaration(NamedIndividual(odrl:gteq))
+Declaration(NamedIndividual(odrl:hasPart))
+Declaration(NamedIndividual(odrl:ignore))
+Declaration(NamedIndividual(odrl:include))
+Declaration(NamedIndividual(odrl:index))
+Declaration(NamedIndividual(odrl:inform))
+Declaration(NamedIndividual(odrl:install))
+Declaration(NamedIndividual(odrl:invalid))
+Declaration(NamedIndividual(odrl:isA))
+Declaration(NamedIndividual(odrl:isAllOf))
+Declaration(NamedIndividual(odrl:isAnyOf))
+Declaration(NamedIndividual(odrl:isNoneOf))
+Declaration(NamedIndividual(odrl:isPartOf))
+Declaration(NamedIndividual(odrl:lease))
+Declaration(NamedIndividual(odrl:lend))
+Declaration(NamedIndividual(odrl:license))
+Declaration(NamedIndividual(odrl:lt))
+Declaration(NamedIndividual(odrl:lteq))
+Declaration(NamedIndividual(odrl:modify))
+Declaration(NamedIndividual(odrl:move))
+Declaration(NamedIndividual(odrl:neq))
+Declaration(NamedIndividual(odrl:nextPolicy))
+Declaration(NamedIndividual(odrl:obtainConsent))
+Declaration(NamedIndividual(odrl:odrl.html))
+Declaration(NamedIndividual(odrl:odrl.rdf))
+Declaration(NamedIndividual(odrl:odrl.ttl))
+Declaration(NamedIndividual(odrl:odrl.xsd))
+Declaration(NamedIndividual(odrl:pay))
+Declaration(NamedIndividual(odrl:perm))
+Declaration(NamedIndividual(odrl:play))
+Declaration(NamedIndividual(odrl:present))
+Declaration(NamedIndividual(odrl:preview))
+Declaration(NamedIndividual(odrl:print))
+Declaration(NamedIndividual(odrl:prohibit))
+Declaration(NamedIndividual(odrl:read))
+Declaration(NamedIndividual(odrl:reproduce))
+Declaration(NamedIndividual(odrl:reviewPolicy))
+Declaration(NamedIndividual(odrl:secondaryUse))
+Declaration(NamedIndividual(odrl:sell))
+Declaration(NamedIndividual(odrl:share))
+Declaration(NamedIndividual(odrl:shareAlike))
+Declaration(NamedIndividual(odrl:support))
+Declaration(NamedIndividual(odrl:textToSpeech))
+Declaration(NamedIndividual(odrl:transform))
+Declaration(NamedIndividual(odrl:translate))
+Declaration(NamedIndividual(odrl:uninstall))
+Declaration(NamedIndividual(odrl:watermark))
+Declaration(NamedIndividual(odrl:write))
+Declaration(AnnotationProperty(dct:contributor))
+Declaration(AnnotationProperty(dct:creator))
+Declaration(AnnotationProperty(dct:description))
+Declaration(AnnotationProperty(dct:format))
+Declaration(AnnotationProperty(dct:isVersionOf))
+Declaration(AnnotationProperty(dct:issued))
+Declaration(AnnotationProperty(ont:deprecatedBy))
+Declaration(AnnotationProperty(vann:example))
+Declaration(AnnotationProperty(vann:preferredNamespacePrefix))
+Declaration(AnnotationProperty(vann:preferredNamespaceUri))
+Declaration(AnnotationProperty(vs:term_status))
+Declaration(AnnotationProperty(skos:broader))
+Declaration(AnnotationProperty(skos:hasTopConcept))
+Declaration(AnnotationProperty(odrl:status))
+Declaration(AnnotationProperty(foaf:primaryTopic))
+############################
+#   Annotation Properties
+############################
+
+# Annotation Property: odrl:status (status)
+
+AnnotationAssertion(rdfs:comment odrl:status "The current value of the constraint. The range of the status property is identical to that of the operand property selected used in the constraint."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:status <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:status "status"@en)
+AnnotationAssertion(vs:term_status odrl:status "testing")
+AnnotationPropertyDomain(odrl:status odrl:Constraint)
+
+
+############################
+#   Object Properties
+############################
+
+# Object Property: odrl:action (action)
+
+AnnotationAssertion(rdfs:comment odrl:action "The operation relating to the asset for which permission is being granted. A permission must include exactly one action."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:action <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:action "action"@en)
+AnnotationAssertion(vs:term_status odrl:action "testing")
+ObjectPropertyDomain(odrl:action odrl:Rule)
+ObjectPropertyRange(odrl:action odrl:Action)
+
+# Object Property: odrl:assignee (assignee)
+
+AnnotationAssertion(rdfs:comment odrl:assignee "The Party is the recipient of the policy statement."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:assignee <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:assignee "assignee"@en)
+AnnotationAssertion(vs:term_status odrl:assignee "testing")
+SubObjectPropertyOf(odrl:assignee odrl:function)
+ObjectPropertyRange(odrl:assignee odrl:Party)
+
+# Object Property: odrl:assigner (assigner)
+
+AnnotationAssertion(rdfs:comment odrl:assigner "The Party is the issuer of the policy statement."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:assigner <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:assigner "assigner"@en)
+AnnotationAssertion(vs:term_status odrl:assigner "testing")
+SubObjectPropertyOf(odrl:assigner odrl:function)
+ObjectPropertyRange(odrl:assigner odrl:Party)
+
+# Object Property: odrl:attributedParty (attributed party)
+
+AnnotationAssertion(rdfs:comment odrl:attributedParty "The Party to be attributed."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:attributedParty <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:attributedParty "attributed party"@en)
+AnnotationAssertion(vs:term_status odrl:attributedParty "testing")
+SubObjectPropertyOf(odrl:attributedParty odrl:function)
+
+# Object Property: odrl:conflict (conflict)
+
+AnnotationAssertion(rdfs:comment odrl:conflict "Relates a conflict-resolution mechansim to a Policy. If no mechanism is specified, the default is invalid."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:conflict <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:conflict "conflict"@en)
+AnnotationAssertion(vs:term_status odrl:conflict "testing")
+ObjectPropertyDomain(odrl:conflict odrl:Policy)
+ObjectPropertyRange(odrl:conflict odrl:ConflictTerm)
+
+# Object Property: odrl:consentingParty (consenting party)
+
+AnnotationAssertion(rdfs:comment odrl:consentingParty "The Party to obtain consent from."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:consentingParty <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:consentingParty "consenting party"@en)
+AnnotationAssertion(vs:term_status odrl:consentingParty "testing")
+SubObjectPropertyOf(odrl:consentingParty odrl:function)
+
+# Object Property: odrl:constraint (constraint)
+
+AnnotationAssertion(rdfs:comment odrl:constraint "One or more constraints which affect the validity of the Permission; e.g. if the Action play is only permitted for a certain period of time."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:constraint <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:constraint "constraint"@en)
+AnnotationAssertion(vs:term_status odrl:constraint "testing")
+ObjectPropertyDomain(odrl:constraint odrl:Rule)
+ObjectPropertyRange(odrl:constraint odrl:Constraint)
+
+# Object Property: odrl:dateTime (date/time)
+
+AnnotationAssertion(rdfs:comment odrl:dateTime "The date (and optional time and timezone) representing a point in time or period."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:dateTime <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:dateTime "date/time"@en)
+AnnotationAssertion(vs:term_status odrl:dateTime "testing")
+ObjectPropertyRange(odrl:dateTime ObjectUnionOf(xsd:date xsd:dateTime))
+
+# Object Property: odrl:deliveryChannel (delivery channel)
+
+AnnotationAssertion(rdfs:comment odrl:deliveryChannel "The delivery channel used for storing or communicating the asset."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:deliveryChannel <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:deliveryChannel "delivery channel"@en)
+AnnotationAssertion(vs:term_status odrl:deliveryChannel "testing")
+
+# Object Property: odrl:device (device)
+
+AnnotationAssertion(rdfs:comment odrl:device "An identifiable computing system."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:device <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:device "device"@en)
+AnnotationAssertion(vs:term_status odrl:device "testing")
+
+# Object Property: odrl:duty (duty)
+
+AnnotationAssertion(rdfs:comment odrl:duty "A Duty indicates requirements which must be fulfilled in order to receive the permission."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:duty <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:duty "duty"@en)
+AnnotationAssertion(vs:term_status odrl:duty "testing")
+ObjectPropertyDomain(odrl:duty odrl:Permission)
+ObjectPropertyRange(odrl:duty ObjectUnionOf(odrl:Action odrl:Duty))
+
+# Object Property: odrl:event (event)
+
+AnnotationAssertion(rdfs:comment odrl:event "Specification of a defined event applicable to the asset usage."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:event <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:event "event"@en)
+AnnotationAssertion(vs:term_status odrl:event "testing")
+
+# Object Property: odrl:fileFormat (file format)
+
+AnnotationAssertion(rdfs:comment odrl:fileFormat "The file format applicable to the Asset."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:fileFormat <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:fileFormat "file format"@en)
+AnnotationAssertion(vs:term_status odrl:fileFormat "testing")
+
+# Object Property: odrl:function (function)
+
+AnnotationAssertion(rdfs:comment odrl:function "Function is an abstract property whose sub-properties define the roles which may be fulfilled by a party in relation to a Rule."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:function <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:function "function"@en)
+AnnotationAssertion(vs:term_status odrl:function "testing")
+ObjectPropertyDomain(odrl:function odrl:Rule)
+ObjectPropertyRange(odrl:function odrl:Party)
+
+# Object Property: odrl:informedParty (informed party)
+
+AnnotationAssertion(rdfs:comment odrl:informedParty "The Party to be informed of all uses."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:informedParty <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:informedParty "informed party"@en)
+AnnotationAssertion(vs:term_status odrl:informedParty "testing")
+SubObjectPropertyOf(odrl:informedParty odrl:function)
+
+# Object Property: odrl:inheritFrom (inherits from)
+
+AnnotationAssertion(rdfs:comment odrl:inheritFrom "Relates a policy to another policy from which terms are inherited."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:inheritFrom <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:inheritFrom "inherits from"@en)
+AnnotationAssertion(vs:term_status odrl:inheritFrom "testing")
+ObjectPropertyDomain(odrl:inheritFrom odrl:Policy)
+ObjectPropertyRange(odrl:inheritFrom odrl:Policy)
+
+# Object Property: odrl:operator (operator)
+
+AnnotationAssertion(rdfs:comment odrl:operator "The Boolean operator applied to a constraint and its operand."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:operator <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:operator "operator"@en)
+AnnotationAssertion(vs:term_status odrl:operator "testing")
+ObjectPropertyDomain(odrl:operator odrl:Constraint)
+ObjectPropertyRange(odrl:operator odrl:Operator)
+
+# Object Property: odrl:output (output)
+
+AnnotationAssertion(rdfs:comment odrl:output "The output property specifies the Asset which is created from the output of the Action."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:output <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:output "output"@en)
+AnnotationAssertion(vs:term_status odrl:output "testing")
+SubObjectPropertyOf(odrl:output odrl:relation)
+ObjectPropertyDomain(odrl:output odrl:Rule)
+ObjectPropertyRange(odrl:output odrl:Asset)
+
+# Object Property: odrl:payeeParty (payee party)
+
+AnnotationAssertion(rdfs:comment odrl:payeeParty "The Party is the recipient of the payment."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:payeeParty <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:payeeParty "payee party"@en)
+AnnotationAssertion(vs:term_status odrl:payeeParty "testing")
+SubObjectPropertyOf(odrl:payeeParty odrl:function)
+
+# Object Property: odrl:permission (permission)
+
+AnnotationAssertion(rdfs:comment odrl:permission "Relates the description of an individual Permission to a Policy. A permission can be specified either in terms of an Action alone, or an instance of Permission relating an Action and one or more other attributes."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:permission <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:permission "permission"@en)
+AnnotationAssertion(vs:term_status odrl:permission "testing")
+ObjectPropertyDomain(odrl:permission odrl:Policy)
+ObjectPropertyRange(odrl:permission ObjectUnionOf(odrl:Action odrl:Permission))
+
+# Object Property: odrl:prohibition (prohibition)
+
+AnnotationAssertion(rdfs:comment odrl:prohibition "Relates the description of an individual Prohibition to a Policy. A prohibition can be specified either in terms of an Action alone, or an instance of Prohibition relating an Action and one or more other attributes."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:prohibition <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:prohibition "prohibition"@en)
+AnnotationAssertion(vs:term_status odrl:prohibition "testing")
+ObjectPropertyDomain(odrl:prohibition odrl:Policy)
+ObjectPropertyRange(odrl:prohibition ObjectUnionOf(odrl:Action odrl:Prohibition))
+
+# Object Property: odrl:purpose (purpose)
+
+AnnotationAssertion(rdfs:comment odrl:purpose "Specification of a defined purpose applicable to the asset usage."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:purpose <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:purpose "purpose"@en)
+AnnotationAssertion(vs:term_status odrl:purpose "testing")
+
+# Object Property: odrl:recipient (recipient)
+
+AnnotationAssertion(rdfs:comment odrl:recipient "The party that receives the result of the Action on the Asset."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:recipient <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:recipient "recipient"@en)
+AnnotationAssertion(vs:term_status odrl:recipient "testing")
+
+# Object Property: odrl:relation (relation)
+
+AnnotationAssertion(rdfs:comment odrl:relation "Relation is an abstract property which creates an explicit link between an Action and an Asset. Sub-properties of relation are used to define the nature of that link."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:relation <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:relation "relation"@en)
+AnnotationAssertion(vs:term_status odrl:relation "testing")
+ObjectPropertyDomain(odrl:relation odrl:Rule)
+ObjectPropertyRange(odrl:relation odrl:Asset)
+
+# Object Property: odrl:target (target)
+
+AnnotationAssertion(rdfs:comment odrl:target "The target property specifies the Asset upon which the Action is performed."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:target <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:target "target"@en)
+AnnotationAssertion(vs:term_status odrl:target "testing")
+SubObjectPropertyOf(odrl:target odrl:relation)
+ObjectPropertyDomain(odrl:target odrl:Rule)
+ObjectPropertyRange(odrl:target odrl:Asset)
+
+# Object Property: odrl:trackingParty (tracking party)
+
+AnnotationAssertion(rdfs:comment odrl:trackingParty "The Party is the usage tracker."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:trackingParty <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:trackingParty "tracking party"@en)
+AnnotationAssertion(vs:term_status odrl:trackingParty "testing")
+SubObjectPropertyOf(odrl:trackingParty odrl:function)
+
+# Object Property: odrl:undefined (undefined)
+
+AnnotationAssertion(rdfs:comment odrl:undefined "Relates the mechanism used for handling undefined actions to a Policy. If no mechanism is specified, the default is invalid."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:undefined <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:undefined "undefined"@en)
+AnnotationAssertion(vs:term_status odrl:undefined "testing")
+ObjectPropertyDomain(odrl:undefined odrl:Policy)
+ObjectPropertyRange(odrl:undefined odrl:UndefinedTerm)
+
+# Object Property: odrl:unit (unit)
+
+AnnotationAssertion(rdfs:comment odrl:unit "The unit of measurement used for the constraint value."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:unit <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:unit "unit"@en)
+AnnotationAssertion(vs:term_status odrl:unit "testing")
+ObjectPropertyDomain(odrl:unit odrl:Constraint)
+ObjectPropertyRange(odrl:unit rdfs:Resource)
+
+# Object Property: odrl:version (version)
+
+AnnotationAssertion(rdfs:comment odrl:version "The scope of versions for the asset."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:version <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:version "version"@en)
+AnnotationAssertion(vs:term_status odrl:version "testing")
+
+# Object Property: odrl:virtualLocation (virtual location)
+
+AnnotationAssertion(rdfs:comment odrl:virtualLocation "Specification of a digital locale."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:virtualLocation <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:virtualLocation "virtual location"@en)
+AnnotationAssertion(vs:term_status odrl:virtualLocation "testing")
+
+
+############################
+#   Data Properties
+############################
+
+# Data Property: odrl:absolutePosition (absolute position)
+
+AnnotationAssertion(rdfs:comment odrl:absolutePosition "A point defined with absolute coordinates."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:absolutePosition <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:absolutePosition "absolute position"@en)
+AnnotationAssertion(vs:term_status odrl:absolutePosition "testing")
+SubDataPropertyOf(odrl:absolutePosition odrl:rightOperand)
+
+# Data Property: odrl:absoluteSize (absolute size)
+
+AnnotationAssertion(rdfs:comment odrl:absoluteSize "The absolute dimension that the Asset may be resized."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:absoluteSize <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:absoluteSize "absolute size"@en)
+AnnotationAssertion(vs:term_status odrl:absoluteSize "testing")
+SubDataPropertyOf(odrl:absoluteSize odrl:rightOperand)
+DataPropertyRange(odrl:absoluteSize xsd:decimal)
+
+# Data Property: odrl:count (count)
+
+AnnotationAssertion(rdfs:comment odrl:count "The numeric count indicating the number of times the corresponding entity may be exercised"@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:count <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:count "count"@en)
+AnnotationAssertion(vs:term_status odrl:count "testing")
+SubDataPropertyOf(odrl:count odrl:rightOperand)
+DataPropertyRange(odrl:count xsd:nonNegativeInteger)
+
+# Data Property: odrl:dateTime (date/time)
+
+SubDataPropertyOf(odrl:dateTime odrl:rightOperand)
+
+# Data Property: odrl:deliveryChannel (delivery channel)
+
+SubDataPropertyOf(odrl:deliveryChannel odrl:rightOperand)
+
+# Data Property: odrl:device (device)
+
+SubDataPropertyOf(odrl:device odrl:rightOperand)
+
+# Data Property: odrl:elapsedTime (elapsed time)
+
+AnnotationAssertion(rdfs:comment odrl:elapsedTime "A period of time in which the policy action can be exercised."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:elapsedTime <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:elapsedTime "elapsed time"@en)
+AnnotationAssertion(vs:term_status odrl:elapsedTime "testing")
+SubDataPropertyOf(odrl:elapsedTime odrl:rightOperand)
+DataPropertyRange(odrl:elapsedTime rdfs:Literal)
+
+# Data Property: odrl:event (event)
+
+SubDataPropertyOf(odrl:event odrl:rightOperand)
+
+# Data Property: odrl:fileFormat (file format)
+
+SubDataPropertyOf(odrl:fileFormat odrl:rightOperand)
+
+# Data Property: odrl:industry (industry)
+
+AnnotationAssertion(rdfs:comment odrl:industry "The defined industry sector applicable to the asset usage"@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:industry <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:industry "industry"@en)
+AnnotationAssertion(vs:term_status odrl:industry "testing")
+SubDataPropertyOf(odrl:industry odrl:rightOperand)
+
+# Data Property: odrl:inheritAllowed (inheritance allowed)
+
+AnnotationAssertion(rdfs:comment odrl:inheritAllowed "A boolean value indicating whether this policy can be inherited from."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:inheritAllowed <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:inheritAllowed "inheritance allowed"@en)
+AnnotationAssertion(vs:term_status odrl:inheritAllowed "testing")
+DataPropertyDomain(odrl:inheritAllowed odrl:Policy)
+DataPropertyRange(odrl:inheritAllowed xsd:boolean)
+
+# Data Property: odrl:language (language)
+
+AnnotationAssertion(rdfs:comment odrl:language "The natural language applicable to the asset usage"@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:language <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:language "language"@en)
+AnnotationAssertion(vs:term_status odrl:language "testing")
+SubDataPropertyOf(odrl:language odrl:rightOperand)
+
+# Data Property: odrl:media (media)
+
+AnnotationAssertion(rdfs:comment odrl:media "The media type in which the asset may be used."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:media <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:media "media"@en)
+AnnotationAssertion(vs:term_status odrl:media "testing")
+SubDataPropertyOf(odrl:media odrl:rightOperand)
+
+# Data Property: odrl:meteredTime (metered time)
+
+AnnotationAssertion(rdfs:comment odrl:meteredTime "The maximum period of metered usage time."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:meteredTime <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:meteredTime "metered time"@en)
+AnnotationAssertion(vs:term_status odrl:meteredTime "testing")
+SubDataPropertyOf(odrl:meteredTime odrl:rightOperand)
+DataPropertyRange(odrl:meteredTime rdfs:Literal)
+
+# Data Property: odrl:payAmount (payment amount)
+
+AnnotationAssertion(rdfs:isDefinedBy odrl:payAmount <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:payAmount "payment amount"@en)
+AnnotationAssertion(vs:term_status odrl:payAmount "testing")
+SubDataPropertyOf(odrl:payAmount odrl:rightOperand)
+DataPropertyRange(odrl:payAmount xsd:decimal)
+
+# Data Property: odrl:percentage (percentage)
+
+AnnotationAssertion(rdfs:comment odrl:percentage "The amount (as a percentage) of the action applicable to the asset."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:percentage <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:percentage "percentage"@en)
+AnnotationAssertion(vs:term_status odrl:percentage "testing")
+SubDataPropertyOf(odrl:percentage odrl:rightOperand)
+DataPropertyRange(odrl:percentage xsd:decimal)
+
+# Data Property: odrl:product (product)
+
+AnnotationAssertion(rdfs:comment odrl:product "The specified Product or Service name."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:product <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:product "product"@en)
+AnnotationAssertion(vs:term_status odrl:product "testing")
+SubDataPropertyOf(odrl:product odrl:rightOperand)
+DataPropertyRange(odrl:product xsd:string)
+
+# Data Property: odrl:proximity (proximity)
+
+AnnotationAssertion(ont:deprecatedBy odrl:proximity <http://www.openmobilealliance.com/oma-dd/proximity>)
+AnnotationAssertion(rdfs:comment odrl:proximity "An value indicating the closeness or nearness."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:proximity <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:proximity "proximity"@en)
+AnnotationAssertion(vs:term_status odrl:proximity "deprecated")
+SubDataPropertyOf(odrl:proximity odrl:rightOperand)
+
+# Data Property: odrl:purpose (purpose)
+
+SubDataPropertyOf(odrl:purpose odrl:rightOperand)
+
+# Data Property: odrl:recipient (recipient)
+
+SubDataPropertyOf(odrl:recipient odrl:rightOperand)
+
+# Data Property: odrl:relativePosition (relative position)
+
+AnnotationAssertion(rdfs:comment odrl:relativePosition "A point defined with reference to another position."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:relativePosition <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:relativePosition "relative position"@en)
+AnnotationAssertion(vs:term_status odrl:relativePosition "testing")
+SubDataPropertyOf(odrl:relativePosition odrl:rightOperand)
+
+# Data Property: odrl:relativeSize (relative size)
+
+AnnotationAssertion(rdfs:comment odrl:relativeSize "The relative dimension that the Asset may be resized."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:relativeSize <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:relativeSize "relative size"@en)
+AnnotationAssertion(vs:term_status odrl:relativeSize "testing")
+SubDataPropertyOf(odrl:relativeSize odrl:rightOperand)
+
+# Data Property: odrl:resolution (resolution)
+
+AnnotationAssertion(rdfs:comment odrl:resolution "The resolution at which the asset may be used."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:resolution <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:resolution "resolution"@en)
+AnnotationAssertion(vs:term_status odrl:resolution "testing")
+SubDataPropertyOf(odrl:resolution odrl:rightOperand)
+
+# Data Property: odrl:rightOperand (right-operand)
+
+AnnotationAssertion(rdfs:comment odrl:rightOperand "The operand applied to an instance of a constraint. Do not use the right-operand property directly within a Constraint. Instead, a Constraint instance must contain exactly one triple which makes use of one of the sub-properties of right-operand."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:rightOperand <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:rightOperand "right-operand"@en)
+AnnotationAssertion(vs:term_status odrl:rightOperand "testing")
+DataPropertyDomain(odrl:rightOperand odrl:Constraint)
+
+# Data Property: odrl:spatial (spatial)
+
+AnnotationAssertion(rdfs:comment odrl:spatial "A code representing a geospatial area."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:spatial <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:spatial "spatial"@en)
+AnnotationAssertion(vs:term_status odrl:spatial "testing")
+SubDataPropertyOf(odrl:spatial odrl:rightOperand)
+
+# Data Property: odrl:system (system)
+
+AnnotationAssertion(rdfs:comment odrl:system "An identifiable computing system."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:system <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:system "system"@en)
+AnnotationAssertion(vs:term_status odrl:system "testing")
+SubDataPropertyOf(odrl:system odrl:rightOperand)
+
+# Data Property: odrl:timeInterval (time interval)
+
+AnnotationAssertion(rdfs:comment odrl:timeInterval "Recurring period of time in which the usage may be exercised."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:timeInterval <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:timeInterval "time interval"@en)
+AnnotationAssertion(vs:term_status odrl:timeInterval "testing")
+SubDataPropertyOf(odrl:timeInterval odrl:rightOperand)
+DataPropertyRange(odrl:timeInterval rdfs:Literal)
+
+# Data Property: odrl:timedCount (timed count)
+
+AnnotationAssertion(ont:deprecatedBy odrl:timedCount <http://www.openmobilealliance.com/oma-dd/timed-count>)
+AnnotationAssertion(rdfs:comment odrl:timedCount "The number of seconds after which timed metering use of the asset begins."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:timedCount <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:timedCount "timed count"@en)
+AnnotationAssertion(vs:term_status odrl:timedCount "deprecated")
+SubDataPropertyOf(odrl:timedCount odrl:rightOperand)
+DataPropertyRange(odrl:timedCount rdfs:Literal)
+
+# Data Property: odrl:version (version)
+
+SubDataPropertyOf(odrl:version odrl:rightOperand)
+
+# Data Property: odrl:virtualLocation (virtual location)
+
+SubDataPropertyOf(odrl:virtualLocation odrl:rightOperand)
+
+
+
+############################
+#   Classes
+############################
+
+# Class: owl:Thing (owl:Thing)
+
+EquivalentClasses(owl:Thing odrl:Asset)
+
+# Class: odrl:Action (Action)
+
+AnnotationAssertion(rdfs:comment odrl:Action "Instances of Action are things one might be permitted to do or prohibited from doing to a work."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:Action <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:Action "Action"@en)
+AnnotationAssertion(vs:term_status odrl:Action "testing")
+SubClassOf(odrl:Action skos:Concept)
+
+# Class: odrl:Agreement (Agreement)
+
+AnnotationAssertion(rdfs:comment odrl:Agreement "Policy expressions that are formal contracts (or licenses) stipulating all the terms of usage and all the parties involved."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:Agreement <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:Agreement "Agreement"@en)
+AnnotationAssertion(vs:term_status odrl:Agreement "testing")
+SubClassOf(odrl:Agreement odrl:Policy)
+DisjointClasses(odrl:Agreement odrl:Offer)
+DisjointClasses(odrl:Agreement odrl:Privacy)
+DisjointClasses(odrl:Agreement odrl:Request)
+DisjointClasses(odrl:Agreement odrl:Set)
+DisjointClasses(odrl:Agreement odrl:Ticket)
+
+# Class: odrl:All (All)
+
+AnnotationAssertion(rdfs:comment odrl:All "Specifies that the scope of the relationship is all of the collective individuals within a context."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:All <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:All "All"@en)
+AnnotationAssertion(vs:term_status odrl:All "testing")
+SubClassOf(odrl:All odrl:Party)
+
+# Class: odrl:All2ndConnections (All second-level connections)
+
+AnnotationAssertion(rdfs:comment odrl:All2ndConnections "Specifies that the scope of the relationship is all of the second-level connections to the Party."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:All2ndConnections <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:All2ndConnections "All second-level connections"@en)
+AnnotationAssertion(vs:term_status odrl:All2ndConnections "testing")
+SubClassOf(odrl:All2ndConnections odrl:Party)
+
+# Class: odrl:AllConnections (All connections)
+
+AnnotationAssertion(rdfs:comment odrl:AllConnections "Specifies that the scope of the relationship is all of the first-level connections of the Party."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:AllConnections <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:AllConnections "All connections"@en)
+AnnotationAssertion(vs:term_status odrl:AllConnections "testing")
+SubClassOf(odrl:AllConnections odrl:Party)
+
+# Class: odrl:AllGroups (All groups)
+
+AnnotationAssertion(rdfs:comment odrl:AllGroups "Specifies that the scope of the relationship is all of the group connections of the Party."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:AllGroups <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:AllGroups "All groups"@en)
+AnnotationAssertion(vs:term_status odrl:AllGroups "testing")
+SubClassOf(odrl:AllGroups odrl:Party)
+
+# Class: odrl:Asset (Asset)
+
+AnnotationAssertion(rdfs:comment odrl:Asset "Asset is anything which can be subject to a policy. Asserting that something the target of a policy implies that it is an Asset."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:Asset <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:Asset "Asset"@en)
+AnnotationAssertion(vs:term_status odrl:Asset "testing")
+
+# Class: odrl:ConflictTerm (Conflict term)
+
+AnnotationAssertion(rdfs:comment odrl:ConflictTerm "Instances of ConflictTerm describe policies for resolving conflicts."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:ConflictTerm <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:ConflictTerm "Conflict term"@en)
+AnnotationAssertion(vs:term_status odrl:ConflictTerm "testing")
+
+# Class: odrl:Constraint (Constraint)
+
+AnnotationAssertion(rdfs:comment odrl:Constraint "Parent class of all Constraints."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:Constraint <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:Constraint "Constraint"@en)
+AnnotationAssertion(vs:term_status odrl:Constraint "testing")
+SubClassOf(odrl:Constraint owl:Thing)
+
+# Class: odrl:Duty (Duty)
+
+AnnotationAssertion(rdfs:comment odrl:Duty "A Duty is a rule which indicates requirements which must be fulfilled in order to receive the permission."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:Duty <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:Duty "Duty"@en)
+AnnotationAssertion(vs:term_status odrl:Duty "testing")
+SubClassOf(odrl:Duty odrl:Rule)
+DisjointClasses(odrl:Duty odrl:Permission)
+DisjointClasses(odrl:Duty odrl:Prohibition)
+
+# Class: odrl:Group (Group)
+
+AnnotationAssertion(rdfs:comment odrl:Group "Specifies that the scope of the relationship is the defined group with multiple individual members."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:Group <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:Group "Group"@en)
+AnnotationAssertion(vs:term_status odrl:Group "testing")
+SubClassOf(odrl:Group odrl:Party)
+
+# Class: odrl:Individual (Individual)
+
+AnnotationAssertion(rdfs:comment odrl:Individual "Specifies that the scope of the relationship is the single Party individual."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:Individual <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:Individual "Individual"@en)
+AnnotationAssertion(vs:term_status odrl:Individual "testing")
+SubClassOf(odrl:Individual odrl:Party)
+
+# Class: odrl:Offer (Offer)
+
+AnnotationAssertion(rdfs:comment odrl:Offer "An instance of Offer is a Policy expression that proposes terms of usage from an Asset owner."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:Offer <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:Offer "Offer"@en)
+AnnotationAssertion(vs:term_status odrl:Offer "testing")
+SubClassOf(odrl:Offer odrl:Policy)
+DisjointClasses(odrl:Offer odrl:Privacy)
+DisjointClasses(odrl:Offer odrl:Request)
+DisjointClasses(odrl:Offer odrl:Set)
+DisjointClasses(odrl:Offer odrl:Ticket)
+
+# Class: odrl:Operator (Operator)
+
+AnnotationAssertion(rdfs:comment odrl:Operator "Instances of the Operator class represent boolean operators"@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:Operator <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:Operator "Operator"@en)
+AnnotationAssertion(vs:term_status odrl:Operator "testing")
+SubClassOf(odrl:Operator owl:Thing)
+
+# Class: odrl:Party (Party)
+
+AnnotationAssertion(rdfs:comment odrl:Party "An entity which can participate in policy transactions. Use an instance of the Party class where it's necessary to associate a Scope with the relationship; in other cases, simply reference the party directly."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:Party <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:Party "Party"@en)
+AnnotationAssertion(vs:term_status odrl:Party "testing")
+
+# Class: odrl:Permission (Permission)
+
+AnnotationAssertion(rdfs:comment odrl:Permission "A Permission is a rule which indicates the actions the assignee is permitted to perform on the associated asset. In other words, what the assigner (supplier) has granted to the assignee (consumer)."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:Permission <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:Permission "Permission"@en)
+AnnotationAssertion(vs:term_status odrl:Permission "testing")
+SubClassOf(odrl:Permission odrl:Rule)
+DisjointClasses(odrl:Permission odrl:Prohibition)
+
+# Class: odrl:Policy (Policy)
+
+AnnotationAssertion(rdfs:comment odrl:Policy "A top level entity for describing policies."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:Policy <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:Policy "Policy"@en)
+AnnotationAssertion(vs:term_status odrl:Policy "testing")
+SubClassOf(odrl:Policy odrl:Asset)
+
+# Class: odrl:Privacy (Privacy)
+
+AnnotationAssertion(rdfs:comment odrl:Privacy "An instance of Privacy is a Policy expression that stipulates the terms of usage over personal information."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:Privacy <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:Privacy "Privacy"@en)
+AnnotationAssertion(vs:term_status odrl:Privacy "testing")
+SubClassOf(odrl:Privacy odrl:Policy)
+DisjointClasses(odrl:Privacy odrl:Request)
+DisjointClasses(odrl:Privacy odrl:Set)
+DisjointClasses(odrl:Privacy odrl:Ticket)
+
+# Class: odrl:Prohibition (Prohibition)
+
+AnnotationAssertion(rdfs:comment odrl:Prohibition "A Prohibition is a rule which indicates the Actions that the assignee is prohibited to perform on the related Asset."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:Prohibition <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:Prohibition "Prohibition"@en)
+AnnotationAssertion(vs:term_status odrl:Prohibition "testing")
+SubClassOf(odrl:Prohibition odrl:Rule)
+
+# Class: odrl:Request (Request)
+
+AnnotationAssertion(rdfs:comment odrl:Request "An instance of Request is a Policy expression that proposes terms of usage to an Asset owner."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:Request <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:Request "Request"@en)
+AnnotationAssertion(vs:term_status odrl:Request "testing")
+SubClassOf(odrl:Request odrl:Policy)
+DisjointClasses(odrl:Request odrl:Set)
+DisjointClasses(odrl:Request odrl:Ticket)
+
+# Class: odrl:Rule (Rule)
+
+AnnotationAssertion(rdfs:comment odrl:Rule "An abstract common ancestor to Permissions, Prohibitions and Duties."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:Rule <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:Rule "Rule"@en)
+AnnotationAssertion(vs:term_status odrl:Rule "testing")
+
+# Class: odrl:Set (Set)
+
+AnnotationAssertion(rdfs:comment odrl:Set "An instance of Set is a Policy expression that consists of entities from the complete model."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:Set <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:Set "Set"@en)
+AnnotationAssertion(vs:term_status odrl:Set "testing")
+SubClassOf(odrl:Set odrl:Policy)
+DisjointClasses(odrl:Set odrl:Ticket)
+
+# Class: odrl:Ticket (Ticket)
+
+AnnotationAssertion(rdfs:comment odrl:Ticket "An instance of Ticket is a Policy expression that stipulates the terms of usage and is redeemable by any Party who currently holds the Ticket in their possession."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:Ticket <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:Ticket "Ticket"@en)
+AnnotationAssertion(vs:term_status odrl:Ticket "testing")
+SubClassOf(odrl:Ticket odrl:Policy)
+
+# Class: odrl:UndefinedTerm (Undefined values)
+
+AnnotationAssertion(rdfs:comment odrl:UndefinedTerm "Instances of UndefinedTerm describe policies for processing unsupported actions."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:UndefinedTerm <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:UndefinedTerm "Undefined values"@en)
+AnnotationAssertion(vs:term_status odrl:UndefinedTerm "testing")
+
+
+############################
+#   Named Individuals
+############################
+
+# Individual: odrl: (odrl:)
+
+ClassAssertion(voaf:Vocabulary <http://www.w3.org/ns/odrl/2/>)
+
+# Individual: odrl:acceptTracking (Accept tracking)
+
+AnnotationAssertion(rdfs:comment odrl:acceptTracking "The act of accepting that the use of the asset may be recorded. The collected information may be tracked by the assigner, or may link to a Party with role function 'trackingParty'."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:acceptTracking <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:acceptTracking "Accept tracking"@en)
+AnnotationAssertion(vs:term_status odrl:acceptTracking "testing")
+ClassAssertion(skos:Concept odrl:acceptTracking)
+ClassAssertion(odrl:Action odrl:acceptTracking)
+
+# Individual: odrl:actions (ODRL Actions vocabulary)
+
+AnnotationAssertion(rdfs:isDefinedBy odrl:actions <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:actions "ODRL Actions vocabulary"@en)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:acceptTracking)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:adHocShare)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:aggregate)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:annotate)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:anonymize)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:append)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:archive)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:attachPolicy)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:attachSource)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:attribute)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:commercialize)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:concurrentUse)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:copy)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:delete)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:derive)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:display)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:distribute)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:ensureExclusivity)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:execute)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:export)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:extract)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:give)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:include)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:index)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:inform)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:install)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:lease)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:lend)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:license)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:modify)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:move)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:nextPolicy)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:obtainConsent)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:pay)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:play)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:present)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:preview)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:print)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:read)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:reproduce)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:reviewPolicy)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:secondaryUse)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:sell)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:share)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:shareAlike)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:textToSpeech)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:transform)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:translate)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:uninstall)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:watermark)
+AnnotationAssertion(skos:hasTopConcept odrl:actions odrl:write)
+ClassAssertion(skos:ConceptScheme odrl:actions)
+
+# Individual: odrl:adHocShare (Ad-hoc sharing)
+
+AnnotationAssertion(ont:deprecatedBy odrl:adHocShare <http://www.openmobilealliance.com/oma-dd/adhoc-share>)
+AnnotationAssertion(rdfs:comment odrl:adHocShare "The act of sharing the asset to parties in close proximity to the owner. This action may be used to express [OMA] Sharing semantics."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:adHocShare <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:adHocShare "Ad-hoc sharing"@en)
+AnnotationAssertion(vs:term_status odrl:adHocShare "deprecated")
+ClassAssertion(skos:Concept odrl:adHocShare)
+ClassAssertion(odrl:Action odrl:adHocShare)
+
+# Individual: odrl:aggregate (Aggregate)
+
+AnnotationAssertion(rdfs:comment odrl:aggregate "The act of using the asset (or parts of it) as part of a composite collection."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:aggregate <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:aggregate "Aggregate"@en)
+AnnotationAssertion(vs:term_status odrl:aggregate "testing")
+ClassAssertion(skos:Concept odrl:aggregate)
+ClassAssertion(odrl:Action odrl:aggregate)
+
+# Individual: odrl:annotate (Annotate)
+
+AnnotationAssertion(rdfs:comment odrl:annotate "The act of adding notations/commentaries to the asset."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:annotate <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:annotate "Annotate"@en)
+AnnotationAssertion(vs:term_status odrl:annotate "testing")
+ClassAssertion(skos:Concept odrl:annotate)
+ClassAssertion(odrl:Action odrl:annotate)
+
+# Individual: odrl:anonymize (Anonymize)
+
+AnnotationAssertion(rdfs:comment odrl:anonymize "The act of anonymising the asset."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:anonymize <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:anonymize "Anonymize"@en)
+AnnotationAssertion(vs:term_status odrl:anonymize "testing")
+ClassAssertion(skos:Concept odrl:anonymize)
+ClassAssertion(odrl:Action odrl:anonymize)
+
+# Individual: odrl:append (Append)
+
+AnnotationAssertion(rdfs:comment odrl:append "The act of adding to the end of an asset."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:append <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:append "Append"@en)
+AnnotationAssertion(vs:term_status odrl:append "testing")
+ClassAssertion(skos:Concept odrl:append)
+ClassAssertion(odrl:Action odrl:append)
+
+# Individual: odrl:archive (Archive)
+
+AnnotationAssertion(rdfs:comment odrl:archive "The act of persistently storing the asset."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:archive <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:archive "Archive"@en)
+AnnotationAssertion(vs:term_status odrl:archive "testing")
+ClassAssertion(skos:Concept odrl:archive)
+ClassAssertion(odrl:Action odrl:archive)
+
+# Individual: odrl:attachPolicy (Attach policy)
+
+AnnotationAssertion(ont:deprecatedBy odrl:attachPolicy <http://creativecommons.org/ns#Notice>)
+AnnotationAssertion(rdfs:comment odrl:attachPolicy "The act of keeping the policy notice with the asset."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:attachPolicy <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:attachPolicy "Attach policy"@en)
+AnnotationAssertion(vs:term_status odrl:attachPolicy "deprecated")
+ClassAssertion(skos:Concept odrl:attachPolicy)
+ClassAssertion(odrl:Action odrl:attachPolicy)
+
+# Individual: odrl:attachSource (Attach source)
+
+AnnotationAssertion(ont:deprecatedBy odrl:attachSource <http://creativecommons.org/ns#SourceCode>)
+AnnotationAssertion(rdfs:comment odrl:attachSource "The act of attaching the source of the asset and its derivatives."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:attachSource <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:attachSource "Attach source"@en)
+AnnotationAssertion(vs:term_status odrl:attachSource "deprecated")
+ClassAssertion(skos:Concept odrl:attachSource)
+ClassAssertion(odrl:Action odrl:attachSource)
+
+# Individual: odrl:attribute (Attribute)
+
+AnnotationAssertion(rdfs:comment odrl:attribute "The act of attributing the asset to a party."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:attribute <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:attribute "Attribute"@en)
+AnnotationAssertion(vs:term_status odrl:attribute "testing")
+ClassAssertion(skos:Concept odrl:attribute)
+ClassAssertion(odrl:Action odrl:attribute)
+
+# Individual: odrl:commercialize (Commercialize)
+
+AnnotationAssertion(ont:deprecatedBy odrl:commercialize <http://creativecommons.org/ns#CommercialUse>)
+AnnotationAssertion(rdfs:comment odrl:commercialize "The act of using the asset in a business environment."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:commercialize <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:commercialize "Commercialize"@en)
+AnnotationAssertion(vs:term_status odrl:commercialize "deprecated")
+ClassAssertion(skos:Concept odrl:commercialize)
+ClassAssertion(odrl:Action odrl:commercialize)
+
+# Individual: odrl:concurrentUse (Concurrent use)
+
+AnnotationAssertion(rdfs:comment odrl:concurrentUse "The act of multiple concurrent use of the asset."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:concurrentUse <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:concurrentUse "Concurrent use"@en)
+AnnotationAssertion(vs:term_status odrl:concurrentUse "testing")
+ClassAssertion(skos:Concept odrl:concurrentUse)
+ClassAssertion(odrl:Action odrl:concurrentUse)
+
+# Individual: odrl:copy (Copy)
+
+AnnotationAssertion(rdfs:comment odrl:copy "The act of making an exact reproduction of the asset."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:copy <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:copy "Copy"@en)
+AnnotationAssertion(vs:term_status odrl:copy "testing")
+ClassAssertion(skos:Concept odrl:copy)
+ClassAssertion(odrl:Action odrl:copy)
+SameIndividual(odrl:copy odrl:reproduce)
+
+# Individual: odrl:delete (Delete)
+
+AnnotationAssertion(rdfs:comment odrl:delete "The act of permanently removing the asset."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:delete <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:delete "Delete"@en)
+AnnotationAssertion(vs:term_status odrl:delete "testing")
+ClassAssertion(skos:Concept odrl:delete)
+ClassAssertion(odrl:Action odrl:delete)
+
+# Individual: odrl:derive (Derive)
+
+AnnotationAssertion(rdfs:comment odrl:derive "The act of creating a new derivative asset from the asset"@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:derive <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:derive "Derive"@en)
+AnnotationAssertion(vs:term_status odrl:derive "testing")
+ClassAssertion(skos:Concept odrl:derive)
+ClassAssertion(odrl:Action odrl:derive)
+SameIndividual(odrl:derive odrl:modify)
+
+# Individual: odrl:display (Display)
+
+AnnotationAssertion(rdfs:comment odrl:display "The act of making a transient visible rendering of the asset"@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:display <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:display "Display"@en)
+AnnotationAssertion(vs:term_status odrl:display "testing")
+ClassAssertion(skos:Concept odrl:display)
+ClassAssertion(odrl:Action odrl:display)
+SameIndividual(odrl:display odrl:execute)
+
+# Individual: odrl:distribute (Distribute)
+
+AnnotationAssertion(rdfs:comment odrl:distribute "The act of publicly distributing, displaying and/or performing the asset."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:distribute <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:distribute "Distribute"@en)
+AnnotationAssertion(vs:term_status odrl:distribute "testing")
+ClassAssertion(skos:Concept odrl:distribute)
+ClassAssertion(odrl:Action odrl:distribute)
+
+# Individual: odrl:ensureExclusivity (Ensure exclusivity)
+
+AnnotationAssertion(rdfs:comment odrl:ensureExclusivity "The act of requiring the Assigner to ensure the Permission on the asset is unique to the Assignee."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:ensureExclusivity <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:ensureExclusivity "Ensure exclusivity"@en)
+AnnotationAssertion(vs:term_status odrl:ensureExclusivity "testing")
+ClassAssertion(skos:Concept odrl:ensureExclusivity)
+ClassAssertion(odrl:Action odrl:ensureExclusivity)
+
+# Individual: odrl:eq (Equal to)
+
+AnnotationAssertion(rdfs:comment odrl:eq "Indicating that a given value equals the operand of the Constraint."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:eq <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:eq "Equal to"@en)
+AnnotationAssertion(vs:term_status odrl:eq "testing")
+ClassAssertion(odrl:Operator odrl:eq)
+
+# Individual: odrl:execute (Execute)
+
+AnnotationAssertion(rdfs:comment odrl:execute "The act of making a transient visible rendering of the asset."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:execute <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:execute "Execute"@en)
+AnnotationAssertion(vs:term_status odrl:execute "testing")
+ClassAssertion(skos:Concept odrl:execute)
+ClassAssertion(odrl:Action odrl:execute)
+
+# Individual: odrl:export (Export)
+
+AnnotationAssertion(rdfs:comment odrl:export "The act of transforming the asset into a new form."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:export <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:export "Export"@en)
+AnnotationAssertion(vs:term_status odrl:export "testing")
+ClassAssertion(skos:Concept odrl:export)
+ClassAssertion(odrl:Action odrl:export)
+SameIndividual(odrl:export odrl:transform)
+
+# Individual: odrl:extract (Extract)
+
+AnnotationAssertion(rdfs:comment odrl:extract "The act of extracting (replicating) unchanged parts of the asset."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:extract <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:extract "Extract"@en)
+AnnotationAssertion(vs:term_status odrl:extract "testing")
+ClassAssertion(skos:Concept odrl:extract)
+ClassAssertion(odrl:Action odrl:extract)
+
+# Individual: odrl:extractChar (Extract character)
+
+AnnotationAssertion(ont:deprecatedBy odrl:extractChar <http://www.editeur.org/onix-pl/extract-char>)
+AnnotationAssertion(rdfs:comment odrl:extractChar "The act of extracting (replicating) unchanged character(s) from the asset."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:extractChar <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:extractChar "Extract character"@en)
+AnnotationAssertion(vs:term_status odrl:extractChar "deprecated")
+AnnotationAssertion(skos:broader odrl:extractChar odrl:extract)
+ClassAssertion(skos:Concept odrl:extractChar)
+ClassAssertion(odrl:Action odrl:extractChar)
+
+# Individual: odrl:extractPage (Extract page)
+
+AnnotationAssertion(ont:deprecatedBy odrl:extractPage <http://www.editeur.org/onix-pl/extract-word>)
+AnnotationAssertion(rdfs:comment odrl:extractPage "The act of extracting (replicating) unchanged page(s) from the asset."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:extractPage <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:extractPage "Extract page"@en)
+AnnotationAssertion(vs:term_status odrl:extractPage "deprecated")
+AnnotationAssertion(skos:broader odrl:extractPage odrl:extract)
+ClassAssertion(skos:Concept odrl:extractPage)
+ClassAssertion(odrl:Action odrl:extractPage)
+
+# Individual: odrl:extractWord (Extract word)
+
+AnnotationAssertion(ont:deprecatedBy odrl:extractWord <http://www.editeur.org/onix-pl/extract-page>)
+AnnotationAssertion(rdfs:comment odrl:extractWord "The act of extracting (replicating) unchanged word(s) from the asset."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:extractWord <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:extractWord "Extract word"@en)
+AnnotationAssertion(vs:term_status odrl:extractWord "deprecated")
+AnnotationAssertion(skos:broader odrl:extractWord odrl:extract)
+ClassAssertion(skos:Concept odrl:extractWord)
+ClassAssertion(odrl:Action odrl:extractWord)
+
+# Individual: odrl:give (Give)
+
+AnnotationAssertion(rdfs:comment odrl:give "The act of giving away the asset in perpetuity without exchange of value."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:give <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:give "Give"@en)
+AnnotationAssertion(vs:term_status odrl:give "testing")
+ClassAssertion(skos:Concept odrl:give)
+ClassAssertion(odrl:Action odrl:give)
+
+# Individual: odrl:gt (Greater than)
+
+AnnotationAssertion(rdfs:isDefinedBy odrl:gt <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:gt "Greater than"@en)
+AnnotationAssertion(vs:term_status odrl:gt "testing")
+ClassAssertion(odrl:Operator odrl:gt)
+
+# Individual: odrl:gteq (Greater than or equal to)
+
+AnnotationAssertion(rdfs:isDefinedBy odrl:gteq <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:gteq "Greater than or equal to"@en)
+AnnotationAssertion(vs:term_status odrl:gteq "testing")
+ClassAssertion(odrl:Operator odrl:gteq)
+
+# Individual: odrl:hasPart (Has part)
+
+AnnotationAssertion(rdfs:isDefinedBy odrl:hasPart <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:hasPart "Has part"@en)
+AnnotationAssertion(vs:term_status odrl:hasPart "testing")
+ClassAssertion(odrl:Operator odrl:hasPart)
+
+# Individual: odrl:ignore (Ignore)
+
+AnnotationAssertion(rdfs:comment odrl:ignore "Undefined actions should be ignored."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:ignore <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:ignore "Ignore"@en)
+AnnotationAssertion(vs:term_status odrl:ignore "testing")
+ClassAssertion(odrl:UndefinedTerm odrl:ignore)
+
+# Individual: odrl:include (Include)
+
+AnnotationAssertion(rdfs:comment odrl:include "The act of including other related assets to fulfill the function."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:include <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:include "Include"@en)
+AnnotationAssertion(vs:term_status odrl:include "testing")
+ClassAssertion(skos:Concept odrl:include)
+ClassAssertion(odrl:Action odrl:include)
+
+# Individual: odrl:index (Index)
+
+AnnotationAssertion(rdfs:comment odrl:index "The act of indexing the asset into a collection of assets."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:index <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:index "Index"@en)
+AnnotationAssertion(vs:term_status odrl:index "testing")
+ClassAssertion(skos:Concept odrl:index)
+ClassAssertion(odrl:Action odrl:index)
+
+# Individual: odrl:inform (Inform)
+
+AnnotationAssertion(rdfs:comment odrl:inform "The act of informing a party that an action has been performed on the asset."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:inform <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:inform "Inform"@en)
+AnnotationAssertion(vs:term_status odrl:inform "testing")
+ClassAssertion(skos:Concept odrl:inform)
+ClassAssertion(odrl:Action odrl:inform)
+
+# Individual: odrl:install (Install)
+
+AnnotationAssertion(rdfs:comment odrl:install "The act of loading the asset onto storage device ready for operation."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:install <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:install "Install"@en)
+AnnotationAssertion(vs:term_status odrl:install "testing")
+ClassAssertion(skos:Concept odrl:install)
+ClassAssertion(odrl:Action odrl:install)
+
+# Individual: odrl:invalid (Invalid)
+
+AnnotationAssertion(rdfs:comment odrl:invalid "The policy is invalidated."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:invalid <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:invalid "Invalid"@en)
+AnnotationAssertion(vs:term_status odrl:invalid "testing")
+ClassAssertion(odrl:ConflictTerm odrl:invalid)
+ClassAssertion(odrl:UndefinedTerm odrl:invalid)
+
+# Individual: odrl:isA (Is a)
+
+AnnotationAssertion(rdfs:isDefinedBy odrl:isA <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:isA "Is a"@en)
+AnnotationAssertion(vs:term_status odrl:isA "testing")
+ClassAssertion(odrl:Operator odrl:isA)
+
+# Individual: odrl:isAllOf (Is all of)
+
+AnnotationAssertion(rdfs:isDefinedBy odrl:isAllOf <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:isAllOf "Is all of"@en)
+AnnotationAssertion(vs:term_status odrl:isAllOf "testing")
+ClassAssertion(odrl:Operator odrl:isAllOf)
+
+# Individual: odrl:isAnyOf (Is any of)
+
+AnnotationAssertion(rdfs:isDefinedBy odrl:isAnyOf <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:isAnyOf "Is any of"@en)
+AnnotationAssertion(vs:term_status odrl:isAnyOf "testing")
+ClassAssertion(odrl:Operator odrl:isAnyOf)
+
+# Individual: odrl:isNoneOf (Is none of)
+
+AnnotationAssertion(rdfs:isDefinedBy odrl:isNoneOf <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:isNoneOf "Is none of"@en)
+AnnotationAssertion(vs:term_status odrl:isNoneOf "testing")
+ClassAssertion(odrl:Operator odrl:isNoneOf)
+
+# Individual: odrl:isPartOf (Is part of)
+
+AnnotationAssertion(rdfs:isDefinedBy odrl:isPartOf <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:isPartOf "Is part of"@en)
+AnnotationAssertion(vs:term_status odrl:isPartOf "testing")
+ClassAssertion(odrl:Operator odrl:isPartOf)
+
+# Individual: odrl:lease (Lease)
+
+AnnotationAssertion(rdfs:comment odrl:lease "The act of making available the asset to a third-party for a fixed period of time with exchange of value."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:lease <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:lease "Lease"@en)
+AnnotationAssertion(vs:term_status odrl:lease "testing")
+ClassAssertion(skos:Concept odrl:lease)
+ClassAssertion(odrl:Action odrl:lease)
+
+# Individual: odrl:lend (Lend)
+
+AnnotationAssertion(rdfs:comment odrl:lend "The act of making available the asset to a third-party for a fixed period of time without exchange of value."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:lend <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:lend "Lend"@en)
+AnnotationAssertion(vs:term_status odrl:lend "testing")
+ClassAssertion(skos:Concept odrl:lend)
+ClassAssertion(odrl:Action odrl:lend)
+
+# Individual: odrl:license (License)
+
+AnnotationAssertion(rdfs:comment odrl:license "The act of granting the right to use the asset to a third-party."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:license <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:license "License"@en)
+AnnotationAssertion(vs:term_status odrl:license "testing")
+ClassAssertion(skos:Concept odrl:license)
+ClassAssertion(odrl:Action odrl:license)
+
+# Individual: odrl:lt (Less than)
+
+AnnotationAssertion(rdfs:isDefinedBy odrl:lt <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:lt "Less than"@en)
+AnnotationAssertion(vs:term_status odrl:lt "testing")
+ClassAssertion(odrl:Operator odrl:lt)
+
+# Individual: odrl:lteq (Less than or equal to)
+
+AnnotationAssertion(rdfs:isDefinedBy odrl:lteq <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:lteq "Less than or equal to"@en)
+AnnotationAssertion(vs:term_status odrl:lteq "testing")
+ClassAssertion(odrl:Operator odrl:lteq)
+
+# Individual: odrl:modify (Modify)
+
+AnnotationAssertion(rdfs:comment odrl:modify "The act of creating a new derivative asset from the asset."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:modify <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:modify "Modify"@en)
+AnnotationAssertion(vs:term_status odrl:modify "testing")
+ClassAssertion(skos:Concept odrl:modify)
+ClassAssertion(odrl:Action odrl:modify)
+
+# Individual: odrl:move (Move)
+
+AnnotationAssertion(rdfs:comment odrl:move "The act of moving the asset."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:move <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:move "Move"@en)
+AnnotationAssertion(vs:term_status odrl:move "testing")
+ClassAssertion(skos:Concept odrl:move)
+ClassAssertion(odrl:Action odrl:move)
+
+# Individual: odrl:neq (Not equal to)
+
+AnnotationAssertion(rdfs:isDefinedBy odrl:neq <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:neq "Not equal to"@en)
+AnnotationAssertion(vs:term_status odrl:neq "testing")
+ClassAssertion(odrl:Operator odrl:neq)
+
+# Individual: odrl:nextPolicy (Next policy)
+
+AnnotationAssertion(rdfs:comment odrl:nextPolicy "The act of specifying an asset (which must be a Policy) as the Policy terms for third-party use of the asset."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:nextPolicy <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:nextPolicy "Next policy"@en)
+AnnotationAssertion(vs:term_status odrl:nextPolicy "testing")
+ClassAssertion(skos:Concept odrl:nextPolicy)
+ClassAssertion(odrl:Action odrl:nextPolicy)
+
+# Individual: odrl:obtainConsent (Obtain consent)
+
+AnnotationAssertion(rdfs:comment odrl:obtainConsent "The act of requiring explicit consent from a party to perform the action on the asset."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:obtainConsent <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:obtainConsent "Obtain consent"@en)
+AnnotationAssertion(vs:term_status odrl:obtainConsent "testing")
+ClassAssertion(skos:Concept odrl:obtainConsent)
+ClassAssertion(odrl:Action odrl:obtainConsent)
+
+# Individual: odrl:odrl.html (ODRL 2.0 (HTML))
+
+AnnotationAssertion(dct:format odrl:odrl.html <http://purl.org/NET/mediatypes/text/html>)
+AnnotationAssertion(dct:isVersionOf odrl:odrl.html <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:odrl.html "ODRL 2.0 (HTML)"@en)
+AnnotationAssertion(foaf:primaryTopic odrl:odrl.html <http://www.w3.org/ns/odrl/2/>)
+ClassAssertion(dcmit:Text odrl:odrl.html)
+
+# Individual: odrl:odrl.rdf (ODRL 2.0 (RDF/XML))
+
+AnnotationAssertion(dct:format odrl:odrl.rdf <http://purl.org/NET/mediatypes/application/rdf+xml>)
+AnnotationAssertion(dct:isVersionOf odrl:odrl.rdf <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:odrl.rdf "ODRL 2.0 (RDF/XML)"@en)
+AnnotationAssertion(foaf:primaryTopic odrl:odrl.rdf <http://www.w3.org/ns/odrl/2/>)
+ClassAssertion(dcmit:Text odrl:odrl.rdf)
+
+# Individual: odrl:odrl.ttl (ODRL 2.0 (Turtle))
+
+AnnotationAssertion(dct:format odrl:odrl.ttl <http://purl.org/NET/mediatypes/text/turtle>)
+AnnotationAssertion(dct:isVersionOf odrl:odrl.ttl <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:odrl.ttl "ODRL 2.0 (Turtle)"@en)
+AnnotationAssertion(foaf:primaryTopic odrl:odrl.ttl <http://www.w3.org/ns/odrl/2/>)
+ClassAssertion(dcmit:Text odrl:odrl.ttl)
+
+# Individual: odrl:odrl.xsd (ODRL 2.0 (XML Schema Definition))
+
+AnnotationAssertion(dct:format odrl:odrl.xsd <http://purl.org/NET/mediatypes/application/xml>)
+AnnotationAssertion(dct:isVersionOf odrl:odrl.xsd <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:odrl.xsd "ODRL 2.0 (XML Schema Definition)"@en)
+AnnotationAssertion(foaf:primaryTopic odrl:odrl.xsd <http://www.w3.org/ns/odrl/2/>)
+ClassAssertion(dcmit:Text odrl:odrl.xsd)
+
+# Individual: odrl:pay (Pay)
+
+AnnotationAssertion(rdfs:comment odrl:pay "The act of paying a financial amount to a party for use of the asset."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:pay <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:pay "Pay"@en)
+AnnotationAssertion(vs:term_status odrl:pay "testing")
+ClassAssertion(skos:Concept odrl:pay)
+ClassAssertion(odrl:Action odrl:pay)
+
+# Individual: odrl:perm (Permissions)
+
+AnnotationAssertion(rdfs:comment odrl:perm "Permissions take precedence over prohibitions."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:perm <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:perm "Permissions"@en)
+AnnotationAssertion(vs:term_status odrl:perm "testing")
+ClassAssertion(odrl:ConflictTerm odrl:perm)
+
+# Individual: odrl:play (Play)
+
+AnnotationAssertion(rdfs:comment odrl:play "The act of rendering the asset into audio and/or video form."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:play <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:play "Play"@en)
+AnnotationAssertion(vs:term_status odrl:play "testing")
+ClassAssertion(skos:Concept odrl:play)
+ClassAssertion(odrl:Action odrl:play)
+SameIndividual(odrl:play odrl:present)
+
+# Individual: odrl:present (Present)
+
+AnnotationAssertion(rdfs:comment odrl:present "The act of rendering the asset into audio and/or video form."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:present <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:present "Present"@en)
+AnnotationAssertion(vs:term_status odrl:present "testing")
+ClassAssertion(skos:Concept odrl:present)
+ClassAssertion(odrl:Action odrl:present)
+
+# Individual: odrl:preview (Preview)
+
+AnnotationAssertion(rdfs:comment odrl:preview "The act of providing a short preview of the asset."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:preview <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:preview "Preview"@en)
+AnnotationAssertion(vs:term_status odrl:preview "testing")
+ClassAssertion(skos:Concept odrl:preview)
+ClassAssertion(odrl:Action odrl:preview)
+
+# Individual: odrl:print (Print)
+
+AnnotationAssertion(rdfs:comment odrl:print "The act of rendering the asset onto paper or hard copy form."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:print <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:print "Print"@en)
+AnnotationAssertion(vs:term_status odrl:print "testing")
+ClassAssertion(skos:Concept odrl:print)
+ClassAssertion(odrl:Action odrl:print)
+
+# Individual: odrl:prohibit (Prohibit)
+
+AnnotationAssertion(rdfs:comment odrl:prohibit "Prohibitions take precedence over permissions."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:prohibit <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:prohibit "Prohibit"@en)
+AnnotationAssertion(vs:term_status odrl:prohibit "testing")
+ClassAssertion(odrl:ConflictTerm odrl:prohibit)
+
+# Individual: odrl:read (Read)
+
+AnnotationAssertion(rdfs:comment odrl:read "The act of obtaining data from the asset."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:read <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:read "Read"@en)
+AnnotationAssertion(vs:term_status odrl:read "testing")
+ClassAssertion(skos:Concept odrl:read)
+ClassAssertion(odrl:Action odrl:read)
+
+# Individual: odrl:reproduce (Reproduce)
+
+AnnotationAssertion(rdfs:comment odrl:reproduce "The act of making an exact reproduction of the asset."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:reproduce <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:reproduce "Reproduce"@en)
+AnnotationAssertion(vs:term_status odrl:reproduce "testing")
+ClassAssertion(skos:Concept odrl:reproduce)
+ClassAssertion(odrl:Action odrl:reproduce)
+
+# Individual: odrl:reviewPolicy (Review policy)
+
+AnnotationAssertion(rdfs:comment odrl:reviewPolicy "The act of performing a manual review of the terms associated with the asset."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:reviewPolicy <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:reviewPolicy "Review policy"@en)
+AnnotationAssertion(vs:term_status odrl:reviewPolicy "testing")
+ClassAssertion(skos:Concept odrl:reviewPolicy)
+ClassAssertion(odrl:Action odrl:reviewPolicy)
+
+# Individual: odrl:secondaryUse (Secondary use)
+
+AnnotationAssertion(rdfs:comment odrl:secondaryUse "The act of using the asset for a purpose other than the purpose it was intended for."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:secondaryUse <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:secondaryUse "Secondary use"@en)
+AnnotationAssertion(vs:term_status odrl:secondaryUse "testing")
+ClassAssertion(skos:Concept odrl:secondaryUse)
+ClassAssertion(odrl:Action odrl:secondaryUse)
+
+# Individual: odrl:sell (Sell)
+
+AnnotationAssertion(rdfs:comment odrl:sell "The act of trading the asset in exchange of value."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:sell <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:sell "Sell"@en)
+AnnotationAssertion(vs:term_status odrl:sell "testing")
+ClassAssertion(skos:Concept odrl:sell)
+ClassAssertion(odrl:Action odrl:sell)
+
+# Individual: odrl:share (Share)
+
+AnnotationAssertion(ont:deprecatedBy odrl:share <http://creativecommons.org/ns#Distribution>)
+AnnotationAssertion(rdfs:comment odrl:share "The act of the non-commercial reproduction and distribution of the asset to third-parties."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:share <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:share "Share"@en)
+AnnotationAssertion(vs:term_status odrl:share "deprecated")
+ClassAssertion(skos:Concept odrl:share)
+ClassAssertion(odrl:Action odrl:share)
+
+# Individual: odrl:shareAlike (Share-alike)
+
+AnnotationAssertion(ont:deprecatedBy odrl:shareAlike <http://creativecommons.org/ns#ShareAlike>)
+AnnotationAssertion(rdfs:comment odrl:shareAlike "The act of distributing any derivative asset under the same terms as the original asset."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:shareAlike <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:shareAlike "Share-alike"@en)
+AnnotationAssertion(vs:term_status odrl:shareAlike "deprecated")
+ClassAssertion(skos:Concept odrl:shareAlike)
+ClassAssertion(odrl:Action odrl:shareAlike)
+
+# Individual: odrl:support (Support)
+
+AnnotationAssertion(rdfs:comment odrl:support "Undefined actions do not invalidate the policy, but notification for review must occur."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:support <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:support "Support"@en)
+AnnotationAssertion(vs:term_status odrl:support "testing")
+ClassAssertion(odrl:UndefinedTerm odrl:support)
+
+# Individual: odrl:textToSpeech (Text-to-speech)
+
+AnnotationAssertion(rdfs:comment odrl:textToSpeech "The act of a system reading the text of the asset out loud."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:textToSpeech <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:textToSpeech "Text-to-speech"@en)
+AnnotationAssertion(vs:term_status odrl:textToSpeech "testing")
+ClassAssertion(skos:Concept odrl:textToSpeech)
+ClassAssertion(odrl:Action odrl:textToSpeech)
+
+# Individual: odrl:transform (Transform)
+
+AnnotationAssertion(rdfs:comment odrl:transform "The act of transforming the asset into a new form."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:transform <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:transform "Transform"@en)
+AnnotationAssertion(vs:term_status odrl:transform "testing")
+ClassAssertion(skos:Concept odrl:transform)
+ClassAssertion(odrl:Action odrl:transform)
+
+# Individual: odrl:translate (Translate)
+
+AnnotationAssertion(rdfs:comment odrl:translate "The act of translating the asset into a new natural language."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:translate <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:translate "Translate"@en)
+AnnotationAssertion(vs:term_status odrl:translate "testing")
+ClassAssertion(skos:Concept odrl:translate)
+ClassAssertion(odrl:Action odrl:translate)
+
+# Individual: odrl:uninstall (Uninstall)
+
+AnnotationAssertion(rdfs:comment odrl:uninstall "The act of unloading the asset from storage device."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:uninstall <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:uninstall "Uninstall"@en)
+AnnotationAssertion(vs:term_status odrl:uninstall "testing")
+ClassAssertion(skos:Concept odrl:uninstall)
+ClassAssertion(odrl:Action odrl:uninstall)
+
+# Individual: odrl:watermark (Watermark)
+
+AnnotationAssertion(rdfs:comment odrl:watermark "The act of applying a watermark to the asset."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:watermark <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:watermark "Watermark"@en)
+AnnotationAssertion(vs:term_status odrl:watermark "testing")
+ClassAssertion(skos:Concept odrl:watermark)
+ClassAssertion(odrl:Action odrl:watermark)
+
+# Individual: odrl:write (Write)
+
+AnnotationAssertion(rdfs:comment odrl:write "The act of writing to the asset."@en)
+AnnotationAssertion(rdfs:isDefinedBy odrl:write <http://www.w3.org/ns/odrl/2/>)
+AnnotationAssertion(rdfs:label odrl:write "Write"@en)
+AnnotationAssertion(vs:term_status odrl:write "testing")
+ClassAssertion(skos:Concept odrl:write)
+ClassAssertion(odrl:Action odrl:write)
+
+
+)
