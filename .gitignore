@@ -2,9 +2,6 @@
 build/
 build-*/
 build_test/
-<<<<<<< HEAD
-cmake-build*/
-=======
 CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake
@@ -13,7 +10,6 @@ CMakeDoxyfile.in
 CMakeDoxygenDefaults.cmake
 CMakeLists_*.txt
 *error.txt
->>>>>>> f1f59a9 (Add example ontologies and update main functionality)
 
 # Generated files
 owl.cpp.backup
@@ -21,14 +17,12 @@ owl.cpp.backup
 *.a
 *.so
 *.dylib
-<<<<<<< HEAD
-=======
 *.gch
 
 # Fichiers de résultats générés à l'exécution
 res_realisation
 res_classification
-sortie.txt
+res_queries
 
 
 # Fichiers temporaires
@@ -36,12 +30,13 @@ sortie.txt
 *.tmp
 *.swp
 *.swo
+*.old
 *~
+
 
 # Bibliothèques externes (sous-modules)
 lib/cowl/build/
 lib/cowl/lib/ulib/build/
->>>>>>> f1f59a9 (Add example ontologies and update main functionality)
 
 # IDE
 .vscode/
