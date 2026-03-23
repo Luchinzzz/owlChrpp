@@ -1,406 +1,118 @@
-//#define ENABLE_TRACE
-#include <iostream>
-#include <string>
-#include <vector>
-#include <chrono>
-#include <set>
-#include <algorithm>
 #include <chrpp.hh>
-#include "AnySimpleType.h"
-#include "parsercowl.h"
-#include <fstream>
-const std::string owlThing = "owl:Thing";
-const std::string owlNothing = "owl:Nothing";
-const std::string emptyString = "";
-
-const std::string output_file_Real = "res_realisation";
-const std::string output_file_Classif = "res_classification";
-const std::string output_file_Queries = "sortie.txt";
-/**
- * Hash data structure needed for std::string
- */
-
-static int global_counter = 0;
-
-int get_next_id() {
-    return global_counter++;
-}
-
-namespace chr {
-
-// Opérateur de comparaison pour Logical_var<std::string> pour permettre l'utilisation dans std::set
-template<typename T>
-bool operator<(const Logical_var<T>& a, const Logical_var<T>& b) {
-    // Comparaison basée sur l'adresse mémoire (identité) ou la valeur si ground
-    if (a.ground() && b.ground()) {
-        return *a < *b;
-    }
-    // Comparaison par adresse pour les variables non-ground
-    return &a < &b;
-}
-
-template<>
-struct Type_instruction_wrapper<std::shared_ptr<AnySimpleType>, false> {
-    static std::string to_string(const std::shared_ptr<AnySimpleType>& ptr) {
-        if (!ptr) return "null";
-        return "AnySimpleType(id=" + ptr->toString() + ")";
-    }
-
-    static void update_hash(const std::shared_ptr<AnySimpleType>& ptr) {
-        if (ptr) {
-            XXHash<unsigned int>::update(ptr->getId());
-        }
-    }
-
-    static bool is_equal(const std::shared_ptr<AnySimpleType>& a, const std::shared_ptr<AnySimpleType>& b) {
-        if (!a || !b) return a == b;
-        return a->getId() == b->getId(); 
-    }
-};
-}
-
-// XXHash pour std::shared_ptr<AnySimpleType>
-template <>
-struct chr::XXHash<std::shared_ptr<AnySimpleType>>
-{
-    static void update(const std::shared_ptr<AnySimpleType>& ptr)
-    {
-        if (ptr) {
-            chr::XXHash<unsigned int>::update(ptr->getId());
-        } else {
-            chr::XXHash<unsigned int>::update(0);
-        }
-    }
-};
-
-
-template <>
-struct chr::XXHash<Value>
-{
-    static void update(const Value& v)
-    {
-        std::string composite = v.val;
-
-            if (v.typeVal)
-        {
-            composite += "::" + std::to_string(v.typeVal->getId());
-        }
-        else
-        {
-            composite += "::null";
-        }
-
-        chr::XXHash<std::string>::update(composite);
-    }
-};
-
-
-using LogicalVarSet = std::set<chr::Logical_var<int>>;
-using StringSet = std::vector<std::string>;
-using LogicalVarSetIterator = std::set<chr::Logical_var<int>>::iterator;
-
-
-namespace chr {
-template<>
-  struct Type_instruction_wrapper<std::set<std::string>::iterator, false> {
-      static std::string to_string(const std::set<std::string>::iterator& it) {
-          return *it;
-      }
-      static void update_hash(const std::set<std::string>::iterator&) {}
-      static bool is_equal(const std::set<std::string>::iterator& a,
-                           const std::set<std::string>::iterator& b) {
-          return a == b;
-      }
-  };
-
-template<>
-  struct Type_instruction_wrapper<LogicalVarSetIterator, false> {
-      static std::string to_string(const LogicalVarSetIterator& it) {
-          // Ne pas déréférencer l'itérateur, renvoyer une représentation générique
-          return "LogicalVarSetIterator";
-      }
-      static void update_hash(const LogicalVarSetIterator&) {}
-      static bool is_equal(const LogicalVarSetIterator& a,
-                           const LogicalVarSetIterator& b) {
-          return a == b;
-      }
-  };
-
-}
-
-// XXHash pour LogicalVarSetIterator  
-template <>
-struct chr::XXHash<LogicalVarSetIterator>
-{
-    static void update(const LogicalVarSetIterator& it)
-    {
-        // Hash basé sur l'adresse de l'itérateur
-        chr::XXHash<size_t>::update(reinterpret_cast<size_t>(&(*it)));
-    }
-};
-bool different(const chr::Logical_var<int>&  A, const chr::Logical_var<int>&  B, const chr::Logical_var<int>&  C) {
-    return A != B && B != C && A != C;
-}
-
-void afficher(std::string x){
-    std::cout<<x<<std::endl;
-}
-
-void afficher(std::string x,std::string y){
-    std::cout<<x<<"    "<<y<<std::endl;
-}
-
-void stockerRealisation(std::string x,std::string y){
- std::ofstream out(output_file_Real, std::ios::app);  
-    if (!out) {
-        std::cerr << "Impossible d'ouvrir output.txt\n";
-        return ;
-    }
-    out << x<<" "<<y<<"\n";
-    out.close()  ; 
-}
-
-void stockerClassification(std::string x,std::string y){
- std::ofstream out(output_file_Classif, std::ios::app);  
-    if (!out) {
-        std::cerr << "Impossible d'ouvrir  output_file_Classif\n";
-        return ;
-    }
-    out << x<<" "<<y<<"\n";
-    out.close()  ; 
-}
-
-void stockerQueries(const StringSet& s, int id){
-    std::ofstream out(output_file_Queries, std::ios::app);  
-    if (!out) {
-        std::cerr << "Impossible d'ouvrir  output_file_Queries\n";
-        return ;
-    }
-    out << id << " : ";
-    for(const std::string& res : s){
-       out<< res <<"  ";
-    }
-    out<<std::endl;
-    out.close()  ; 
-}
-
-std::string valueToString(const Value & v){
-    std::string composite = "\"" + v.val + "\"";
-
-     /*       if (v.typeVal)
-        {
-            composite += "^^" + v.typeVal->toString();
-        }
-        else
-        {
-            composite += "::null";
-        } */
-        return composite ;
-}
-
-bool contains(const chr::Logical_var<int>& x, const LogicalVarSet& l){
-    return l.find(x) != l.end();
-}
-
-StringSet makeVec(const std::string & a, const std::string & b){
-    StringSet s;
-    s.insert(s.end(),a);
-    s.insert(s.end(),b);
-    return s;
-}
-
-void afficherResultatSet(const StringSet& s, int id){
-     std::cout << id << " : ";
-    for(const std::string& res : s){
-       std::cout<< res <<"  ";
-    }
-    std::cout<<std::endl;
-}
-
-LogicalVarSetIterator getBegin(const LogicalVarSet& s){
-    return s.begin();
-}
-
-LogicalVarSetIterator getEnd(const LogicalVarSet& s){
-    return s.end();
-}
-
-
-bool samePrefix(const std::string & px,const std::string & x){
-        size_t pos = px.find(':');
-        std::string pref = px.substr(0, pos);
-        return (pref==x) ;
-}
-
-bool prefixIntern(const std::string & uri){
-        size_t pos = uri.find('#');
-        std::string pref = uri.substr(0, pos);
-        return (pref=="http://anonymous.org") ;
-}
-
-
-template <typename T>
-bool checkClassification(T& pb,const std::string & x ,const std::string & c){
-    auto it = pb.get_owlClassAssertion_store().begin();
-    while (!it.at_end())
-    {    if((*std::get<1>(*it))==x && (*std::get<2>(*it))==c)
-        {
-            return true;
-        }
-         ++it;
-    }
-    return false;
-}
-
-
-std::string constructFullUri(const std::string& prefix,
-                             const std::string& localName)
-{
-    auto pos = localName.find(':');
-    std::string name = localName.substr(pos+1);
-    return prefix + ":" + name;
-}
-
-bool sameDataType(const std::shared_ptr<AnySimpleType> dr1, const std::shared_ptr<AnySimpleType> dr2){
-    if (!dr1 || !dr2) {
-        return false;  // Considère que les types null ne sont pas égaux
-    }
-    return dr1->getId() == dr2->getId();
-}
-bool invalidType(const std::shared_ptr<AnySimpleType> dr, const Value & v){
-    // Vérification de la hiérarchie de types XSD
-    // dr est le type attendu (range), v.typeVal est le type de la valeur
-    if (!dr || !v.typeVal) {
-        return true;  // Type invalide si l'un des types est null
-    }
-    bool isValid = v.typeVal->verify(dr.get());    
-    return !isValid;  // Retourne true si le type est invalide
-}
-
-Value createValue(const std::string& val, const std::shared_ptr<AnySimpleType> typeVal) {
-    Value v;
-    v.val = val;
-    v.typeVal = typeVal;
-    return v;
-}
-bool equalIncrement(int j,int i){
-    return j==i+1;
-}
-
-/**
-*
-*\ingroup Examples
+#include "include/AnySimpleType.h"
+#include <iostream>
+#include "include/constants.h"   // owlThing, owlNothing, emptyString — usati in decine di regole
+#include "include/types.h"       // LogicalVarSet, StringSet, LogicalVarSetIterator, get_next_id()
+#include "include/utils.h"
+#include "include/chr_traits.h"
 
 <CHR name="OWL2">
     // === Contraintes ===
-    <chr_constraint>
-            owlPrefix(?int,?int),
-			owlClass(?int),
-			owlObjectProperty(?int),
-			owlDataProperty(?int),
-            owlNamedIndividual(?int),
-			owlSubclassOf(?int,?int),
-			owlEquivalentClass(?int,?int),
-			owlSubDataPropertyOf(?int,?int),
-			owlSubObjectPropertyOf(?int,?int),
-			owlEquivalentDataProperty(?int,?int),
-			owlEquivalentObjectProperty(?int,?int),
-			owlObjectPropertyDomain(?int,?int),
-			owlDataPropertyDomain(?int,?int),
-			owlObjectPropertyRange(?int,?int),
-			owlClassAssertion(?int,?int,+bool),
-			owlDisjointClass(?int,?int),
-            owlNegativeObjectAssertion(?int,?int,?int),
-            owlObjectPropertyAssertion(?int,?int,?int),
-            owlSameIndividual(?int,?int),
-            owlDifferentIndividual(?int,?int),
-            owlInverseObjectProperty(?int,?int),
-            owlSymmetricObjectProperty(?int),
-            owlAsymmetricObjectProperty(?int),
-            owlDisjointObjectProperty(?int,?int),
-            owlDisjointDataProperty(?int,?int),
-            owlReflexiveObjectProperty(?int),
-            owlIrreflexiveObjectProperty(?int),
-            owlFunctionalObjectProperty(?int),
-            owlFunctionalDataProperty(?int),
-            owlInverseFunctionalObjectProperty(?int),
-            owlTransitiveObjectProperty(?int),
-            owlDataPropertyAssertion(?int,?int,+Value),
-            owlNegativeDataAssertion(?int,?int,+Value),
-            owlDataPropertyRange(?int,+std::shared_ptr<[AnySimpleType]>),
-            owlUnionClass(?int,?int),
-            owlUnionOf(?int,+LogicalVarSet),
-            owlUnionOfLoop(?int,+LogicalVarSetIterator,+LogicalVarSetIterator),
-            owlIntersectionOf(?int,+LogicalVarSet),
-            owlIntersectionClass(?int,?int,+int),
-            owlIntersectionOfLoop(?int,+LogicalVarSetIterator,+LogicalVarSetIterator,+int),
-            intersectionSubclassCheck(?int,?int,+int),
-            owlCandidatsIntersection(?int,?int,+int),
-            owlObjectAllValuesFrom(?int,?int,?int),
-            owlDataAllValuesFrom(?int,?int,+std::shared_ptr<[AnySimpleType]>),
-            owlObjectSomeValuesFrom(?int,?int,?int),
-            owlDataSomeValuesFrom(?int,?int,+std::shared_ptr<[AnySimpleType]>),
-            owlDataValue(+Value,+std::string,+std::shared_ptr<[AnySimpleType]>),
-            owlComplementOf(?int,?int),
-            owlObjectMaxCardinality(?int,?int,+int),
-            owlDataMaxCardinality(?int,?int,+int),
-            owlHasValueObject(?int,?int,?int),
-            owlOneOf(?int,+LogicalVarSet),
-            owlOneOfLoop(?int,+LogicalVarSetIterator,+LogicalVarSetIterator),
-            owlObjectPropertyChain(?int,?int,+int,+int),
-            constructPropertyChain(?int,+int,?int,?int,+int) ,
-            owlHasKey(?int,?int,+int,+int),
-            owlHasKeyCheck(?int,?int,?int,+int,+int),
-            querySuperClassOfUri(+std::string),
-            querySubClassOfUri(+std::string),
-            querySuperClassOf(?int),
-            querySuperClassOfReal(?int,?int),
-            querySubClassOf(?int),
-            queryClassification(?int),
-            queryClassificationReal(?int),
-            queryClassificationUri(+std::string),
-            queryClassificationTemp(?int),
-            queryClassificationTempUri(+std::string),
-            queryInstanceURI(+std::string,+std::string),
-            queryInstance(?int,?int),
-            queryInstancesURI(+std::string),
-            queryInstances(?int,+int),
-            queryObjAssertionUri(+std::string),
-            queryObjAssertion(?int,+int),
-            querySubjectByObjectUri(+std::string),
-            querySubjectByObject(?int,+int),
-            queryDataAssertionUri(+std::string),
-            queryDataAssertion(?int,+int),
-            queryEngineeringStudentsUri(+std::string,+std::string,+std::string,+std::string,+std::string),
-            queryEngineeringStudents(?int,?int,?int,?int,?int,+int),
-            queryComplexStudentsUri(+std::string,+std::string,+std::string,+std::string,+std::string),
-            queryComplexStudents(?int,?int,?int,?int,?int,+int),
-            queryObjAssertionSubjectUri(+std::string,+std::string),
-            queryObjAssertionSubject(?int,?int,+int),
-            queryObjAssertionClassUri(?int,?int),
-            queryObjAssertionClass(?int,?int),
-            queryEquivalentClass(?int)    ,
-            queryEquivalentClassReal(?int,?int)    ,
-            res(+std::string),
-            resultRealisation(+std::string,+std::string),
-            classification(),
-            resultClassification(+std::string,+std::string),
-            queryFullUri(?int),
-            logicalName(+std::string,?int),
-            realisation(),
-            queryisMemberOf(),
-            ResultVec(+StringSet,+int),
-            // Intermediate constraints for ID assignment (fix for missing logicalName)
-            queryInstancesWithId(+std::string,+int),
-            queryObjAssertionWithId(+std::string,+int),
-            queryDataAssertionWithId(+std::string,+int),
-            querySubjectByObjectWithId(+std::string,+int),
-            queryObjAssertionSubjectWithId(+std::string,+std::string,+int),
-            queryEngineeringStudentsWithId(+std::string,+std::string,+std::string,+std::string,+std::string,+int),
-            queryComplexStudentsWithId(+std::string,+std::string,+std::string,+std::string,+std::string,+int)
-
-            
-
+<chr_constraint>
+  owlPrefix(?int,?int),
+        owlClass(?int),
+        owlObjectProperty(?int),
+        owlDataProperty(?int),
+        owlNamedIndividual(?int),
+        owlSubclassOf(?int,?int),
+        owlEquivalentClass(?int,?int),
+        owlSubDataPropertyOf(?int,?int),
+        owlSubObjectPropertyOf(?int,?int),
+        owlEquivalentDataProperty(?int,?int),
+        owlEquivalentObjectProperty(?int,?int),
+        owlObjectPropertyDomain(?int,?int),
+        owlDataPropertyDomain(?int,?int),
+        owlObjectPropertyRange(?int,?int),
+        owlClassAssertion(?int,?int,+bool),
+        owlDisjointClass(?int,?int),
+        owlNegativeObjectAssertion(?int,?int,?int),
+        owlObjectPropertyAssertion(?int,?int,?int),
+        owlSameIndividual(?int,?int),
+        owlDifferentIndividual(?int,?int),
+        owlInverseObjectProperty(?int,?int),
+        owlSymmetricObjectProperty(?int),
+        owlAsymmetricObjectProperty(?int),
+        owlDisjointObjectProperty(?int,?int),
+        owlDisjointDataProperty(?int,?int),
+        owlReflexiveObjectProperty(?int),
+        owlIrreflexiveObjectProperty(?int),
+        owlFunctionalObjectProperty(?int),
+        owlFunctionalDataProperty(?int),
+        owlInverseFunctionalObjectProperty(?int),
+        owlTransitiveObjectProperty(?int),
+        owlDataPropertyAssertion(?int,?int,+Value),
+        owlNegativeDataAssertion(?int,?int,+Value),
+        owlDataPropertyRange(?int,+std::shared_ptr<[AnySimpleType]>),
+        owlUnionClass(?int,?int),
+        owlUnionOf(?int,+LogicalVarSet),
+        owlUnionOfLoop(?int,+LogicalVarSetIterator,+LogicalVarSetIterator),
+        owlIntersectionOf(?int,+LogicalVarSet),
+        owlIntersectionClass(?int,?int,+int),
+        owlIntersectionOfLoop(?int,+LogicalVarSetIterator,+LogicalVarSetIterator,+int),
+        intersectionSubclassCheck(?int,?int,+int),
+        owlCandidatsIntersection(?int,?int,+int),
+        owlObjectAllValuesFrom(?int,?int,?int),
+        owlDataAllValuesFrom(?int,?int,+std::shared_ptr<[AnySimpleType]>),
+        owlObjectSomeValuesFrom(?int,?int,?int),
+        owlDataSomeValuesFrom(?int,?int,+std::shared_ptr<[AnySimpleType]>),
+        owlDataValue(+Value,+std::string,+std::shared_ptr<[AnySimpleType]>),
+        owlComplementOf(?int,?int),
+        owlObjectMaxCardinality(?int,?int,+int),
+        owlDataMaxCardinality(?int,?int,+int),
+        owlHasValueObject(?int,?int,?int),
+        owlOneOf(?int,+LogicalVarSet),
+        owlOneOfLoop(?int,+LogicalVarSetIterator,+LogicalVarSetIterator),
+        owlObjectPropertyChain(?int,?int,+int,+int),
+        constructPropertyChain(?int,+int,?int,?int,+int) ,
+        owlHasKey(?int,?int,+int,+int),
+        owlHasKeyCheck(?int,?int,?int,+int,+int),
+        querySuperClassOfUri(+std::string),
+        querySubClassOfUri(+std::string),
+        querySuperClassOf(?int),
+        querySuperClassOfReal(?int,?int),
+        querySubClassOf(?int),
+        queryClassification(?int),
+        queryClassificationReal(?int),
+        queryClassificationUri(+std::string),
+        queryClassificationTemp(?int),
+        queryClassificationTempUri(+std::string),
+        queryInstanceURI(+std::string,+std::string),
+        queryInstance(?int,?int),
+        queryInstancesURI(+std::string),
+        queryInstances(?int,+int),
+        queryObjAssertionUri(+std::string),
+        queryObjAssertion(?int,+int),
+        querySubjectByObjectUri(+std::string),
+        querySubjectByObject(?int,+int),
+        queryDataAssertionUri(+std::string),
+        queryDataAssertion(?int,+int),
+        queryEngineeringStudentsUri(+std::string,+std::string,+std::string,+std::string,+std::string),
+        queryEngineeringStudents(?int,?int,?int,?int,?int,+int),
+        queryComplexStudentsUri(+std::string,+std::string,+std::string,+std::string,+std::string),
+        queryComplexStudents(?int,?int,?int,?int,?int,+int),
+        queryObjAssertionSubjectUri(+std::string,+std::string),
+        queryObjAssertionSubject(?int,?int,+int),
+        queryObjAssertionClassUri(?int,?int),
+        queryObjAssertionClass(?int,?int),
+        queryEquivalentClass(?int)    ,
+        queryEquivalentClassReal(?int,?int)    ,
+        res(+std::string),
+        resultRealisation(+std::string,+std::string),
+        classification(),
+        resultClassification(+std::string,+std::string),
+        queryFullUri(?int),
+        logicalName(+std::string,?int),
+        realisation(),
+        queryisMemberOf(),
+        ResultVec(+StringSet,+int),
+        // Intermediate constraints for ID assignment (fix for missing logicalName)
+        queryInstancesWithId(+std::string,+int),
+        queryObjAssertionWithId(+std::string,+int),
+        queryDataAssertionWithId(+std::string,+int),
+        querySubjectByObjectWithId(+std::string,+int),
+        queryObjAssertionSubjectWithId(+std::string,+std::string,+int),
+        queryEngineeringStudentsWithId(+std::string,+std::string,+std::string,+std::string,+std::string,+int),
+        queryComplexStudentsWithId(+std::string,+std::string,+std::string,+std::string,+std::string,+int)
 
 //suppression des doublons
 owlPrefix(X,Y) #passive \ owlPrefix(X,Y) <=> true ;;
@@ -509,7 +221,7 @@ NegativeDataAssertion @ owlNegativeDataAssertion(X,P,Y),owlDataPropertyAssertion
 
 //owlIrreflexiveObjectProperty(P) is true if the property P is an irreflexive object property
 irreflexiveProperty @ owlIrreflexiveObjectProperty(P),owlObjectPropertyAssertion(X,P,X)<=> failure();;
- 
+
 //if c1 complementOf c2 and x rdf:type c1 and  x rdf:type c2 it fail
 complementOf @ owlComplementOf(A,NOTA) , owlClassAssertion(X,A,true), owlClassAssertion(X,NOTA,true)<=> failure();;
 
@@ -759,33 +471,33 @@ owlHasValueObject(C,P,Y),owlObjectPropertyAssertion(U,P,Y) ==> owlClassAssertion
 //alors C est sous-classe de SV (les mêmes variables P et Y sont utilisées car getOrCreateLogicalVar
 //garantit que la même URI produit la même variable logique)
 hasValueSubsumption @ owlHasValueObject(C, P, A),
-                      owlClassAssertion(A, Y, true),
-                      owlObjectSomeValuesFrom(SV, P, Y)
+                    owlClassAssertion(A, Y, true),
+                    owlObjectSomeValuesFrom(SV, P, Y)
 ==> owlSubclassOf(C, SV) ;;
 
 //HasValue subsumption avec hiérarchie de classes: si C ≡ HasValue(P, A) et A:Y1 et Y1 ⊆ Y2,
 //et SV ≡ SomeValuesFrom(P, Y2), alors C ⊆ SV
 hasValueSubsumptionClass @ owlHasValueObject(C, P, A),
-                           owlClassAssertion(A, Y1, true),
-                           owlSubclassOf(Y1, Y2),
-                           owlObjectSomeValuesFrom(SV, P, Y2)
+                        owlClassAssertion(A, Y1, true),
+                        owlSubclassOf(Y1, Y2),
+                        owlObjectSomeValuesFrom(SV, P, Y2)
 ==> owlSubclassOf(C, SV) ;;
 
 //HasValue subsumption avec hiérarchie de propriétés: si C ≡ HasValue(P1, A) et P1 ⊆ P2 et A:Y,
 //et SV ≡ SomeValuesFrom(P2, Y), alors C ⊆ SV
 hasValueSubsumptionProp @ owlHasValueObject(C, P1, A),
-                          owlSubObjectPropertyOf(P1, P2),
-                          owlClassAssertion(A, Y, true),
-                          owlObjectSomeValuesFrom(SV, P2, Y)
+                        owlSubObjectPropertyOf(P1, P2),
+                        owlClassAssertion(A, Y, true),
+                        owlObjectSomeValuesFrom(SV, P2, Y)
 ==> owlSubclassOf(C, SV) ;;
 
 //HasValue subsumption avec hiérarchie de propriétés ET de classes: si C ≡ HasValue(P1, A) et P1 ⊆ P2,
 //et A:Y1 et Y1 ⊆ Y2, et SV ≡ SomeValuesFrom(P2, Y2), alors C ⊆ SV
 hasValueSubsumptionPropClass @ owlHasValueObject(C, P1, A),
-                               owlSubObjectPropertyOf(P1, P2),
-                               owlClassAssertion(A, Y1, true),
-                               owlSubclassOf(Y1, Y2),
-                               owlObjectSomeValuesFrom(SV, P2, Y2)
+                            owlSubObjectPropertyOf(P1, P2),
+                            owlClassAssertion(A, Y1, true),
+                            owlSubclassOf(Y1, Y2),
+                            owlObjectSomeValuesFrom(SV, P2, Y2)
 ==> owlSubclassOf(C, SV) ;;
 
 //OneOf: initialize loop to iterate over all individuals in the enumeration set
@@ -834,7 +546,7 @@ querySubClassOfUri(URIC) , logicalName(URIC,X) #passive ==> querySubClassOf(X) ,
 
 //querySubClassOf: recursively follow subclass relationships to find all subclasses  
 r_querySubClassOf1 @ querySubClassOf(X), owlSubclassOf(Y,X), logicalName(URIY,Y) #passive ==> 
-    !(X==Y) | querySubClassOf(Y),queryEquivalentClass(X), res(URIY) ;;
+!(X==Y) | querySubClassOf(Y),queryEquivalentClass(X), res(URIY) ;;
 
 
 
@@ -843,7 +555,7 @@ queryClassificationUri(URIX), logicalName(URIX,X) #passive ==> queryClassificati
 
 //queryClassification: add all direct class assertions to results AND recursively get superclasses
 r_queryClassification1 @ queryClassification(X), owlClassAssertion(X,C,true), logicalName(URIC,C) #passive ==> 
-    res(URIC), querySuperClassOf(C) , queryEquivalentClass(C);;
+res(URIC), querySuperClassOf(C) , queryEquivalentClass(C);;
 
 
 
@@ -870,7 +582,7 @@ classification(), owlSubclassOf(X,Y) , logicalName(URIX,X) #passive , logicalNam
 classification(), owlSubclassOf(X,X) , logicalName(URIX,X) #passive  ==> resultClassification(URIX,URIX) ;;
 
 //translate sparql querries (OWLBENCH)
-//ResultVec(S,ID) ==> afficherResultatSet(S,ID);;
+ResultVec(S,ID) ==> afficherResultatSet(S,ID);;
 ResultVec(S,ID) ==> stockerQueries(S,ID);;
 
 //query 1, 2, 5, 6, 8, 9, 16 : SELECT  DISTINCT  ?x  ?y  WHERE { ?x  :isMemberOf  ?y  }
@@ -917,7 +629,7 @@ querySubjectByObject(P,ID) <=> success();;
 //query 17 : SELECT DISTINCT ?x ?y WHERE {?x rdf:type :Student. ?x :isStudentOf ?y. ?y :isPartOf ?z . ?z :hasCollegeDiscipline :Engineering}
 queryEngineeringStudentsUri(URIE, URIF, URIG, URIH, URIK) <=> queryEngineeringStudentsWithId(URIE, URIF, URIG, URIH, URIK, get_next_id()) ;;
 logicalName(URIE, E), logicalName(URIF, F), logicalName(URIG, G), logicalName(URIH, H), logicalName(URIK, K) \
-  queryEngineeringStudentsWithId(URIE, URIF, URIG, URIH, URIK, ID) <=> queryEngineeringStudents(E, F, G, H, K, ID) ;;
+queryEngineeringStudentsWithId(URIE, URIF, URIG, URIH, URIK, ID) <=> queryEngineeringStudents(E, F, G, H, K, ID) ;;
 queryEngineeringStudentsWithId(URIE, URIF, URIG, URIH, URIK, ID) <=> success() ;;
 queryEngineeringStudents(E,F,G,H,K,ID) , owlClassAssertion(X,E,true), owlObjectPropertyAssertion(X,F,Y) , owlObjectPropertyAssertion(Y,G,Z) , owlObjectPropertyAssertion(Z,H,K) , logicalName(URIX,X) #passive,logicalName(URIY,Y) #passive ==> ResultVec(makeVec(URIX,URIY),ID);;
 queryEngineeringStudents(E,F,G,H,K,ID)  <=> success();;
@@ -925,122 +637,8 @@ queryEngineeringStudents(E,F,G,H,K,ID)  <=> success();;
 //query 18 : SELECT  DISTINCT  ?s  ?c  WHERE  {?s  rdf:type  :Student.  ?x rdf:type  :Organization.  ?x  :hasDean  ?z.  ?z  :teachesCourse  ?c.  ?s :takesCourse  ?c  }
 queryComplexStudentsUri(URIE, URIF, URIG, URIH, URIK) <=> queryComplexStudentsWithId(URIE, URIF, URIG, URIH, URIK, get_next_id()) ;;
 logicalName(URIE, E), logicalName(URIF, F), logicalName(URIG, G), logicalName(URIH, H), logicalName(URIK, K) \
-  queryComplexStudentsWithId(URIE, URIF, URIG, URIH, URIK, ID) <=> queryComplexStudents(E, F, G, H, K, ID) ;;
+queryComplexStudentsWithId(URIE, URIF, URIG, URIH, URIK, ID) <=> queryComplexStudents(E, F, G, H, K, ID) ;;
 queryComplexStudentsWithId(URIE, URIF, URIG, URIH, URIK, ID) <=> success() ;;
 queryComplexStudents(E, F, G, H,K, ID), owlClassAssertion(S,E,true),  owlClassAssertion(X,F,true), owlObjectPropertyAssertion(X,G,Z), owlObjectPropertyAssertion(Z,H,C) , owlObjectPropertyAssertion(S,K,C) , logicalName(URIS,S) #passive, logicalName(URIC,C) #passive==> ResultVec(makeVec(URIS,URIC),ID);;
 queryComplexStudents(E, F, G, H,K,ID)<=> success();;
-
 </CHR>
-*/
-
-namespace chr {
-
-template <>
-struct Type_instruction_wrapper<Value, false> {
-    static std::string to_string(const Value& v) {
-        return "Value(" + v.val + ")";
-    }
-
-    static void update_hash(const Value& v) {
-        XXHash<std::string>::update(v.val); // ou adapte selon ta logique de hachage
-    }
-
-    static bool is_equal(const Value& a, const Value& b) {
-        return a.val == b.val;
-    }
-};
-
-}
-
-
-template <typename T>
-void print(T& pb)
-{
-
-    auto it = pb.chr_store_begin();
-    while (!it.at_end())
-    {
-        std::cout << it.to_string() << std::endl;
-        ++it;
-    }
-
-}
-
-int main(int argc, char* argv[])
-{
-
-     std::ofstream fileReal(output_file_Real);
-     std::ofstream fileClassif(output_file_Classif);
-     std::ofstream fileQueries(output_file_Queries);
-     
-   // Déterminer le fichier à utiliser
-    //std::string filename = "results/OWL2RL-1.ofn"; // Valeur par défaut
-    std::string filename = "results/OWL2RL-1.ofn"; 
-    if (argc > 1) {
-        filename = argv[1];
-    }
-
-    auto start =std::chrono::steady_clock::now();
-    auto space = OWL2::create();
- CHR_RUN(
-    chr::Logical_var<int> owlThingLogicalVar;
-    chr::Logical_var<int> owlNothingLogicalVar;
-    space->logicalName(owlThing, owlThingLogicalVar);
-    space->logicalName(owlNothing, owlNothingLogicalVar);
-    ParserCowl<OWL2> parser(filename, *space);
-    parser.load();
-
-
-    space->realisation();
-    space->classification();
-<<<<<<< HEAD
-    space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#isMemberOf"));
-    space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#isPartOf"));
-    space->queryDataAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasAge"));
-    space->queryInstancesURI(std::string("https://kracr.iiitd.edu.in/OWL2Bench#T20CricketFan"));
-    space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasAlumnus"));
-    space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#isAffiliatedOrganizationOf"));
-    space->queryObjAssertionSubjectUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasCollegeDiscipline"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#NonScience"));
-    space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasCollaborationWith"));
-    space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#isAdvisedBy"));
-    space->queryInstancesURI(std::string("https://kracr.iiitd.edu.in/OWL2Bench#Person"));
-    space->queryInstancesURI(std::string("https://kracr.iiitd.edu.in/OWL2Bench#WomanCollege"));
-    space->queryInstancesURI(std::string("https://kracr.iiitd.edu.in/OWL2Bench#LeisureStudent"));
-    space->querySubjectByObjectUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#isHeadOf"));
-    space->querySubjectByObjectUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasHead"));
-    space->queryInstancesURI(std::string("https://kracr.iiitd.edu.in/OWL2Bench#Faculty"));
-    space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasSameHomeTownWith"));
-    space->queryEngineeringStudentsUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#Student"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#isStudentOf"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#isPartOf"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasCollegeDiscipline"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#Engineering"));
-    space->queryComplexStudentsUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#Student"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#Organization"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasDean"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#teachesCourse"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#takesCourse"));
-=======
-    //space->querySuperClassOfUri(std::string("http://schema.org/Person"));
-    space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#isMemberOf"));
-//     space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#isPartOf"));
-//     space->queryDataAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasAge"));
-//     space->queryInstancesURI(std::string("https://kracr.iiitd.edu.in/OWL2Bench#T20CricketFan"));
-//     space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasAlumnus"));
-//     space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#isAffiliatedOrganizationOf"));
-//     space->queryObjAssertionSubjectUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasCollegeDiscipline"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#NonScience"));
-//    space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasCollaborationWith"));
-//     space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#isAdvisedBy"));
-//     space->queryInstancesURI(std::string("https://kracr.iiitd.edu.in/OWL2Bench#Person"));
-//     space->queryInstancesURI(std::string("https://kracr.iiitd.edu.in/OWL2Bench#WomanCollege"));
-//     space->queryInstancesURI(std::string("https://kracr.iiitd.edu.in/OWL2Bench#LeisureStudent"));
-//     space->querySubjectByObjectUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#isHeadOf"));
-//     space->querySubjectByObjectUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasHead"));
-//     space->queryInstancesURI(std::string("https://kracr.iiitd.edu.in/OWL2Bench#Faculty"));
-//      space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasSameHomeTownWith"));
-//     space->queryEngineeringStudentsUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#Student"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#isStudentOf"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#isPartOf"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasCollegeDiscipline"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#Engineering"));
-//     space->queryComplexStudentsUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#Student"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#Organization"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasDean"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#teachesCourse"),std::string("https://kracr.iiitd.edu.in/OWL2Bench#takesCourse"));
->>>>>>> f1f59a9 (Add example ontologies and update main functionality)
-    
-
- )
-    auto end = std::chrono::steady_clock::now();
-    std::chrono::duration<double> elapsed = end - start;
-    std::cout<<"temps "<<  elapsed.count()  <<std::endl;
-   //print(*space);
-    //chr::Statistics::print(std::cout);
-
-    return 0;
-}

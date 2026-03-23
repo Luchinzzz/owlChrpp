@@ -1,0 +1,355 @@
+Prefix(:=<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14>
+
+Declaration(Class(:Course))
+Declaration(Class(:Course_work))
+Declaration(Class(:Department))
+Declaration(Class(:Exams))
+Declaration(Class(:Faculty))
+Declaration(Class(:Lab_room))
+Declaration(Class(:Lecture_hall))
+Declaration(Class(:Lecturer))
+Declaration(Class(:Library))
+Declaration(Class(:Program))
+Declaration(Class(:Student))
+Declaration(Class(:TA))
+Declaration(Class(:Thesis))
+Declaration(Class(:University))
+Declaration(Class(:academic_staff))
+Declaration(ObjectProperty(:belonging_to))
+Declaration(ObjectProperty(:faculties_of_university))
+Declaration(ObjectProperty(:is_studying))
+Declaration(ObjectProperty(:lecturers_of_faculty))
+Declaration(ObjectProperty(:offered_by))
+Declaration(ObjectProperty(:offers))
+Declaration(DataProperty(:course_code))
+Declaration(DataProperty(:department_code))
+Declaration(DataProperty(:grade))
+Declaration(DataProperty(:location))
+Declaration(DataProperty(:name))
+Declaration(DataProperty(:student_id))
+Declaration(NamedIndividual(:C1))
+Declaration(NamedIndividual(:C2))
+Declaration(NamedIndividual(:C3))
+Declaration(NamedIndividual(:C4))
+Declaration(NamedIndividual(:C5))
+Declaration(NamedIndividual(:D1))
+Declaration(NamedIndividual(:D2))
+Declaration(NamedIndividual(:F1))
+Declaration(NamedIndividual(:F2))
+Declaration(NamedIndividual(:F3))
+Declaration(NamedIndividual(:L1))
+Declaration(NamedIndividual(:L2))
+Declaration(NamedIndividual(:L3))
+Declaration(NamedIndividual(:S1))
+Declaration(NamedIndividual(:S2))
+Declaration(NamedIndividual(:S3))
+Declaration(NamedIndividual(:TA1))
+Declaration(NamedIndividual(:TA2))
+Declaration(NamedIndividual(:TA3))
+Declaration(NamedIndividual(:TA4))
+Declaration(NamedIndividual(:U1))
+Declaration(NamedIndividual(:U2))
+############################
+#   Object Properties
+############################
+
+# Object Property: :belonging_to (:belonging_to)
+
+ObjectPropertyDomain(:belonging_to :TA)
+ObjectPropertyRange(:belonging_to :Department)
+
+# Object Property: :faculties_of_university (:faculties_of_university)
+
+ObjectPropertyDomain(:faculties_of_university :University)
+ObjectPropertyRange(:faculties_of_university :Faculty)
+
+# Object Property: :is_studying (:is_studying)
+
+ObjectPropertyDomain(:is_studying :Student)
+ObjectPropertyRange(:is_studying :Course)
+
+# Object Property: :lecturers_of_faculty (:lecturers_of_faculty)
+
+ObjectPropertyDomain(:lecturers_of_faculty :Faculty)
+ObjectPropertyRange(:lecturers_of_faculty :Lecturer)
+
+# Object Property: :offered_by (:offered_by)
+
+InverseObjectProperties(:offered_by :offers)
+ObjectPropertyDomain(:offered_by :Course)
+ObjectPropertyRange(:offered_by :Faculty)
+
+# Object Property: :offers (:offers)
+
+ObjectPropertyDomain(:offers :Faculty)
+ObjectPropertyRange(:offers :Course)
+
+
+############################
+#   Data Properties
+############################
+
+# Data Property: :course_code (:course_code)
+
+SubDataPropertyOf(:course_code owl:topDataProperty)
+DataPropertyDomain(:course_code :Course)
+DataPropertyRange(:course_code xsd:string)
+
+# Data Property: :department_code (:department_code)
+
+SubDataPropertyOf(:department_code owl:topDataProperty)
+DataPropertyDomain(:department_code :Department)
+DataPropertyDomain(:department_code ObjectUnionOf(DataHasValue(:department_code "AI") DataHasValue(:department_code "CS") DataHasValue(:department_code "DS") DataHasValue(:department_code "IS") DataHasValue(:department_code "IT")))
+DataPropertyRange(:department_code xsd:string)
+
+# Data Property: :grade (:grade)
+
+SubDataPropertyOf(:grade owl:topDataProperty)
+DataPropertyDomain(:grade :Student)
+DataPropertyDomain(:grade DataMinCardinality(0 :grade xsd:double))
+DataPropertyDomain(:grade DataMaxCardinality(4 :grade xsd:double))
+DataPropertyRange(:grade xsd:double)
+
+# Data Property: :location (:location)
+
+SubDataPropertyOf(:location owl:topDataProperty)
+DataPropertyDomain(:location :University)
+DataPropertyRange(:location xsd:string)
+
+# Data Property: :name (:name)
+
+SubDataPropertyOf(:name owl:topDataProperty)
+DataPropertyDomain(:name :University)
+DataPropertyRange(:name xsd:string)
+
+# Data Property: :student_id (:student_id)
+
+SubDataPropertyOf(:student_id owl:topDataProperty)
+DataPropertyDomain(:student_id :Student)
+DataPropertyRange(:student_id xsd:string)
+
+
+
+############################
+#   Classes
+############################
+
+# Class: :Course (:Course)
+
+SubClassOf(:Course :University)
+
+# Class: :Course_work (:Course_work)
+
+SubClassOf(:Course_work :Course)
+
+# Class: :Department (:Department)
+
+SubClassOf(:Department :University)
+
+# Class: :Exams (:Exams)
+
+SubClassOf(:Exams :University)
+
+# Class: :Faculty (:Faculty)
+
+SubClassOf(:Faculty :University)
+
+# Class: :Lab_room (:Lab_room)
+
+SubClassOf(:Lab_room :University)
+
+# Class: :Lecture_hall (:Lecture_hall)
+
+SubClassOf(:Lecture_hall :University)
+
+# Class: :Lecturer (:Lecturer)
+
+SubClassOf(:Lecturer :University)
+
+# Class: :Library (:Library)
+
+SubClassOf(:Library :University)
+
+# Class: :Program (:Program)
+
+SubClassOf(:Program :University)
+
+# Class: :Student (:Student)
+
+SubClassOf(:Student :University)
+
+# Class: :TA (:TA)
+
+SubClassOf(:TA :University)
+
+# Class: :Thesis (:Thesis)
+
+SubClassOf(:Thesis :University)
+
+# Class: :University (:University)
+
+SubClassOf(:University owl:Thing)
+
+# Class: :academic_staff (:academic_staff)
+
+SubClassOf(:academic_staff :University)
+
+
+############################
+#   Named Individuals
+############################
+
+# Individual: :C1 (:C1)
+
+ClassAssertion(:Course :C1)
+ObjectPropertyAssertion(:offered_by :C1 :F1)
+DataPropertyAssertion(:course_code :C1 "CS123")
+DataPropertyAssertion(:name :C1 "OOP")
+
+# Individual: :C2 (:C2)
+
+ClassAssertion(:Course :C2)
+ObjectPropertyAssertion(:offered_by :C2 :F1)
+DataPropertyAssertion(:course_code :C2 "CS112")
+DataPropertyAssertion(:name :C2 "Algorithms")
+
+# Individual: :C3 (:C3)
+
+ClassAssertion(:Course :C3)
+ObjectPropertyAssertion(:offered_by :C3 :F1)
+DataPropertyAssertion(:course_code :C3 "CS113")
+DataPropertyAssertion(:name :C3 "c++")
+
+# Individual: :C4 (:C4)
+
+ClassAssertion(:Course :C4)
+ObjectPropertyAssertion(:offered_by :C4 :F3)
+DataPropertyAssertion(:course_code :C4 "CS321")
+DataPropertyAssertion(:name :C4 "DataBase")
+
+# Individual: :C5 (:C5)
+
+ClassAssertion(:Course :C5)
+ObjectPropertyAssertion(:offered_by :C5 :F3)
+DataPropertyAssertion(:course_code :C5 "CS521")
+DataPropertyAssertion(:name :C5 "Math3")
+
+# Individual: :D1 (:D1)
+
+ClassAssertion(:Department :D1)
+DataPropertyAssertion(:department_code :D1 "CS")
+DataPropertyAssertion(:name :D1 "computer science")
+
+# Individual: :D2 (:D2)
+
+ClassAssertion(:Department :D2)
+DataPropertyAssertion(:department_code :D2 "IT")
+DataPropertyAssertion(:name :D2 "information technology")
+
+# Individual: :F1 (:F1)
+
+ClassAssertion(:Faculty :F1)
+ObjectPropertyAssertion(:faculties_of_university :F1 :U1)
+DataPropertyAssertion(:location :F1 "Giza")
+DataPropertyAssertion(:name :F1 "Computer Science")
+
+# Individual: :F2 (:F2)
+
+ClassAssertion(:Faculty :F2)
+ObjectPropertyAssertion(:faculties_of_university :F2 :U2)
+DataPropertyAssertion(:location :F2 "Giza")
+DataPropertyAssertion(:name :F2 "calture faculty")
+
+# Individual: :F3 (:F3)
+
+ClassAssertion(:Faculty :F3)
+ObjectPropertyAssertion(:faculties_of_university :F3 :U1)
+DataPropertyAssertion(:location :F3 "Giza")
+DataPropertyAssertion(:name :F3 "Engennering faculty")
+
+# Individual: :L1 (:L1)
+
+ClassAssertion(:Lecturer :L1)
+ObjectPropertyAssertion(:lecturers_of_faculty :L1 :F1)
+DataPropertyAssertion(:name :L1 "Dr:Abir")
+
+# Individual: :L2 (:L2)
+
+ClassAssertion(:Lecturer :L2)
+ObjectPropertyAssertion(:lecturers_of_faculty :L2 :F1)
+DataPropertyAssertion(:name :L2 "Dr:Amin")
+
+# Individual: :L3 (:L3)
+
+ClassAssertion(:Lecturer :L3)
+ObjectPropertyAssertion(:lecturers_of_faculty :L3 :F3)
+DataPropertyAssertion(:name :L3 "Dr:Manar")
+
+# Individual: :S1 (:S1)
+
+ClassAssertion(:Student :S1)
+ObjectPropertyAssertion(:is_studying :S1 :C1)
+ObjectPropertyAssertion(:is_studying :S1 :C2)
+DataPropertyAssertion(:grade :S1 "3.22"^^xsd:double)
+DataPropertyAssertion(:name :S1 "Ahmed")
+
+# Individual: :S2 (:S2)
+
+ClassAssertion(:Student :S2)
+ObjectPropertyAssertion(:is_studying :S2 :C3)
+ObjectPropertyAssertion(:is_studying :S2 :C4)
+DataPropertyAssertion(:grade :S2 "3.45"^^xsd:double)
+DataPropertyAssertion(:name :S2 "Khaled")
+
+# Individual: :S3 (:S3)
+
+ClassAssertion(:Student :S3)
+ObjectPropertyAssertion(:is_studying :S3 :C1)
+ObjectPropertyAssertion(:is_studying :S3 :C5)
+DataPropertyAssertion(:grade :S3 "3.7"^^xsd:double)
+DataPropertyAssertion(:name :S3 "Manar")
+
+# Individual: :TA1 (:TA1)
+
+ClassAssertion(:TA :TA1)
+ObjectPropertyAssertion(:belonging_to :TA1 :D1)
+DataPropertyAssertion(:name :TA1 "Ahmed Sayed")
+
+# Individual: :TA2 (:TA2)
+
+ClassAssertion(:TA :TA2)
+ObjectPropertyAssertion(:belonging_to :TA2 :D1)
+DataPropertyAssertion(:name :TA2 "Samah")
+
+# Individual: :TA3 (:TA3)
+
+ClassAssertion(:TA :TA3)
+ObjectPropertyAssertion(:belonging_to :TA3 :D1)
+DataPropertyAssertion(:name :TA3 "Aya")
+
+# Individual: :TA4 (:TA4)
+
+ClassAssertion(:TA :TA4)
+ObjectPropertyAssertion(:belonging_to :TA4 :D1)
+DataPropertyAssertion(:name :TA4 "Khaled Ashraf")
+
+# Individual: :U1 (:U1)
+
+ClassAssertion(:University :U1)
+DataPropertyAssertion(:name :U1 "Cairo University")
+
+# Individual: :U2 (:U2)
+
+ClassAssertion(:University :U2)
+DataPropertyAssertion(:name :U2 "Helwan University")
+
+
+)

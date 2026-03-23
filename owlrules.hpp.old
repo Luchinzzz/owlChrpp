@@ -1,0 +1,1960 @@
+#pragma once
+
+#include <chrpp.hh>
+#include "include/AnySimpleType.h"
+#include <iostream>
+#include "include/constants.h"
+#include "include/types.h"
+#include "include/utils.h"
+#include "include/chr_traits.h"
+#include "include/parsercowl.h"
+
+class OWL2 {
+    unsigned long int next_free_constraint_id = 1;
+
+public:
+    // ==================== CONSTRAINT STORE DECLARATIONS ====================
+
+    struct owlPrefix {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,1> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlClass {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlObjectProperty {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlDataProperty {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlNamedIndividual {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlSubclassOf {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,1>, chr::LNS::Index<0>, chr::LNS::Index<1> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlEquivalentClass {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0>, chr::LNS::Index<0,1> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlSubDataPropertyOf {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0>, chr::LNS::Index<1>, chr::LNS::Index<0,1> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlSubObjectPropertyOf {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0>, chr::LNS::Index<1>, chr::LNS::Index<0,1> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlEquivalentDataProperty {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,1> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlEquivalentObjectProperty {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,1> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlObjectPropertyDomain {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0>, chr::LNS::Index<0,1>, chr::LNS::Index<1> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlDataPropertyDomain {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0>, chr::LNS::Index<0,1> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlObjectPropertyRange {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0>, chr::LNS::Index<0,1>, chr::LNS::Index<1> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlClassAssertion {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int >, chr::Logical_var_ground< bool > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,2>, chr::LNS::Index<1,2>, chr::LNS::Index<0,1,2>, chr::LNS::Index<2>, chr::LNS::Index<0> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlDisjointClass {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,1> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlNegativeObjectAssertion {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int >, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,1,2> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlObjectPropertyAssertion {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int >, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,1>, chr::LNS::Index<2>, chr::LNS::Index<0,1,2>, chr::LNS::Index<1>, chr::LNS::Index<1,2>, chr::LNS::Index<0,2>, chr::LNS::Index<0> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlSameIndividual {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0>, chr::LNS::Index<0,1>, chr::LNS::Index<1> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlDifferentIndividual {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,1> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlInverseObjectProperty {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,1>, chr::LNS::Index<0> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlSymmetricObjectProperty {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlAsymmetricObjectProperty {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlDisjointObjectProperty {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,1> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlDisjointDataProperty {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,1> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlReflexiveObjectProperty {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlIrreflexiveObjectProperty {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlFunctionalObjectProperty {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlFunctionalDataProperty {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlInverseFunctionalObjectProperty {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlTransitiveObjectProperty {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlDataPropertyAssertion {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int >, chr::Logical_var_ground< Value > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0>, chr::LNS::Index<0,1>, chr::LNS::Index<0,1,2>, chr::LNS::Index<0,2>, chr::LNS::Index<1,2>, chr::LNS::Index<1>, chr::LNS::Index<2> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlNegativeDataAssertion {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int >, chr::Logical_var_ground< Value > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,1,2> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlDataPropertyRange {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var_ground< std::shared_ptr< AnySimpleType > > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0>, chr::LNS::Index<0,1> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlUnionClass {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<1>, chr::LNS::Index<0,1> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlUnionOf {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var_ground< LogicalVarSet > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,1>, chr::LNS::Index<1> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlUnionOfLoop {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var_ground< LogicalVarSetIterator >, chr::Logical_var_ground< LogicalVarSetIterator > >;
+    };
+
+    struct owlIntersectionOf {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var_ground< LogicalVarSet > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,1> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlIntersectionClass {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int >, chr::Logical_var_ground< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,2>, chr::LNS::Index<0,1,2>, chr::LNS::Index<1,2>, chr::LNS::Index<1>, chr::LNS::Index<0> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlIntersectionOfLoop {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var_ground< LogicalVarSetIterator >, chr::Logical_var_ground< LogicalVarSetIterator >, chr::Logical_var_ground< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,3>, chr::LNS::Index<0,1,2,3> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct intersectionSubclassCheck {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int >, chr::Logical_var_ground< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,1,2>, chr::LNS::Index<0,2> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlCandidatsIntersection {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int >, chr::Logical_var_ground< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,1,2>, chr::LNS::Index<1,2> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlObjectAllValuesFrom {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int >, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,1,2> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlDataAllValuesFrom {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int >, chr::Logical_var_ground< std::shared_ptr< AnySimpleType > > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,1,2> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlObjectSomeValuesFrom {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int >, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<2>, chr::LNS::Index<0>, chr::LNS::Index<1,2>, chr::LNS::Index<0,1,2> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlDataSomeValuesFrom {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int >, chr::Logical_var_ground< std::shared_ptr< AnySimpleType > > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0>, chr::LNS::Index<1>, chr::LNS::Index<0,1,2> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlDataValue {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var_ground< Value >, chr::Logical_var_ground< std::string >, chr::Logical_var_ground< std::shared_ptr< AnySimpleType > > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,1>, chr::LNS::Index<0>, chr::LNS::Index<1>, chr::LNS::Index<0,1,2> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlComplementOf {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,1> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlObjectMaxCardinality {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int >, chr::Logical_var_ground< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,2>, chr::LNS::Index<0,1,2>, chr::LNS::Index<1,2> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlDataMaxCardinality {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int >, chr::Logical_var_ground< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,2>, chr::LNS::Index<0,1,2>, chr::LNS::Index<1,2> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlHasValueObject {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int >, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0>, chr::LNS::Index<2>, chr::LNS::Index<0,1,2>, chr::LNS::Index<0,1>, chr::LNS::Index<1,2> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlOneOf {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var_ground< LogicalVarSet > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,1> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlOneOfLoop {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var_ground< LogicalVarSetIterator >, chr::Logical_var_ground< LogicalVarSetIterator > >;
+    };
+
+    struct owlObjectPropertyChain {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int >, chr::Logical_var_ground< int >, chr::Logical_var_ground< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,3>, chr::LNS::Index<1,2>, chr::LNS::Index<1> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct constructPropertyChain {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var_ground< int >, chr::Logical_var< int >, chr::Logical_var< int >, chr::Logical_var_ground< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,1,2,3,4>, chr::LNS::Index<0,3,4>, chr::LNS::Index<0,4> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlHasKey {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int >, chr::Logical_var_ground< int >, chr::Logical_var_ground< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,2>, chr::LNS::Index<0,1,2,3>, chr::LNS::Index<0,2,3> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct owlHasKeyCheck {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int >, chr::Logical_var< int >, chr::Logical_var_ground< int >, chr::Logical_var_ground< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<1,2>, chr::LNS::Index<0,3,4>, chr::LNS::Index<0,1,2,3,4> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct querySuperClassOfUri {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var_ground< std::string > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct querySubClassOfUri {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var_ground< std::string > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct querySuperClassOf {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct querySuperClassOfReal {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,1> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct querySubClassOf {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct queryClassification {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct queryClassificationReal {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct queryClassificationUri {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var_ground< std::string > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct queryClassificationTemp {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct queryClassificationTempUri {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var_ground< std::string > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct queryInstanceURI {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var_ground< std::string >, chr::Logical_var_ground< std::string > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,1> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct queryInstance {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int > >;
+    };
+
+    struct queryInstancesURI {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var_ground< std::string > >;
+    };
+
+    struct queryInstances {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var_ground< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0>, chr::LNS::Index<0,1> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct queryObjAssertionUri {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var_ground< std::string > >;
+    };
+
+    struct queryObjAssertion {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var_ground< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0>, chr::LNS::Index<0,1> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct querySubjectByObjectUri {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var_ground< std::string > >;
+    };
+
+    struct querySubjectByObject {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var_ground< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0>, chr::LNS::Index<0,1> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct queryDataAssertionUri {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var_ground< std::string > >;
+    };
+
+    struct queryDataAssertion {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var_ground< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0>, chr::LNS::Index<0,1> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct queryEngineeringStudentsUri {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var_ground< std::string >, chr::Logical_var_ground< std::string >, chr::Logical_var_ground< std::string >, chr::Logical_var_ground< std::string >, chr::Logical_var_ground< std::string > >;
+    };
+
+    struct queryEngineeringStudents {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int >, chr::Logical_var< int >, chr::Logical_var< int >, chr::Logical_var< int >, chr::Logical_var_ground< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0>, chr::LNS::Index<0,1>, chr::LNS::Index<0,2>, chr::LNS::Index<0,3,4> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct queryComplexStudentsUri {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var_ground< std::string >, chr::Logical_var_ground< std::string >, chr::Logical_var_ground< std::string >, chr::Logical_var_ground< std::string >, chr::Logical_var_ground< std::string > >;
+    };
+
+    struct queryComplexStudents {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int >, chr::Logical_var< int >, chr::Logical_var< int >, chr::Logical_var< int >, chr::Logical_var_ground< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,1>, chr::LNS::Index<0,1,2>, chr::LNS::Index<0,1,3>, chr::LNS::Index<0,1,4> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct queryObjAssertionSubjectUri {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var_ground< std::string >, chr::Logical_var_ground< std::string > >;
+    };
+
+    struct queryObjAssertionSubject {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int >, chr::Logical_var_ground< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,1>, chr::LNS::Index<0,1,2> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct queryObjAssertionClassUri {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,1> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct queryObjAssertionClass {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,1> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct queryEquivalentClass {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct queryEquivalentClassReal {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,1> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct res {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var_ground< std::string > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct resultRealisation {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var_ground< std::string >, chr::Logical_var_ground< std::string > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,1> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct classification {
+        using Type = typename std::tuple< unsigned long int >;
+        using Constraint_store_t = typename chr::Constraint_store_simple< Type, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct resultClassification {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var_ground< std::string >, chr::Logical_var_ground< std::string > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0>, chr::LNS::Index<0,1> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct queryFullUri {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct logicalName {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var_ground< std::string >, chr::Logical_var< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0>, chr::LNS::Index<1>, chr::LNS::Index<0,1> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct realisation {
+        using Type = typename std::tuple< unsigned long int >;
+        using Constraint_store_t = typename chr::Constraint_store_simple< Type, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct queryisMemberOf {
+        using Type = typename std::tuple< unsigned long int >;
+        using Constraint_store_t = typename chr::Constraint_store_simple< Type, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct ResultVec {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var_ground< StringSet >, chr::Logical_var_ground< int > >;
+        using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,1> >, false >;
+        class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+        public:
+            Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it);
+            Constraint_callback(const Constraint_callback&) = delete;
+            void operator=(const Constraint_callback&) = delete;
+            ~Constraint_callback();
+            unsigned char run() override;
+        private:
+            chr::Weak_obj< OWL2 > _space;
+            typename Constraint_store_t::iterator _it;
+        };
+    };
+
+    struct queryInstancesWithId {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var_ground< std::string >, chr::Logical_var_ground< int > >;
+    };
+
+    struct queryObjAssertionWithId {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var_ground< std::string >, chr::Logical_var_ground< int > >;
+    };
+
+    struct queryDataAssertionWithId {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var_ground< std::string >, chr::Logical_var_ground< int > >;
+    };
+
+    struct querySubjectByObjectWithId {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var_ground< std::string >, chr::Logical_var_ground< int > >;
+    };
+
+    struct queryObjAssertionSubjectWithId {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var_ground< std::string >, chr::Logical_var_ground< std::string >, chr::Logical_var_ground< int > >;
+    };
+
+    struct queryEngineeringStudentsWithId {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var_ground< std::string >, chr::Logical_var_ground< std::string >, chr::Logical_var_ground< std::string >, chr::Logical_var_ground< std::string >, chr::Logical_var_ground< std::string >, chr::Logical_var_ground< int > >;
+    };
+
+    struct queryComplexStudentsWithId {
+        using Type = typename std::tuple< unsigned long int, chr::Logical_var_ground< std::string >, chr::Logical_var_ground< std::string >, chr::Logical_var_ground< std::string >, chr::Logical_var_ground< std::string >, chr::Logical_var_ground< std::string >, chr::Logical_var_ground< int > >;
+    };
+
+private:
+    // ==================== CONSTRAINT STORES ====================
+    chr::Shared_obj< typename owlPrefix::Constraint_store_t >              owlPrefix_constraint_store{ chr::make_shared< typename owlPrefix::Constraint_store_t >("owlPrefix") };
+    chr::Shared_obj< typename owlClass::Constraint_store_t >               owlClass_constraint_store{ chr::make_shared< typename owlClass::Constraint_store_t >("owlClass") };
+    chr::Shared_obj< typename owlObjectProperty::Constraint_store_t >      owlObjectProperty_constraint_store{ chr::make_shared< typename owlObjectProperty::Constraint_store_t >("owlObjectProperty") };
+    chr::Shared_obj< typename owlDataProperty::Constraint_store_t >        owlDataProperty_constraint_store{ chr::make_shared< typename owlDataProperty::Constraint_store_t >("owlDataProperty") };
+    chr::Shared_obj< typename owlNamedIndividual::Constraint_store_t >     owlNamedIndividual_constraint_store{ chr::make_shared< typename owlNamedIndividual::Constraint_store_t >("owlNamedIndividual") };
+    chr::Shared_obj< typename owlSubclassOf::Constraint_store_t >          owlSubclassOf_constraint_store{ chr::make_shared< typename owlSubclassOf::Constraint_store_t >("owlSubclassOf") };
+    chr::Shared_obj< typename owlEquivalentClass::Constraint_store_t >     owlEquivalentClass_constraint_store{ chr::make_shared< typename owlEquivalentClass::Constraint_store_t >("owlEquivalentClass") };
+    chr::Shared_obj< typename owlSubDataPropertyOf::Constraint_store_t >   owlSubDataPropertyOf_constraint_store{ chr::make_shared< typename owlSubDataPropertyOf::Constraint_store_t >("owlSubDataPropertyOf") };
+    chr::Shared_obj< typename owlSubObjectPropertyOf::Constraint_store_t > owlSubObjectPropertyOf_constraint_store{ chr::make_shared< typename owlSubObjectPropertyOf::Constraint_store_t >("owlSubObjectPropertyOf") };
+    chr::Shared_obj< typename owlEquivalentDataProperty::Constraint_store_t >   owlEquivalentDataProperty_constraint_store{ chr::make_shared< typename owlEquivalentDataProperty::Constraint_store_t >("owlEquivalentDataProperty") };
+    chr::Shared_obj< typename owlEquivalentObjectProperty::Constraint_store_t > owlEquivalentObjectProperty_constraint_store{ chr::make_shared< typename owlEquivalentObjectProperty::Constraint_store_t >("owlEquivalentObjectProperty") };
+    chr::Shared_obj< typename owlObjectPropertyDomain::Constraint_store_t > owlObjectPropertyDomain_constraint_store{ chr::make_shared< typename owlObjectPropertyDomain::Constraint_store_t >("owlObjectPropertyDomain") };
+    chr::Shared_obj< typename owlDataPropertyDomain::Constraint_store_t >  owlDataPropertyDomain_constraint_store{ chr::make_shared< typename owlDataPropertyDomain::Constraint_store_t >("owlDataPropertyDomain") };
+    chr::Shared_obj< typename owlObjectPropertyRange::Constraint_store_t > owlObjectPropertyRange_constraint_store{ chr::make_shared< typename owlObjectPropertyRange::Constraint_store_t >("owlObjectPropertyRange") };
+    chr::Shared_obj< typename owlClassAssertion::Constraint_store_t >      owlClassAssertion_constraint_store{ chr::make_shared< typename owlClassAssertion::Constraint_store_t >("owlClassAssertion") };
+    chr::Shared_obj< typename owlDisjointClass::Constraint_store_t >       owlDisjointClass_constraint_store{ chr::make_shared< typename owlDisjointClass::Constraint_store_t >("owlDisjointClass") };
+    chr::Shared_obj< typename owlNegativeObjectAssertion::Constraint_store_t > owlNegativeObjectAssertion_constraint_store{ chr::make_shared< typename owlNegativeObjectAssertion::Constraint_store_t >("owlNegativeObjectAssertion") };
+    chr::Shared_obj< typename owlObjectPropertyAssertion::Constraint_store_t > owlObjectPropertyAssertion_constraint_store{ chr::make_shared< typename owlObjectPropertyAssertion::Constraint_store_t >("owlObjectPropertyAssertion") };
+    chr::Shared_obj< typename owlSameIndividual::Constraint_store_t >      owlSameIndividual_constraint_store{ chr::make_shared< typename owlSameIndividual::Constraint_store_t >("owlSameIndividual") };
+    chr::Shared_obj< typename owlDifferentIndividual::Constraint_store_t > owlDifferentIndividual_constraint_store{ chr::make_shared< typename owlDifferentIndividual::Constraint_store_t >("owlDifferentIndividual") };
+    chr::Shared_obj< typename owlInverseObjectProperty::Constraint_store_t >    owlInverseObjectProperty_constraint_store{ chr::make_shared< typename owlInverseObjectProperty::Constraint_store_t >("owlInverseObjectProperty") };
+    chr::Shared_obj< typename owlSymmetricObjectProperty::Constraint_store_t >  owlSymmetricObjectProperty_constraint_store{ chr::make_shared< typename owlSymmetricObjectProperty::Constraint_store_t >("owlSymmetricObjectProperty") };
+    chr::Shared_obj< typename owlAsymmetricObjectProperty::Constraint_store_t > owlAsymmetricObjectProperty_constraint_store{ chr::make_shared< typename owlAsymmetricObjectProperty::Constraint_store_t >("owlAsymmetricObjectProperty") };
+    chr::Shared_obj< typename owlDisjointObjectProperty::Constraint_store_t >   owlDisjointObjectProperty_constraint_store{ chr::make_shared< typename owlDisjointObjectProperty::Constraint_store_t >("owlDisjointObjectProperty") };
+    chr::Shared_obj< typename owlDisjointDataProperty::Constraint_store_t >     owlDisjointDataProperty_constraint_store{ chr::make_shared< typename owlDisjointDataProperty::Constraint_store_t >("owlDisjointDataProperty") };
+    chr::Shared_obj< typename owlReflexiveObjectProperty::Constraint_store_t >  owlReflexiveObjectProperty_constraint_store{ chr::make_shared< typename owlReflexiveObjectProperty::Constraint_store_t >("owlReflexiveObjectProperty") };
+    chr::Shared_obj< typename owlIrreflexiveObjectProperty::Constraint_store_t > owlIrreflexiveObjectProperty_constraint_store{ chr::make_shared< typename owlIrreflexiveObjectProperty::Constraint_store_t >("owlIrreflexiveObjectProperty") };
+    chr::Shared_obj< typename owlFunctionalObjectProperty::Constraint_store_t >  owlFunctionalObjectProperty_constraint_store{ chr::make_shared< typename owlFunctionalObjectProperty::Constraint_store_t >("owlFunctionalObjectProperty") };
+    chr::Shared_obj< typename owlFunctionalDataProperty::Constraint_store_t >   owlFunctionalDataProperty_constraint_store{ chr::make_shared< typename owlFunctionalDataProperty::Constraint_store_t >("owlFunctionalDataProperty") };
+    chr::Shared_obj< typename owlInverseFunctionalObjectProperty::Constraint_store_t > owlInverseFunctionalObjectProperty_constraint_store{ chr::make_shared< typename owlInverseFunctionalObjectProperty::Constraint_store_t >("owlInverseFunctionalObjectProperty") };
+    chr::Shared_obj< typename owlTransitiveObjectProperty::Constraint_store_t >  owlTransitiveObjectProperty_constraint_store{ chr::make_shared< typename owlTransitiveObjectProperty::Constraint_store_t >("owlTransitiveObjectProperty") };
+    chr::Shared_obj< typename owlDataPropertyAssertion::Constraint_store_t >     owlDataPropertyAssertion_constraint_store{ chr::make_shared< typename owlDataPropertyAssertion::Constraint_store_t >("owlDataPropertyAssertion") };
+    chr::Shared_obj< typename owlNegativeDataAssertion::Constraint_store_t >     owlNegativeDataAssertion_constraint_store{ chr::make_shared< typename owlNegativeDataAssertion::Constraint_store_t >("owlNegativeDataAssertion") };
+    chr::Shared_obj< typename owlDataPropertyRange::Constraint_store_t >         owlDataPropertyRange_constraint_store{ chr::make_shared< typename owlDataPropertyRange::Constraint_store_t >("owlDataPropertyRange") };
+    chr::Shared_obj< typename owlUnionClass::Constraint_store_t >                owlUnionClass_constraint_store{ chr::make_shared< typename owlUnionClass::Constraint_store_t >("owlUnionClass") };
+    chr::Shared_obj< typename owlUnionOf::Constraint_store_t >                   owlUnionOf_constraint_store{ chr::make_shared< typename owlUnionOf::Constraint_store_t >("owlUnionOf") };
+    chr::Shared_obj< typename owlIntersectionOf::Constraint_store_t >            owlIntersectionOf_constraint_store{ chr::make_shared< typename owlIntersectionOf::Constraint_store_t >("owlIntersectionOf") };
+    chr::Shared_obj< typename owlIntersectionClass::Constraint_store_t >         owlIntersectionClass_constraint_store{ chr::make_shared< typename owlIntersectionClass::Constraint_store_t >("owlIntersectionClass") };
+    chr::Shared_obj< typename owlIntersectionOfLoop::Constraint_store_t >        owlIntersectionOfLoop_constraint_store{ chr::make_shared< typename owlIntersectionOfLoop::Constraint_store_t >("owlIntersectionOfLoop") };
+    chr::Shared_obj< typename intersectionSubclassCheck::Constraint_store_t >    intersectionSubclassCheck_constraint_store{ chr::make_shared< typename intersectionSubclassCheck::Constraint_store_t >("intersectionSubclassCheck") };
+    chr::Shared_obj< typename owlCandidatsIntersection::Constraint_store_t >     owlCandidatsIntersection_constraint_store{ chr::make_shared< typename owlCandidatsIntersection::Constraint_store_t >("owlCandidatsIntersection") };
+    chr::Shared_obj< typename owlObjectAllValuesFrom::Constraint_store_t >       owlObjectAllValuesFrom_constraint_store{ chr::make_shared< typename owlObjectAllValuesFrom::Constraint_store_t >("owlObjectAllValuesFrom") };
+    chr::Shared_obj< typename owlDataAllValuesFrom::Constraint_store_t >         owlDataAllValuesFrom_constraint_store{ chr::make_shared< typename owlDataAllValuesFrom::Constraint_store_t >("owlDataAllValuesFrom") };
+    chr::Shared_obj< typename owlObjectSomeValuesFrom::Constraint_store_t >      owlObjectSomeValuesFrom_constraint_store{ chr::make_shared< typename owlObjectSomeValuesFrom::Constraint_store_t >("owlObjectSomeValuesFrom") };
+    chr::Shared_obj< typename owlDataSomeValuesFrom::Constraint_store_t >        owlDataSomeValuesFrom_constraint_store{ chr::make_shared< typename owlDataSomeValuesFrom::Constraint_store_t >("owlDataSomeValuesFrom") };
+    chr::Shared_obj< typename owlDataValue::Constraint_store_t >                 owlDataValue_constraint_store{ chr::make_shared< typename owlDataValue::Constraint_store_t >("owlDataValue") };
+    chr::Shared_obj< typename owlComplementOf::Constraint_store_t >              owlComplementOf_constraint_store{ chr::make_shared< typename owlComplementOf::Constraint_store_t >("owlComplementOf") };
+    chr::Shared_obj< typename owlObjectMaxCardinality::Constraint_store_t >      owlObjectMaxCardinality_constraint_store{ chr::make_shared< typename owlObjectMaxCardinality::Constraint_store_t >("owlObjectMaxCardinality") };
+    chr::Shared_obj< typename owlDataMaxCardinality::Constraint_store_t >        owlDataMaxCardinality_constraint_store{ chr::make_shared< typename owlDataMaxCardinality::Constraint_store_t >("owlDataMaxCardinality") };
+    chr::Shared_obj< typename owlHasValueObject::Constraint_store_t >            owlHasValueObject_constraint_store{ chr::make_shared< typename owlHasValueObject::Constraint_store_t >("owlHasValueObject") };
+    chr::Shared_obj< typename owlOneOf::Constraint_store_t >                     owlOneOf_constraint_store{ chr::make_shared< typename owlOneOf::Constraint_store_t >("owlOneOf") };
+    chr::Shared_obj< typename owlObjectPropertyChain::Constraint_store_t >       owlObjectPropertyChain_constraint_store{ chr::make_shared< typename owlObjectPropertyChain::Constraint_store_t >("owlObjectPropertyChain") };
+    chr::Shared_obj< typename constructPropertyChain::Constraint_store_t >       constructPropertyChain_constraint_store{ chr::make_shared< typename constructPropertyChain::Constraint_store_t >("constructPropertyChain") };
+    chr::Shared_obj< typename owlHasKey::Constraint_store_t >                    owlHasKey_constraint_store{ chr::make_shared< typename owlHasKey::Constraint_store_t >("owlHasKey") };
+    chr::Shared_obj< typename owlHasKeyCheck::Constraint_store_t >               owlHasKeyCheck_constraint_store{ chr::make_shared< typename owlHasKeyCheck::Constraint_store_t >("owlHasKeyCheck") };
+    chr::Shared_obj< typename querySuperClassOfUri::Constraint_store_t >         querySuperClassOfUri_constraint_store{ chr::make_shared< typename querySuperClassOfUri::Constraint_store_t >("querySuperClassOfUri") };
+    chr::Shared_obj< typename querySubClassOfUri::Constraint_store_t >           querySubClassOfUri_constraint_store{ chr::make_shared< typename querySubClassOfUri::Constraint_store_t >("querySubClassOfUri") };
+    chr::Shared_obj< typename querySuperClassOf::Constraint_store_t >            querySuperClassOf_constraint_store{ chr::make_shared< typename querySuperClassOf::Constraint_store_t >("querySuperClassOf") };
+    chr::Shared_obj< typename querySuperClassOfReal::Constraint_store_t >        querySuperClassOfReal_constraint_store{ chr::make_shared< typename querySuperClassOfReal::Constraint_store_t >("querySuperClassOfReal") };
+    chr::Shared_obj< typename querySubClassOf::Constraint_store_t >              querySubClassOf_constraint_store{ chr::make_shared< typename querySubClassOf::Constraint_store_t >("querySubClassOf") };
+    chr::Shared_obj< typename queryClassification::Constraint_store_t >          queryClassification_constraint_store{ chr::make_shared< typename queryClassification::Constraint_store_t >("queryClassification") };
+    chr::Shared_obj< typename queryClassificationReal::Constraint_store_t >      queryClassificationReal_constraint_store{ chr::make_shared< typename queryClassificationReal::Constraint_store_t >("queryClassificationReal") };
+    chr::Shared_obj< typename queryClassificationUri::Constraint_store_t >       queryClassificationUri_constraint_store{ chr::make_shared< typename queryClassificationUri::Constraint_store_t >("queryClassificationUri") };
+    chr::Shared_obj< typename queryClassificationTemp::Constraint_store_t >      queryClassificationTemp_constraint_store{ chr::make_shared< typename queryClassificationTemp::Constraint_store_t >("queryClassificationTemp") };
+    chr::Shared_obj< typename queryClassificationTempUri::Constraint_store_t >   queryClassificationTempUri_constraint_store{ chr::make_shared< typename queryClassificationTempUri::Constraint_store_t >("queryClassificationTempUri") };
+    chr::Shared_obj< typename queryInstanceURI::Constraint_store_t >             queryInstanceURI_constraint_store{ chr::make_shared< typename queryInstanceURI::Constraint_store_t >("queryInstanceURI") };
+    chr::Shared_obj< typename queryInstances::Constraint_store_t >               queryInstances_constraint_store{ chr::make_shared< typename queryInstances::Constraint_store_t >("queryInstances") };
+    chr::Shared_obj< typename queryObjAssertion::Constraint_store_t >            queryObjAssertion_constraint_store{ chr::make_shared< typename queryObjAssertion::Constraint_store_t >("queryObjAssertion") };
+    chr::Shared_obj< typename querySubjectByObject::Constraint_store_t >         querySubjectByObject_constraint_store{ chr::make_shared< typename querySubjectByObject::Constraint_store_t >("querySubjectByObject") };
+    chr::Shared_obj< typename queryDataAssertion::Constraint_store_t >           queryDataAssertion_constraint_store{ chr::make_shared< typename queryDataAssertion::Constraint_store_t >("queryDataAssertion") };
+    chr::Shared_obj< typename queryEngineeringStudents::Constraint_store_t >     queryEngineeringStudents_constraint_store{ chr::make_shared< typename queryEngineeringStudents::Constraint_store_t >("queryEngineeringStudents") };
+    chr::Shared_obj< typename queryComplexStudents::Constraint_store_t >         queryComplexStudents_constraint_store{ chr::make_shared< typename queryComplexStudents::Constraint_store_t >("queryComplexStudents") };
+    chr::Shared_obj< typename queryObjAssertionSubject::Constraint_store_t >     queryObjAssertionSubject_constraint_store{ chr::make_shared< typename queryObjAssertionSubject::Constraint_store_t >("queryObjAssertionSubject") };
+    chr::Shared_obj< typename queryObjAssertionClassUri::Constraint_store_t >    queryObjAssertionClassUri_constraint_store{ chr::make_shared< typename queryObjAssertionClassUri::Constraint_store_t >("queryObjAssertionClassUri") };
+    chr::Shared_obj< typename queryObjAssertionClass::Constraint_store_t >       queryObjAssertionClass_constraint_store{ chr::make_shared< typename queryObjAssertionClass::Constraint_store_t >("queryObjAssertionClass") };
+    chr::Shared_obj< typename queryEquivalentClass::Constraint_store_t >         queryEquivalentClass_constraint_store{ chr::make_shared< typename queryEquivalentClass::Constraint_store_t >("queryEquivalentClass") };
+    chr::Shared_obj< typename queryEquivalentClassReal::Constraint_store_t >     queryEquivalentClassReal_constraint_store{ chr::make_shared< typename queryEquivalentClassReal::Constraint_store_t >("queryEquivalentClassReal") };
+    chr::Shared_obj< typename res::Constraint_store_t >                          res_constraint_store{ chr::make_shared< typename res::Constraint_store_t >("res") };
+    chr::Shared_obj< typename resultRealisation::Constraint_store_t >            resultRealisation_constraint_store{ chr::make_shared< typename resultRealisation::Constraint_store_t >("resultRealisation") };
+    chr::Shared_obj< typename classification::Constraint_store_t >               classification_constraint_store{ chr::make_shared< typename classification::Constraint_store_t >("classification") };
+    chr::Shared_obj< typename resultClassification::Constraint_store_t >         resultClassification_constraint_store{ chr::make_shared< typename resultClassification::Constraint_store_t >("resultClassification") };
+    chr::Shared_obj< typename queryFullUri::Constraint_store_t >                 queryFullUri_constraint_store{ chr::make_shared< typename queryFullUri::Constraint_store_t >("queryFullUri") };
+    chr::Shared_obj< typename logicalName::Constraint_store_t >                  logicalName_constraint_store{ chr::make_shared< typename logicalName::Constraint_store_t >("logicalName") };
+    chr::Shared_obj< typename realisation::Constraint_store_t >                  realisation_constraint_store{ chr::make_shared< typename realisation::Constraint_store_t >("realisation") };
+    chr::Shared_obj< typename queryisMemberOf::Constraint_store_t >              queryisMemberOf_constraint_store{ chr::make_shared< typename queryisMemberOf::Constraint_store_t >("queryisMemberOf") };
+    chr::Shared_obj< typename ResultVec::Constraint_store_t >                    ResultVec_constraint_store{ chr::make_shared< typename ResultVec::Constraint_store_t >("ResultVec") };
+
+public:
+    unsigned int _ref_use_count  = 0;
+    unsigned int _ref_weak_count = 0;
+
+    OWL2() = default;
+    ~OWL2();
+
+    static chr::Shared_obj<OWL2> create() { return chr::make_shared<OWL2>(); }
+
+    // ==================== STORE ACCESSORS ====================
+    typename owlPrefix::Constraint_store_t&              get_owlPrefix_store()              { return *owlPrefix_constraint_store; }
+    typename owlClass::Constraint_store_t&               get_owlClass_store()               { return *owlClass_constraint_store; }
+    typename owlObjectProperty::Constraint_store_t&      get_owlObjectProperty_store()      { return *owlObjectProperty_constraint_store; }
+    typename owlDataProperty::Constraint_store_t&        get_owlDataProperty_store()        { return *owlDataProperty_constraint_store; }
+    typename owlNamedIndividual::Constraint_store_t&     get_owlNamedIndividual_store()     { return *owlNamedIndividual_constraint_store; }
+    typename owlSubclassOf::Constraint_store_t&          get_owlSubclassOf_store()          { return *owlSubclassOf_constraint_store; }
+    typename owlEquivalentClass::Constraint_store_t&     get_owlEquivalentClass_store()     { return *owlEquivalentClass_constraint_store; }
+    typename owlSubDataPropertyOf::Constraint_store_t&   get_owlSubDataPropertyOf_store()   { return *owlSubDataPropertyOf_constraint_store; }
+    typename owlSubObjectPropertyOf::Constraint_store_t& get_owlSubObjectPropertyOf_store() { return *owlSubObjectPropertyOf_constraint_store; }
+    typename owlEquivalentDataProperty::Constraint_store_t&   get_owlEquivalentDataProperty_store()   { return *owlEquivalentDataProperty_constraint_store; }
+    typename owlEquivalentObjectProperty::Constraint_store_t& get_owlEquivalentObjectProperty_store() { return *owlEquivalentObjectProperty_constraint_store; }
+    typename owlObjectPropertyDomain::Constraint_store_t& get_owlObjectPropertyDomain_store() { return *owlObjectPropertyDomain_constraint_store; }
+    typename owlDataPropertyDomain::Constraint_store_t&  get_owlDataPropertyDomain_store()  { return *owlDataPropertyDomain_constraint_store; }
+    typename owlObjectPropertyRange::Constraint_store_t& get_owlObjectPropertyRange_store() { return *owlObjectPropertyRange_constraint_store; }
+    typename owlClassAssertion::Constraint_store_t&      get_owlClassAssertion_store()      { return *owlClassAssertion_constraint_store; }
+    typename owlDisjointClass::Constraint_store_t&       get_owlDisjointClass_store()       { return *owlDisjointClass_constraint_store; }
+    typename owlNegativeObjectAssertion::Constraint_store_t& get_owlNegativeObjectAssertion_store() { return *owlNegativeObjectAssertion_constraint_store; }
+    typename owlObjectPropertyAssertion::Constraint_store_t& get_owlObjectPropertyAssertion_store() { return *owlObjectPropertyAssertion_constraint_store; }
+    typename owlSameIndividual::Constraint_store_t&      get_owlSameIndividual_store()      { return *owlSameIndividual_constraint_store; }
+    typename owlDifferentIndividual::Constraint_store_t& get_owlDifferentIndividual_store() { return *owlDifferentIndividual_constraint_store; }
+    typename owlInverseObjectProperty::Constraint_store_t&    get_owlInverseObjectProperty_store()    { return *owlInverseObjectProperty_constraint_store; }
+    typename owlSymmetricObjectProperty::Constraint_store_t&  get_owlSymmetricObjectProperty_store()  { return *owlSymmetricObjectProperty_constraint_store; }
+    typename owlAsymmetricObjectProperty::Constraint_store_t& get_owlAsymmetricObjectProperty_store() { return *owlAsymmetricObjectProperty_constraint_store; }
+    typename owlDisjointObjectProperty::Constraint_store_t&   get_owlDisjointObjectProperty_store()   { return *owlDisjointObjectProperty_constraint_store; }
+    typename owlDisjointDataProperty::Constraint_store_t&     get_owlDisjointDataProperty_store()     { return *owlDisjointDataProperty_constraint_store; }
+    typename owlReflexiveObjectProperty::Constraint_store_t&  get_owlReflexiveObjectProperty_store()  { return *owlReflexiveObjectProperty_constraint_store; }
+    typename owlIrreflexiveObjectProperty::Constraint_store_t& get_owlIrreflexiveObjectProperty_store() { return *owlIrreflexiveObjectProperty_constraint_store; }
+    typename owlFunctionalObjectProperty::Constraint_store_t&  get_owlFunctionalObjectProperty_store()  { return *owlFunctionalObjectProperty_constraint_store; }
+    typename owlFunctionalDataProperty::Constraint_store_t&   get_owlFunctionalDataProperty_store()   { return *owlFunctionalDataProperty_constraint_store; }
+    typename owlInverseFunctionalObjectProperty::Constraint_store_t& get_owlInverseFunctionalObjectProperty_store() { return *owlInverseFunctionalObjectProperty_constraint_store; }
+    typename owlTransitiveObjectProperty::Constraint_store_t&  get_owlTransitiveObjectProperty_store()  { return *owlTransitiveObjectProperty_constraint_store; }
+    typename owlDataPropertyAssertion::Constraint_store_t&     get_owlDataPropertyAssertion_store()     { return *owlDataPropertyAssertion_constraint_store; }
+    typename owlNegativeDataAssertion::Constraint_store_t&     get_owlNegativeDataAssertion_store()     { return *owlNegativeDataAssertion_constraint_store; }
+    typename owlDataPropertyRange::Constraint_store_t&         get_owlDataPropertyRange_store()         { return *owlDataPropertyRange_constraint_store; }
+    typename owlUnionClass::Constraint_store_t&                get_owlUnionClass_store()                { return *owlUnionClass_constraint_store; }
+    typename owlUnionOf::Constraint_store_t&                   get_owlUnionOf_store()                   { return *owlUnionOf_constraint_store; }
+    typename owlIntersectionOf::Constraint_store_t&            get_owlIntersectionOf_store()            { return *owlIntersectionOf_constraint_store; }
+    typename owlIntersectionClass::Constraint_store_t&         get_owlIntersectionClass_store()         { return *owlIntersectionClass_constraint_store; }
+    typename owlIntersectionOfLoop::Constraint_store_t&        get_owlIntersectionOfLoop_store()        { return *owlIntersectionOfLoop_constraint_store; }
+    typename intersectionSubclassCheck::Constraint_store_t&    get_intersectionSubclassCheck_store()    { return *intersectionSubclassCheck_constraint_store; }
+    typename owlCandidatsIntersection::Constraint_store_t&     get_owlCandidatsIntersection_store()     { return *owlCandidatsIntersection_constraint_store; }
+    typename owlObjectAllValuesFrom::Constraint_store_t&       get_owlObjectAllValuesFrom_store()       { return *owlObjectAllValuesFrom_constraint_store; }
+    typename owlDataAllValuesFrom::Constraint_store_t&         get_owlDataAllValuesFrom_store()         { return *owlDataAllValuesFrom_constraint_store; }
+    typename owlObjectSomeValuesFrom::Constraint_store_t&      get_owlObjectSomeValuesFrom_store()      { return *owlObjectSomeValuesFrom_constraint_store; }
+    typename owlDataSomeValuesFrom::Constraint_store_t&        get_owlDataSomeValuesFrom_store()        { return *owlDataSomeValuesFrom_constraint_store; }
+    typename owlDataValue::Constraint_store_t&                 get_owlDataValue_store()                 { return *owlDataValue_constraint_store; }
+    typename owlComplementOf::Constraint_store_t&              get_owlComplementOf_store()              { return *owlComplementOf_constraint_store; }
+    typename owlObjectMaxCardinality::Constraint_store_t&      get_owlObjectMaxCardinality_store()      { return *owlObjectMaxCardinality_constraint_store; }
+    typename owlDataMaxCardinality::Constraint_store_t&        get_owlDataMaxCardinality_store()        { return *owlDataMaxCardinality_constraint_store; }
+    typename owlHasValueObject::Constraint_store_t&            get_owlHasValueObject_store()            { return *owlHasValueObject_constraint_store; }
+    typename owlOneOf::Constraint_store_t&                     get_owlOneOf_store()                     { return *owlOneOf_constraint_store; }
+    typename owlObjectPropertyChain::Constraint_store_t&       get_owlObjectPropertyChain_store()       { return *owlObjectPropertyChain_constraint_store; }
+    typename constructPropertyChain::Constraint_store_t&       get_constructPropertyChain_store()       { return *constructPropertyChain_constraint_store; }
+    typename owlHasKey::Constraint_store_t&                    get_owlHasKey_store()                    { return *owlHasKey_constraint_store; }
+    typename owlHasKeyCheck::Constraint_store_t&               get_owlHasKeyCheck_store()               { return *owlHasKeyCheck_constraint_store; }
+    typename querySuperClassOfUri::Constraint_store_t&         get_querySuperClassOfUri_store()         { return *querySuperClassOfUri_constraint_store; }
+    typename querySubClassOfUri::Constraint_store_t&           get_querySubClassOfUri_store()           { return *querySubClassOfUri_constraint_store; }
+    typename querySuperClassOf::Constraint_store_t&            get_querySuperClassOf_store()            { return *querySuperClassOf_constraint_store; }
+    typename querySuperClassOfReal::Constraint_store_t&        get_querySuperClassOfReal_store()        { return *querySuperClassOfReal_constraint_store; }
+    typename querySubClassOf::Constraint_store_t&              get_querySubClassOf_store()              { return *querySubClassOf_constraint_store; }
+    typename queryClassification::Constraint_store_t&          get_queryClassification_store()          { return *queryClassification_constraint_store; }
+    typename queryClassificationReal::Constraint_store_t&      get_queryClassificationReal_store()      { return *queryClassificationReal_constraint_store; }
+    typename queryClassificationUri::Constraint_store_t&       get_queryClassificationUri_store()       { return *queryClassificationUri_constraint_store; }
+    typename queryClassificationTemp::Constraint_store_t&      get_queryClassificationTemp_store()      { return *queryClassificationTemp_constraint_store; }
+    typename queryClassificationTempUri::Constraint_store_t&   get_queryClassificationTempUri_store()   { return *queryClassificationTempUri_constraint_store; }
+    typename queryInstanceURI::Constraint_store_t&             get_queryInstanceURI_store()             { return *queryInstanceURI_constraint_store; }
+    typename queryInstances::Constraint_store_t&               get_queryInstances_store()               { return *queryInstances_constraint_store; }
+    typename queryObjAssertion::Constraint_store_t&            get_queryObjAssertion_store()            { return *queryObjAssertion_constraint_store; }
+    typename querySubjectByObject::Constraint_store_t&         get_querySubjectByObject_store()         { return *querySubjectByObject_constraint_store; }
+    typename queryDataAssertion::Constraint_store_t&           get_queryDataAssertion_store()           { return *queryDataAssertion_constraint_store; }
+    typename queryEngineeringStudents::Constraint_store_t&     get_queryEngineeringStudents_store()     { return *queryEngineeringStudents_constraint_store; }
+    typename queryComplexStudents::Constraint_store_t&         get_queryComplexStudents_store()         { return *queryComplexStudents_constraint_store; }
+    typename queryObjAssertionSubject::Constraint_store_t&     get_queryObjAssertionSubject_store()     { return *queryObjAssertionSubject_constraint_store; }
+    typename queryObjAssertionClassUri::Constraint_store_t&    get_queryObjAssertionClassUri_store()    { return *queryObjAssertionClassUri_constraint_store; }
+    typename queryObjAssertionClass::Constraint_store_t&       get_queryObjAssertionClass_store()       { return *queryObjAssertionClass_constraint_store; }
+    typename queryEquivalentClass::Constraint_store_t&         get_queryEquivalentClass_store()         { return *queryEquivalentClass_constraint_store; }
+    typename queryEquivalentClassReal::Constraint_store_t&     get_queryEquivalentClassReal_store()     { return *queryEquivalentClassReal_constraint_store; }
+    typename res::Constraint_store_t&                          get_res_store()                          { return *res_constraint_store; }
+    typename resultRealisation::Constraint_store_t&            get_resultRealisation_store()            { return *resultRealisation_constraint_store; }
+    typename classification::Constraint_store_t&               get_classification_store()               { return *classification_constraint_store; }
+    typename resultClassification::Constraint_store_t&         get_resultClassification_store()         { return *resultClassification_constraint_store; }
+    typename queryFullUri::Constraint_store_t&                 get_queryFullUri_store()                 { return *queryFullUri_constraint_store; }
+    typename logicalName::Constraint_store_t&                  get_logicalName_store()                  { return *logicalName_constraint_store; }
+    typename realisation::Constraint_store_t&                  get_realisation_store()                  { return *realisation_constraint_store; }
+    typename queryisMemberOf::Constraint_store_t&              get_queryisMemberOf_store()              { return *queryisMemberOf_constraint_store; }
+    typename ResultVec::Constraint_store_t&                    get_ResultVec_store()                    { return *ResultVec_constraint_store; }
+
+    // ==================== HISTORY ====================
+    struct History {
+        typename chr::Shared_obj< chr::History_dyn< 1 > > rule_93{ chr::make_shared< typename chr::History_dyn< 1 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 1 > > rule_94{ chr::make_shared< typename chr::History_dyn< 1 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_95{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 1 > > rule_96{ chr::make_shared< typename chr::History_dyn< 1 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_97{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 3 > > rule_98{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 3 > > rule_99{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 1 > > rule_100{ chr::make_shared< typename chr::History_dyn< 1 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 1 > > rule_101{ chr::make_shared< typename chr::History_dyn< 1 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_102{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_103{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 1 > > rule_104{ chr::make_shared< typename chr::History_dyn< 1 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 1 > > rule_105{ chr::make_shared< typename chr::History_dyn< 1 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_106{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_107{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_108{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_109{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_110{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_111{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_112{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_113{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_114{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_116{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_117{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 1 > > rule_118{ chr::make_shared< typename chr::History_dyn< 1 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_119{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_120{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_121{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_122{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 1 > > rule_123{ chr::make_shared< typename chr::History_dyn< 1 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_124{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_125{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_126{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_127{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_128{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_130{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 1 > > rule_131{ chr::make_shared< typename chr::History_dyn< 1 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_132{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_133{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_134{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 3 > > rule_135{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 3 > > rule_137{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 1 > > rule_138{ chr::make_shared< typename chr::History_dyn< 1 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 1 > > rule_139{ chr::make_shared< typename chr::History_dyn< 1 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_143{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_144{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 1 > > rule_145{ chr::make_shared< typename chr::History_dyn< 1 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_147{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 3 > > rule_148{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_149{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_150{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_151{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_153{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 3 > > rule_154{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_156{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_159{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 3 > > rule_160{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_161{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_163{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_164{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 3 > > rule_170{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_171{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 3 > > rule_172{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 4 > > rule_173{ chr::make_shared< typename chr::History_dyn< 4 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 4 > > rule_174{ chr::make_shared< typename chr::History_dyn< 4 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 5 > > rule_175{ chr::make_shared< typename chr::History_dyn< 5 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 1 > > rule_176{ chr::make_shared< typename chr::History_dyn< 1 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_180{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 3 > > rule_181{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 3 > > rule_185{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 1 > > rule_189{ chr::make_shared< typename chr::History_dyn< 1 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_190{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_191{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_192{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 3 > > rule_193{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_194{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 3 > > rule_195{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 2 > > rule_196{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 3 > > rule_197{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 1 > > rule_201{ chr::make_shared< typename chr::History_dyn< 1 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 4 > > rule_202{ chr::make_shared< typename chr::History_dyn< 4 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 3 > > rule_203{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 1 > > rule_205{ chr::make_shared< typename chr::History_dyn< 1 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 5 > > rule_206{ chr::make_shared< typename chr::History_dyn< 5 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 3 > > rule_207{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 1 > > rule_208{ chr::make_shared< typename chr::History_dyn< 1 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 1 > > rule_209{ chr::make_shared< typename chr::History_dyn< 1 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 4 > > rule_213{ chr::make_shared< typename chr::History_dyn< 4 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 3 > > rule_214{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 3 > > rule_219{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 3 > > rule_224{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 3 > > rule_229{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 4 > > rule_234{ chr::make_shared< typename chr::History_dyn< 4 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 7 > > rule_239{ chr::make_shared< typename chr::History_dyn< 7 > >() };
+        typename chr::Shared_obj< chr::History_dyn< 8 > > rule_244{ chr::make_shared< typename chr::History_dyn< 8 > >() };
+    };
+    History _history;
+
+    // ==================== chr_store_begin ====================
+    auto chr_store_begin();
+
+    // ==================== do_* DECLARATIONS ====================
+    chr::ES_CHR do_owlPrefix(typename owlPrefix::Type c_args, typename owlPrefix::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlClass(typename owlClass::Type c_args, typename owlClass::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlObjectProperty(typename owlObjectProperty::Type c_args, typename owlObjectProperty::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlDataProperty(typename owlDataProperty::Type c_args, typename owlDataProperty::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlNamedIndividual(typename owlNamedIndividual::Type c_args, typename owlNamedIndividual::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename owlSubclassOf::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlEquivalentClass(typename owlEquivalentClass::Type c_args, typename owlEquivalentClass::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlSubDataPropertyOf(typename owlSubDataPropertyOf::Type c_args, typename owlSubDataPropertyOf::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlSubObjectPropertyOf(typename owlSubObjectPropertyOf::Type c_args, typename owlSubObjectPropertyOf::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlEquivalentDataProperty(typename owlEquivalentDataProperty::Type c_args, typename owlEquivalentDataProperty::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlEquivalentObjectProperty(typename owlEquivalentObjectProperty::Type c_args, typename owlEquivalentObjectProperty::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlObjectPropertyDomain(typename owlObjectPropertyDomain::Type c_args, typename owlObjectPropertyDomain::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlDataPropertyDomain(typename owlDataPropertyDomain::Type c_args, typename owlDataPropertyDomain::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlObjectPropertyRange(typename owlObjectPropertyRange::Type c_args, typename owlObjectPropertyRange::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlClassAssertion(typename owlClassAssertion::Type c_args, typename owlClassAssertion::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlDisjointClass(typename owlDisjointClass::Type c_args, typename owlDisjointClass::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlNegativeObjectAssertion(typename owlNegativeObjectAssertion::Type c_args, typename owlNegativeObjectAssertion::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlObjectPropertyAssertion(typename owlObjectPropertyAssertion::Type c_args, typename owlObjectPropertyAssertion::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlSameIndividual(typename owlSameIndividual::Type c_args, typename owlSameIndividual::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlDifferentIndividual(typename owlDifferentIndividual::Type c_args, typename owlDifferentIndividual::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlInverseObjectProperty(typename owlInverseObjectProperty::Type c_args, typename owlInverseObjectProperty::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlSymmetricObjectProperty(typename owlSymmetricObjectProperty::Type c_args, typename owlSymmetricObjectProperty::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlAsymmetricObjectProperty(typename owlAsymmetricObjectProperty::Type c_args, typename owlAsymmetricObjectProperty::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlDisjointObjectProperty(typename owlDisjointObjectProperty::Type c_args, typename owlDisjointObjectProperty::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlDisjointDataProperty(typename owlDisjointDataProperty::Type c_args, typename owlDisjointDataProperty::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlReflexiveObjectProperty(typename owlReflexiveObjectProperty::Type c_args, typename owlReflexiveObjectProperty::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlIrreflexiveObjectProperty(typename owlIrreflexiveObjectProperty::Type c_args, typename owlIrreflexiveObjectProperty::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlFunctionalObjectProperty(typename owlFunctionalObjectProperty::Type c_args, typename owlFunctionalObjectProperty::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlFunctionalDataProperty(typename owlFunctionalDataProperty::Type c_args, typename owlFunctionalDataProperty::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlInverseFunctionalObjectProperty(typename owlInverseFunctionalObjectProperty::Type c_args, typename owlInverseFunctionalObjectProperty::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlTransitiveObjectProperty(typename owlTransitiveObjectProperty::Type c_args, typename owlTransitiveObjectProperty::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlDataPropertyAssertion(typename owlDataPropertyAssertion::Type c_args, typename owlDataPropertyAssertion::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlNegativeDataAssertion(typename owlNegativeDataAssertion::Type c_args, typename owlNegativeDataAssertion::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlDataPropertyRange(typename owlDataPropertyRange::Type c_args, typename owlDataPropertyRange::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlUnionClass(typename owlUnionClass::Type c_args, typename owlUnionClass::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlUnionOf(typename owlUnionOf::Type c_args, typename owlUnionOf::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlUnionOfLoop(typename owlUnionOfLoop::Type c_args);
+    chr::ES_CHR do_owlIntersectionOf(typename owlIntersectionOf::Type c_args, typename owlIntersectionOf::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlIntersectionClass(typename owlIntersectionClass::Type c_args, typename owlIntersectionClass::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlIntersectionOfLoop(typename owlIntersectionOfLoop::Type c_args, typename owlIntersectionOfLoop::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_intersectionSubclassCheck(typename intersectionSubclassCheck::Type c_args, typename intersectionSubclassCheck::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlCandidatsIntersection(typename owlCandidatsIntersection::Type c_args, typename owlCandidatsIntersection::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlObjectAllValuesFrom(typename owlObjectAllValuesFrom::Type c_args, typename owlObjectAllValuesFrom::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlDataAllValuesFrom(typename owlDataAllValuesFrom::Type c_args, typename owlDataAllValuesFrom::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlObjectSomeValuesFrom(typename owlObjectSomeValuesFrom::Type c_args, typename owlObjectSomeValuesFrom::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlDataSomeValuesFrom(typename owlDataSomeValuesFrom::Type c_args, typename owlDataSomeValuesFrom::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlDataValue(typename owlDataValue::Type c_args, typename owlDataValue::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlComplementOf(typename owlComplementOf::Type c_args, typename owlComplementOf::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlObjectMaxCardinality(typename owlObjectMaxCardinality::Type c_args, typename owlObjectMaxCardinality::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlDataMaxCardinality(typename owlDataMaxCardinality::Type c_args, typename owlDataMaxCardinality::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlHasValueObject(typename owlHasValueObject::Type c_args, typename owlHasValueObject::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlOneOf(typename owlOneOf::Type c_args, typename owlOneOf::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlOneOfLoop(typename owlOneOfLoop::Type c_args);
+    chr::ES_CHR do_owlObjectPropertyChain(typename owlObjectPropertyChain::Type c_args, typename owlObjectPropertyChain::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_constructPropertyChain(typename constructPropertyChain::Type c_args, typename constructPropertyChain::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlHasKey(typename owlHasKey::Type c_args, typename owlHasKey::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_owlHasKeyCheck(typename owlHasKeyCheck::Type c_args, typename owlHasKeyCheck::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_querySuperClassOfUri(typename querySuperClassOfUri::Type c_args, typename querySuperClassOfUri::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_querySubClassOfUri(typename querySubClassOfUri::Type c_args, typename querySubClassOfUri::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_querySuperClassOf(typename querySuperClassOf::Type c_args, typename querySuperClassOf::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_querySuperClassOfReal(typename querySuperClassOfReal::Type c_args, typename querySuperClassOfReal::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_querySubClassOf(typename querySubClassOf::Type c_args, typename querySubClassOf::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_queryClassification(typename queryClassification::Type c_args, typename queryClassification::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_queryClassificationReal(typename queryClassificationReal::Type c_args, typename queryClassificationReal::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_queryClassificationUri(typename queryClassificationUri::Type c_args, typename queryClassificationUri::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_queryClassificationTemp(typename queryClassificationTemp::Type c_args, typename queryClassificationTemp::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_queryClassificationTempUri(typename queryClassificationTempUri::Type c_args, typename queryClassificationTempUri::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_queryInstanceURI(typename queryInstanceURI::Type c_args, typename queryInstanceURI::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_queryInstance(typename queryInstance::Type c_args);
+    chr::ES_CHR do_queryInstancesURI(typename queryInstancesURI::Type c_args);
+    chr::ES_CHR do_queryInstances(typename queryInstances::Type c_args, typename queryInstances::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_queryObjAssertionUri(typename queryObjAssertionUri::Type c_args);
+    chr::ES_CHR do_queryObjAssertion(typename queryObjAssertion::Type c_args, typename queryObjAssertion::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_querySubjectByObjectUri(typename querySubjectByObjectUri::Type c_args);
+    chr::ES_CHR do_querySubjectByObject(typename querySubjectByObject::Type c_args, typename querySubjectByObject::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_queryDataAssertionUri(typename queryDataAssertionUri::Type c_args);
+    chr::ES_CHR do_queryDataAssertion(typename queryDataAssertion::Type c_args, typename queryDataAssertion::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_queryEngineeringStudentsUri(typename queryEngineeringStudentsUri::Type c_args);
+    chr::ES_CHR do_queryEngineeringStudents(typename queryEngineeringStudents::Type c_args, typename queryEngineeringStudents::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_queryComplexStudentsUri(typename queryComplexStudentsUri::Type c_args);
+    chr::ES_CHR do_queryComplexStudents(typename queryComplexStudents::Type c_args, typename queryComplexStudents::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_queryObjAssertionSubjectUri(typename queryObjAssertionSubjectUri::Type c_args);
+    chr::ES_CHR do_queryObjAssertionSubject(typename queryObjAssertionSubject::Type c_args, typename queryObjAssertionSubject::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_queryObjAssertionClassUri(typename queryObjAssertionClassUri::Type c_args, typename queryObjAssertionClassUri::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_queryObjAssertionClass(typename queryObjAssertionClass::Type c_args, typename queryObjAssertionClass::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_queryEquivalentClass(typename queryEquivalentClass::Type c_args, typename queryEquivalentClass::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_queryEquivalentClassReal(typename queryEquivalentClassReal::Type c_args, typename queryEquivalentClassReal::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_res(typename res::Type c_args, typename res::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_resultRealisation(typename resultRealisation::Type c_args, typename resultRealisation::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_classification(typename classification::Type c_args, typename classification::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_resultClassification(typename resultClassification::Type c_args, typename resultClassification::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_queryFullUri(typename queryFullUri::Type c_args, typename queryFullUri::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_logicalName(typename logicalName::Type c_args, typename logicalName::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_realisation(typename realisation::Type c_args, typename realisation::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_queryisMemberOf(typename queryisMemberOf::Type c_args, typename queryisMemberOf::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_ResultVec(typename ResultVec::Type c_args, typename ResultVec::Constraint_store_t::iterator c_it);
+    chr::ES_CHR do_queryInstancesWithId(typename queryInstancesWithId::Type c_args);
+    chr::ES_CHR do_queryObjAssertionWithId(typename queryObjAssertionWithId::Type c_args);
+    chr::ES_CHR do_queryDataAssertionWithId(typename queryDataAssertionWithId::Type c_args);
+    chr::ES_CHR do_querySubjectByObjectWithId(typename querySubjectByObjectWithId::Type c_args);
+    chr::ES_CHR do_queryObjAssertionSubjectWithId(typename queryObjAssertionSubjectWithId::Type c_args);
+    chr::ES_CHR do_queryEngineeringStudentsWithId(typename queryEngineeringStudentsWithId::Type c_args);
+    chr::ES_CHR do_queryComplexStudentsWithId(typename queryComplexStudentsWithId::Type c_args);
+
+    // ==================== PUBLIC CONSTRAINT INVOCATION METHODS ====================
+    chr::ES_CHR owlPrefix( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1);
+    chr::ES_CHR owlClass( chr::Logical_var< int > arg0);
+    chr::ES_CHR owlObjectProperty( chr::Logical_var< int > arg0);
+    chr::ES_CHR owlDataProperty( chr::Logical_var< int > arg0);
+    chr::ES_CHR owlNamedIndividual( chr::Logical_var< int > arg0);
+    chr::ES_CHR owlSubclassOf( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1);
+    chr::ES_CHR owlEquivalentClass( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1);
+    chr::ES_CHR owlSubDataPropertyOf( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1);
+    chr::ES_CHR owlSubObjectPropertyOf( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1);
+    chr::ES_CHR owlEquivalentDataProperty( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1);
+    chr::ES_CHR owlEquivalentObjectProperty( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1);
+    chr::ES_CHR owlObjectPropertyDomain( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1);
+    chr::ES_CHR owlDataPropertyDomain( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1);
+    chr::ES_CHR owlObjectPropertyRange( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1);
+    chr::ES_CHR owlClassAssertion( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1, chr::Logical_var_ground< bool > arg2);
+    chr::ES_CHR owlDisjointClass( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1);
+    chr::ES_CHR owlNegativeObjectAssertion( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1, chr::Logical_var< int > arg2);
+    chr::ES_CHR owlObjectPropertyAssertion( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1, chr::Logical_var< int > arg2);
+    chr::ES_CHR owlSameIndividual( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1);
+    chr::ES_CHR owlDifferentIndividual( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1);
+    chr::ES_CHR owlInverseObjectProperty( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1);
+    chr::ES_CHR owlSymmetricObjectProperty( chr::Logical_var< int > arg0);
+    chr::ES_CHR owlAsymmetricObjectProperty( chr::Logical_var< int > arg0);
+    chr::ES_CHR owlDisjointObjectProperty( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1);
+    chr::ES_CHR owlDisjointDataProperty( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1);
+    chr::ES_CHR owlReflexiveObjectProperty( chr::Logical_var< int > arg0);
+    chr::ES_CHR owlIrreflexiveObjectProperty( chr::Logical_var< int > arg0);
+    chr::ES_CHR owlFunctionalObjectProperty( chr::Logical_var< int > arg0);
+    chr::ES_CHR owlFunctionalDataProperty( chr::Logical_var< int > arg0);
+    chr::ES_CHR owlInverseFunctionalObjectProperty( chr::Logical_var< int > arg0);
+    chr::ES_CHR owlTransitiveObjectProperty( chr::Logical_var< int > arg0);
+    chr::ES_CHR owlDataPropertyAssertion( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1, chr::Logical_var_ground< Value > arg2);
+    chr::ES_CHR owlNegativeDataAssertion( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1, chr::Logical_var_ground< Value > arg2);
+    chr::ES_CHR owlDataPropertyRange( chr::Logical_var< int > arg0, chr::Logical_var_ground< std::shared_ptr< AnySimpleType > > arg1);
+    chr::ES_CHR owlUnionClass( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1);
+    chr::ES_CHR owlUnionOf( chr::Logical_var< int > arg0, chr::Logical_var_ground< LogicalVarSet > arg1);
+    chr::ES_CHR owlUnionOfLoop( chr::Logical_var< int > arg0, chr::Logical_var_ground< LogicalVarSetIterator > arg1, chr::Logical_var_ground< LogicalVarSetIterator > arg2);
+    chr::ES_CHR owlIntersectionOf( chr::Logical_var< int > arg0, chr::Logical_var_ground< LogicalVarSet > arg1);
+    chr::ES_CHR owlIntersectionClass( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1, chr::Logical_var_ground< int > arg2);
+    chr::ES_CHR owlIntersectionOfLoop( chr::Logical_var< int > arg0, chr::Logical_var_ground< LogicalVarSetIterator > arg1, chr::Logical_var_ground< LogicalVarSetIterator > arg2, chr::Logical_var_ground< int > arg3);
+    chr::ES_CHR intersectionSubclassCheck( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1, chr::Logical_var_ground< int > arg2);
+    chr::ES_CHR owlCandidatsIntersection( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1, chr::Logical_var_ground< int > arg2);
+    chr::ES_CHR owlObjectAllValuesFrom( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1, chr::Logical_var< int > arg2);
+    chr::ES_CHR owlDataAllValuesFrom( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1, chr::Logical_var_ground< std::shared_ptr< AnySimpleType > > arg2);
+    chr::ES_CHR owlObjectSomeValuesFrom( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1, chr::Logical_var< int > arg2);
+    chr::ES_CHR owlDataSomeValuesFrom( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1, chr::Logical_var_ground< std::shared_ptr< AnySimpleType > > arg2);
+    chr::ES_CHR owlDataValue( chr::Logical_var_ground< Value > arg0, chr::Logical_var_ground< std::string > arg1, chr::Logical_var_ground< std::shared_ptr< AnySimpleType > > arg2);
+    chr::ES_CHR owlComplementOf( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1);
+    chr::ES_CHR owlObjectMaxCardinality( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1, chr::Logical_var_ground< int > arg2);
+    chr::ES_CHR owlDataMaxCardinality( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1, chr::Logical_var_ground< int > arg2);
+    chr::ES_CHR owlHasValueObject( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1, chr::Logical_var< int > arg2);
+    chr::ES_CHR owlOneOf( chr::Logical_var< int > arg0, chr::Logical_var_ground< LogicalVarSet > arg1);
+    chr::ES_CHR owlOneOfLoop( chr::Logical_var< int > arg0, chr::Logical_var_ground< LogicalVarSetIterator > arg1, chr::Logical_var_ground< LogicalVarSetIterator > arg2);
+    chr::ES_CHR owlObjectPropertyChain( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1, chr::Logical_var_ground< int > arg2, chr::Logical_var_ground< int > arg3);
+    chr::ES_CHR constructPropertyChain( chr::Logical_var< int > arg0, chr::Logical_var_ground< int > arg1, chr::Logical_var< int > arg2, chr::Logical_var< int > arg3, chr::Logical_var_ground< int > arg4);
+    chr::ES_CHR owlHasKey( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1, chr::Logical_var_ground< int > arg2, chr::Logical_var_ground< int > arg3);
+    chr::ES_CHR owlHasKeyCheck( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1, chr::Logical_var< int > arg2, chr::Logical_var_ground< int > arg3, chr::Logical_var_ground< int > arg4);
+    chr::ES_CHR querySuperClassOfUri( chr::Logical_var_ground< std::string > arg0);
+    chr::ES_CHR querySubClassOfUri( chr::Logical_var_ground< std::string > arg0);
+    chr::ES_CHR querySuperClassOf( chr::Logical_var< int > arg0);
+    chr::ES_CHR querySuperClassOfReal( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1);
+    chr::ES_CHR querySubClassOf( chr::Logical_var< int > arg0);
+    chr::ES_CHR queryClassification( chr::Logical_var< int > arg0);
+    chr::ES_CHR queryClassificationReal( chr::Logical_var< int > arg0);
+    chr::ES_CHR queryClassificationUri( chr::Logical_var_ground< std::string > arg0);
+    chr::ES_CHR queryClassificationTemp( chr::Logical_var< int > arg0);
+    chr::ES_CHR queryClassificationTempUri( chr::Logical_var_ground< std::string > arg0);
+    chr::ES_CHR queryInstanceURI( chr::Logical_var_ground< std::string > arg0, chr::Logical_var_ground< std::string > arg1);
+    chr::ES_CHR queryInstance( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1);
+    chr::ES_CHR queryInstancesURI( chr::Logical_var_ground< std::string > arg0);
+    chr::ES_CHR queryInstances( chr::Logical_var< int > arg0, chr::Logical_var_ground< int > arg1);
+    chr::ES_CHR queryObjAssertionUri( chr::Logical_var_ground< std::string > arg0);
+    chr::ES_CHR queryObjAssertion( chr::Logical_var< int > arg0, chr::Logical_var_ground< int > arg1);
+    chr::ES_CHR querySubjectByObjectUri( chr::Logical_var_ground< std::string > arg0);
+    chr::ES_CHR querySubjectByObject( chr::Logical_var< int > arg0, chr::Logical_var_ground< int > arg1);
+    chr::ES_CHR queryDataAssertionUri( chr::Logical_var_ground< std::string > arg0);
+    chr::ES_CHR queryDataAssertion( chr::Logical_var< int > arg0, chr::Logical_var_ground< int > arg1);
+    chr::ES_CHR queryEngineeringStudentsUri( chr::Logical_var_ground< std::string > arg0, chr::Logical_var_ground< std::string > arg1, chr::Logical_var_ground< std::string > arg2, chr::Logical_var_ground< std::string > arg3, chr::Logical_var_ground< std::string > arg4);
+    chr::ES_CHR queryEngineeringStudents( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1, chr::Logical_var< int > arg2, chr::Logical_var< int > arg3, chr::Logical_var< int > arg4, chr::Logical_var_ground< int > arg5);
+    chr::ES_CHR queryComplexStudentsUri( chr::Logical_var_ground< std::string > arg0, chr::Logical_var_ground< std::string > arg1, chr::Logical_var_ground< std::string > arg2, chr::Logical_var_ground< std::string > arg3, chr::Logical_var_ground< std::string > arg4);
+    chr::ES_CHR queryComplexStudents( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1, chr::Logical_var< int > arg2, chr::Logical_var< int > arg3, chr::Logical_var< int > arg4, chr::Logical_var_ground< int > arg5);
+    chr::ES_CHR queryObjAssertionSubjectUri( chr::Logical_var_ground< std::string > arg0, chr::Logical_var_ground< std::string > arg1);
+    chr::ES_CHR queryObjAssertionSubject( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1, chr::Logical_var_ground< int > arg2);
+    chr::ES_CHR queryObjAssertionClassUri( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1);
+    chr::ES_CHR queryObjAssertionClass( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1);
+    chr::ES_CHR queryEquivalentClass( chr::Logical_var< int > arg0);
+    chr::ES_CHR queryEquivalentClassReal( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1);
+    chr::ES_CHR res( chr::Logical_var_ground< std::string > arg0);
+    chr::ES_CHR resultRealisation( chr::Logical_var_ground< std::string > arg0, chr::Logical_var_ground< std::string > arg1);
+    chr::ES_CHR classification();
+    chr::ES_CHR resultClassification( chr::Logical_var_ground< std::string > arg0, chr::Logical_var_ground< std::string > arg1);
+    chr::ES_CHR queryFullUri( chr::Logical_var< int > arg0);
+    chr::ES_CHR logicalName( chr::Logical_var_ground< std::string > arg0, chr::Logical_var< int > arg1);
+    chr::ES_CHR realisation();
+    chr::ES_CHR queryisMemberOf();
+    chr::ES_CHR ResultVec( chr::Logical_var_ground< StringSet > arg0, chr::Logical_var_ground< int > arg1);
+    chr::ES_CHR queryInstancesWithId( chr::Logical_var_ground< std::string > arg0, chr::Logical_var_ground< int > arg1);
+    chr::ES_CHR queryObjAssertionWithId( chr::Logical_var_ground< std::string > arg0, chr::Logical_var_ground< int > arg1);
+    chr::ES_CHR queryDataAssertionWithId( chr::Logical_var_ground< std::string > arg0, chr::Logical_var_ground< int > arg1);
+    chr::ES_CHR querySubjectByObjectWithId( chr::Logical_var_ground< std::string > arg0, chr::Logical_var_ground< int > arg1);
+    chr::ES_CHR queryObjAssertionSubjectWithId( chr::Logical_var_ground< std::string > arg0, chr::Logical_var_ground< std::string > arg1, chr::Logical_var_ground< int > arg2);
+    chr::ES_CHR queryEngineeringStudentsWithId( chr::Logical_var_ground< std::string > arg0, chr::Logical_var_ground< std::string > arg1, chr::Logical_var_ground< std::string > arg2, chr::Logical_var_ground< std::string > arg3, chr::Logical_var_ground< std::string > arg4, chr::Logical_var_ground< int > arg5);
+    chr::ES_CHR queryComplexStudentsWithId( chr::Logical_var_ground< std::string > arg0, chr::Logical_var_ground< std::string > arg1, chr::Logical_var_ground< std::string > arg2, chr::Logical_var_ground< std::string > arg3, chr::Logical_var_ground< std::string > arg4, chr::Logical_var_ground< int > arg5);
+};

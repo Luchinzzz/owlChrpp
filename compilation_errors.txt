@@ -1,0 +1,861 @@
+[ 24%] Built target ulib
+[ 25%] Generate the functional syntax reader.
+[ 28%] Built target cowl-functional-reader
+[ 28%] Built target cowl-readers
+[ 28%] Built target cowl-writers
+[ 92%] Built target cowl
+[ 94%] Génération de owl.cpp depuis owlrules.chr
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.chrpp:592:57: info: an unused occurence of rule has been detected and automatically removed
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.chrpp:603:58: info: an unused occurence of rule has been detected and automatically removed
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.chrpp:610:54: info: an unused occurence of rule has been detected and automatically removed
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.chrpp:617:91: info: an unused occurence of rule has been detected and automatically removed
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.chrpp:617:91: info: an unused occurence of rule has been detected and automatically removed
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.chrpp:624:60: info: an unused occurence of rule has been detected and automatically removed
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.chrpp:632:66: info: an unused occurence of rule has been detected and automatically removed
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.chrpp:632:66: info: an unused occurence of rule has been detected and automatically removed
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.chrpp:632:66: info: an unused occurence of rule has been detected and automatically removed
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.chrpp:632:66: info: an unused occurence of rule has been detected and automatically removed
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.chrpp:632:66: info: an unused occurence of rule has been detected and automatically removed
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.chrpp:640:62: info: an unused occurence of rule has been detected and automatically removed
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.chrpp:640:62: info: an unused occurence of rule has been detected and automatically removed
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.chrpp:640:62: info: an unused occurence of rule has been detected and automatically removed
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.chrpp:640:62: info: an unused occurence of rule has been detected and automatically removed
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.chrpp:640:62: info: an unused occurence of rule has been detected and automatically removed
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.chrpp:564:57: info: an unused occurence of rule named 'rule2' has been detected and automatically removed
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.chrpp:202:62: info: an unused occurence of rule has been detected and automatically removed
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.chrpp:181:68: info: an unused occurence of rule has been detected and automatically removed
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.chrpp:174:50: info: an unused occurence of rule has been detected and automatically removed
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.chrpp:175:60: info: an unused occurence of rule has been detected and automatically removed
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.chrpp:183:90: info: an unused occurence of rule has been detected and automatically removed
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.chrpp:177:66: info: an unused occurence of rule has been detected and automatically removed
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.chrpp:179:72: info: an unused occurence of rule has been detected and automatically removed
+[ 95%] Building CXX object CMakeFiles/owl_rules.dir/owlrules.cpp.o
+In file included from /home/chiaral/Desktop/owl-chr/chrpp/runtime/chrpp.in.hh:41,
+                 from /home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:7699:
+/home/chiaral/Desktop/owl-chr/chrpp/runtime/bt_list.hh:135:25: warning: ISO C++ prohibits anonymous structs [-Wpedantic]
+  135 |                         {
+      |                         ^
+/home/chiaral/Desktop/owl-chr/chrpp/runtime/bt_list.hh:153:49: warning: ISO C++ prohibits anonymous structs [-Wpedantic]
+  153 |                                                 {
+      |                                                 ^
+/home/chiaral/Desktop/owl-chr/chrpp/runtime/bt_list.hh:161:49: warning: ISO C++ prohibits anonymous structs [-Wpedantic]
+  161 |                                                 {
+      |                                                 ^
+/home/chiaral/Desktop/owl-chr/chrpp/runtime/bt_list.hh:145:33: warning: ISO C++ prohibits anonymous structs [-Wpedantic]
+  145 |                                 {
+      |                                 ^
+/home/chiaral/Desktop/owl-chr/chrpp/runtime/bt_list.hh:172:33: warning: ISO C++ prohibits anonymous structs [-Wpedantic]
+  172 |                                 {
+      |                                 ^
+/home/chiaral/Desktop/owl-chr/chrpp/runtime/bt_list.hh:183:33: warning: ISO C++ prohibits anonymous structs [-Wpedantic]
+  183 |                                 {
+      |                                 ^
+In file included from /home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/utils.h:9,
+                 from /home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:7704:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In member function ‘bool ParserCowl<T>::load()’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3022:14: warning: ISO C++ forbids variable length array ‘buffer’ [-Wvla]
+ 3022 |         char buffer[path.size()+1];
+      |              ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp: In member function ‘chr::ES_CHR OWL2::do_owlComplementOf(owlComplementOf::Type, chr::Constraint_store_index<std::tuple<long unsigned int, chr::Logical_var<int>, chr::Logical_var<int> >, std::tuple<chr::LNS::Index<0, 1> >, false>::iterator)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:15081:23: warning: unused variable ‘A’ [-Wunused-variable]
+15081 |                 auto& A = std::get<1>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp: In member function ‘chr::ES_CHR OWL2::do_owlDataPropertyAssertion(owlDataPropertyAssertion::Type, chr::Constraint_store_index<std::tuple<long unsigned int, chr::Logical_var<int>, chr::Logical_var<int>, chr::Logical_var_ground<Value> >, std::tuple<chr::LNS::Index<0>, chr::LNS::Index<0, 1>, chr::LNS::Index<0, 1, 2>, chr::LNS::Index<0, 2>, chr::LNS::Index<1, 2>, chr::LNS::Index<1>, chr::LNS::Index<2> >, false>::iterator)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:15852:23: warning: unused variable ‘X’ [-Wunused-variable]
+15852 |                 auto& X = std::get<1>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:15853:23: warning: unused variable ‘P’ [-Wunused-variable]
+15853 |                 auto& P = std::get<2>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp: In member function ‘chr::ES_CHR OWL2::do_owlHasKey(owlHasKey::Type, chr::Constraint_store_index<std::tuple<long unsigned int, chr::Logical_var<int>, chr::Logical_var<int>, chr::Logical_var_ground<int>, chr::Logical_var_ground<int> >, std::tuple<chr::LNS::Index<0, 2>, chr::LNS::Index<0, 1, 2, 3>, chr::LNS::Index<0, 2, 3> >, false>::iterator)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:18015:23: warning: unused variable ‘P’ [-Wunused-variable]
+18015 |                 auto& P = std::get<2>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp: In member function ‘chr::ES_CHR OWL2::do_owlHasKeyCheck(owlHasKeyCheck::Type, chr::Constraint_store_index<std::tuple<long unsigned int, chr::Logical_var<int>, chr::Logical_var<int>, chr::Logical_var<int>, chr::Logical_var_ground<int>, chr::Logical_var_ground<int> >, std::tuple<chr::LNS::Index<1, 2>, chr::LNS::Index<0, 3, 4>, chr::LNS::Index<0, 1, 2, 3, 4> >, false>::iterator)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:18357:23: warning: unused variable ‘C’ [-Wunused-variable]
+18357 |                 auto& C = std::get<1>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp: In member function ‘chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(owlObjectPropertyAssertion::Type, chr::Constraint_store_index<std::tuple<long unsigned int, chr::Logical_var<int>, chr::Logical_var<int>, chr::Logical_var<int> >, std::tuple<chr::LNS::Index<0, 1>, chr::LNS::Index<2>, chr::LNS::Index<0, 1, 2>, chr::LNS::Index<1>, chr::LNS::Index<1, 2>, chr::LNS::Index<0, 2>, chr::LNS::Index<0> >, false>::iterator)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:20546:23: warning: unused variable ‘Y’ [-Wunused-variable]
+20546 |                 auto& Y = std::get<3>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:20590:23: warning: unused variable ‘X’ [-Wunused-variable]
+20590 |                 auto& X = std::get<1>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp: In member function ‘chr::ES_CHR OWL2::do_owlOneOfLoop(owlOneOfLoop::Type)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:24411:23: warning: unused variable ‘C’ [-Wunused-variable]
+24411 |                 auto& C = std::get<1>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp: In member function ‘chr::ES_CHR OWL2::do_owlUnionOfLoop(owlUnionOfLoop::Type)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:27567:23: warning: unused variable ‘C’ [-Wunused-variable]
+27567 |                 auto& C = std::get<1>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp: In member function ‘chr::ES_CHR OWL2::do_queryComplexStudents(queryComplexStudents::Type, chr::Constraint_store_index<std::tuple<long unsigned int, chr::Logical_var<int>, chr::Logical_var<int>, chr::Logical_var<int>, chr::Logical_var<int>, chr::Logical_var<int>, chr::Logical_var_ground<int> >, std::tuple<chr::LNS::Index<0, 1>, chr::LNS::Index<0, 1, 2>, chr::LNS::Index<0, 1, 3>, chr::LNS::Index<0, 1, 4> >, false>::iterator)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:28111:23: warning: unused variable ‘E’ [-Wunused-variable]
+28111 |                 auto& E = std::get<1>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:28112:23: warning: unused variable ‘F’ [-Wunused-variable]
+28112 |                 auto& F = std::get<2>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:28113:23: warning: unused variable ‘G’ [-Wunused-variable]
+28113 |                 auto& G = std::get<3>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:28114:23: warning: unused variable ‘H’ [-Wunused-variable]
+28114 |                 auto& H = std::get<4>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:28115:23: warning: unused variable ‘K’ [-Wunused-variable]
+28115 |                 auto& K = std::get<5>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:28116:23: warning: unused variable ‘ID’ [-Wunused-variable]
+28116 |                 auto& ID = std::get<6>(c_args);
+      |                       ^~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp: In member function ‘chr::ES_CHR OWL2::do_queryComplexStudentsWithId(queryComplexStudentsWithId::Type)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:28256:23: warning: unused variable ‘URIE’ [-Wunused-variable]
+28256 |                 auto& URIE = std::get<1>(c_args);
+      |                       ^~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:28257:23: warning: unused variable ‘URIF’ [-Wunused-variable]
+28257 |                 auto& URIF = std::get<2>(c_args);
+      |                       ^~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:28258:23: warning: unused variable ‘URIG’ [-Wunused-variable]
+28258 |                 auto& URIG = std::get<3>(c_args);
+      |                       ^~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:28259:23: warning: unused variable ‘URIH’ [-Wunused-variable]
+28259 |                 auto& URIH = std::get<4>(c_args);
+      |                       ^~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:28260:23: warning: unused variable ‘URIK’ [-Wunused-variable]
+28260 |                 auto& URIK = std::get<5>(c_args);
+      |                       ^~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:28261:23: warning: unused variable ‘ID’ [-Wunused-variable]
+28261 |                 auto& ID = std::get<6>(c_args);
+      |                       ^~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp: In member function ‘chr::ES_CHR OWL2::do_queryDataAssertion(queryDataAssertion::Type, chr::Constraint_store_index<std::tuple<long unsigned int, chr::Logical_var<int>, chr::Logical_var_ground<int> >, std::tuple<chr::LNS::Index<0>, chr::LNS::Index<0, 1> >, false>::iterator)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:28372:23: warning: unused variable ‘P’ [-Wunused-variable]
+28372 |                 auto& P = std::get<1>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:28373:23: warning: unused variable ‘ID’ [-Wunused-variable]
+28373 |                 auto& ID = std::get<2>(c_args);
+      |                       ^~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp: In member function ‘chr::ES_CHR OWL2::do_queryDataAssertionWithId(queryDataAssertionWithId::Type)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:28446:23: warning: unused variable ‘URIP’ [-Wunused-variable]
+28446 |                 auto& URIP = std::get<1>(c_args);
+      |                       ^~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:28447:23: warning: unused variable ‘ID’ [-Wunused-variable]
+28447 |                 auto& ID = std::get<2>(c_args);
+      |                       ^~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp: In member function ‘chr::ES_CHR OWL2::do_queryEngineeringStudents(queryEngineeringStudents::Type, chr::Constraint_store_index<std::tuple<long unsigned int, chr::Logical_var<int>, chr::Logical_var<int>, chr::Logical_var<int>, chr::Logical_var<int>, chr::Logical_var<int>, chr::Logical_var_ground<int> >, std::tuple<chr::LNS::Index<0>, chr::LNS::Index<0, 1>, chr::LNS::Index<0, 2>, chr::LNS::Index<0, 3, 4> >, false>::iterator)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:28629:23: warning: unused variable ‘E’ [-Wunused-variable]
+28629 |                 auto& E = std::get<1>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:28630:23: warning: unused variable ‘F’ [-Wunused-variable]
+28630 |                 auto& F = std::get<2>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:28631:23: warning: unused variable ‘G’ [-Wunused-variable]
+28631 |                 auto& G = std::get<3>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:28632:23: warning: unused variable ‘H’ [-Wunused-variable]
+28632 |                 auto& H = std::get<4>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:28633:23: warning: unused variable ‘K’ [-Wunused-variable]
+28633 |                 auto& K = std::get<5>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:28634:23: warning: unused variable ‘ID’ [-Wunused-variable]
+28634 |                 auto& ID = std::get<6>(c_args);
+      |                       ^~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp: In member function ‘chr::ES_CHR OWL2::do_queryEngineeringStudentsWithId(queryEngineeringStudentsWithId::Type)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:28774:23: warning: unused variable ‘URIE’ [-Wunused-variable]
+28774 |                 auto& URIE = std::get<1>(c_args);
+      |                       ^~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:28775:23: warning: unused variable ‘URIF’ [-Wunused-variable]
+28775 |                 auto& URIF = std::get<2>(c_args);
+      |                       ^~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:28776:23: warning: unused variable ‘URIG’ [-Wunused-variable]
+28776 |                 auto& URIG = std::get<3>(c_args);
+      |                       ^~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:28777:23: warning: unused variable ‘URIH’ [-Wunused-variable]
+28777 |                 auto& URIH = std::get<4>(c_args);
+      |                       ^~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:28778:23: warning: unused variable ‘URIK’ [-Wunused-variable]
+28778 |                 auto& URIK = std::get<5>(c_args);
+      |                       ^~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:28779:23: warning: unused variable ‘ID’ [-Wunused-variable]
+28779 |                 auto& ID = std::get<6>(c_args);
+      |                       ^~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp: In member function ‘chr::ES_CHR OWL2::do_queryInstance(queryInstance::Type)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:29016:23: warning: unused variable ‘X’ [-Wunused-variable]
+29016 |                 auto& X = std::get<1>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:29017:23: warning: unused variable ‘C’ [-Wunused-variable]
+29017 |                 auto& C = std::get<2>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp: In member function ‘chr::ES_CHR OWL2::do_queryInstances(queryInstances::Type, chr::Constraint_store_index<std::tuple<long unsigned int, chr::Logical_var<int>, chr::Logical_var_ground<int> >, std::tuple<chr::LNS::Index<0>, chr::LNS::Index<0, 1> >, false>::iterator)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:29207:23: warning: unused variable ‘C’ [-Wunused-variable]
+29207 |                 auto& C = std::get<1>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:29208:23: warning: unused variable ‘ID’ [-Wunused-variable]
+29208 |                 auto& ID = std::get<2>(c_args);
+      |                       ^~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp: In member function ‘chr::ES_CHR OWL2::do_queryInstancesWithId(queryInstancesWithId::Type)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:29281:23: warning: unused variable ‘URIC’ [-Wunused-variable]
+29281 |                 auto& URIC = std::get<1>(c_args);
+      |                       ^~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:29282:23: warning: unused variable ‘ID’ [-Wunused-variable]
+29282 |                 auto& ID = std::get<2>(c_args);
+      |                       ^~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp: In member function ‘chr::ES_CHR OWL2::do_queryObjAssertion(queryObjAssertion::Type, chr::Constraint_store_index<std::tuple<long unsigned int, chr::Logical_var<int>, chr::Logical_var_ground<int> >, std::tuple<chr::LNS::Index<0>, chr::LNS::Index<0, 1> >, false>::iterator)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:29484:23: warning: unused variable ‘P’ [-Wunused-variable]
+29484 |                 auto& P = std::get<1>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:29485:23: warning: unused variable ‘ID’ [-Wunused-variable]
+29485 |                 auto& ID = std::get<2>(c_args);
+      |                       ^~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp: In member function ‘chr::ES_CHR OWL2::do_queryObjAssertionSubject(queryObjAssertionSubject::Type, chr::Constraint_store_index<std::tuple<long unsigned int, chr::Logical_var<int>, chr::Logical_var<int>, chr::Logical_var_ground<int> >, std::tuple<chr::LNS::Index<0, 1>, chr::LNS::Index<0, 1, 2> >, false>::iterator)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:29731:23: warning: unused variable ‘P’ [-Wunused-variable]
+29731 |                 auto& P = std::get<1>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:29732:23: warning: unused variable ‘O’ [-Wunused-variable]
+29732 |                 auto& O = std::get<2>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:29733:23: warning: unused variable ‘ID’ [-Wunused-variable]
+29733 |                 auto& ID = std::get<3>(c_args);
+      |                       ^~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp: In member function ‘chr::ES_CHR OWL2::do_queryObjAssertionSubjectWithId(queryObjAssertionSubjectWithId::Type)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:29822:23: warning: unused variable ‘URIP’ [-Wunused-variable]
+29822 |                 auto& URIP = std::get<1>(c_args);
+      |                       ^~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:29823:23: warning: unused variable ‘URIO’ [-Wunused-variable]
+29823 |                 auto& URIO = std::get<2>(c_args);
+      |                       ^~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:29824:23: warning: unused variable ‘ID’ [-Wunused-variable]
+29824 |                 auto& ID = std::get<3>(c_args);
+      |                       ^~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp: In member function ‘chr::ES_CHR OWL2::do_queryObjAssertionWithId(queryObjAssertionWithId::Type)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:29886:23: warning: unused variable ‘URIP’ [-Wunused-variable]
+29886 |                 auto& URIP = std::get<1>(c_args);
+      |                       ^~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:29887:23: warning: unused variable ‘ID’ [-Wunused-variable]
+29887 |                 auto& ID = std::get<2>(c_args);
+      |                       ^~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp: In member function ‘chr::ES_CHR OWL2::do_querySubjectByObject(querySubjectByObject::Type, chr::Constraint_store_index<std::tuple<long unsigned int, chr::Logical_var<int>, chr::Logical_var_ground<int> >, std::tuple<chr::LNS::Index<0>, chr::LNS::Index<0, 1> >, false>::iterator)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:30216:23: warning: unused variable ‘P’ [-Wunused-variable]
+30216 |                 auto& P = std::get<1>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:30217:23: warning: unused variable ‘ID’ [-Wunused-variable]
+30217 |                 auto& ID = std::get<2>(c_args);
+      |                       ^~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp: In member function ‘chr::ES_CHR OWL2::do_querySubjectByObjectWithId(querySubjectByObjectWithId::Type)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:30290:23: warning: unused variable ‘URIP’ [-Wunused-variable]
+30290 |                 auto& URIP = std::get<1>(c_args);
+      |                       ^~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.cpp:30291:23: warning: unused variable ‘ID’ [-Wunused-variable]
+30291 |                 auto& ID = std::get<2>(c_args);
+      |                       ^~
+[ 97%] Linking CXX static library libowl_rules.a
+[ 97%] Built target owl_rules
+[ 98%] Building CXX object CMakeFiles/ParserProject.dir/main.cpp.o
+In file included from /home/chiaral/Desktop/owl-chr/chrpp/runtime/chrpp.in.hh:41,
+                 from /home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:5:
+/home/chiaral/Desktop/owl-chr/chrpp/runtime/bt_list.hh:135:25: warning: ISO C++ prohibits anonymous structs [-Wpedantic]
+  135 |                         {
+      |                         ^
+/home/chiaral/Desktop/owl-chr/chrpp/runtime/bt_list.hh:153:49: warning: ISO C++ prohibits anonymous structs [-Wpedantic]
+  153 |                                                 {
+      |                                                 ^
+/home/chiaral/Desktop/owl-chr/chrpp/runtime/bt_list.hh:161:49: warning: ISO C++ prohibits anonymous structs [-Wpedantic]
+  161 |                                                 {
+      |                                                 ^
+/home/chiaral/Desktop/owl-chr/chrpp/runtime/bt_list.hh:145:33: warning: ISO C++ prohibits anonymous structs [-Wpedantic]
+  145 |                                 {
+      |                                 ^
+/home/chiaral/Desktop/owl-chr/chrpp/runtime/bt_list.hh:172:33: warning: ISO C++ prohibits anonymous structs [-Wpedantic]
+  172 |                                 {
+      |                                 ^
+/home/chiaral/Desktop/owl-chr/chrpp/runtime/bt_list.hh:183:33: warning: ISO C++ prohibits anonymous structs [-Wpedantic]
+  183 |                                 {
+      |                                 ^
+In file included from /home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:7:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In member function ‘bool ParserCowl<T>::load()’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3022:14: warning: ISO C++ forbids variable length array ‘buffer’ [-Wvla]
+ 3022 |         char buffer[path.size()+1];
+      |              ^~~~~~
+In file included from /home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:13:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp: In member function ‘chr::ES_CHR OWL2::do_owlComplementOf(owlComplementOf::Type, chr::Constraint_store_index<std::tuple<long unsigned int, chr::Logical_var<int>, chr::Logical_var<int> >, std::tuple<chr::LNS::Index<0, 1> >, false>::iterator)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:15081:23: warning: unused variable ‘A’ [-Wunused-variable]
+15081 |                 auto& A = std::get<1>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp: In member function ‘chr::ES_CHR OWL2::do_owlDataPropertyAssertion(owlDataPropertyAssertion::Type, chr::Constraint_store_index<std::tuple<long unsigned int, chr::Logical_var<int>, chr::Logical_var<int>, chr::Logical_var_ground<Value> >, std::tuple<chr::LNS::Index<0>, chr::LNS::Index<0, 1>, chr::LNS::Index<0, 1, 2>, chr::LNS::Index<0, 2>, chr::LNS::Index<1, 2>, chr::LNS::Index<1>, chr::LNS::Index<2> >, false>::iterator)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:15852:23: warning: unused variable ‘X’ [-Wunused-variable]
+15852 |                 auto& X = std::get<1>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:15853:23: warning: unused variable ‘P’ [-Wunused-variable]
+15853 |                 auto& P = std::get<2>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp: In member function ‘chr::ES_CHR OWL2::do_owlHasKey(owlHasKey::Type, chr::Constraint_store_index<std::tuple<long unsigned int, chr::Logical_var<int>, chr::Logical_var<int>, chr::Logical_var_ground<int>, chr::Logical_var_ground<int> >, std::tuple<chr::LNS::Index<0, 2>, chr::LNS::Index<0, 1, 2, 3>, chr::LNS::Index<0, 2, 3> >, false>::iterator)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:18015:23: warning: unused variable ‘P’ [-Wunused-variable]
+18015 |                 auto& P = std::get<2>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp: In member function ‘chr::ES_CHR OWL2::do_owlHasKeyCheck(owlHasKeyCheck::Type, chr::Constraint_store_index<std::tuple<long unsigned int, chr::Logical_var<int>, chr::Logical_var<int>, chr::Logical_var<int>, chr::Logical_var_ground<int>, chr::Logical_var_ground<int> >, std::tuple<chr::LNS::Index<1, 2>, chr::LNS::Index<0, 3, 4>, chr::LNS::Index<0, 1, 2, 3, 4> >, false>::iterator)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:18357:23: warning: unused variable ‘C’ [-Wunused-variable]
+18357 |                 auto& C = std::get<1>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp: In member function ‘chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(owlObjectPropertyAssertion::Type, chr::Constraint_store_index<std::tuple<long unsigned int, chr::Logical_var<int>, chr::Logical_var<int>, chr::Logical_var<int> >, std::tuple<chr::LNS::Index<0, 1>, chr::LNS::Index<2>, chr::LNS::Index<0, 1, 2>, chr::LNS::Index<1>, chr::LNS::Index<1, 2>, chr::LNS::Index<0, 2>, chr::LNS::Index<0> >, false>::iterator)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:20546:23: warning: unused variable ‘Y’ [-Wunused-variable]
+20546 |                 auto& Y = std::get<3>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:20590:23: warning: unused variable ‘X’ [-Wunused-variable]
+20590 |                 auto& X = std::get<1>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp: In member function ‘chr::ES_CHR OWL2::do_owlOneOfLoop(owlOneOfLoop::Type)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:24411:23: warning: unused variable ‘C’ [-Wunused-variable]
+24411 |                 auto& C = std::get<1>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp: In member function ‘chr::ES_CHR OWL2::do_owlUnionOfLoop(owlUnionOfLoop::Type)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:27567:23: warning: unused variable ‘C’ [-Wunused-variable]
+27567 |                 auto& C = std::get<1>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp: In member function ‘chr::ES_CHR OWL2::do_queryComplexStudents(queryComplexStudents::Type, chr::Constraint_store_index<std::tuple<long unsigned int, chr::Logical_var<int>, chr::Logical_var<int>, chr::Logical_var<int>, chr::Logical_var<int>, chr::Logical_var<int>, chr::Logical_var_ground<int> >, std::tuple<chr::LNS::Index<0, 1>, chr::LNS::Index<0, 1, 2>, chr::LNS::Index<0, 1, 3>, chr::LNS::Index<0, 1, 4> >, false>::iterator)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:28111:23: warning: unused variable ‘E’ [-Wunused-variable]
+28111 |                 auto& E = std::get<1>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:28112:23: warning: unused variable ‘F’ [-Wunused-variable]
+28112 |                 auto& F = std::get<2>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:28113:23: warning: unused variable ‘G’ [-Wunused-variable]
+28113 |                 auto& G = std::get<3>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:28114:23: warning: unused variable ‘H’ [-Wunused-variable]
+28114 |                 auto& H = std::get<4>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:28115:23: warning: unused variable ‘K’ [-Wunused-variable]
+28115 |                 auto& K = std::get<5>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:28116:23: warning: unused variable ‘ID’ [-Wunused-variable]
+28116 |                 auto& ID = std::get<6>(c_args);
+      |                       ^~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp: In member function ‘chr::ES_CHR OWL2::do_queryComplexStudentsWithId(queryComplexStudentsWithId::Type)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:28256:23: warning: unused variable ‘URIE’ [-Wunused-variable]
+28256 |                 auto& URIE = std::get<1>(c_args);
+      |                       ^~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:28257:23: warning: unused variable ‘URIF’ [-Wunused-variable]
+28257 |                 auto& URIF = std::get<2>(c_args);
+      |                       ^~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:28258:23: warning: unused variable ‘URIG’ [-Wunused-variable]
+28258 |                 auto& URIG = std::get<3>(c_args);
+      |                       ^~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:28259:23: warning: unused variable ‘URIH’ [-Wunused-variable]
+28259 |                 auto& URIH = std::get<4>(c_args);
+      |                       ^~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:28260:23: warning: unused variable ‘URIK’ [-Wunused-variable]
+28260 |                 auto& URIK = std::get<5>(c_args);
+      |                       ^~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:28261:23: warning: unused variable ‘ID’ [-Wunused-variable]
+28261 |                 auto& ID = std::get<6>(c_args);
+      |                       ^~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp: In member function ‘chr::ES_CHR OWL2::do_queryDataAssertion(queryDataAssertion::Type, chr::Constraint_store_index<std::tuple<long unsigned int, chr::Logical_var<int>, chr::Logical_var_ground<int> >, std::tuple<chr::LNS::Index<0>, chr::LNS::Index<0, 1> >, false>::iterator)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:28372:23: warning: unused variable ‘P’ [-Wunused-variable]
+28372 |                 auto& P = std::get<1>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:28373:23: warning: unused variable ‘ID’ [-Wunused-variable]
+28373 |                 auto& ID = std::get<2>(c_args);
+      |                       ^~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp: In member function ‘chr::ES_CHR OWL2::do_queryDataAssertionWithId(queryDataAssertionWithId::Type)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:28446:23: warning: unused variable ‘URIP’ [-Wunused-variable]
+28446 |                 auto& URIP = std::get<1>(c_args);
+      |                       ^~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:28447:23: warning: unused variable ‘ID’ [-Wunused-variable]
+28447 |                 auto& ID = std::get<2>(c_args);
+      |                       ^~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp: In member function ‘chr::ES_CHR OWL2::do_queryEngineeringStudents(queryEngineeringStudents::Type, chr::Constraint_store_index<std::tuple<long unsigned int, chr::Logical_var<int>, chr::Logical_var<int>, chr::Logical_var<int>, chr::Logical_var<int>, chr::Logical_var<int>, chr::Logical_var_ground<int> >, std::tuple<chr::LNS::Index<0>, chr::LNS::Index<0, 1>, chr::LNS::Index<0, 2>, chr::LNS::Index<0, 3, 4> >, false>::iterator)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:28629:23: warning: unused variable ‘E’ [-Wunused-variable]
+28629 |                 auto& E = std::get<1>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:28630:23: warning: unused variable ‘F’ [-Wunused-variable]
+28630 |                 auto& F = std::get<2>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:28631:23: warning: unused variable ‘G’ [-Wunused-variable]
+28631 |                 auto& G = std::get<3>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:28632:23: warning: unused variable ‘H’ [-Wunused-variable]
+28632 |                 auto& H = std::get<4>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:28633:23: warning: unused variable ‘K’ [-Wunused-variable]
+28633 |                 auto& K = std::get<5>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:28634:23: warning: unused variable ‘ID’ [-Wunused-variable]
+28634 |                 auto& ID = std::get<6>(c_args);
+      |                       ^~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp: In member function ‘chr::ES_CHR OWL2::do_queryEngineeringStudentsWithId(queryEngineeringStudentsWithId::Type)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:28774:23: warning: unused variable ‘URIE’ [-Wunused-variable]
+28774 |                 auto& URIE = std::get<1>(c_args);
+      |                       ^~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:28775:23: warning: unused variable ‘URIF’ [-Wunused-variable]
+28775 |                 auto& URIF = std::get<2>(c_args);
+      |                       ^~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:28776:23: warning: unused variable ‘URIG’ [-Wunused-variable]
+28776 |                 auto& URIG = std::get<3>(c_args);
+      |                       ^~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:28777:23: warning: unused variable ‘URIH’ [-Wunused-variable]
+28777 |                 auto& URIH = std::get<4>(c_args);
+      |                       ^~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:28778:23: warning: unused variable ‘URIK’ [-Wunused-variable]
+28778 |                 auto& URIK = std::get<5>(c_args);
+      |                       ^~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:28779:23: warning: unused variable ‘ID’ [-Wunused-variable]
+28779 |                 auto& ID = std::get<6>(c_args);
+      |                       ^~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp: In member function ‘chr::ES_CHR OWL2::do_queryInstance(queryInstance::Type)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:29016:23: warning: unused variable ‘X’ [-Wunused-variable]
+29016 |                 auto& X = std::get<1>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:29017:23: warning: unused variable ‘C’ [-Wunused-variable]
+29017 |                 auto& C = std::get<2>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp: In member function ‘chr::ES_CHR OWL2::do_queryInstances(queryInstances::Type, chr::Constraint_store_index<std::tuple<long unsigned int, chr::Logical_var<int>, chr::Logical_var_ground<int> >, std::tuple<chr::LNS::Index<0>, chr::LNS::Index<0, 1> >, false>::iterator)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:29207:23: warning: unused variable ‘C’ [-Wunused-variable]
+29207 |                 auto& C = std::get<1>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:29208:23: warning: unused variable ‘ID’ [-Wunused-variable]
+29208 |                 auto& ID = std::get<2>(c_args);
+      |                       ^~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp: In member function ‘chr::ES_CHR OWL2::do_queryInstancesWithId(queryInstancesWithId::Type)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:29281:23: warning: unused variable ‘URIC’ [-Wunused-variable]
+29281 |                 auto& URIC = std::get<1>(c_args);
+      |                       ^~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:29282:23: warning: unused variable ‘ID’ [-Wunused-variable]
+29282 |                 auto& ID = std::get<2>(c_args);
+      |                       ^~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp: In member function ‘chr::ES_CHR OWL2::do_queryObjAssertion(queryObjAssertion::Type, chr::Constraint_store_index<std::tuple<long unsigned int, chr::Logical_var<int>, chr::Logical_var_ground<int> >, std::tuple<chr::LNS::Index<0>, chr::LNS::Index<0, 1> >, false>::iterator)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:29484:23: warning: unused variable ‘P’ [-Wunused-variable]
+29484 |                 auto& P = std::get<1>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:29485:23: warning: unused variable ‘ID’ [-Wunused-variable]
+29485 |                 auto& ID = std::get<2>(c_args);
+      |                       ^~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp: In member function ‘chr::ES_CHR OWL2::do_queryObjAssertionSubject(queryObjAssertionSubject::Type, chr::Constraint_store_index<std::tuple<long unsigned int, chr::Logical_var<int>, chr::Logical_var<int>, chr::Logical_var_ground<int> >, std::tuple<chr::LNS::Index<0, 1>, chr::LNS::Index<0, 1, 2> >, false>::iterator)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:29731:23: warning: unused variable ‘P’ [-Wunused-variable]
+29731 |                 auto& P = std::get<1>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:29732:23: warning: unused variable ‘O’ [-Wunused-variable]
+29732 |                 auto& O = std::get<2>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:29733:23: warning: unused variable ‘ID’ [-Wunused-variable]
+29733 |                 auto& ID = std::get<3>(c_args);
+      |                       ^~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp: In member function ‘chr::ES_CHR OWL2::do_queryObjAssertionSubjectWithId(queryObjAssertionSubjectWithId::Type)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:29822:23: warning: unused variable ‘URIP’ [-Wunused-variable]
+29822 |                 auto& URIP = std::get<1>(c_args);
+      |                       ^~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:29823:23: warning: unused variable ‘URIO’ [-Wunused-variable]
+29823 |                 auto& URIO = std::get<2>(c_args);
+      |                       ^~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:29824:23: warning: unused variable ‘ID’ [-Wunused-variable]
+29824 |                 auto& ID = std::get<3>(c_args);
+      |                       ^~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp: In member function ‘chr::ES_CHR OWL2::do_queryObjAssertionWithId(queryObjAssertionWithId::Type)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:29886:23: warning: unused variable ‘URIP’ [-Wunused-variable]
+29886 |                 auto& URIP = std::get<1>(c_args);
+      |                       ^~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:29887:23: warning: unused variable ‘ID’ [-Wunused-variable]
+29887 |                 auto& ID = std::get<2>(c_args);
+      |                       ^~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp: In member function ‘chr::ES_CHR OWL2::do_querySubjectByObject(querySubjectByObject::Type, chr::Constraint_store_index<std::tuple<long unsigned int, chr::Logical_var<int>, chr::Logical_var_ground<int> >, std::tuple<chr::LNS::Index<0>, chr::LNS::Index<0, 1> >, false>::iterator)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:30216:23: warning: unused variable ‘P’ [-Wunused-variable]
+30216 |                 auto& P = std::get<1>(c_args);
+      |                       ^
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:30217:23: warning: unused variable ‘ID’ [-Wunused-variable]
+30217 |                 auto& ID = std::get<2>(c_args);
+      |                       ^~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp: In member function ‘chr::ES_CHR OWL2::do_querySubjectByObjectWithId(querySubjectByObjectWithId::Type)’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:30290:23: warning: unused variable ‘URIP’ [-Wunused-variable]
+30290 |                 auto& URIP = std::get<1>(c_args);
+      |                       ^~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/owlrules.hpp:30291:23: warning: unused variable ‘ID’ [-Wunused-variable]
+30291 |                 auto& ID = std::get<2>(c_args);
+      |                       ^~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘bool ParserCowl<T>::load() [with T = OWL2]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3022:14: warning: ISO C++ forbids variable length array [-Wvla]
+ 3022 |         char buffer[path.size()+1];
+      |              ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3037:19: warning: unused variable ‘out’ [-Wunused-variable]
+ 3037 |         UOStream *out = uostream_std();
+      |                   ^~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static void ParserCowl<T>::printPrefixes(ParserCowl<T>*, CowlOntology*) [with T = OWL2; CowlOntology = CowlOntology]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3034:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:432:15: warning: unused variable ‘stream’ [-Wunused-variable]
+  432 |     UOStream *stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2976:19: warning: unused variable ‘out’ [-Wunused-variable]
+ 2976 |         UOStream *out = uostream_std();
+      |                   ^~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2982:19: warning: unused variable ‘out’ [-Wunused-variable]
+ 2982 |         UOStream *out = uostream_std();
+      |                   ^~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2987:19: warning: unused variable ‘out’ [-Wunused-variable]
+ 2987 |         UOStream *out = uostream_std();
+      |                   ^~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2994:23: warning: unused variable ‘out’ [-Wunused-variable]
+ 2994 |             UOStream *out = uostream_std();
+      |                       ^~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static void ParserCowl<T>::iterateDecl(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2789:20:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:489:14: warning: unused variable ‘stream’ [-Wunused-variable]
+  489 |    UOStream *stream = uostream_std();
+      |              ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static void ParserCowl<T>::iterateSubclass(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2795:24:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:534:15: warning: unused variable ‘stream’ [-Wunused-variable]
+  534 |     UOStream *stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static void ParserCowl<T>::iterateEquivClass(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2801:26:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:1441:15: warning: unused variable ‘stream’ [-Wunused-variable]
+ 1441 |     UOStream* stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static void ParserCowl<T>::iterateDisjClass(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2807:25:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:1501:21: warning: unused variable ‘name’ [-Wunused-variable]
+ 1501 |         CowlString *name = cowl_iri_get_rem(iri);  // Pour l'affichage seulement
+      |                     ^~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:1488:15: warning: unused variable ‘stream’ [-Wunused-variable]
+ 1488 |     UOStream *stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static void ParserCowl<T>::iterateClassAssert(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2813:27:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:1523:15: warning: unused variable ‘stream’ [-Wunused-variable]
+ 1523 |     UOStream *stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:1528:17: warning: unused variable ‘nameClasse’ [-Wunused-variable]
+ 1528 |     CowlString *nameClasse = cowl_iri_get_rem(iriClasse);  // Pour l'affichage seulement
+      |                 ^~~~~~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:1529:17: warning: unused variable ‘nameIndiv’ [-Wunused-variable]
+ 1529 |     CowlString *nameIndiv = cowl_iri_get_rem(iriIndiv);  // Pour l'affichage seulement
+      |                 ^~~~~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static void ParserCowl<T>::iterateObjPropAssert(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2819:29:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:1549:15: warning: unused variable ‘stream’ [-Wunused-variable]
+ 1549 |     UOStream *stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:1556:17: warning: unused variable ‘nameSujet’ [-Wunused-variable]
+ 1556 |     CowlString *nameSujet= cowl_iri_get_rem(iriSujet);  // Pour l'affichage seulement
+      |                 ^~~~~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:1557:17: warning: unused variable ‘nameObjet’ [-Wunused-variable]
+ 1557 |     CowlString *nameObjet = cowl_iri_get_rem(iriObjet);  // Pour l'affichage seulement
+      |                 ^~~~~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:1560:17: warning: unused variable ‘nameProp’ [-Wunused-variable]
+ 1560 |     CowlString *nameProp = cowl_iri_get_rem(iriProp);  // Pour l'affichage seulement
+      |                 ^~~~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static void ParserCowl<T>::iterateNegObjPropAssert(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2825:32:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:1584:15: warning: unused variable ‘stream’ [-Wunused-variable]
+ 1584 |     UOStream *stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:1591:17: warning: unused variable ‘nameSujet’ [-Wunused-variable]
+ 1591 |     CowlString *nameSujet= cowl_iri_get_rem(iriSujet);  // Pour l'affichage seulement
+      |                 ^~~~~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:1592:17: warning: unused variable ‘nameObjet’ [-Wunused-variable]
+ 1592 |     CowlString *nameObjet = cowl_iri_get_rem(iriObjet);  // Pour l'affichage seulement
+      |                 ^~~~~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:1596:17: warning: unused variable ‘nameProp’ [-Wunused-variable]
+ 1596 |     CowlString *nameProp = cowl_iri_get_rem(iriProp);  // Pour l'affichage seulement
+      |                 ^~~~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static void ParserCowl<T>::iterateSubObjProp(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2831:26:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:1636:26: warning: unused variable ‘prop’ [-Wunused-variable]
+ 1636 |             CowlObjProp* prop = (CowlObjProp*)cowl_vector_get_item(propChain, i);
+      |                          ^~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:1621:15: warning: unused variable ‘stream’ [-Wunused-variable]
+ 1621 |     UOStream *stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static void ParserCowl<T>::iterateEquivObjProp(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2837:28:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:1702:21: warning: unused variable ‘propName’ [-Wunused-variable]
+ 1702 |         CowlString *propName = cowl_iri_get_rem(propIri);  // Pour l'affichage seulement
+      |                     ^~~~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:1691:15: warning: unused variable ‘stream’ [-Wunused-variable]
+ 1691 |     UOStream *stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static void ParserCowl<T>::iterateObjPropDomain(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2844:29:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:1725:15: warning: unused variable ‘stream’ [-Wunused-variable]
+ 1725 |     UOStream *stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static void ParserCowl<T>::iterateObjPropRange(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2851:28:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:1744:15: warning: unused variable ‘stream’ [-Wunused-variable]
+ 1744 |     UOStream *stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static void ParserCowl<T>::iterateDiffInd(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2857:23:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:1763:15: warning: unused variable ‘stream’ [-Wunused-variable]
+ 1763 |     UOStream *stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static void ParserCowl<T>::iterateSameInd(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2863:23:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:1798:15: warning: unused variable ‘stream’ [-Wunused-variable]
+ 1798 |     UOStream *stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static void ParserCowl<T>::iterateDataPropAssert(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2869:30:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:1831:15: warning: unused variable ‘stream’ [-Wunused-variable]
+ 1831 |     UOStream *stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static void ParserCowl<T>::iterateNegDataPropAssert(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2875:33:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2028:15: warning: unused variable ‘stream’ [-Wunused-variable]
+ 2028 |     UOStream *stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static void ParserCowl<T>::iterateDataPropDomain(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2881:30:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2216:15: warning: unused variable ‘stream’ [-Wunused-variable]
+ 2216 |     UOStream *stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static void ParserCowl<T>::iterateDataPropRange(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2887:29:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2234:15: warning: unused variable ‘stream’ [-Wunused-variable]
+ 2234 |     UOStream *stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static void ParserCowl<T>::iterateSubDataProp(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2893:27:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2471:12: warning: unused variable ‘stream’ [-Wunused-variable]
+ 2471 |  UOStream *stream = uostream_std();
+      |            ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static void ParserCowl<T>::iterateEquivDataProp(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2899:29:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2506:21: warning: unused variable ‘propName’ [-Wunused-variable]
+ 2506 |         CowlString *propName = cowl_iri_get_rem(propIri);  // Pour l'affichage seulement
+      |                     ^~~~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2495:15: warning: unused variable ‘stream’ [-Wunused-variable]
+ 2495 |     UOStream *stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static void ParserCowl<T>::iterateDisjDataProp(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2905:28:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2541:21: warning: unused variable ‘propName’ [-Wunused-variable]
+ 2541 |         CowlString *propName = cowl_iri_get_rem(propIri);  // Pour l'affichage seulement
+      |                     ^~~~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2529:15: warning: unused variable ‘stream’ [-Wunused-variable]
+ 2529 |     UOStream *stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static void ParserCowl<T>::iterateFuncDataProp(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2911:28:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2564:15: warning: unused variable ‘stream’ [-Wunused-variable]
+ 2564 |     UOStream *stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static void ParserCowl<T>::iterateInvObjProp(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2917:26:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2636:15: warning: unused variable ‘stream’ [-Wunused-variable]
+ 2636 |     UOStream *stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static void ParserCowl<T>::iterateSymObjProp(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2923:26:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2653:15: warning: unused variable ‘stream’ [-Wunused-variable]
+ 2653 |     UOStream *stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static void ParserCowl<T>::iterateFuncObjProp(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2929:27:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2666:15: warning: unused variable ‘stream’ [-Wunused-variable]
+ 2666 |     UOStream *stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static void ParserCowl<T>::iterateInvFuncObjProp(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2935:30:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2679:15: warning: unused variable ‘stream’ [-Wunused-variable]
+ 2679 |     UOStream *stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static void ParserCowl<T>::iterateAsymmObjProp(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2941:28:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2692:15: warning: unused variable ‘stream’ [-Wunused-variable]
+ 2692 |     UOStream *stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static void ParserCowl<T>::iterateTransObjProp(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2947:28:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2706:15: warning: unused variable ‘stream’ [-Wunused-variable]
+ 2706 |     UOStream *stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static void ParserCowl<T>::iterateReflObjProp(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2953:27:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2721:15: warning: unused variable ‘stream’ [-Wunused-variable]
+ 2721 |     UOStream *stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static void ParserCowl<T>::iterateIrrefObjProp(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2959:28:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2734:15: warning: unused variable ‘stream’ [-Wunused-variable]
+ 2734 |     UOStream *stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static void ParserCowl<T>::iterateDisjObjProp(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2965:27:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2760:21: warning: unused variable ‘propName’ [-Wunused-variable]
+ 2760 |         CowlString *propName = cowl_iri_get_rem(propIri);  // Pour l'affichage seulement
+      |                     ^~~~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2748:15: warning: unused variable ‘stream’ [-Wunused-variable]
+ 2748 |     UOStream *stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static void ParserCowl<T>::iterateHasKey(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2971:22:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2578:15: warning: unused variable ‘stream’ [-Wunused-variable]
+ 2578 |     UOStream *stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static chr::Logical_var<int> ParserCowl<T>::processComplexClass(ParserCowl<T>*, CowlClsExp*) [with T = OWL2; CowlClsExp = CowlClsExp]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:549:37:   required from ‘static void ParserCowl<T>::iterateSubclass(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2795:24:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:660:23: warning: unused variable ‘stream’ [-Wunused-variable]
+  660 |             UOStream* stream = uostream_std();
+      |                       ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static chr::Logical_var<int> ParserCowl<T>::iterateUnion(ParserCowl<T>*, CowlClsExp*) [with T = OWL2; CowlClsExp = CowlClsExp]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:629:32:   required from ‘static chr::Logical_var<int> ParserCowl<T>::processComplexClass(ParserCowl<T>*, CowlClsExp*) [with T = OWL2; CowlClsExp = CowlClsExp]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:549:37:   required from ‘static void ParserCowl<T>::iterateSubclass(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2795:24:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:570:15: warning: unused variable ‘stream’ [-Wunused-variable]
+  570 |     UOStream* stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static chr::Logical_var<int> ParserCowl<T>::iterateIntersection(ParserCowl<T>*, CowlClsExp*) [with T = OWL2; CowlClsExp = CowlClsExp]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:632:39:   required from ‘static chr::Logical_var<int> ParserCowl<T>::processComplexClass(ParserCowl<T>*, CowlClsExp*) [with T = OWL2; CowlClsExp = CowlClsExp]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:549:37:   required from ‘static void ParserCowl<T>::iterateSubclass(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2795:24:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:677:15: warning: unused variable ‘stream’ [-Wunused-variable]
+  677 |     UOStream* stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static chr::Logical_var<int> ParserCowl<T>::iterateObjectSomeValuesFrom(ParserCowl<T>*, CowlClsExp*) [with T = OWL2; CowlClsExp = CowlClsExp]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:635:47:   required from ‘static chr::Logical_var<int> ParserCowl<T>::processComplexClass(ParserCowl<T>*, CowlClsExp*) [with T = OWL2; CowlClsExp = CowlClsExp]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:549:37:   required from ‘static void ParserCowl<T>::iterateSubclass(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2795:24:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:734:15: warning: unused variable ‘stream’ [-Wunused-variable]
+  734 |     UOStream* stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static chr::Logical_var<int> ParserCowl<T>::iterateObjectAllValuesFrom(ParserCowl<T>*, CowlClsExp*) [with T = OWL2; CowlClsExp = CowlClsExp]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:638:46:   required from ‘static chr::Logical_var<int> ParserCowl<T>::processComplexClass(ParserCowl<T>*, CowlClsExp*) [with T = OWL2; CowlClsExp = CowlClsExp]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:549:37:   required from ‘static void ParserCowl<T>::iterateSubclass(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2795:24:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:779:15: warning: unused variable ‘stream’ [-Wunused-variable]
+  779 |     UOStream* stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static chr::Logical_var<int> ParserCowl<T>::iterateObjectHasValue(ParserCowl<T>*, CowlClsExp*) [with T = OWL2; CowlClsExp = CowlClsExp]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:641:41:   required from ‘static chr::Logical_var<int> ParserCowl<T>::processComplexClass(ParserCowl<T>*, CowlClsExp*) [with T = OWL2; CowlClsExp = CowlClsExp]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:549:37:   required from ‘static void ParserCowl<T>::iterateSubclass(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2795:24:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:821:15: warning: unused variable ‘stream’ [-Wunused-variable]
+  821 |     UOStream* stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static chr::Logical_var<int> ParserCowl<T>::iterateObjectOneOf(ParserCowl<T>*, CowlClsExp*) [with T = OWL2; CowlClsExp = CowlClsExp]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:644:38:   required from ‘static chr::Logical_var<int> ParserCowl<T>::processComplexClass(ParserCowl<T>*, CowlClsExp*) [with T = OWL2; CowlClsExp = CowlClsExp]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:549:37:   required from ‘static void ParserCowl<T>::iterateSubclass(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2795:24:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:853:15: warning: unused variable ‘stream’ [-Wunused-variable]
+  853 |     UOStream* stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static chr::Logical_var<int> ParserCowl<T>::iterateDataSomeValuesFrom(ParserCowl<T>*, CowlClsExp*) [with T = OWL2; CowlClsExp = CowlClsExp]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:647:45:   required from ‘static chr::Logical_var<int> ParserCowl<T>::processComplexClass(ParserCowl<T>*, CowlClsExp*) [with T = OWL2; CowlClsExp = CowlClsExp]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:549:37:   required from ‘static void ParserCowl<T>::iterateSubclass(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2795:24:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:885:15: warning: unused variable ‘stream’ [-Wunused-variable]
+  885 |     UOStream* stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static chr::Logical_var<int> ParserCowl<T>::iterateDataAllValuesFrom(ParserCowl<T>*, CowlClsExp*) [with T = OWL2; CowlClsExp = CowlClsExp]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:650:44:   required from ‘static chr::Logical_var<int> ParserCowl<T>::processComplexClass(ParserCowl<T>*, CowlClsExp*) [with T = OWL2; CowlClsExp = CowlClsExp]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:549:37:   required from ‘static void ParserCowl<T>::iterateSubclass(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2795:24:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:1070:15: warning: unused variable ‘stream’ [-Wunused-variable]
+ 1070 |     UOStream* stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static chr::Logical_var<int> ParserCowl<T>::iterateMaxCardinality(ParserCowl<T>*, CowlClsExp*) [with T = OWL2; CowlClsExp = CowlClsExp]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:654:41:   required from ‘static chr::Logical_var<int> ParserCowl<T>::processComplexClass(ParserCowl<T>*, CowlClsExp*) [with T = OWL2; CowlClsExp = CowlClsExp]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:549:37:   required from ‘static void ParserCowl<T>::iterateSubclass(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2795:24:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:1261:15: warning: unused variable ‘stream’ [-Wunused-variable]
+ 1261 |     UOStream* stream = uostream_std();
+      |               ^~~~~~
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h: In instantiation of ‘static chr::Logical_var<int> ParserCowl<T>::iterateObjectComplementOf(ParserCowl<T>*, CowlClsExp*) [with T = OWL2; CowlClsExp = CowlClsExp]’:
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:657:45:   required from ‘static chr::Logical_var<int> ParserCowl<T>::processComplexClass(ParserCowl<T>*, CowlClsExp*) [with T = OWL2; CowlClsExp = CowlClsExp]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:549:37:   required from ‘static void ParserCowl<T>::iterateSubclass(ParserCowl<T>*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:2795:24:   required from ‘static bool ParserCowl<T>::for_each(void*, CowlAny*) [with T = OWL2; CowlAny = void]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:3040:22:   required from ‘bool ParserCowl<T>::load() [with T = OWL2]’
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/main.cpp:42:2:   required from here
+/home/chiaral/Desktop/owl-chr/owl2chr-Luchinzzz/owlChrpp/include/parsercowl.h:1410:15: warning: unused variable ‘stream’ [-Wunused-variable]
+ 1410 |     UOStream* stream = uostream_std();
+      |               ^~~~~~
+[100%] Linking CXX executable ParserProject
+[100%] Built target ParserProject

@@ -88,6 +88,37 @@ cmake -DCHRPP_ROOT=/absolute/path/to/chrpp -S . -B build
 
 ---
 
+### CMake Build Logic
+
+The CMake workflow is based on two separate targets with distinct dependencies:
+```bash
+owlrules.chr  ──(chrppc)──►  owl.cpp  ──►  libowl_rules.a
+                                                  │
+main.cpp  ─────────────────────────────►  ParserProject  (executable)
+
+```
+
+#### Target 1 — owl_rules (static library)
+Contains only owl.cpp generated from owlrules.chr
+Recompiled only when owlrules.chr changes
+main.cpp is not among its dependencies, so modifying it does not trigger recompilation
+
+##### Target 2 — ParserProject (executable)
+Contains only main.cpp and links owl_rules
+When main.cpp changes, CMake recompiles only main.cpp and relinks — CHR rules remain unchanged
+Useful CMake Commands:
+
+```bash
+# Standard build (compiles only changed files)
+cmake -B build && cmake --build build
+
+# Force regeneration of owl.cpp from owlrules.chr
+cmake --build build --target generate_owl_cpp
+
+# Recompile only main.cpp (after modifying main.cpp)
+cmake --build build --target ParserProject
+```
+---
 ## Input Format
 
 The engine accepts **OWL 2 Functional Syntax** (`.ofn`) only:
@@ -174,8 +205,8 @@ ParserCowl<OWL2> parser("results/OWL2RL-10.ofn", *space);
 parser.load();
 
 // Uncomment the desired queries:
-space->querySuperClassOfUri("https://kracr.iiitd.edu.in/OWL2Bench#Student");
-space->queryInstancesURI("https://kracr.iiitd.edu.in/OWL2Bench#Faculty");
+space->querySuperClassOfUri("<https://kracr.iiitd.edu.in/OWL2Bench#Student>");
+space->queryInstancesURI("<https://kracr.iiitd.edu.in/OWL2Bench#Faculty>");
 space->realisation();
 space->classification();
 ```
