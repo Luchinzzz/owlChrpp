@@ -10,7 +10,7 @@
 #include "include/types.h"
 #include "include/chr_traits.h"
 #include "include/utils.h"
-#include "owlrules.hpp"
+#include "owlrulesOWL2.hh"
 
 // ── Store printer ─────────────────────────────────────────────────────────────
 
@@ -26,26 +26,48 @@ void print(T &pb)
 }
 
 std::vector<Query> queries = {
-    {"obj", "<https://kracr.iiitd.edu.in/OWL2Bench#isMemberOf>"},
-    {"obj", "<https://kracr.iiitd.edu.in/OWL2Bench#isPartOf>"},
-    {"data", "<https://kracr.iiitd.edu.in/OWL2Bench#hasAge>"},
-    {"inst", "<https://kracr.iiitd.edu.in/OWL2Bench#T20CricketFan>"},
-    {"obj", "<https://kracr.iiitd.edu.in/OWL2Bench#hasAlumnus>"},
-    {"obj", "<https://kracr.iiitd.edu.in/OWL2Bench#isAffiliatedOrganizationOf>"},
-    {"obj-subject", "<https://kracr.iiitd.edu.in/OWL2Bench#hasCollegeDiscipline>"},
-    {"obj", "<https://kracr.iiitd.edu.in/OWL2Bench#hasCollaborationWith>"},
-    {"obj", "<https://kracr.iiitd.edu.in/OWL2Bench#isAdvisedBy>"},
-    {"inst", "<https://kracr.iiitd.edu.in/OWL2Bench#Person>"},
-    {"inst", "<https://kracr.iiitd.edu.in/OWL2Bench#WomanCollege>"},
-    {"inst", "<https://kracr.iiitd.edu.in/OWL2Bench#LeisureStudent>"},
-    {"subj", "<https://kracr.iiitd.edu.in/OWL2Bench#isHeadOf>"},
-    {"subj", "<https://kracr.iiitd.edu.in/OWL2Bench#hasHead>"},
-    {"inst", "<https://kracr.iiitd.edu.in/OWL2Bench#Faculty>"},
-    {"obj", "<https://kracr.iiitd.edu.in/OWL2Bench#hasSameHomeTownWith>"},
+    // Superclass query: retrieve all individuals classified as Student
+    {"super", "<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#Student>"},
+
+    // Superclass query: retrieve all individuals classified as Lecturer
+    {"super", "<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#Lecturer>"},
+
+    // Superclass query: retrieve all individuals classified as TA
+    {"super", "<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#TA>"},
+
+    // Object property query: retrieve all (subject, object) pairs of is_studying
+    {"obj", "<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#is_studying>"},
+
+    // Object property query: retrieve all (subject, object) pairs of offered_by
+    {"obj", "<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#offered_by>"},
+
+    // Object property query: retrieve all (subject, object) pairs of belonging_to
+    {"obj", "<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#belonging_to>"},
+
+    // Object property query: retrieve all (subject, object) pairs of lecturers_of_faculty
+    {"obj", "<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#lecturers_of_faculty>"},
+
+    // Data property query: retrieve all (subject, value) pairs of grade
+    {"data", "<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#grade>"},
+
+    // Data property query: retrieve all (subject, value) pairs of name
+    {"data", "<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#name>"},
+
+    // Data property query: retrieve all (subject, value) pairs of course_code
+    {"data", "<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#course_code>"},
+
+    // Subject query: retrieve all individuals that have an is_studying relationship
+    {"subj", "<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#is_studying>"},
+
+    // Subject query: retrieve all individuals that have an offered_by relationship
+    {"subj", "<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#offered_by>"},
 };
 
 int main(int argc, char *argv[])
 {
+
+    std::ofstream fileReal(output_file_Real);
+    std::ofstream fileClassif(output_file_Classif);
 
     // Déterminer le fichier à utiliser
     std::string filename = "examples/ofn/OWL2RL-11.ofn"; // Valeur par défaut
@@ -67,6 +89,7 @@ int main(int argc, char *argv[])
 
         int counter = 0;
 
+ 
         for (const auto &q : queries) {
             if (q.type == "obj")
             {
@@ -85,11 +108,11 @@ int main(int argc, char *argv[])
                 // querySubjectByObjectUri
                 space->querySubjectByObjectUri(q.uri);
             }
-            else if (q.type == "obj-subject")
-            {
-                // obj assertion con soggetto specifico
-                space->queryObjAssertionSubjectUri(q.uri);
-            }
+            // else if (q.type == "obj-subject")
+            // {
+            //     // obj assertion con soggetto specifico
+            //     space->queryObjAssertionSubjectUri(q.uri);
+            // }
             else if (q.type == "inst")
             {
                 // queryInstancesURI
@@ -101,6 +124,7 @@ int main(int argc, char *argv[])
                 continue;
             }
         };
+
 
         // space->querySuperClassOfUri(std::string("http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#TA"));
         // space->queryObjAssertionUri(std::string("<https://kracr.iiitd.edu.in/OWL2Bench#isMemberOf>"));

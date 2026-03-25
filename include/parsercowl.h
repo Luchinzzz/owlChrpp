@@ -72,7 +72,7 @@ enum class XSDType  {
     UNKNOWN
 };
 
-XSDType mapXsdType(const std::string& t){
+inline XSDType mapXsdType(const std::string& t){
     std::string s = t;
     std::transform(s.begin(), s.end(), s.begin(), ::tolower);
 

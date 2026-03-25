@@ -12,31 +12,31 @@
 
 // ── Display ───────────────────────────────────────────────────────────────────
 
-void afficher(std::string x) {
+inline void afficher(std::string x) {
     std::cout << x << std::endl;
 }
 
-void afficher(std::string x, std::string y) {
+inline void afficher(std::string x, std::string y) {
     std::cout << x << "    " << y << std::endl;
 }
 
 // ── File output ───────────────────────────────────────────────────────────────
 
-void stockerRealisation(std::string x, std::string y) {
+inline void stockerRealisation(std::string x, std::string y) {
     std::ofstream out(output_file_Real, std::ios::app);
     if (!out) { std::cerr << "Impossible d'ouvrir output.txt\n"; return; }
     out << x << " " << y << "\n";
     out.close();
 }
 
-void stockerClassification(std::string x, std::string y) {
+inline void stockerClassification(std::string x, std::string y) {
     std::ofstream out(output_file_Classif, std::ios::app);
     if (!out) { std::cerr << "Impossible d'ouvrir  output_file_Classif\n"; return; }
     out << x << " " << y << "\n";
     out.close();
 }
 
-void stockerQueries(const StringSet& s, int id) {
+inline void stockerQueries(const StringSet& s, int id) {
     //std::ofstream out(output_file_Queries, std::ios::app);
     std::string queriesFilename = output_file_Queries + "_" + std::to_string(id);
     std::ofstream out(queriesFilename, std::ios::app);
@@ -50,37 +50,37 @@ void stockerQueries(const StringSet& s, int id) {
 
 // ── String helpers ────────────────────────────────────────────────────────────
 
-std::string valueToString(const Value& v) {
+inline std::string valueToString(const Value& v) {
     return "\"" + v.val + "\"";
 }
 
-StringSet makeVec(const std::string& a, const std::string& b) {
+inline StringSet makeVec(const std::string& a, const std::string& b) {
     StringSet s;
     s.insert(s.end(), a);
     s.insert(s.end(), b);
     return s;
 }
 
-void afficherResultatSet(const StringSet& s, int id) {
+inline void afficherResultatSet(const StringSet& s, int id) {
     std::cout << id << " : ";
     for (const std::string& res : s)
         std::cout << res << "  ";
     std::cout << std::endl;
 }
 
-bool samePrefix(const std::string& px, const std::string& x) {
+inline bool samePrefix(const std::string& px, const std::string& x) {
     size_t pos = px.find(':');
     std::string pref = px.substr(0, pos);
     return (pref == x);
 }
 
-bool prefixIntern(const std::string& uri) {
+inline bool prefixIntern(const std::string& uri) {
     size_t pos = uri.find('#');
     std::string pref = uri.substr(0, pos);
     return (pref == "http://anonymous.org");
 }
 
-std::string constructFullUri(const std::string& prefix,
+inline std::string constructFullUri(const std::string& prefix,
                               const std::string& localName) {
     auto pos = localName.find(':');
     std::string name = localName.substr(pos + 1);
@@ -89,31 +89,31 @@ std::string constructFullUri(const std::string& prefix,
 
 // ── OWL / CHR helpers ─────────────────────────────────────────────────────────
 
-bool different(const chr::Logical_var<int>& A,
+inline bool different(const chr::Logical_var<int>& A,
                const chr::Logical_var<int>& B,
                const chr::Logical_var<int>& C) {
     return A != B && B != C && A != C;
 }
 
-bool contains(const chr::Logical_var<int>& x, const LogicalVarSet& l) {
+inline bool contains(const chr::Logical_var<int>& x, const LogicalVarSet& l) {
     return l.find(x) != l.end();
 }
 
-LogicalVarSetIterator getBegin(const LogicalVarSet& s) { return s.begin(); }
-LogicalVarSetIterator getEnd  (const LogicalVarSet& s) { return s.end();   }
+inline LogicalVarSetIterator getBegin(const LogicalVarSet& s) { return s.begin(); }
+inline LogicalVarSetIterator getEnd  (const LogicalVarSet& s) { return s.end();   }
 
-bool sameDataType(const std::shared_ptr<AnySimpleType> dr1,
+inline bool sameDataType(const std::shared_ptr<AnySimpleType> dr1,
                    const std::shared_ptr<AnySimpleType> dr2) {
     if (!dr1 || !dr2) return false;
     return dr1->getId() == dr2->getId();
 }
 
-bool invalidType(const std::shared_ptr<AnySimpleType> dr, const Value& v) {
+inline bool invalidType(const std::shared_ptr<AnySimpleType> dr, const Value& v) {
     if (!dr || !v.typeVal) return true;
     return !v.typeVal->verify(dr.get());
 }
 
-Value createValue(const std::string& val,
+inline Value createValue(const std::string& val,
                    const std::shared_ptr<AnySimpleType> typeVal) {
     Value v;
     v.val     = val;
@@ -121,12 +121,12 @@ Value createValue(const std::string& val,
     return v;
 }
 
-bool equalIncrement(int j, int i) {
+inline bool equalIncrement(int j, int i) {
     return j == i + 1;
 }
 
 template <typename T>
-bool checkClassification(T& pb, const std::string& x, const std::string& c) {
+inline bool checkClassification(T& pb, const std::string& x, const std::string& c) {
     auto it = pb.get_owlClassAssertion_store().begin();
     while (!it.at_end()) {
         if ((*std::get<1>(*it)) == x && (*std::get<2>(*it)) == c)
