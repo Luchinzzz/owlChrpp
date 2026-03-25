@@ -37,7 +37,9 @@ void stockerClassification(std::string x, std::string y) {
 }
 
 void stockerQueries(const StringSet& s, int id) {
-    std::ofstream out(output_file_Queries, std::ios::app);
+    //std::ofstream out(output_file_Queries, std::ios::app);
+    std::string queriesFilename = output_file_Queries + "_" + std::to_string(id);
+    std::ofstream out(queriesFilename, std::ios::app);
     if (!out) { std::cerr << "Impossible d'ouvrir  output_file_Queries\n"; return; }
     out << id << " : ";
     for (const std::string& res : s)

@@ -20,9 +20,7 @@ owl.cpp.backup
 *.gch
 
 # Fichiers de résultats générés à l'exécution
-res_realisation
-res_classification
-res_queries
+results/*
 
 
 # Fichiers temporaires

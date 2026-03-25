@@ -15,3 +15,8 @@ static int global_counter = 0;
 inline int get_next_id() {
     return global_counter++;
 }
+
+struct Query {
+    std::string type;   
+    std::string uri;
+};
