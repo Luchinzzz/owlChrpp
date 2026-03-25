@@ -74,7 +74,7 @@ cd build && make -j$(nproc)
 
 # 4. Run (from the project root)
 cd ..
-./build/ParserProject results/OWL2RL-10.ofn
+./build/ParserProject examples/ofn/OWL2RL-10.ofn
 ```
 
 If CHR++ is not in `../chrpp` (sibling directory), specify the path:
@@ -99,13 +99,13 @@ main.cpp  ─────(g++ -std=c++17 -O3)───────►  ParserPro
 ```
 
 #### Target 1 — owl_rules (static library)
-Contains only owlrules.cpp generated from owlrules.chr
-Recompiled only when owlrules.chr changes
+Contains only owlrules.cpp generated from owlrules.chrpp.
+Recompiled only when owlrules.chrpp changes.
 main.cpp is not among its dependencies, so modifying it does not trigger recompilation
 
 ##### Target 2 — ParserProject (executable)
-Contains only main.cpp and links owl_rules
-When main.cpp changes, CMake recompiles only main.cpp and relinks — CHR rules remain unchanged
+Contains only main.cpp and links owl_rules.
+When main.cpp changes, CMake recompiles only main.cpp and relinks, CHR rules remain unchanged.
 Useful CMake Commands:
 
 ```bash
