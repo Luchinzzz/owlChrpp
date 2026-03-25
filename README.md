@@ -51,7 +51,7 @@ See [INSTALL.md](INSTALL.md) for full installation instructions.
   - Repository: https://gitlab.com/vynce/chrpp
   - Must be compiled **in-source** (see below)
 
-> **CHR++ version note**: versions older than commit `a9ebc45` generate incorrect guard expressions in `owl.cpp`, leading to wrong inference results or crashes. If a new CHR++ version is released, verify it includes this commit before upgrading.
+> **CHR++ version note**: versions older than commit `a9ebc45` generate incorrect guard expressions in `owlrules.cpp`, leading to wrong inference results or crashes. If a new CHR++ version is released, verify it includes this commit before upgrading.
 
 ### Quick Install
 
@@ -68,7 +68,7 @@ cd ..
 git clone --recurse-submodules https://github.com/arigraphitech/owlChrpp.git
 cd owlChrpp
 
-# 3. Build (Release -O3 by default, owl.cpp auto-generated)
+# 3. Build (Release -O3 by default, owlrules.cpp auto-generated)
 cmake -S . -B build
 cd build && make -j$(nproc)
 
@@ -83,8 +83,8 @@ cmake -DCHRPP_ROOT=/absolute/path/to/chrpp -S . -B build
 ```
 
 **CMake output messages**:
-- `CHR++ found: .../chrppc/chrppc (owl.cpp auto-regeneration enabled)` → ready
-- `chrppc not found — using pre-generated owl.cpp` → CHR++ not found, see [INSTALL.md](INSTALL.md)
+- `CHR++ found: .../chrppc/chrppc (owlrules.cpp auto-regeneration enabled)` → ready
+- `chrppc not found — using pre-generated owlrules.cpp` → CHR++ not found, see [INSTALL.md](INSTALL.md)
 
 ---
 
@@ -92,14 +92,14 @@ cmake -DCHRPP_ROOT=/absolute/path/to/chrpp -S . -B build
 
 The CMake workflow is based on two separate targets with distinct dependencies:
 ```bash
-owlrules.chr  ──(chrppc)──►  owl.cpp  ──►  libowl_rules.a
+owlrules.chr  ──(chrppc)──►  owlrules.cpp  ──►  libowl_rules.a
                                                   │
-main.cpp  ─────────────────────────────►  ParserProject  (executable)
+main.cpp  ─────(g++ -std=c++17 -O3)───────►  ParserProject  (executable)
 
 ```
 
 #### Target 1 — owl_rules (static library)
-Contains only owl.cpp generated from owlrules.chr
+Contains only owlrules.cpp generated from owlrules.chr
 Recompiled only when owlrules.chr changes
 main.cpp is not among its dependencies, so modifying it does not trigger recompilation
 
@@ -112,7 +112,7 @@ Useful CMake Commands:
 # Standard build (compiles only changed files)
 cmake -B build && cmake --build build
 
-# Force regeneration of owl.cpp from owlrules.chr
+# Force regeneration of owlrules.cpp from owlrules.chrpp
 cmake --build build --target generate_owl_cpp
 
 # Recompile only main.cpp (after modifying main.cpp)
@@ -196,22 +196,55 @@ The project includes OWL2Bench benchmark ontologies in `examples/ofn`:
 
 **Note**: Files 11 and 10 are intermediate-size datasets created for practical testing purposes. Files 1 and 2 are official OWL2Bench-generated ontologies where the number corresponds to the **number of universities** in the ontology (1 university = 3.2 MB, 2 universities = 6.3 MB).
 
-### Query Examples
+### Test Examples
 
 ```cpp
-// In owlFunctional.chrpp main()
-auto space = OWL2::create();
-ParserCowl<OWL2> parser("examples/ofn/OWL2RL-10.ofn", *space);
-parser.load();
+// In main.cpp main()
 
-// Uncomment the desired queries:
-space->querySuperClassOfUri("<https://kracr.iiitd.edu.in/OWL2Bench#Student>");
-space->queryInstancesURI("<https://kracr.iiitd.edu.in/OWL2Bench#Faculty>");
-space->realisation();
-space->classification();
+// Add the query here
+std::vector<Query> queries = {
+    {"obj", "<https://kracr.iiitd.edu.in/OWL2Bench#isMemberOf>"},
+    {"obj", "<https://kracr.iiitd.edu.in/OWL2Bench#isPartOf>"},
+    {"data", "<https://kracr.iiitd.edu.in/OWL2Bench#hasAge>"},
+}
+...
+{
+    ...
+    auto space = OWL2::create();
+    ParserCowl<OWL2> parser("examples/ofn/OWL2RL-11.ofn", *space);
+    parser.load();
+
+    space->realisation();
+    space->classification();
+    ...
+}
 ```
 
 ---
+
+### Query Mapping in owl2chr
+
+The engine maps query types to specific reasoning functions in the `OWL2` space. Each query has a **type** and a **URI**, and the type determines which query function is called.
+
+---
+
+#### Mapping Table
+
+| Query Type       | Function Called                                  | Description |
+|-----------------|--------------------------------------------------|-------------|
+| `obj`           | `space->queryObjAssertionUri(q.uri)`           | Retrieves all object property assertions for the given URI. Example: all `isMemberOf` relationships. |
+| `super`         | `space->querySuperClassOfUri(q.uri)`           | Retrieves all superclasses of a class URI (including `owl:Thing`). |
+| `sub`           | `space->querySubClassOfUri(q.uri)`             | Retrieves all subclasses of a class URI. 
+| `data`          | `space->queryDataAssertionUri(q.uri)`          | Retrieves all data property assertions for a URI. Example: `hasAge`. |
+| `subj`          | `space->querySubjectByObjectUri(q.uri)`        | Retrieves subjects for a given object property. Example: who `isHeadOf` a department. |
+| `obj-subject`   | `space->queryObjAssertionSubjectUri(q.uri)` | Retrieves object property assertions with a specific subject. Example: `hasCollegeDiscipline`. |
+| `inst`          | `space->queryInstancesURI(q.uri)`              | Retrieves all individuals that are instances of the given class URI. Example: all `T20CricketFan` individuals. |
+
+If a query type is not recognized, the program prints an error message:
+
+```cpp
+std::cerr << "Type of query not recognized: " << q.type << std::endl;
+```
 
 ## Architecture
 
@@ -222,6 +255,7 @@ owlChrpp/
 ├── owlrules.chrpp         # CHR++ rules
 ├── owlrules.cpp           # Generated by chrppc from owlrules.chrpp
 ├── owlrules.hpp           # Header file for OWL2 CHR++ rules 
+├── main.cpp               # Main C++ file
 ├── include                # Header files to include
     ├── parsercowl.h       # COWL parser for OWL 2        
     ├── Parser.h           # Generic parsing interface   
@@ -242,23 +276,13 @@ owlChrpp/
     └── json               # Examples in json format    
 ```
 
-### Build Workflow
-
-```
-owlFunctional.chrpp
-       ↓  (chrppc — auto-triggered by make when .chrpp changes)
-   owl.cpp
-       ↓  (g++ -std=c++17 -O3)
- build/ParserProject
-```
-
 ---
 
 ## Tests and Benchmarks
 
 ### Running CHR++ Tests
 
-Tests are configured in the `main()` function of `owlFunctional.chrpp`. Uncomment the desired task:
+Tests are configured in the `main()` function of `main.cpp`. Uncomment the desired task:
 
 #### Classification (CT) — Class Hierarchy
 
@@ -348,14 +372,15 @@ python3 compare_query_results.py sortie.txt ../../../owl2bench/sparql_reference_
 
 ### Modifying CHR++ Rules
 
-1. Edit `owlFunctional.chrpp`
-2. Recompile — `owl.cpp` is auto-regenerated: `cd build && make`
-3. Commit the updated `owl.cpp` if sharing your changes
+1. Edit `owlrules.chrpp`
+2. Recreate `owlrules.hpp` by doing `chrppc owlrules.chrpp -sout > owlrules.hpp` or `/absolute/path/to/chrppc owlrules.chrpp -sout > owlrules.hpp`
+3. Recompile — `owlrules.cpp` is auto-regenerated: `cd build && make` or `cmake --build build --target generate_owl_cpp`
+3. Commit the updated `owlrules.cpp` if sharing your changes
 
 ### Adding a New Query
 
 ```chrpp
-// In owlFunctional.chrpp
+// In owlrules.chrpp
 
 // 1. Declare the constraint
 <chr_constraint>

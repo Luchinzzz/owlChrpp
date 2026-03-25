@@ -75,8 +75,6 @@ int main(int argc, char *argv[])
             else if (q.type == "super")
             {
                 space->querySuperClassOfUri(q.uri);
-                // } else if (q.type == "sub") {
-                //     space->querySubClassOfUri(q.uri);
             }
             else if (q.type == "data")
             {
@@ -90,7 +88,7 @@ int main(int argc, char *argv[])
             else if (q.type == "obj-subject")
             {
                 // obj assertion con soggetto specifico
-                space->queryObjAssertionSubjectUri(q.uri, q.uri);
+                space->queryObjAssertionSubjectUri(q.uri);
             }
             else if (q.type == "inst")
             {
