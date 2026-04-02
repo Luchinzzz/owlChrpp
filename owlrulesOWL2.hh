@@ -950,7 +950,7 @@ queryInstances<queryInstances( C, ID )> { logicalName<logicalName( URIX, X )>, o
 //----------------------- END INCLUDE HEADER ---------------------
 #define __CHRPPC_MAJOR__ 1
 #define __CHRPPC_MINOR__ 90
-#line 1 "/home/user/owlChrpp/owlrules.chrpp"
+#line 1 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 #include <chrpp.hh>
 class OWL2 {
 	unsigned long int next_free_constraint_id = 1;

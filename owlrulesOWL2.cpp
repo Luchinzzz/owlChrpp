@@ -7489,7 +7489,7 @@ Begin queryisMemberOf_store
 	Store constraint queryisMemberOf
 Goto next goal constraint
 */
-#include </home/user/owlChrpp/owlrulesOWL2.hh>
+#include </home/user/owl-chr/owlChrpp/owlrulesOWL2.hh>
 chr::ES_CHR OWL2::do_ResultVec(typename ResultVec::Type c_args, typename ResultVec::Constraint_store_t::iterator c_it) {
 	bool c_stored_before = !c_it.at_end();
 	chr::Statistics::update_call_stack();
@@ -7503,7 +7503,7 @@ chr::ES_CHR OWL2::do_ResultVec(typename ResultVec::Type c_args, typename ResultV
 		auto& ID = std::get<2>(c_args);
 		auto it0_0 = ResultVec_constraint_store->template begin<0>(S,ID);
 		while ( !it0_0.at_end() ) {
-#line 195 "/home/user/owlChrpp/owlrules.chrpp"
+#line 195 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -7513,7 +7513,7 @@ chr::ES_CHR OWL2::do_ResultVec(typename ResultVec::Type c_args, typename ResultV
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 195 "/home/user/owlChrpp/owlrules.chrpp"
+#line 195 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -7535,7 +7535,7 @@ chr::ES_CHR OWL2::do_ResultVec(typename ResultVec::Type c_args, typename ResultV
 			c_it.lock();
 			// Body
 			chr::Statistics::inc_nb_rules();
-#line 585 "/home/user/owlChrpp/owlrules.chrpp"
+#line 585 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			CHECK_ES( afficherResultatSet( S, ID ) );
 			assert(c_stored_before);
 			if (!c_it.alive()) {
@@ -7560,7 +7560,7 @@ chr::ES_CHR OWL2::do_ResultVec(typename ResultVec::Type c_args, typename ResultV
 			c_it.lock();
 			// Body
 			chr::Statistics::inc_nb_rules();
-#line 586 "/home/user/owlChrpp/owlrules.chrpp"
+#line 586 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			CHECK_ES( stockerQueries( S, ID ) );
 			assert(c_stored_before);
 			if (!c_it.alive()) {
@@ -7588,7 +7588,7 @@ chr::ES_CHR OWL2::do_classification(typename classification::Type c_args, typena
 		if (classification_constraint_store->empty()) goto classification_1;
 		auto it0_0 = classification_constraint_store->begin();
 		while ( !it0_0.at_end() ) {
-#line 203 "/home/user/owlChrpp/owlrules.chrpp"
+#line 203 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -7598,7 +7598,7 @@ chr::ES_CHR OWL2::do_classification(typename classification::Type c_args, typena
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 203 "/home/user/owlChrpp/owlrules.chrpp"
+#line 203 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -7620,7 +7620,7 @@ chr::ES_CHR OWL2::do_classification(typename classification::Type c_args, typena
 			while ( !it1_1.at_end() ) {
 				auto URIX(std::get<1>(*it1_1));
 				auto X(std::get<2>(*it1_1));
-#line 581 "/home/user/owlChrpp/owlrules.chrpp"
+#line 581 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it1_1) != std::get<0>(*it1_0) )
@@ -7630,7 +7630,7 @@ chr::ES_CHR OWL2::do_classification(typename classification::Type c_args, typena
 					while ( !it1_2.at_end() ) {
 						auto URIY(std::get<1>(*it1_2));
 						auto Y(std::get<2>(*it1_2));
-#line 581 "/home/user/owlChrpp/owlrules.chrpp"
+#line 581 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						// Begin guard
 						if (
 							( std::get<0>(*it1_2) != std::get<0>(*it1_0) )
@@ -7651,7 +7651,7 @@ chr::ES_CHR OWL2::do_classification(typename classification::Type c_args, typena
 									c_it.lock();
 									// Body
 									chr::Statistics::inc_nb_rules();
-#line 581 "/home/user/owlChrpp/owlrules.chrpp"
+#line 581 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 									if (chr::ES_CHR::FAILURE == resultClassification( URIX, URIY )) return chr::ES_CHR::FAILURE;
 									assert(c_stored_before);
 									if (!c_it.alive()) {
@@ -7712,7 +7712,7 @@ chr::ES_CHR OWL2::do_classification(typename classification::Type c_args, typena
 		while ( !it2_0.at_end() ) {
 			auto X(std::get<1>(*it2_0));
 			auto _LV_0_(std::get<2>(*it2_0));
-#line 582 "/home/user/owlChrpp/owlrules.chrpp"
+#line 582 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( _LV_0_ == X )
@@ -7731,7 +7731,7 @@ chr::ES_CHR OWL2::do_classification(typename classification::Type c_args, typena
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 582 "/home/user/owlChrpp/owlrules.chrpp"
+#line 582 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == resultClassification( URIX, URIX )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -7781,7 +7781,7 @@ chr::ES_CHR OWL2::do_constructPropertyChain(typename constructPropertyChain::Typ
 		auto& N = std::get<5>(c_args);
 		auto it0_0 = constructPropertyChain_constraint_store->template begin<0>(PC,I,X,Y,N);
 		while ( !it0_0.at_end() ) {
-#line 514 "/home/user/owlChrpp/owlrules.chrpp"
+#line 514 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -7791,7 +7791,7 @@ chr::ES_CHR OWL2::do_constructPropertyChain(typename constructPropertyChain::Typ
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 514 "/home/user/owlChrpp/owlrules.chrpp"
+#line 514 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -7809,7 +7809,7 @@ chr::ES_CHR OWL2::do_constructPropertyChain(typename constructPropertyChain::Typ
 		auto& X = std::get<3>(c_args);
 		auto& Y = std::get<4>(c_args);
 		auto& N = std::get<5>(c_args);
-#line 516 "/home/user/owlChrpp/owlrules.chrpp"
+#line 516 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			( I < N )
@@ -7818,7 +7818,7 @@ chr::ES_CHR OWL2::do_constructPropertyChain(typename constructPropertyChain::Typ
 			while ( !it1_0.at_end() ) {
 				auto P(std::get<2>(*it1_0));
 				auto J(std::get<3>(*it1_0));
-#line 516 "/home/user/owlChrpp/owlrules.chrpp"
+#line 516 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					equalIncrement( J, I )
@@ -7841,7 +7841,7 @@ chr::ES_CHR OWL2::do_constructPropertyChain(typename constructPropertyChain::Typ
 							c_it.lock();
 							// Body
 							chr::Statistics::inc_nb_rules();
-#line 516 "/home/user/owlChrpp/owlrules.chrpp"
+#line 516 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 							if (chr::ES_CHR::FAILURE == constructPropertyChain( PC, ( I + 1 ), X, Z, N )) return chr::ES_CHR::FAILURE;
 							assert(c_stored_before);
 							if (!c_it.alive()) {
@@ -7883,7 +7883,7 @@ chr::ES_CHR OWL2::do_constructPropertyChain(typename constructPropertyChain::Typ
 		}
 		// Body
 		chr::Statistics::inc_nb_rules();
-#line 517 "/home/user/owlChrpp/owlrules.chrpp"
+#line 517 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		if (chr::ES_CHR::FAILURE == owlObjectPropertyAssertion( X, PC, Y )) return chr::ES_CHR::FAILURE;
 		return chr::ES_CHR::SUCCESS;
 	}
@@ -7912,7 +7912,7 @@ chr::ES_CHR OWL2::do_intersectionSubclassCheck(typename intersectionSubclassChec
 		auto& I = std::get<3>(c_args);
 		auto it0_0 = intersectionSubclassCheck_constraint_store->template begin<0>(X,C,I);
 		while ( !it0_0.at_end() ) {
-#line 158 "/home/user/owlChrpp/owlrules.chrpp"
+#line 158 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -7922,7 +7922,7 @@ chr::ES_CHR OWL2::do_intersectionSubclassCheck(typename intersectionSubclassChec
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 158 "/home/user/owlChrpp/owlrules.chrpp"
+#line 158 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -7939,7 +7939,7 @@ chr::ES_CHR OWL2::do_intersectionSubclassCheck(typename intersectionSubclassChec
 		auto& I = std::get<3>(c_args);
 		auto it1_0 = intersectionSubclassCheck_constraint_store->template begin<0>(C,A,I);
 		while ( !it1_0.at_end() ) {
-#line 407 "/home/user/owlChrpp/owlrules.chrpp"
+#line 407 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it1_0) != std::get<0>(c_args) )
@@ -7949,7 +7949,7 @@ chr::ES_CHR OWL2::do_intersectionSubclassCheck(typename intersectionSubclassChec
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 407 "/home/user/owlChrpp/owlrules.chrpp"
+#line 407 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -7965,7 +7965,7 @@ chr::ES_CHR OWL2::do_intersectionSubclassCheck(typename intersectionSubclassChec
 		auto& C = std::get<1>(c_args);
 		auto& A = std::get<2>(c_args);
 		auto& I = std::get<3>(c_args);
-#line 413 "/home/user/owlChrpp/owlrules.chrpp"
+#line 413 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			( I > 0 )
@@ -7989,7 +7989,7 @@ chr::ES_CHR OWL2::do_intersectionSubclassCheck(typename intersectionSubclassChec
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 413 "/home/user/owlChrpp/owlrules.chrpp"
+#line 413 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == intersectionSubclassCheck( C, A, ( I + 1 ) )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -8028,7 +8028,7 @@ chr::ES_CHR OWL2::do_intersectionSubclassCheck(typename intersectionSubclassChec
 		while ( !it3_0.at_end() ) {
 			auto ITEND(std::get<2>(*it3_0));
 			auto _LV_0_(std::get<3>(*it3_0));
-#line 417 "/home/user/owlChrpp/owlrules.chrpp"
+#line 417 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( _LV_0_ == ITEND )
@@ -8038,7 +8038,7 @@ chr::ES_CHR OWL2::do_intersectionSubclassCheck(typename intersectionSubclassChec
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 417 "/home/user/owlChrpp/owlrules.chrpp"
+#line 417 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlSubclassOf( A, C )) return chr::ES_CHR::FAILURE;
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -8068,7 +8068,7 @@ chr::ES_CHR OWL2::do_logicalName(typename logicalName::Type c_args, typename log
 		auto& X = std::get<2>(c_args);
 		auto it0_0 = logicalName_constraint_store->template begin<2>(URI,X);
 		while ( !it0_0.at_end() ) {
-#line 197 "/home/user/owlChrpp/owlrules.chrpp"
+#line 197 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -8078,7 +8078,7 @@ chr::ES_CHR OWL2::do_logicalName(typename logicalName::Type c_args, typename log
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 197 "/home/user/owlChrpp/owlrules.chrpp"
+#line 197 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -8093,7 +8093,7 @@ chr::ES_CHR OWL2::do_logicalName(typename logicalName::Type c_args, typename log
 		if (owlClass_constraint_store->empty()) goto logicalName_2;
 		auto& URIC = std::get<1>(c_args);
 		auto& C = std::get<2>(c_args);
-#line 249 "/home/user/owlChrpp/owlrules.chrpp"
+#line 249 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			(!( URIC == "http://www.w3.org/2002/07/owl#Thing" ) )
@@ -8101,7 +8101,7 @@ chr::ES_CHR OWL2::do_logicalName(typename logicalName::Type c_args, typename log
 			auto it1_0 = logicalName_constraint_store->template begin<0>(owlThing);
 			while ( !it1_0.at_end() ) {
 				auto OwlThingVar(std::get<2>(*it1_0));
-#line 249 "/home/user/owlChrpp/owlrules.chrpp"
+#line 249 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it1_0) != std::get<0>(c_args) )
@@ -8121,7 +8121,7 @@ chr::ES_CHR OWL2::do_logicalName(typename logicalName::Type c_args, typename log
 							c_it.lock();
 							// Body
 							chr::Statistics::inc_nb_rules();
-#line 249 "/home/user/owlChrpp/owlrules.chrpp"
+#line 249 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 							if (chr::ES_CHR::FAILURE == owlSubclassOf( C, OwlThingVar )) return chr::ES_CHR::FAILURE;
 							assert(c_stored_before);
 							if (!c_it.alive()) {
@@ -8157,7 +8157,7 @@ chr::ES_CHR OWL2::do_logicalName(typename logicalName::Type c_args, typename log
 		if (owlClass_constraint_store->empty()) goto logicalName_3;
 		auto& URIC = std::get<1>(c_args);
 		auto& C = std::get<2>(c_args);
-#line 252 "/home/user/owlChrpp/owlrules.chrpp"
+#line 252 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			(!( URIC == owlNothing ) )
@@ -8165,7 +8165,7 @@ chr::ES_CHR OWL2::do_logicalName(typename logicalName::Type c_args, typename log
 			auto it2_0 = logicalName_constraint_store->template begin<0>(owlNothing);
 			while ( !it2_0.at_end() ) {
 				auto OwlNothingVar(std::get<2>(*it2_0));
-#line 252 "/home/user/owlChrpp/owlrules.chrpp"
+#line 252 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it2_0) != std::get<0>(c_args) )
@@ -8185,7 +8185,7 @@ chr::ES_CHR OWL2::do_logicalName(typename logicalName::Type c_args, typename log
 							c_it.lock();
 							// Body
 							chr::Statistics::inc_nb_rules();
-#line 252 "/home/user/owlChrpp/owlrules.chrpp"
+#line 252 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 							if (chr::ES_CHR::FAILURE == owlSubclassOf( OwlNothingVar, C )) return chr::ES_CHR::FAILURE;
 							assert(c_stored_before);
 							if (!c_it.alive()) {
@@ -8230,7 +8230,7 @@ chr::ES_CHR OWL2::do_logicalName(typename logicalName::Type c_args, typename log
 			auto it3_1 = owlClassAssertion_constraint_store->template begin<1>(Y,true);
 			while ( !it3_1.at_end() ) {
 				auto W(std::get<1>(*it3_1));
-#line 440 "/home/user/owlChrpp/owlrules.chrpp"
+#line 440 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it3_1) != std::get<0>(*it3_0) )
@@ -8241,7 +8241,7 @@ chr::ES_CHR OWL2::do_logicalName(typename logicalName::Type c_args, typename log
 						auto P(std::get<2>(*it3_2));
 						auto it3_3 = owlObjectPropertyAssertion_constraint_store->template begin<2>(U,P,V);
 						while ( !it3_3.at_end() ) {
-#line 440 "/home/user/owlChrpp/owlrules.chrpp"
+#line 440 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 							// Begin guard
 							if (
 								( std::get<0>(*it3_3) != std::get<0>(*it3_2) )
@@ -8249,7 +8249,7 @@ chr::ES_CHR OWL2::do_logicalName(typename logicalName::Type c_args, typename log
 								auto it3_4 = logicalName_constraint_store->template begin<1>(W);
 								while ( !it3_4.at_end() ) {
 									auto URI(std::get<1>(*it3_4));
-#line 440 "/home/user/owlChrpp/owlrules.chrpp"
+#line 440 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 									// Begin guard
 									if (
 										( std::get<0>(*it3_4) != std::get<0>(c_args) )
@@ -8262,7 +8262,7 @@ chr::ES_CHR OWL2::do_logicalName(typename logicalName::Type c_args, typename log
 										it3_3.kill();
 										// Body
 										chr::Statistics::inc_nb_rules();
-#line 440 "/home/user/owlChrpp/owlrules.chrpp"
+#line 440 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 
 										return chr::ES_CHR::SUCCESS;
 									} // End guard
@@ -8307,7 +8307,7 @@ chr::ES_CHR OWL2::do_logicalName(typename logicalName::Type c_args, typename log
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 605 "/home/user/owlChrpp/owlrules.chrpp"
+#line 605 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == ResultVec( makeVec( URIX, valueToString( Y ) ), ID )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -8354,7 +8354,7 @@ chr::ES_CHR OWL2::do_owlAsymmetricObjectProperty(typename owlAsymmetricObjectPro
 		auto& P = std::get<1>(c_args);
 		auto it0_0 = owlAsymmetricObjectProperty_constraint_store->template begin<0>(P);
 		while ( !it0_0.at_end() ) {
-#line 140 "/home/user/owlChrpp/owlrules.chrpp"
+#line 140 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -8364,7 +8364,7 @@ chr::ES_CHR OWL2::do_owlAsymmetricObjectProperty(typename owlAsymmetricObjectPro
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 140 "/home/user/owlChrpp/owlrules.chrpp"
+#line 140 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -8393,7 +8393,7 @@ chr::ES_CHR OWL2::do_owlAsymmetricObjectProperty(typename owlAsymmetricObjectPro
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 338 "/home/user/owlChrpp/owlrules.chrpp"
+#line 338 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlNegativeObjectAssertion( Y, P, X )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -8432,7 +8432,7 @@ chr::ES_CHR OWL2::do_owlCandidatsIntersection(typename owlCandidatsIntersection:
 		auto& I = std::get<3>(c_args);
 		auto it0_0 = owlCandidatsIntersection_constraint_store->template begin<0>(X,C,I);
 		while ( !it0_0.at_end() ) {
-#line 157 "/home/user/owlChrpp/owlrules.chrpp"
+#line 157 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -8442,7 +8442,7 @@ chr::ES_CHR OWL2::do_owlCandidatsIntersection(typename owlCandidatsIntersection:
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 157 "/home/user/owlChrpp/owlrules.chrpp"
+#line 157 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -8477,7 +8477,7 @@ chr::ES_CHR OWL2::do_owlCandidatsIntersection(typename owlCandidatsIntersection:
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 391 "/home/user/owlChrpp/owlrules.chrpp"
+#line 391 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlCandidatsIntersection( X, C, ( I + 1 ) )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -8515,7 +8515,7 @@ chr::ES_CHR OWL2::do_owlCandidatsIntersection(typename owlCandidatsIntersection:
 		while ( !it2_0.at_end() ) {
 			auto ITEND(std::get<2>(*it2_0));
 			auto _LV_0_(std::get<3>(*it2_0));
-#line 394 "/home/user/owlChrpp/owlrules.chrpp"
+#line 394 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( _LV_0_ == ITEND )
@@ -8533,7 +8533,7 @@ chr::ES_CHR OWL2::do_owlCandidatsIntersection(typename owlCandidatsIntersection:
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 394 "/home/user/owlChrpp/owlrules.chrpp"
+#line 394 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlClassAssertion( X, C, true )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -8576,7 +8576,7 @@ chr::ES_CHR OWL2::do_owlClass(typename owlClass::Type c_args, typename owlClass:
 		auto& C = std::get<1>(c_args);
 		auto it0_0 = owlClass_constraint_store->template begin<0>(C);
 		while ( !it0_0.at_end() ) {
-#line 119 "/home/user/owlChrpp/owlrules.chrpp"
+#line 119 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -8586,7 +8586,7 @@ chr::ES_CHR OWL2::do_owlClass(typename owlClass::Type c_args, typename owlClass:
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 119 "/home/user/owlChrpp/owlrules.chrpp"
+#line 119 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -8609,7 +8609,7 @@ chr::ES_CHR OWL2::do_owlClass(typename owlClass::Type c_args, typename owlClass:
 			c_it.lock();
 			// Body
 			chr::Statistics::inc_nb_rules();
-#line 241 "/home/user/owlChrpp/owlrules.chrpp"
+#line 241 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			if (chr::ES_CHR::FAILURE == owlEquivalentClass( C, C )) return chr::ES_CHR::FAILURE;
 			assert(c_stored_before);
 			if (!c_it.alive()) {
@@ -8632,7 +8632,7 @@ chr::ES_CHR OWL2::do_owlClass(typename owlClass::Type c_args, typename owlClass:
 			auto it2_1 = logicalName_constraint_store->template begin<1>(C);
 			while ( !it2_1.at_end() ) {
 				auto URIC(std::get<1>(*it2_1));
-#line 249 "/home/user/owlChrpp/owlrules.chrpp"
+#line 249 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it2_1) != std::get<0>(*it2_0) )
@@ -8651,7 +8651,7 @@ chr::ES_CHR OWL2::do_owlClass(typename owlClass::Type c_args, typename owlClass:
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 249 "/home/user/owlChrpp/owlrules.chrpp"
+#line 249 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlSubclassOf( C, OwlThingVar )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -8695,7 +8695,7 @@ chr::ES_CHR OWL2::do_owlClass(typename owlClass::Type c_args, typename owlClass:
 			auto it3_1 = logicalName_constraint_store->template begin<1>(C);
 			while ( !it3_1.at_end() ) {
 				auto URIC(std::get<1>(*it3_1));
-#line 252 "/home/user/owlChrpp/owlrules.chrpp"
+#line 252 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it3_1) != std::get<0>(*it3_0) )
@@ -8714,7 +8714,7 @@ chr::ES_CHR OWL2::do_owlClass(typename owlClass::Type c_args, typename owlClass:
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 252 "/home/user/owlChrpp/owlrules.chrpp"
+#line 252 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlSubclassOf( OwlNothingVar, C )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -8768,7 +8768,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 		auto& B = std::get<3>(c_args);
 		auto it0_0 = owlClassAssertion_constraint_store->template begin<2>(X,A,B);
 		while ( !it0_0.at_end() ) {
-#line 132 "/home/user/owlChrpp/owlrules.chrpp"
+#line 132 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -8778,7 +8778,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 132 "/home/user/owlChrpp/owlrules.chrpp"
+#line 132 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -8797,7 +8797,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 		auto it1_0 = owlClassAssertion_constraint_store->template begin<0>(X,true);
 		while ( !it1_0.at_end() ) {
 			auto B(std::get<2>(*it1_0));
-#line 208 "/home/user/owlChrpp/owlrules.chrpp"
+#line 208 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it1_0) != std::get<0>(c_args) )
@@ -8811,7 +8811,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 					it1_1.kill();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 208 "/home/user/owlChrpp/owlrules.chrpp"
+#line 208 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					return chr::failure();
 					return chr::ES_CHR::SUCCESS;
 				}
@@ -8831,7 +8831,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 		auto it2_0 = owlClassAssertion_constraint_store->template begin<0>(X,true);
 		while ( !it2_0.at_end() ) {
 			auto A(std::get<2>(*it2_0));
-#line 208 "/home/user/owlChrpp/owlrules.chrpp"
+#line 208 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it2_0) != std::get<0>(c_args) )
@@ -8845,7 +8845,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 					it2_1.kill();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 208 "/home/user/owlChrpp/owlrules.chrpp"
+#line 208 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					return chr::failure();
 					return chr::ES_CHR::SUCCESS;
 				}
@@ -8865,7 +8865,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 		auto it3_0 = owlClassAssertion_constraint_store->template begin<0>(X,true);
 		while ( !it3_0.at_end() ) {
 			auto NOTA(std::get<2>(*it3_0));
-#line 226 "/home/user/owlChrpp/owlrules.chrpp"
+#line 226 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it3_0) != std::get<0>(c_args) )
@@ -8879,7 +8879,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 					it3_1.kill();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 226 "/home/user/owlChrpp/owlrules.chrpp"
+#line 226 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					return chr::failure();
 					return chr::ES_CHR::SUCCESS;
 				}
@@ -8899,7 +8899,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 		auto it4_0 = owlClassAssertion_constraint_store->template begin<0>(X,true);
 		while ( !it4_0.at_end() ) {
 			auto A(std::get<2>(*it4_0));
-#line 226 "/home/user/owlChrpp/owlrules.chrpp"
+#line 226 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it4_0) != std::get<0>(c_args) )
@@ -8913,7 +8913,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 					it4_1.kill();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 226 "/home/user/owlChrpp/owlrules.chrpp"
+#line 226 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					return chr::failure();
 					return chr::ES_CHR::SUCCESS;
 				}
@@ -8940,9 +8940,9 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 			c_it.lock();
 			// Body
 			chr::Statistics::inc_nb_rules();
-#line 234 "/home/user/owlChrpp/owlrules.chrpp"
+#line 234 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			if (chr::ES_CHR::FAILURE == owlClass( C )) return chr::ES_CHR::FAILURE;
-#line 234 "/home/user/owlChrpp/owlrules.chrpp"
+#line 234 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			if (chr::ES_CHR::FAILURE == owlNamedIndividual( X )) return chr::ES_CHR::FAILURE;
 			assert(c_stored_before);
 			if (!c_it.alive()) {
@@ -8963,7 +8963,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 		auto it6_0 = owlSubclassOf_constraint_store->template begin<1>(A);
 		while ( !it6_0.at_end() ) {
 			auto B(std::get<2>(*it6_0));
-#line 299 "/home/user/owlChrpp/owlrules.chrpp"
+#line 299 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				(!( A == B ) )
@@ -8981,7 +8981,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 299 "/home/user/owlChrpp/owlrules.chrpp"
+#line 299 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlClassAssertion( X, B, true )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -9013,7 +9013,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 		auto it7_0 = owlEquivalentClass_constraint_store->template begin<0>(A);
 		while ( !it7_0.at_end() ) {
 			auto B(std::get<2>(*it7_0));
-#line 302 "/home/user/owlChrpp/owlrules.chrpp"
+#line 302 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				(!( A == B ) )
@@ -9031,7 +9031,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 302 "/home/user/owlChrpp/owlrules.chrpp"
+#line 302 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlClassAssertion( X, B, true )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -9063,7 +9063,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 		auto it8_0 = owlSameIndividual_constraint_store->template begin<0>(X);
 		while ( !it8_0.at_end() ) {
 			auto Y(std::get<2>(*it8_0));
-#line 322 "/home/user/owlChrpp/owlrules.chrpp"
+#line 322 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				(!( X == Y ) )
@@ -9081,7 +9081,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 322 "/home/user/owlChrpp/owlrules.chrpp"
+#line 322 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlClassAssertion( Y, C, B )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -9125,7 +9125,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 			it9_0.kill();
 			// Body
 			chr::Statistics::inc_nb_rules();
-#line 372 "/home/user/owlChrpp/owlrules.chrpp"
+#line 372 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			if (chr::ES_CHR::FAILURE == owlClassAssertion( X, C, true )) return chr::ES_CHR::FAILURE;
 			assert(c_stored_before);
 			if (!c_it.alive()) {
@@ -9161,7 +9161,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 388 "/home/user/owlChrpp/owlrules.chrpp"
+#line 388 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlCandidatsIntersection( X, C, 0 )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -9206,7 +9206,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 391 "/home/user/owlChrpp/owlrules.chrpp"
+#line 391 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlCandidatsIntersection( X, C, ( I + 1 ) )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -9256,7 +9256,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 397 "/home/user/owlChrpp/owlrules.chrpp"
+#line 397 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlClassAssertion( X, C1, true )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -9282,7 +9282,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 		if (std::get<3>(c_args) != false) goto owlClassAssertion_14;
 		auto it13_0 = owlClassAssertion_constraint_store->template begin<2>(X,NOTA,true);
 		while ( !it13_0.at_end() ) {
-#line 425 "/home/user/owlChrpp/owlrules.chrpp"
+#line 425 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it13_0) != std::get<0>(c_args) )
@@ -9292,7 +9292,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 425 "/home/user/owlChrpp/owlrules.chrpp"
+#line 425 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -9309,7 +9309,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 		if (std::get<3>(c_args) != true) goto owlClassAssertion_15;
 		auto it14_0 = owlClassAssertion_constraint_store->template begin<2>(X,NOTA,false);
 		while ( !it14_0.at_end() ) {
-#line 425 "/home/user/owlChrpp/owlrules.chrpp"
+#line 425 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it14_0) != std::get<0>(c_args) )
@@ -9326,7 +9326,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 				it14_0.kill();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 425 "/home/user/owlChrpp/owlrules.chrpp"
+#line 425 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -9354,7 +9354,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 		auto it15_0 = owlClassAssertion_constraint_store->template begin<0>(X,true);
 		while ( !it15_0.at_end() ) {
 			auto A(std::get<2>(*it15_0));
-#line 428 "/home/user/owlChrpp/owlrules.chrpp"
+#line 428 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it15_0) != std::get<0>(c_args) )
@@ -9366,7 +9366,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 					}
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 428 "/home/user/owlChrpp/owlrules.chrpp"
+#line 428 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					CHECK_ES( true );
 					return chr::ES_CHR::SUCCESS;
 				}
@@ -9386,7 +9386,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 		auto it16_0 = owlClassAssertion_constraint_store->template begin<0>(X,false);
 		while ( !it16_0.at_end() ) {
 			auto NOTA(std::get<2>(*it16_0));
-#line 428 "/home/user/owlChrpp/owlrules.chrpp"
+#line 428 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it16_0) != std::get<0>(c_args) )
@@ -9405,7 +9405,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 					it16_0.kill();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 428 "/home/user/owlChrpp/owlrules.chrpp"
+#line 428 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					CHECK_ES( true );
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -9452,7 +9452,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 434 "/home/user/owlChrpp/owlrules.chrpp"
+#line 434 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlClassAssertion( U, C, true )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -9504,11 +9504,11 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 				// Body
 				chr::Statistics::inc_nb_rules();
 				typename std::tuple_element<3,typename owlObjectPropertyAssertion::Type>::type V;
-#line 437 "/home/user/owlChrpp/owlrules.chrpp"
+#line 437 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlObjectPropertyAssertion( U, P, V )) return chr::ES_CHR::FAILURE;
-#line 437 "/home/user/owlChrpp/owlrules.chrpp"
+#line 437 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == logicalName( emptyString, V )) return chr::ES_CHR::FAILURE;
-#line 437 "/home/user/owlChrpp/owlrules.chrpp"
+#line 437 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlClassAssertion( V, Y, true )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -9541,7 +9541,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 			auto it19_1 = owlClassAssertion_constraint_store->template begin<1>(Y,true);
 			while ( !it19_1.at_end() ) {
 				auto W(std::get<1>(*it19_1));
-#line 440 "/home/user/owlChrpp/owlrules.chrpp"
+#line 440 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it19_1) != std::get<0>(c_args) )
@@ -9552,7 +9552,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 						auto P(std::get<2>(*it19_2));
 						auto it19_3 = owlObjectPropertyAssertion_constraint_store->template begin<2>(U,P,V);
 						while ( !it19_3.at_end() ) {
-#line 440 "/home/user/owlChrpp/owlrules.chrpp"
+#line 440 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 							// Begin guard
 							if (
 								( std::get<0>(*it19_3) != std::get<0>(*it19_2) )
@@ -9560,7 +9560,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 								auto it19_4 = logicalName_constraint_store->template begin<1>(W);
 								while ( !it19_4.at_end() ) {
 									auto URI(std::get<1>(*it19_4));
-#line 440 "/home/user/owlChrpp/owlrules.chrpp"
+#line 440 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 									// Begin guard
 									if (
 										( std::get<0>(*it19_4) != std::get<0>(*it19_0) )
@@ -9573,7 +9573,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 										it19_3.kill();
 										// Body
 										chr::Statistics::inc_nb_rules();
-#line 440 "/home/user/owlChrpp/owlrules.chrpp"
+#line 440 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 
 										return chr::ES_CHR::SUCCESS;
 									} // End guard
@@ -9605,7 +9605,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 		auto it20_0 = owlClassAssertion_constraint_store->template begin<1>(Y,true);
 		while ( !it20_0.at_end() ) {
 			auto V(std::get<1>(*it20_0));
-#line 440 "/home/user/owlChrpp/owlrules.chrpp"
+#line 440 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it20_0) != std::get<0>(c_args) )
@@ -9618,7 +9618,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 						auto P(std::get<2>(*it20_2));
 						auto it20_3 = owlObjectPropertyAssertion_constraint_store->template begin<2>(U,P,W);
 						while ( !it20_3.at_end() ) {
-#line 440 "/home/user/owlChrpp/owlrules.chrpp"
+#line 440 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 							// Begin guard
 							if (
 								( std::get<0>(*it20_3) != std::get<0>(*it20_2) )
@@ -9626,7 +9626,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 								auto it20_4 = logicalName_constraint_store->template begin<1>(W);
 								while ( !it20_4.at_end() ) {
 									auto URI(std::get<1>(*it20_4));
-#line 440 "/home/user/owlChrpp/owlrules.chrpp"
+#line 440 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 									// Begin guard
 									if (
 										( std::get<0>(*it20_4) != std::get<0>(*it20_1) )
@@ -9646,7 +9646,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 										it20_2.kill();
 										// Body
 										chr::Statistics::inc_nb_rules();
-#line 440 "/home/user/owlChrpp/owlrules.chrpp"
+#line 440 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 
 										assert(c_stored_before);
 										if (!c_it.alive()) {
@@ -9697,10 +9697,10 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 446 "/home/user/owlChrpp/owlrules.chrpp"
+#line 446 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlDataPropertyAssertion( U, P, createValue( emptyString, DR ) )) return chr::ES_CHR::FAILURE;
 				typename std::tuple_element<2,typename logicalName::Type>::type V;
-#line 446 "/home/user/owlChrpp/owlrules.chrpp"
+#line 446 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == logicalName( emptyString, V )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -9737,7 +9737,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 				it22_1.kill();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 453 "/home/user/owlChrpp/owlrules.chrpp"
+#line 453 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				return chr::failure();
 				return chr::ES_CHR::SUCCESS;
 			}
@@ -9763,7 +9763,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 				auto it23_2 = owlObjectPropertyAssertion_constraint_store->template begin<0>(U,P);
 				while ( !it23_2.at_end() ) {
 					auto Y2(std::get<3>(*it23_2));
-#line 456 "/home/user/owlChrpp/owlrules.chrpp"
+#line 456 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					// Begin guard
 					if (
 						( std::get<0>(*it23_2) != std::get<0>(*it23_1) )
@@ -9777,7 +9777,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 						it23_2.kill();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 456 "/home/user/owlChrpp/owlrules.chrpp"
+#line 456 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlSameIndividual( Y1, Y2 )) return chr::ES_CHR::FAILURE;
 						return chr::ES_CHR::SUCCESS;
 					} // End guard
@@ -9809,7 +9809,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 				it24_1.kill();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 459 "/home/user/owlChrpp/owlrules.chrpp"
+#line 459 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				return chr::failure();
 				return chr::ES_CHR::SUCCESS;
 			}
@@ -9835,7 +9835,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 				auto it25_2 = owlDataPropertyAssertion_constraint_store->template begin<1>(U,P);
 				while ( !it25_2.at_end() ) {
 					auto Y2(std::get<3>(*it25_2));
-#line 462 "/home/user/owlChrpp/owlrules.chrpp"
+#line 462 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					// Begin guard
 					if (
 						( std::get<0>(*it25_2) != std::get<0>(*it25_1) )
@@ -9849,7 +9849,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 						it25_2.kill();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 462 "/home/user/owlChrpp/owlrules.chrpp"
+#line 462 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						return chr::failure();
 						return chr::ES_CHR::SUCCESS;
 					} // End guard
@@ -9889,7 +9889,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 465 "/home/user/owlChrpp/owlrules.chrpp"
+#line 465 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlObjectPropertyAssertion( U, P, Y )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -9945,7 +9945,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 476 "/home/user/owlChrpp/owlrules.chrpp"
+#line 476 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlSubclassOf( C, SV )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -10006,7 +10006,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 484 "/home/user/owlChrpp/owlrules.chrpp"
+#line 484 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlSubclassOf( C, SV )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -10078,7 +10078,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 492 "/home/user/owlChrpp/owlrules.chrpp"
+#line 492 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlSubclassOf( C, SV )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -10155,7 +10155,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 							c_it.lock();
 							// Body
 							chr::Statistics::inc_nb_rules();
-#line 501 "/home/user/owlChrpp/owlrules.chrpp"
+#line 501 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 							if (chr::ES_CHR::FAILURE == owlSubclassOf( C, SV )) return chr::ES_CHR::FAILURE;
 							assert(c_stored_before);
 							if (!c_it.alive()) {
@@ -10220,7 +10220,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 			auto it31_1 = owlClassAssertion_constraint_store->template begin<1>(C,true);
 			while ( !it31_1.at_end() ) {
 				auto Y(std::get<1>(*it31_1));
-#line 522 "/home/user/owlChrpp/owlrules.chrpp"
+#line 522 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it31_1) != std::get<0>(c_args) )
@@ -10240,7 +10240,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 522 "/home/user/owlChrpp/owlrules.chrpp"
+#line 522 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlHasKeyCheck( C, X, Y, 0, N )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -10287,7 +10287,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 			auto it32_1 = owlClassAssertion_constraint_store->template begin<1>(C,true);
 			while ( !it32_1.at_end() ) {
 				auto X(std::get<1>(*it32_1));
-#line 522 "/home/user/owlChrpp/owlrules.chrpp"
+#line 522 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it32_1) != std::get<0>(c_args) )
@@ -10307,7 +10307,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 522 "/home/user/owlChrpp/owlrules.chrpp"
+#line 522 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlHasKeyCheck( C, X, Y, 0, N )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -10366,11 +10366,11 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 558 "/home/user/owlChrpp/owlrules.chrpp"
+#line 558 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == res( URIC )) return chr::ES_CHR::FAILURE;
-#line 558 "/home/user/owlChrpp/owlrules.chrpp"
+#line 558 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == querySuperClassOf( C )) return chr::ES_CHR::FAILURE;
-#line 558 "/home/user/owlChrpp/owlrules.chrpp"
+#line 558 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == queryEquivalentClass( C )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -10412,7 +10412,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 			auto it35_1 = logicalName_constraint_store->template begin<1>(X);
 			while ( !it35_1.at_end() ) {
 				auto URIX(std::get<1>(*it35_1));
-#line 572 "/home/user/owlChrpp/owlrules.chrpp"
+#line 572 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it35_1) != std::get<0>(*it35_0) )
@@ -10434,7 +10434,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 							c_it.lock();
 							// Body
 							chr::Statistics::inc_nb_rules();
-#line 572 "/home/user/owlChrpp/owlrules.chrpp"
+#line 572 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 							if (chr::ES_CHR::FAILURE == resultRealisation( URIX, URIC )) return chr::ES_CHR::FAILURE;
 							assert(c_stored_before);
 							if (!c_it.alive()) {
@@ -10500,7 +10500,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 574 "/home/user/owlChrpp/owlrules.chrpp"
+#line 574 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == resultRealisation( URI, URI )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -10555,7 +10555,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 612 "/home/user/owlChrpp/owlrules.chrpp"
+#line 612 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == ResultVec( makeVec( URIX, emptyString ), ID )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -10607,14 +10607,14 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 				auto it38_2 = owlObjectPropertyAssertion_constraint_store->template begin<0>(Y,G);
 				while ( !it38_2.at_end() ) {
 					auto Z(std::get<3>(*it38_2));
-#line 634 "/home/user/owlChrpp/owlrules.chrpp"
+#line 634 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					// Begin guard
 					if (
 						( std::get<0>(*it38_2) != std::get<0>(*it38_1) )
 					) {
 						auto it38_3 = owlObjectPropertyAssertion_constraint_store->template begin<2>(Z,H,K);
 						while ( !it38_3.at_end() ) {
-#line 634 "/home/user/owlChrpp/owlrules.chrpp"
+#line 634 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 							// Begin guard
 							if (
 								( std::get<0>(*it38_3) != std::get<0>(*it38_1) )
@@ -10626,7 +10626,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 									auto it38_5 = logicalName_constraint_store->template begin<1>(Y);
 									while ( !it38_5.at_end() ) {
 										auto URIY(std::get<1>(*it38_5));
-#line 634 "/home/user/owlChrpp/owlrules.chrpp"
+#line 634 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 										// Begin guard
 										if (
 											( std::get<0>(*it38_5) != std::get<0>(*it38_4) )
@@ -10649,7 +10649,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 												c_it.lock();
 												// Body
 												chr::Statistics::inc_nb_rules();
-#line 634 "/home/user/owlChrpp/owlrules.chrpp"
+#line 634 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 												if (chr::ES_CHR::FAILURE == ResultVec( makeVec( URIX, URIY ), ID )) return chr::ES_CHR::FAILURE;
 												assert(c_stored_before);
 												if (!c_it.alive()) {
@@ -10750,7 +10750,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 		while ( !it39_0.at_end() ) {
 			auto X(std::get<1>(*it39_0));
 			auto F(std::get<2>(*it39_0));
-#line 642 "/home/user/owlChrpp/owlrules.chrpp"
+#line 642 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it39_0) != std::get<0>(c_args) )
@@ -10767,14 +10767,14 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 						auto it39_3 = owlObjectPropertyAssertion_constraint_store->template begin<0>(Z,H);
 						while ( !it39_3.at_end() ) {
 							auto C(std::get<3>(*it39_3));
-#line 642 "/home/user/owlChrpp/owlrules.chrpp"
+#line 642 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 							// Begin guard
 							if (
 								( std::get<0>(*it39_3) != std::get<0>(*it39_2) )
 							) {
 								auto it39_4 = owlObjectPropertyAssertion_constraint_store->template begin<2>(S,K,C);
 								while ( !it39_4.at_end() ) {
-#line 642 "/home/user/owlChrpp/owlrules.chrpp"
+#line 642 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 									// Begin guard
 									if (
 										( std::get<0>(*it39_4) != std::get<0>(*it39_2) )
@@ -10786,7 +10786,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 											auto it39_6 = logicalName_constraint_store->template begin<1>(C);
 											while ( !it39_6.at_end() ) {
 												auto URIC(std::get<1>(*it39_6));
-#line 642 "/home/user/owlChrpp/owlrules.chrpp"
+#line 642 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 												// Begin guard
 												if (
 													( std::get<0>(*it39_6) != std::get<0>(*it39_5) )
@@ -10810,7 +10810,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 														c_it.lock();
 														// Body
 														chr::Statistics::inc_nb_rules();
-#line 642 "/home/user/owlChrpp/owlrules.chrpp"
+#line 642 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 														if (chr::ES_CHR::FAILURE == ResultVec( makeVec( URIS, URIC ), ID )) return chr::ES_CHR::FAILURE;
 														assert(c_stored_before);
 														if (!c_it.alive()) {
@@ -10927,7 +10927,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 		while ( !it40_0.at_end() ) {
 			auto S(std::get<1>(*it40_0));
 			auto E(std::get<2>(*it40_0));
-#line 642 "/home/user/owlChrpp/owlrules.chrpp"
+#line 642 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it40_0) != std::get<0>(c_args) )
@@ -10944,14 +10944,14 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 						auto it40_3 = owlObjectPropertyAssertion_constraint_store->template begin<0>(Z,H);
 						while ( !it40_3.at_end() ) {
 							auto C(std::get<3>(*it40_3));
-#line 642 "/home/user/owlChrpp/owlrules.chrpp"
+#line 642 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 							// Begin guard
 							if (
 								( std::get<0>(*it40_3) != std::get<0>(*it40_2) )
 							) {
 								auto it40_4 = owlObjectPropertyAssertion_constraint_store->template begin<2>(S,K,C);
 								while ( !it40_4.at_end() ) {
-#line 642 "/home/user/owlChrpp/owlrules.chrpp"
+#line 642 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 									// Begin guard
 									if (
 										( std::get<0>(*it40_4) != std::get<0>(*it40_2) )
@@ -10963,7 +10963,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 											auto it40_6 = logicalName_constraint_store->template begin<1>(C);
 											while ( !it40_6.at_end() ) {
 												auto URIC(std::get<1>(*it40_6));
-#line 642 "/home/user/owlChrpp/owlrules.chrpp"
+#line 642 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 												// Begin guard
 												if (
 													( std::get<0>(*it40_6) != std::get<0>(*it40_5) )
@@ -10987,7 +10987,7 @@ chr::ES_CHR OWL2::do_owlClassAssertion(typename owlClassAssertion::Type c_args, 
 														c_it.lock();
 														// Body
 														chr::Statistics::inc_nb_rules();
-#line 642 "/home/user/owlChrpp/owlrules.chrpp"
+#line 642 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 														if (chr::ES_CHR::FAILURE == ResultVec( makeVec( URIS, URIC ), ID )) return chr::ES_CHR::FAILURE;
 														assert(c_stored_before);
 														if (!c_it.alive()) {
@@ -11109,7 +11109,7 @@ chr::ES_CHR OWL2::do_owlComplementOf(typename owlComplementOf::Type c_args, type
 		auto& NOTA = std::get<2>(c_args);
 		auto it0_0 = owlComplementOf_constraint_store->template begin<0>(A,NOTA);
 		while ( !it0_0.at_end() ) {
-#line 164 "/home/user/owlChrpp/owlrules.chrpp"
+#line 164 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -11119,7 +11119,7 @@ chr::ES_CHR OWL2::do_owlComplementOf(typename owlComplementOf::Type c_args, type
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 164 "/home/user/owlChrpp/owlrules.chrpp"
+#line 164 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -11139,7 +11139,7 @@ chr::ES_CHR OWL2::do_owlComplementOf(typename owlComplementOf::Type c_args, type
 			auto X(std::get<1>(*it1_0));
 			auto it1_1 = owlClassAssertion_constraint_store->template begin<2>(X,NOTA,true);
 			while ( !it1_1.at_end() ) {
-#line 226 "/home/user/owlChrpp/owlrules.chrpp"
+#line 226 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it1_1) != std::get<0>(*it1_0) )
@@ -11151,7 +11151,7 @@ chr::ES_CHR OWL2::do_owlComplementOf(typename owlComplementOf::Type c_args, type
 					it1_1.kill();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 226 "/home/user/owlChrpp/owlrules.chrpp"
+#line 226 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					return chr::failure();
 					return chr::ES_CHR::SUCCESS;
 				} // End guard
@@ -11183,7 +11183,7 @@ chr::ES_CHR OWL2::do_owlComplementOf(typename owlComplementOf::Type c_args, type
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 421 "/home/user/owlChrpp/owlrules.chrpp"
+#line 421 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlClassAssertion( X, NOTA, false )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -11212,7 +11212,7 @@ chr::ES_CHR OWL2::do_owlComplementOf(typename owlComplementOf::Type c_args, type
 			auto X(std::get<1>(*it3_0));
 			auto it3_1 = owlClassAssertion_constraint_store->template begin<2>(X,A,true);
 			while ( !it3_1.at_end() ) {
-#line 428 "/home/user/owlChrpp/owlrules.chrpp"
+#line 428 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it3_1) != std::get<0>(*it3_0) )
@@ -11229,7 +11229,7 @@ chr::ES_CHR OWL2::do_owlComplementOf(typename owlComplementOf::Type c_args, type
 					it3_0.kill();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 428 "/home/user/owlChrpp/owlrules.chrpp"
+#line 428 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					CHECK_ES( true );
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -11271,7 +11271,7 @@ chr::ES_CHR OWL2::do_owlDataAllValuesFrom(typename owlDataAllValuesFrom::Type c_
 		auto& DR = std::get<3>(c_args);
 		auto it0_0 = owlDataAllValuesFrom_constraint_store->template begin<0>(C,P,DR);
 		while ( !it0_0.at_end() ) {
-#line 160 "/home/user/owlChrpp/owlrules.chrpp"
+#line 160 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -11281,7 +11281,7 @@ chr::ES_CHR OWL2::do_owlDataAllValuesFrom(typename owlDataAllValuesFrom::Type c_
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 160 "/home/user/owlChrpp/owlrules.chrpp"
+#line 160 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -11312,7 +11312,7 @@ chr::ES_CHR OWL2::do_owlDataMaxCardinality(typename owlDataMaxCardinality::Type 
 		auto& N = std::get<3>(c_args);
 		auto it0_0 = owlDataMaxCardinality_constraint_store->template begin<1>(C,P,N);
 		while ( !it0_0.at_end() ) {
-#line 199 "/home/user/owlChrpp/owlrules.chrpp"
+#line 199 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -11322,7 +11322,7 @@ chr::ES_CHR OWL2::do_owlDataMaxCardinality(typename owlDataMaxCardinality::Type 
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 199 "/home/user/owlChrpp/owlrules.chrpp"
+#line 199 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -11350,7 +11350,7 @@ chr::ES_CHR OWL2::do_owlDataMaxCardinality(typename owlDataMaxCardinality::Type 
 				it1_1.kill();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 459 "/home/user/owlChrpp/owlrules.chrpp"
+#line 459 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				return chr::failure();
 				return chr::ES_CHR::SUCCESS;
 			}
@@ -11376,7 +11376,7 @@ chr::ES_CHR OWL2::do_owlDataMaxCardinality(typename owlDataMaxCardinality::Type 
 				auto it2_2 = owlDataPropertyAssertion_constraint_store->template begin<1>(U,P);
 				while ( !it2_2.at_end() ) {
 					auto Y2(std::get<3>(*it2_2));
-#line 462 "/home/user/owlChrpp/owlrules.chrpp"
+#line 462 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					// Begin guard
 					if (
 						( std::get<0>(*it2_2) != std::get<0>(*it2_1) )
@@ -11390,7 +11390,7 @@ chr::ES_CHR OWL2::do_owlDataMaxCardinality(typename owlDataMaxCardinality::Type 
 						it2_2.kill();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 462 "/home/user/owlChrpp/owlrules.chrpp"
+#line 462 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						return chr::failure();
 						return chr::ES_CHR::SUCCESS;
 					} // End guard
@@ -11423,7 +11423,7 @@ chr::ES_CHR OWL2::do_owlDataProperty(typename owlDataProperty::Type c_args, type
 		auto& P = std::get<1>(c_args);
 		auto it0_0 = owlDataProperty_constraint_store->template begin<0>(P);
 		while ( !it0_0.at_end() ) {
-#line 121 "/home/user/owlChrpp/owlrules.chrpp"
+#line 121 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -11433,7 +11433,7 @@ chr::ES_CHR OWL2::do_owlDataProperty(typename owlDataProperty::Type c_args, type
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 121 "/home/user/owlChrpp/owlrules.chrpp"
+#line 121 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -11456,9 +11456,9 @@ chr::ES_CHR OWL2::do_owlDataProperty(typename owlDataProperty::Type c_args, type
 			c_it.lock();
 			// Body
 			chr::Statistics::inc_nb_rules();
-#line 258 "/home/user/owlChrpp/owlrules.chrpp"
+#line 258 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			if (chr::ES_CHR::FAILURE == owlEquivalentDataProperty( P, P )) return chr::ES_CHR::FAILURE;
-#line 258 "/home/user/owlChrpp/owlrules.chrpp"
+#line 258 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			if (chr::ES_CHR::FAILURE == owlSubDataPropertyOf( P, P )) return chr::ES_CHR::FAILURE;
 			assert(c_stored_before);
 			if (!c_it.alive()) {
@@ -11491,7 +11491,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 		auto& Y = std::get<3>(c_args);
 		auto it0_0 = owlDataPropertyAssertion_constraint_store->template begin<2>(X,P,Y);
 		while ( !it0_0.at_end() ) {
-#line 149 "/home/user/owlChrpp/owlrules.chrpp"
+#line 149 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -11501,7 +11501,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 149 "/home/user/owlChrpp/owlrules.chrpp"
+#line 149 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -11520,7 +11520,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 		auto it1_0 = owlDataPropertyAssertion_constraint_store->template begin<3>(X,Y);
 		while ( !it1_0.at_end() ) {
 			auto B(std::get<2>(*it1_0));
-#line 217 "/home/user/owlChrpp/owlrules.chrpp"
+#line 217 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it1_0) != std::get<0>(c_args) )
@@ -11534,7 +11534,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 					it1_1.kill();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 217 "/home/user/owlChrpp/owlrules.chrpp"
+#line 217 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					return chr::failure();
 					return chr::ES_CHR::SUCCESS;
 				}
@@ -11554,7 +11554,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 		auto it2_0 = owlDataPropertyAssertion_constraint_store->template begin<3>(X,Y);
 		while ( !it2_0.at_end() ) {
 			auto A(std::get<2>(*it2_0));
-#line 217 "/home/user/owlChrpp/owlrules.chrpp"
+#line 217 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it2_0) != std::get<0>(c_args) )
@@ -11568,7 +11568,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 					it2_1.kill();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 217 "/home/user/owlChrpp/owlrules.chrpp"
+#line 217 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					return chr::failure();
 					return chr::ES_CHR::SUCCESS;
 				}
@@ -11592,7 +11592,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 			it3_0.kill();
 			// Body
 			chr::Statistics::inc_nb_rules();
-#line 220 "/home/user/owlChrpp/owlrules.chrpp"
+#line 220 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			return chr::failure();
 			return chr::ES_CHR::SUCCESS;
 		}
@@ -11620,7 +11620,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 294 "/home/user/owlChrpp/owlrules.chrpp"
+#line 294 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlClassAssertion( X, DP, true )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -11646,7 +11646,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 		auto it5_0 = owlDataPropertyRange_constraint_store->template begin<0>(P);
 		while ( !it5_0.at_end() ) {
 			auto DR(std::get<2>(*it5_0));
-#line 295 "/home/user/owlChrpp/owlrules.chrpp"
+#line 295 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				invalidType( DR, Y )
@@ -11657,7 +11657,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 				it5_0.kill();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 295 "/home/user/owlChrpp/owlrules.chrpp"
+#line 295 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				return chr::failure();
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -11675,7 +11675,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 		auto it6_0 = owlSubDataPropertyOf_constraint_store->template begin<0>(P2);
 		while ( !it6_0.at_end() ) {
 			auto P1(std::get<2>(*it6_0));
-#line 309 "/home/user/owlChrpp/owlrules.chrpp"
+#line 309 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				(!( P2 == P1 ) )
@@ -11693,7 +11693,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 309 "/home/user/owlChrpp/owlrules.chrpp"
+#line 309 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlDataPropertyAssertion( X, P1, Y )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -11725,7 +11725,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 		auto it7_0 = owlSameIndividual_constraint_store->template begin<0>(X);
 		while ( !it7_0.at_end() ) {
 			auto Y(std::get<2>(*it7_0));
-#line 320 "/home/user/owlChrpp/owlrules.chrpp"
+#line 320 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				(!( X == Y ) )
@@ -11743,7 +11743,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 320 "/home/user/owlChrpp/owlrules.chrpp"
+#line 320 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlDataPropertyAssertion( Y, P, O )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -11776,7 +11776,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 		auto it8_0 = owlDataPropertyAssertion_constraint_store->template begin<1>(X,P);
 		while ( !it8_0.at_end() ) {
 			auto Z(std::get<3>(*it8_0));
-#line 349 "/home/user/owlChrpp/owlrules.chrpp"
+#line 349 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it8_0) != std::get<0>(c_args) )
@@ -11791,7 +11791,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 					it8_1.kill();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 349 "/home/user/owlChrpp/owlrules.chrpp"
+#line 349 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					return chr::failure();
 					return chr::ES_CHR::SUCCESS;
 				}
@@ -11811,7 +11811,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 		auto it9_0 = owlDataPropertyAssertion_constraint_store->template begin<1>(X,P);
 		while ( !it9_0.at_end() ) {
 			auto Y(std::get<3>(*it9_0));
-#line 349 "/home/user/owlChrpp/owlrules.chrpp"
+#line 349 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it9_0) != std::get<0>(c_args) )
@@ -11826,7 +11826,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 					it9_1.kill();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 349 "/home/user/owlChrpp/owlrules.chrpp"
+#line 349 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					return chr::failure();
 					return chr::ES_CHR::SUCCESS;
 				}
@@ -11853,7 +11853,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 			c_it.lock();
 			// Body
 			chr::Statistics::inc_nb_rules();
-#line 360 "/home/user/owlChrpp/owlrules.chrpp"
+#line 360 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			if (chr::ES_CHR::FAILURE == owlDataValue( Y, (*Y ) . val, (*Y ) . typeVal )) return chr::ES_CHR::FAILURE;
 			assert(c_stored_before);
 			if (!c_it.alive()) {
@@ -11875,7 +11875,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 		while ( !it11_0.at_end() ) {
 			auto C(std::get<1>(*it11_0));
 			auto DR(std::get<3>(*it11_0));
-#line 443 "/home/user/owlChrpp/owlrules.chrpp"
+#line 443 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				(!invalidType( DR, V ) )
@@ -11893,7 +11893,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 443 "/home/user/owlChrpp/owlrules.chrpp"
+#line 443 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlClassAssertion( U, C, true )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -11930,7 +11930,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 			auto it12_1 = owlDataPropertyAssertion_constraint_store->template begin<1>(U,P);
 			while ( !it12_1.at_end() ) {
 				auto W(std::get<3>(*it12_1));
-#line 449 "/home/user/owlChrpp/owlrules.chrpp"
+#line 449 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it12_1) != std::get<0>(c_args) )
@@ -11939,7 +11939,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 					while ( !it12_2.at_end() ) {
 						auto ValW(std::get<2>(*it12_2));
 						auto TypeW(std::get<3>(*it12_2));
-#line 449 "/home/user/owlChrpp/owlrules.chrpp"
+#line 449 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						// Begin guard
 						if (
 							( std::get<0>(*it12_2) != std::get<0>(*it12_0) )
@@ -11952,7 +11952,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 							it12_0.kill();
 							// Body
 							chr::Statistics::inc_nb_rules();
-#line 449 "/home/user/owlChrpp/owlrules.chrpp"
+#line 449 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 
 							return chr::ES_CHR::SUCCESS;
 						} // End guard
@@ -11980,7 +11980,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 			auto TypeV(std::get<3>(*it13_0));
 			auto it13_1 = owlDataPropertyAssertion_constraint_store->template begin<2>(U,P,V);
 			while ( !it13_1.at_end() ) {
-#line 449 "/home/user/owlChrpp/owlrules.chrpp"
+#line 449 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it13_1) != std::get<0>(c_args) )
@@ -11989,7 +11989,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 					while ( !it13_2.at_end() ) {
 						auto ValW(std::get<2>(*it13_2));
 						auto TypeW(std::get<3>(*it13_2));
-#line 449 "/home/user/owlChrpp/owlrules.chrpp"
+#line 449 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						// Begin guard
 						if (
 							( std::get<0>(*it13_2) != std::get<0>(*it13_0) )
@@ -12009,7 +12009,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 							it13_1.kill();
 							// Body
 							chr::Statistics::inc_nb_rules();
-#line 449 "/home/user/owlChrpp/owlrules.chrpp"
+#line 449 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 
 							assert(c_stored_before);
 							if (!c_it.alive()) {
@@ -12050,7 +12050,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 				it14_1.kill();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 459 "/home/user/owlChrpp/owlrules.chrpp"
+#line 459 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				return chr::failure();
 				return chr::ES_CHR::SUCCESS;
 			}
@@ -12075,7 +12075,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 				auto it15_2 = owlDataPropertyAssertion_constraint_store->template begin<1>(U,P);
 				while ( !it15_2.at_end() ) {
 					auto Y2(std::get<3>(*it15_2));
-#line 462 "/home/user/owlChrpp/owlrules.chrpp"
+#line 462 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					// Begin guard
 					if (
 						( std::get<0>(*it15_2) != std::get<0>(c_args) )
@@ -12089,7 +12089,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 						it15_2.kill();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 462 "/home/user/owlChrpp/owlrules.chrpp"
+#line 462 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						return chr::failure();
 						return chr::ES_CHR::SUCCESS;
 					} // End guard
@@ -12118,7 +12118,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 				auto it16_2 = owlDataPropertyAssertion_constraint_store->template begin<1>(U,P);
 				while ( !it16_2.at_end() ) {
 					auto Y1(std::get<3>(*it16_2));
-#line 462 "/home/user/owlChrpp/owlrules.chrpp"
+#line 462 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					// Begin guard
 					if (
 						( std::get<0>(*it16_2) != std::get<0>(c_args) )
@@ -12132,7 +12132,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 						it16_2.kill();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 462 "/home/user/owlChrpp/owlrules.chrpp"
+#line 462 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						return chr::failure();
 						return chr::ES_CHR::SUCCESS;
 					} // End guard
@@ -12156,7 +12156,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 		auto it17_0 = owlDataPropertyAssertion_constraint_store->template begin<4>(P,V);
 		while ( !it17_0.at_end() ) {
 			auto Y(std::get<1>(*it17_0));
-#line 524 "/home/user/owlChrpp/owlrules.chrpp"
+#line 524 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it17_0) != std::get<0>(c_args) )
@@ -12181,7 +12181,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 						it17_1.kill();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 524 "/home/user/owlChrpp/owlrules.chrpp"
+#line 524 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlHasKeyCheck( C, X, Y, ( I + 1 ), N )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -12221,7 +12221,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 		auto it18_0 = owlDataPropertyAssertion_constraint_store->template begin<4>(P,V);
 		while ( !it18_0.at_end() ) {
 			auto X(std::get<1>(*it18_0));
-#line 524 "/home/user/owlChrpp/owlrules.chrpp"
+#line 524 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it18_0) != std::get<0>(c_args) )
@@ -12246,7 +12246,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 						it18_1.kill();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 524 "/home/user/owlChrpp/owlrules.chrpp"
+#line 524 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlHasKeyCheck( C, X, Y, ( I + 1 ), N )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -12302,7 +12302,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyAssertion(typename owlDataPropertyAssertion:
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 605 "/home/user/owlChrpp/owlrules.chrpp"
+#line 605 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == ResultVec( makeVec( URIX, valueToString( Y ) ), ID )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -12351,7 +12351,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyDomain(typename owlDataPropertyDomain::Type 
 		auto& C = std::get<2>(c_args);
 		auto it0_0 = owlDataPropertyDomain_constraint_store->template begin<1>(P,C);
 		while ( !it0_0.at_end() ) {
-#line 130 "/home/user/owlChrpp/owlrules.chrpp"
+#line 130 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -12361,7 +12361,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyDomain(typename owlDataPropertyDomain::Type 
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 130 "/home/user/owlChrpp/owlrules.chrpp"
+#line 130 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -12378,7 +12378,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyDomain(typename owlDataPropertyDomain::Type 
 		auto it1_0 = owlSubDataPropertyOf_constraint_store->template begin<1>(P2);
 		while ( !it1_0.at_end() ) {
 			auto P1(std::get<1>(*it1_0));
-#line 286 "/home/user/owlChrpp/owlrules.chrpp"
+#line 286 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				(!( P1 == P2 ) )
@@ -12396,7 +12396,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyDomain(typename owlDataPropertyDomain::Type 
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 286 "/home/user/owlChrpp/owlrules.chrpp"
+#line 286 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlDataPropertyDomain( P1, C )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -12440,7 +12440,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyDomain(typename owlDataPropertyDomain::Type 
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 294 "/home/user/owlChrpp/owlrules.chrpp"
+#line 294 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlClassAssertion( X, DP, true )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -12479,7 +12479,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyRange(typename owlDataPropertyRange::Type c_
 		auto& R = std::get<2>(c_args);
 		auto it0_0 = owlDataPropertyRange_constraint_store->template begin<1>(P,R);
 		while ( !it0_0.at_end() ) {
-#line 151 "/home/user/owlChrpp/owlrules.chrpp"
+#line 151 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -12489,7 +12489,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyRange(typename owlDataPropertyRange::Type c_
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 151 "/home/user/owlChrpp/owlrules.chrpp"
+#line 151 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -12506,7 +12506,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyRange(typename owlDataPropertyRange::Type c_
 		auto it1_0 = owlSubDataPropertyOf_constraint_store->template begin<1>(P2);
 		while ( !it1_0.at_end() ) {
 			auto P1(std::get<1>(*it1_0));
-#line 289 "/home/user/owlChrpp/owlrules.chrpp"
+#line 289 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				(!( P1 == P2 ) )
@@ -12523,7 +12523,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyRange(typename owlDataPropertyRange::Type c_
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 289 "/home/user/owlChrpp/owlrules.chrpp"
+#line 289 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlDataPropertyRange( P1, C )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -12554,7 +12554,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyRange(typename owlDataPropertyRange::Type c_
 		auto it2_0 = owlDataPropertyAssertion_constraint_store->template begin<5>(P);
 		while ( !it2_0.at_end() ) {
 			auto Y(std::get<3>(*it2_0));
-#line 295 "/home/user/owlChrpp/owlrules.chrpp"
+#line 295 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				invalidType( DR, Y )
@@ -12565,7 +12565,7 @@ chr::ES_CHR OWL2::do_owlDataPropertyRange(typename owlDataPropertyRange::Type c_
 				it2_0.kill();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 295 "/home/user/owlChrpp/owlrules.chrpp"
+#line 295 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				return chr::failure();
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -12595,7 +12595,7 @@ chr::ES_CHR OWL2::do_owlDataSomeValuesFrom(typename owlDataSomeValuesFrom::Type 
 		auto& DR = std::get<3>(c_args);
 		auto it0_0 = owlDataSomeValuesFrom_constraint_store->template begin<2>(C,P,DR);
 		while ( !it0_0.at_end() ) {
-#line 162 "/home/user/owlChrpp/owlrules.chrpp"
+#line 162 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -12605,7 +12605,7 @@ chr::ES_CHR OWL2::do_owlDataSomeValuesFrom(typename owlDataSomeValuesFrom::Type 
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 162 "/home/user/owlChrpp/owlrules.chrpp"
+#line 162 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -12624,7 +12624,7 @@ chr::ES_CHR OWL2::do_owlDataSomeValuesFrom(typename owlDataSomeValuesFrom::Type 
 		while ( !it1_0.at_end() ) {
 			auto U(std::get<1>(*it1_0));
 			auto V(std::get<3>(*it1_0));
-#line 443 "/home/user/owlChrpp/owlrules.chrpp"
+#line 443 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				(!invalidType( DR, V ) )
@@ -12642,7 +12642,7 @@ chr::ES_CHR OWL2::do_owlDataSomeValuesFrom(typename owlDataSomeValuesFrom::Type 
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 443 "/home/user/owlChrpp/owlrules.chrpp"
+#line 443 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlClassAssertion( U, C, true )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -12687,10 +12687,10 @@ chr::ES_CHR OWL2::do_owlDataSomeValuesFrom(typename owlDataSomeValuesFrom::Type 
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 446 "/home/user/owlChrpp/owlrules.chrpp"
+#line 446 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlDataPropertyAssertion( U, P, createValue( emptyString, DR ) )) return chr::ES_CHR::FAILURE;
 				typename std::tuple_element<2,typename logicalName::Type>::type V;
-#line 446 "/home/user/owlChrpp/owlrules.chrpp"
+#line 446 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == logicalName( emptyString, V )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -12730,7 +12730,7 @@ chr::ES_CHR OWL2::do_owlDataValue(typename owlDataValue::Type c_args, typename o
 		auto& T = std::get<3>(c_args);
 		auto it0_0 = owlDataValue_constraint_store->template begin<3>(V,S,T);
 		while ( !it0_0.at_end() ) {
-#line 163 "/home/user/owlChrpp/owlrules.chrpp"
+#line 163 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -12740,7 +12740,7 @@ chr::ES_CHR OWL2::do_owlDataValue(typename owlDataValue::Type c_args, typename o
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 163 "/home/user/owlChrpp/owlrules.chrpp"
+#line 163 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -12764,7 +12764,7 @@ chr::ES_CHR OWL2::do_owlDataValue(typename owlDataValue::Type c_args, typename o
 			auto it1_1 = owlDataPropertyAssertion_constraint_store->template begin<1>(U,P);
 			while ( !it1_1.at_end() ) {
 				auto W(std::get<3>(*it1_1));
-#line 449 "/home/user/owlChrpp/owlrules.chrpp"
+#line 449 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it1_1) != std::get<0>(*it1_0) )
@@ -12773,7 +12773,7 @@ chr::ES_CHR OWL2::do_owlDataValue(typename owlDataValue::Type c_args, typename o
 					while ( !it1_2.at_end() ) {
 						auto ValW(std::get<2>(*it1_2));
 						auto TypeW(std::get<3>(*it1_2));
-#line 449 "/home/user/owlChrpp/owlrules.chrpp"
+#line 449 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						// Begin guard
 						if (
 							( std::get<0>(*it1_2) != std::get<0>(c_args) )
@@ -12786,7 +12786,7 @@ chr::ES_CHR OWL2::do_owlDataValue(typename owlDataValue::Type c_args, typename o
 							it1_0.kill();
 							// Body
 							chr::Statistics::inc_nb_rules();
-#line 449 "/home/user/owlChrpp/owlrules.chrpp"
+#line 449 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 
 							return chr::ES_CHR::SUCCESS;
 						} // End guard
@@ -12808,7 +12808,7 @@ chr::ES_CHR OWL2::do_owlDataValue(typename owlDataValue::Type c_args, typename o
 		auto& W = std::get<1>(c_args);
 		auto& ValW = std::get<2>(c_args);
 		auto& TypeW = std::get<3>(c_args);
-#line 449 "/home/user/owlChrpp/owlrules.chrpp"
+#line 449 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			(!( ValW == emptyString ) )
@@ -12817,7 +12817,7 @@ chr::ES_CHR OWL2::do_owlDataValue(typename owlDataValue::Type c_args, typename o
 			while ( !it2_0.at_end() ) {
 				auto V(std::get<1>(*it2_0));
 				auto TypeV(std::get<3>(*it2_0));
-#line 449 "/home/user/owlChrpp/owlrules.chrpp"
+#line 449 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it2_0) != std::get<0>(c_args) )
@@ -12829,7 +12829,7 @@ chr::ES_CHR OWL2::do_owlDataValue(typename owlDataValue::Type c_args, typename o
 						auto P(std::get<2>(*it2_1));
 						auto it2_2 = owlDataPropertyAssertion_constraint_store->template begin<2>(U,P,W);
 						while ( !it2_2.at_end() ) {
-#line 449 "/home/user/owlChrpp/owlrules.chrpp"
+#line 449 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 							// Begin guard
 							if (
 								( std::get<0>(*it2_2) != std::get<0>(*it2_1) )
@@ -12844,7 +12844,7 @@ chr::ES_CHR OWL2::do_owlDataValue(typename owlDataValue::Type c_args, typename o
 								it2_1.kill();
 								// Body
 								chr::Statistics::inc_nb_rules();
-#line 449 "/home/user/owlChrpp/owlrules.chrpp"
+#line 449 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 
 								assert(c_stored_before);
 								if (!c_it.alive()) {
@@ -12886,7 +12886,7 @@ chr::ES_CHR OWL2::do_owlDifferentIndividual(typename owlDifferentIndividual::Typ
 		auto& Y = std::get<2>(c_args);
 		auto it0_0 = owlDifferentIndividual_constraint_store->template begin<0>(X,Y);
 		while ( !it0_0.at_end() ) {
-#line 137 "/home/user/owlChrpp/owlrules.chrpp"
+#line 137 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -12896,7 +12896,7 @@ chr::ES_CHR OWL2::do_owlDifferentIndividual(typename owlDifferentIndividual::Typ
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 137 "/home/user/owlChrpp/owlrules.chrpp"
+#line 137 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -12918,7 +12918,7 @@ chr::ES_CHR OWL2::do_owlDifferentIndividual(typename owlDifferentIndividual::Typ
 			it1_0.kill();
 			// Body
 			chr::Statistics::inc_nb_rules();
-#line 326 "/home/user/owlChrpp/owlrules.chrpp"
+#line 326 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			return chr::failure();
 			return chr::ES_CHR::SUCCESS;
 		}
@@ -12946,7 +12946,7 @@ chr::ES_CHR OWL2::do_owlDisjointClass(typename owlDisjointClass::Type c_args, ty
 		auto& B = std::get<2>(c_args);
 		auto it0_0 = owlDisjointClass_constraint_store->template begin<0>(A,B);
 		while ( !it0_0.at_end() ) {
-#line 133 "/home/user/owlChrpp/owlrules.chrpp"
+#line 133 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -12956,7 +12956,7 @@ chr::ES_CHR OWL2::do_owlDisjointClass(typename owlDisjointClass::Type c_args, ty
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 133 "/home/user/owlChrpp/owlrules.chrpp"
+#line 133 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -12976,7 +12976,7 @@ chr::ES_CHR OWL2::do_owlDisjointClass(typename owlDisjointClass::Type c_args, ty
 			auto X(std::get<1>(*it1_0));
 			auto it1_1 = owlClassAssertion_constraint_store->template begin<2>(X,B,true);
 			while ( !it1_1.at_end() ) {
-#line 208 "/home/user/owlChrpp/owlrules.chrpp"
+#line 208 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it1_1) != std::get<0>(*it1_0) )
@@ -12988,7 +12988,7 @@ chr::ES_CHR OWL2::do_owlDisjointClass(typename owlDisjointClass::Type c_args, ty
 					it1_1.kill();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 208 "/home/user/owlChrpp/owlrules.chrpp"
+#line 208 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					return chr::failure();
 					return chr::ES_CHR::SUCCESS;
 				} // End guard
@@ -13020,7 +13020,7 @@ chr::ES_CHR OWL2::do_owlDisjointDataProperty(typename owlDisjointDataProperty::T
 		auto& B = std::get<2>(c_args);
 		auto it0_0 = owlDisjointDataProperty_constraint_store->template begin<0>(A,B);
 		while ( !it0_0.at_end() ) {
-#line 142 "/home/user/owlChrpp/owlrules.chrpp"
+#line 142 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -13030,7 +13030,7 @@ chr::ES_CHR OWL2::do_owlDisjointDataProperty(typename owlDisjointDataProperty::T
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 142 "/home/user/owlChrpp/owlrules.chrpp"
+#line 142 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -13051,7 +13051,7 @@ chr::ES_CHR OWL2::do_owlDisjointDataProperty(typename owlDisjointDataProperty::T
 			auto Y(std::get<3>(*it1_0));
 			auto it1_1 = owlDataPropertyAssertion_constraint_store->template begin<2>(X,B,Y);
 			while ( !it1_1.at_end() ) {
-#line 217 "/home/user/owlChrpp/owlrules.chrpp"
+#line 217 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it1_1) != std::get<0>(*it1_0) )
@@ -13063,7 +13063,7 @@ chr::ES_CHR OWL2::do_owlDisjointDataProperty(typename owlDisjointDataProperty::T
 					it1_1.kill();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 217 "/home/user/owlChrpp/owlrules.chrpp"
+#line 217 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					return chr::failure();
 					return chr::ES_CHR::SUCCESS;
 				} // End guard
@@ -13095,7 +13095,7 @@ chr::ES_CHR OWL2::do_owlDisjointObjectProperty(typename owlDisjointObjectPropert
 		auto& B = std::get<2>(c_args);
 		auto it0_0 = owlDisjointObjectProperty_constraint_store->template begin<0>(A,B);
 		while ( !it0_0.at_end() ) {
-#line 141 "/home/user/owlChrpp/owlrules.chrpp"
+#line 141 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -13105,7 +13105,7 @@ chr::ES_CHR OWL2::do_owlDisjointObjectProperty(typename owlDisjointObjectPropert
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 141 "/home/user/owlChrpp/owlrules.chrpp"
+#line 141 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -13126,7 +13126,7 @@ chr::ES_CHR OWL2::do_owlDisjointObjectProperty(typename owlDisjointObjectPropert
 			auto Y(std::get<3>(*it1_0));
 			auto it1_1 = owlObjectPropertyAssertion_constraint_store->template begin<2>(X,B,Y);
 			while ( !it1_1.at_end() ) {
-#line 214 "/home/user/owlChrpp/owlrules.chrpp"
+#line 214 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it1_1) != std::get<0>(*it1_0) )
@@ -13138,7 +13138,7 @@ chr::ES_CHR OWL2::do_owlDisjointObjectProperty(typename owlDisjointObjectPropert
 					it1_1.kill();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 214 "/home/user/owlChrpp/owlrules.chrpp"
+#line 214 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					return chr::failure();
 					return chr::ES_CHR::SUCCESS;
 				} // End guard
@@ -13170,7 +13170,7 @@ chr::ES_CHR OWL2::do_owlEquivalentClass(typename owlEquivalentClass::Type c_args
 		auto& B = std::get<2>(c_args);
 		auto it0_0 = owlEquivalentClass_constraint_store->template begin<1>(A,B);
 		while ( !it0_0.at_end() ) {
-#line 124 "/home/user/owlChrpp/owlrules.chrpp"
+#line 124 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -13180,7 +13180,7 @@ chr::ES_CHR OWL2::do_owlEquivalentClass(typename owlEquivalentClass::Type c_args
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 124 "/home/user/owlChrpp/owlrules.chrpp"
+#line 124 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -13194,7 +13194,7 @@ chr::ES_CHR OWL2::do_owlEquivalentClass(typename owlEquivalentClass::Type c_args
 		if (owlClassAssertion_constraint_store->empty()) goto owlEquivalentClass_2;
 		auto& A = std::get<1>(c_args);
 		auto& B = std::get<2>(c_args);
-#line 302 "/home/user/owlChrpp/owlrules.chrpp"
+#line 302 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			(!( A == B ) )
@@ -13215,7 +13215,7 @@ chr::ES_CHR OWL2::do_owlEquivalentClass(typename owlEquivalentClass::Type c_args
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 302 "/home/user/owlChrpp/owlrules.chrpp"
+#line 302 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlClassAssertion( X, B, true )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -13238,7 +13238,7 @@ chr::ES_CHR OWL2::do_owlEquivalentClass(typename owlEquivalentClass::Type c_args
 	{
 		auto& A = std::get<1>(c_args);
 		auto& B = std::get<2>(c_args);
-#line 304 "/home/user/owlChrpp/owlrules.chrpp"
+#line 304 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			(!( A == B ) )
@@ -13255,9 +13255,9 @@ chr::ES_CHR OWL2::do_owlEquivalentClass(typename owlEquivalentClass::Type c_args
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 304 "/home/user/owlChrpp/owlrules.chrpp"
+#line 304 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlSubclassOf( A, B )) return chr::ES_CHR::FAILURE;
-#line 304 "/home/user/owlChrpp/owlrules.chrpp"
+#line 304 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlSubclassOf( B, A )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -13276,7 +13276,7 @@ chr::ES_CHR OWL2::do_owlEquivalentClass(typename owlEquivalentClass::Type c_args
 		if (logicalName_constraint_store->empty()) goto owlEquivalentClass_4;
 		auto& X = std::get<1>(c_args);
 		auto& Y = std::get<2>(c_args);
-#line 542 "/home/user/owlChrpp/owlrules.chrpp"
+#line 542 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			(!( X == Y ) )
@@ -13300,7 +13300,7 @@ chr::ES_CHR OWL2::do_owlEquivalentClass(typename owlEquivalentClass::Type c_args
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 542 "/home/user/owlChrpp/owlrules.chrpp"
+#line 542 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == res( URIY )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -13344,7 +13344,7 @@ chr::ES_CHR OWL2::do_owlEquivalentClass(typename owlEquivalentClass::Type c_args
 				auto URIY(std::get<2>(*it4_1));
 				auto it4_2 = logicalName_constraint_store->template begin<2>(URIY,Y);
 				while ( !it4_2.at_end() ) {
-#line 578 "/home/user/owlChrpp/owlrules.chrpp"
+#line 578 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					// Begin guard
 					if (
 						( std::get<0>(*it4_2) != std::get<0>(*it4_0) )
@@ -13362,7 +13362,7 @@ chr::ES_CHR OWL2::do_owlEquivalentClass(typename owlEquivalentClass::Type c_args
 						it4_1.kill();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 578 "/home/user/owlChrpp/owlrules.chrpp"
+#line 578 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						CHECK_ES( true );
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -13413,7 +13413,7 @@ chr::ES_CHR OWL2::do_owlEquivalentDataProperty(typename owlEquivalentDataPropert
 		auto& B = std::get<2>(c_args);
 		auto it0_0 = owlEquivalentDataProperty_constraint_store->template begin<0>(A,B);
 		while ( !it0_0.at_end() ) {
-#line 127 "/home/user/owlChrpp/owlrules.chrpp"
+#line 127 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -13423,7 +13423,7 @@ chr::ES_CHR OWL2::do_owlEquivalentDataProperty(typename owlEquivalentDataPropert
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 127 "/home/user/owlChrpp/owlrules.chrpp"
+#line 127 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -13436,7 +13436,7 @@ chr::ES_CHR OWL2::do_owlEquivalentDataProperty(typename owlEquivalentDataPropert
 	{
 		auto& A = std::get<1>(c_args);
 		auto& B = std::get<2>(c_args);
-#line 266 "/home/user/owlChrpp/owlrules.chrpp"
+#line 266 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			(!( A == B ) )
@@ -13453,9 +13453,9 @@ chr::ES_CHR OWL2::do_owlEquivalentDataProperty(typename owlEquivalentDataPropert
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 266 "/home/user/owlChrpp/owlrules.chrpp"
+#line 266 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlSubDataPropertyOf( A, B )) return chr::ES_CHR::FAILURE;
-#line 266 "/home/user/owlChrpp/owlrules.chrpp"
+#line 266 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlSubDataPropertyOf( B, A )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -13489,7 +13489,7 @@ chr::ES_CHR OWL2::do_owlEquivalentObjectProperty(typename owlEquivalentObjectPro
 		auto& B = std::get<2>(c_args);
 		auto it0_0 = owlEquivalentObjectProperty_constraint_store->template begin<0>(A,B);
 		while ( !it0_0.at_end() ) {
-#line 128 "/home/user/owlChrpp/owlrules.chrpp"
+#line 128 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -13499,7 +13499,7 @@ chr::ES_CHR OWL2::do_owlEquivalentObjectProperty(typename owlEquivalentObjectPro
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 128 "/home/user/owlChrpp/owlrules.chrpp"
+#line 128 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -13512,7 +13512,7 @@ chr::ES_CHR OWL2::do_owlEquivalentObjectProperty(typename owlEquivalentObjectPro
 	{
 		auto& A = std::get<1>(c_args);
 		auto& B = std::get<2>(c_args);
-#line 265 "/home/user/owlChrpp/owlrules.chrpp"
+#line 265 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			(!( A == B ) )
@@ -13529,9 +13529,9 @@ chr::ES_CHR OWL2::do_owlEquivalentObjectProperty(typename owlEquivalentObjectPro
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 265 "/home/user/owlChrpp/owlrules.chrpp"
+#line 265 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlSubObjectPropertyOf( A, B )) return chr::ES_CHR::FAILURE;
-#line 265 "/home/user/owlChrpp/owlrules.chrpp"
+#line 265 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlSubObjectPropertyOf( B, A )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -13564,7 +13564,7 @@ chr::ES_CHR OWL2::do_owlFunctionalDataProperty(typename owlFunctionalDataPropert
 		auto& P = std::get<1>(c_args);
 		auto it0_0 = owlFunctionalDataProperty_constraint_store->template begin<0>(P);
 		while ( !it0_0.at_end() ) {
-#line 146 "/home/user/owlChrpp/owlrules.chrpp"
+#line 146 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -13574,7 +13574,7 @@ chr::ES_CHR OWL2::do_owlFunctionalDataProperty(typename owlFunctionalDataPropert
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 146 "/home/user/owlChrpp/owlrules.chrpp"
+#line 146 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -13595,7 +13595,7 @@ chr::ES_CHR OWL2::do_owlFunctionalDataProperty(typename owlFunctionalDataPropert
 			auto it1_1 = owlDataPropertyAssertion_constraint_store->template begin<1>(X,P);
 			while ( !it1_1.at_end() ) {
 				auto Z(std::get<3>(*it1_1));
-#line 349 "/home/user/owlChrpp/owlrules.chrpp"
+#line 349 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it1_1) != std::get<0>(*it1_0) )
@@ -13608,7 +13608,7 @@ chr::ES_CHR OWL2::do_owlFunctionalDataProperty(typename owlFunctionalDataPropert
 					it1_1.kill();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 349 "/home/user/owlChrpp/owlrules.chrpp"
+#line 349 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					return chr::failure();
 					return chr::ES_CHR::SUCCESS;
 				} // End guard
@@ -13638,7 +13638,7 @@ chr::ES_CHR OWL2::do_owlFunctionalObjectProperty(typename owlFunctionalObjectPro
 		auto& P = std::get<1>(c_args);
 		auto it0_0 = owlFunctionalObjectProperty_constraint_store->template begin<0>(P);
 		while ( !it0_0.at_end() ) {
-#line 145 "/home/user/owlChrpp/owlrules.chrpp"
+#line 145 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -13648,7 +13648,7 @@ chr::ES_CHR OWL2::do_owlFunctionalObjectProperty(typename owlFunctionalObjectPro
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 145 "/home/user/owlChrpp/owlrules.chrpp"
+#line 145 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -13669,7 +13669,7 @@ chr::ES_CHR OWL2::do_owlFunctionalObjectProperty(typename owlFunctionalObjectPro
 			auto it1_1 = owlObjectPropertyAssertion_constraint_store->template begin<0>(X,P);
 			while ( !it1_1.at_end() ) {
 				auto Z(std::get<3>(*it1_1));
-#line 344 "/home/user/owlChrpp/owlrules.chrpp"
+#line 344 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it1_1) != std::get<0>(*it1_0) )
@@ -13688,7 +13688,7 @@ chr::ES_CHR OWL2::do_owlFunctionalObjectProperty(typename owlFunctionalObjectPro
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 344 "/home/user/owlChrpp/owlrules.chrpp"
+#line 344 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlSameIndividual( Y, Z )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -13743,7 +13743,7 @@ chr::ES_CHR OWL2::do_owlHasKey(typename owlHasKey::Type c_args, typename owlHasK
 		auto& N = std::get<4>(c_args);
 		auto it0_0 = owlHasKey_constraint_store->template begin<1>(C,P,I,N);
 		while ( !it0_0.at_end() ) {
-#line 520 "/home/user/owlChrpp/owlrules.chrpp"
+#line 520 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -13753,7 +13753,7 @@ chr::ES_CHR OWL2::do_owlHasKey(typename owlHasKey::Type c_args, typename owlHasK
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 520 "/home/user/owlChrpp/owlrules.chrpp"
+#line 520 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -13776,7 +13776,7 @@ chr::ES_CHR OWL2::do_owlHasKey(typename owlHasKey::Type c_args, typename owlHasK
 			auto it1_1 = owlClassAssertion_constraint_store->template begin<1>(C,true);
 			while ( !it1_1.at_end() ) {
 				auto Y(std::get<1>(*it1_1));
-#line 522 "/home/user/owlChrpp/owlrules.chrpp"
+#line 522 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it1_1) != std::get<0>(*it1_0) )
@@ -13796,7 +13796,7 @@ chr::ES_CHR OWL2::do_owlHasKey(typename owlHasKey::Type c_args, typename owlHasK
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 522 "/home/user/owlChrpp/owlrules.chrpp"
+#line 522 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlHasKeyCheck( C, X, Y, 0, N )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -13847,7 +13847,7 @@ chr::ES_CHR OWL2::do_owlHasKey(typename owlHasKey::Type c_args, typename owlHasK
 				auto V(std::get<3>(*it2_1));
 				auto it2_2 = owlObjectPropertyAssertion_constraint_store->template begin<2>(Y,P,V);
 				while ( !it2_2.at_end() ) {
-#line 523 "/home/user/owlChrpp/owlrules.chrpp"
+#line 523 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					// Begin guard
 					if (
 						( std::get<0>(*it2_2) != std::get<0>(*it2_1) )
@@ -13864,7 +13864,7 @@ chr::ES_CHR OWL2::do_owlHasKey(typename owlHasKey::Type c_args, typename owlHasK
 						it2_0.kill();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 523 "/home/user/owlChrpp/owlrules.chrpp"
+#line 523 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlHasKeyCheck( C, X, Y, ( I + 1 ), N )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -13904,7 +13904,7 @@ chr::ES_CHR OWL2::do_owlHasKey(typename owlHasKey::Type c_args, typename owlHasK
 				auto V(std::get<3>(*it3_1));
 				auto it3_2 = owlDataPropertyAssertion_constraint_store->template begin<2>(Y,P,V);
 				while ( !it3_2.at_end() ) {
-#line 524 "/home/user/owlChrpp/owlrules.chrpp"
+#line 524 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					// Begin guard
 					if (
 						( std::get<0>(*it3_2) != std::get<0>(*it3_1) )
@@ -13921,7 +13921,7 @@ chr::ES_CHR OWL2::do_owlHasKey(typename owlHasKey::Type c_args, typename owlHasK
 						it3_0.kill();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 524 "/home/user/owlChrpp/owlrules.chrpp"
+#line 524 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlHasKeyCheck( C, X, Y, ( I + 1 ), N )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -13967,7 +13967,7 @@ chr::ES_CHR OWL2::do_owlHasKeyCheck(typename owlHasKeyCheck::Type c_args, typena
 		auto& N = std::get<5>(c_args);
 		auto it0_0 = owlHasKeyCheck_constraint_store->template begin<2>(C,X,Y,I,N);
 		while ( !it0_0.at_end() ) {
-#line 521 "/home/user/owlChrpp/owlrules.chrpp"
+#line 521 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -13977,7 +13977,7 @@ chr::ES_CHR OWL2::do_owlHasKeyCheck(typename owlHasKeyCheck::Type c_args, typena
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 521 "/home/user/owlChrpp/owlrules.chrpp"
+#line 521 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -14004,7 +14004,7 @@ chr::ES_CHR OWL2::do_owlHasKeyCheck(typename owlHasKeyCheck::Type c_args, typena
 				auto V(std::get<3>(*it1_1));
 				auto it1_2 = owlObjectPropertyAssertion_constraint_store->template begin<2>(X,P,V);
 				while ( !it1_2.at_end() ) {
-#line 523 "/home/user/owlChrpp/owlrules.chrpp"
+#line 523 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					// Begin guard
 					if (
 						( std::get<0>(*it1_2) != std::get<0>(*it1_1) )
@@ -14014,7 +14014,7 @@ chr::ES_CHR OWL2::do_owlHasKeyCheck(typename owlHasKeyCheck::Type c_args, typena
 						}
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 523 "/home/user/owlChrpp/owlrules.chrpp"
+#line 523 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						c_args = std::make_tuple(next_free_constraint_id++, C, X, Y, ( I + 1 ), N);
 						c_stored_before = false;
 						goto owlHasKeyCheck_call;
@@ -14048,7 +14048,7 @@ chr::ES_CHR OWL2::do_owlHasKeyCheck(typename owlHasKeyCheck::Type c_args, typena
 				auto V(std::get<3>(*it2_1));
 				auto it2_2 = owlDataPropertyAssertion_constraint_store->template begin<2>(X,P,V);
 				while ( !it2_2.at_end() ) {
-#line 524 "/home/user/owlChrpp/owlrules.chrpp"
+#line 524 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					// Begin guard
 					if (
 						( std::get<0>(*it2_2) != std::get<0>(*it2_1) )
@@ -14058,7 +14058,7 @@ chr::ES_CHR OWL2::do_owlHasKeyCheck(typename owlHasKeyCheck::Type c_args, typena
 						}
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 524 "/home/user/owlChrpp/owlrules.chrpp"
+#line 524 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						c_args = std::make_tuple(next_free_constraint_id++, C, X, Y, ( I + 1 ), N);
 						c_stored_before = false;
 						goto owlHasKeyCheck_call;
@@ -14086,7 +14086,7 @@ chr::ES_CHR OWL2::do_owlHasKeyCheck(typename owlHasKeyCheck::Type c_args, typena
 		}
 		// Body
 		chr::Statistics::inc_nb_rules();
-#line 525 "/home/user/owlChrpp/owlrules.chrpp"
+#line 525 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		if (chr::ES_CHR::FAILURE == owlSameIndividual( X, Y )) return chr::ES_CHR::FAILURE;
 		return chr::ES_CHR::SUCCESS;
 	}
@@ -14115,7 +14115,7 @@ chr::ES_CHR OWL2::do_owlHasValueObject(typename owlHasValueObject::Type c_args, 
 		auto& Y = std::get<3>(c_args);
 		auto it0_0 = owlHasValueObject_constraint_store->template begin<2>(C,P,Y);
 		while ( !it0_0.at_end() ) {
-#line 200 "/home/user/owlChrpp/owlrules.chrpp"
+#line 200 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -14125,7 +14125,7 @@ chr::ES_CHR OWL2::do_owlHasValueObject(typename owlHasValueObject::Type c_args, 
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 200 "/home/user/owlChrpp/owlrules.chrpp"
+#line 200 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -14161,7 +14161,7 @@ chr::ES_CHR OWL2::do_owlHasValueObject(typename owlHasValueObject::Type c_args, 
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 465 "/home/user/owlChrpp/owlrules.chrpp"
+#line 465 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlObjectPropertyAssertion( U, P, Y )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -14212,7 +14212,7 @@ chr::ES_CHR OWL2::do_owlHasValueObject(typename owlHasValueObject::Type c_args, 
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 468 "/home/user/owlChrpp/owlrules.chrpp"
+#line 468 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlClassAssertion( U, C, true )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -14258,7 +14258,7 @@ chr::ES_CHR OWL2::do_owlHasValueObject(typename owlHasValueObject::Type c_args, 
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 476 "/home/user/owlChrpp/owlrules.chrpp"
+#line 476 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlSubclassOf( C, SV )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -14319,7 +14319,7 @@ chr::ES_CHR OWL2::do_owlHasValueObject(typename owlHasValueObject::Type c_args, 
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 484 "/home/user/owlChrpp/owlrules.chrpp"
+#line 484 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlSubclassOf( C, SV )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -14391,7 +14391,7 @@ chr::ES_CHR OWL2::do_owlHasValueObject(typename owlHasValueObject::Type c_args, 
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 492 "/home/user/owlChrpp/owlrules.chrpp"
+#line 492 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlSubclassOf( C, SV )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -14468,7 +14468,7 @@ chr::ES_CHR OWL2::do_owlHasValueObject(typename owlHasValueObject::Type c_args, 
 							c_it.lock();
 							// Body
 							chr::Statistics::inc_nb_rules();
-#line 501 "/home/user/owlChrpp/owlrules.chrpp"
+#line 501 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 							if (chr::ES_CHR::FAILURE == owlSubclassOf( C, SV )) return chr::ES_CHR::FAILURE;
 							assert(c_stored_before);
 							if (!c_it.alive()) {
@@ -14542,7 +14542,7 @@ chr::ES_CHR OWL2::do_owlIntersectionClass(typename owlIntersectionClass::Type c_
 		auto& I = std::get<3>(c_args);
 		auto it0_0 = owlIntersectionClass_constraint_store->template begin<1>(C,V,I);
 		while ( !it0_0.at_end() ) {
-#line 155 "/home/user/owlChrpp/owlrules.chrpp"
+#line 155 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -14552,7 +14552,7 @@ chr::ES_CHR OWL2::do_owlIntersectionClass(typename owlIntersectionClass::Type c_
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 155 "/home/user/owlChrpp/owlrules.chrpp"
+#line 155 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -14583,7 +14583,7 @@ chr::ES_CHR OWL2::do_owlIntersectionClass(typename owlIntersectionClass::Type c_
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 388 "/home/user/owlChrpp/owlrules.chrpp"
+#line 388 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlCandidatsIntersection( X, C, 0 )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -14627,7 +14627,7 @@ chr::ES_CHR OWL2::do_owlIntersectionClass(typename owlIntersectionClass::Type c_
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 391 "/home/user/owlChrpp/owlrules.chrpp"
+#line 391 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlCandidatsIntersection( X, C, ( I + 1 ) )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -14676,7 +14676,7 @@ chr::ES_CHR OWL2::do_owlIntersectionClass(typename owlIntersectionClass::Type c_
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 397 "/home/user/owlChrpp/owlrules.chrpp"
+#line 397 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlClassAssertion( X, C1, true )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -14702,7 +14702,7 @@ chr::ES_CHR OWL2::do_owlIntersectionClass(typename owlIntersectionClass::Type c_
 		auto it4_0 = owlSubclassOf_constraint_store->template begin<2>(C1);
 		while ( !it4_0.at_end() ) {
 			auto C2(std::get<1>(*it4_0));
-#line 400 "/home/user/owlChrpp/owlrules.chrpp"
+#line 400 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				(!( C1 == C2 ) )
@@ -14720,7 +14720,7 @@ chr::ES_CHR OWL2::do_owlIntersectionClass(typename owlIntersectionClass::Type c_
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 400 "/home/user/owlChrpp/owlrules.chrpp"
+#line 400 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlSubclassOf( C2, Component )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -14765,7 +14765,7 @@ chr::ES_CHR OWL2::do_owlIntersectionClass(typename owlIntersectionClass::Type c_
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 410 "/home/user/owlChrpp/owlrules.chrpp"
+#line 410 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == intersectionSubclassCheck( C, A, 1 )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -14790,7 +14790,7 @@ chr::ES_CHR OWL2::do_owlIntersectionClass(typename owlIntersectionClass::Type c_
 		auto& C = std::get<1>(c_args);
 		auto& V = std::get<2>(c_args);
 		auto& I = std::get<3>(c_args);
-#line 413 "/home/user/owlChrpp/owlrules.chrpp"
+#line 413 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			( I > 0 )
@@ -14814,7 +14814,7 @@ chr::ES_CHR OWL2::do_owlIntersectionClass(typename owlIntersectionClass::Type c_
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 413 "/home/user/owlChrpp/owlrules.chrpp"
+#line 413 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == intersectionSubclassCheck( C, A, ( I + 1 ) )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -14864,7 +14864,7 @@ chr::ES_CHR OWL2::do_owlIntersectionOf(typename owlIntersectionOf::Type c_args, 
 		auto& S = std::get<2>(c_args);
 		auto it0_0 = owlIntersectionOf_constraint_store->template begin<0>(C,S);
 		while ( !it0_0.at_end() ) {
-#line 154 "/home/user/owlChrpp/owlrules.chrpp"
+#line 154 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -14874,7 +14874,7 @@ chr::ES_CHR OWL2::do_owlIntersectionOf(typename owlIntersectionOf::Type c_args, 
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 154 "/home/user/owlChrpp/owlrules.chrpp"
+#line 154 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -14898,7 +14898,7 @@ chr::ES_CHR OWL2::do_owlIntersectionOf(typename owlIntersectionOf::Type c_args, 
 			c_it.lock();
 			// Body
 			chr::Statistics::inc_nb_rules();
-#line 382 "/home/user/owlChrpp/owlrules.chrpp"
+#line 382 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			if (chr::ES_CHR::FAILURE == owlIntersectionOfLoop( C, (*S ) . begin(  ), (*S ) . end(  ), 0 )) return chr::ES_CHR::FAILURE;
 			assert(c_stored_before);
 			if (!c_it.alive()) {
@@ -14932,7 +14932,7 @@ chr::ES_CHR OWL2::do_owlIntersectionOfLoop(typename owlIntersectionOfLoop::Type 
 		auto& I = std::get<4>(c_args);
 		auto it0_0 = owlIntersectionOfLoop_constraint_store->template begin<1>(C,IT,ITEND,I);
 		while ( !it0_0.at_end() ) {
-#line 156 "/home/user/owlChrpp/owlrules.chrpp"
+#line 156 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -14942,7 +14942,7 @@ chr::ES_CHR OWL2::do_owlIntersectionOfLoop(typename owlIntersectionOfLoop::Type 
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 156 "/home/user/owlChrpp/owlrules.chrpp"
+#line 156 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -14957,7 +14957,7 @@ chr::ES_CHR OWL2::do_owlIntersectionOfLoop(typename owlIntersectionOfLoop::Type 
 		auto& IT = std::get<2>(c_args);
 		auto& ITEND = std::get<3>(c_args);
 		auto& I = std::get<4>(c_args);
-#line 385 "/home/user/owlChrpp/owlrules.chrpp"
+#line 385 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			(!( IT == ITEND ) )
@@ -14967,9 +14967,9 @@ chr::ES_CHR OWL2::do_owlIntersectionOfLoop(typename owlIntersectionOfLoop::Type 
 			}
 			// Body
 			chr::Statistics::inc_nb_rules();
-#line 385 "/home/user/owlChrpp/owlrules.chrpp"
+#line 385 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			if (chr::ES_CHR::FAILURE == owlIntersectionClass( C, (*(*IT ) ), I )) return chr::ES_CHR::FAILURE;
-#line 385 "/home/user/owlChrpp/owlrules.chrpp"
+#line 385 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			c_args = std::make_tuple(next_free_constraint_id++, C, ( std :: next( (*IT ) ) ), ITEND, ( I + 1 ));
 			c_stored_before = false;
 			goto owlIntersectionOfLoop_call;
@@ -15001,7 +15001,7 @@ chr::ES_CHR OWL2::do_owlIntersectionOfLoop(typename owlIntersectionOfLoop::Type 
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 394 "/home/user/owlChrpp/owlrules.chrpp"
+#line 394 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlClassAssertion( X, C, true )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -15040,7 +15040,7 @@ chr::ES_CHR OWL2::do_owlIntersectionOfLoop(typename owlIntersectionOfLoop::Type 
 			it3_0.kill();
 			// Body
 			chr::Statistics::inc_nb_rules();
-#line 417 "/home/user/owlChrpp/owlrules.chrpp"
+#line 417 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			if (chr::ES_CHR::FAILURE == owlSubclassOf( A, C )) return chr::ES_CHR::FAILURE;
 			assert(c_stored_before);
 			if (!c_it.alive()) {
@@ -15073,7 +15073,7 @@ chr::ES_CHR OWL2::do_owlInverseFunctionalObjectProperty(typename owlInverseFunct
 		auto& P = std::get<1>(c_args);
 		auto it0_0 = owlInverseFunctionalObjectProperty_constraint_store->template begin<0>(P);
 		while ( !it0_0.at_end() ) {
-#line 147 "/home/user/owlChrpp/owlrules.chrpp"
+#line 147 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -15083,7 +15083,7 @@ chr::ES_CHR OWL2::do_owlInverseFunctionalObjectProperty(typename owlInverseFunct
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 147 "/home/user/owlChrpp/owlrules.chrpp"
+#line 147 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -15104,7 +15104,7 @@ chr::ES_CHR OWL2::do_owlInverseFunctionalObjectProperty(typename owlInverseFunct
 			auto it1_1 = owlObjectPropertyAssertion_constraint_store->template begin<4>(P,Z);
 			while ( !it1_1.at_end() ) {
 				auto Y(std::get<1>(*it1_1));
-#line 352 "/home/user/owlChrpp/owlrules.chrpp"
+#line 352 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it1_1) != std::get<0>(*it1_0) )
@@ -15123,7 +15123,7 @@ chr::ES_CHR OWL2::do_owlInverseFunctionalObjectProperty(typename owlInverseFunct
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 352 "/home/user/owlChrpp/owlrules.chrpp"
+#line 352 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlSameIndividual( X, Y )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -15176,7 +15176,7 @@ chr::ES_CHR OWL2::do_owlInverseObjectProperty(typename owlInverseObjectProperty:
 		auto& P2 = std::get<2>(c_args);
 		auto it0_0 = owlInverseObjectProperty_constraint_store->template begin<0>(P1,P2);
 		while ( !it0_0.at_end() ) {
-#line 138 "/home/user/owlChrpp/owlrules.chrpp"
+#line 138 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -15186,7 +15186,7 @@ chr::ES_CHR OWL2::do_owlInverseObjectProperty(typename owlInverseObjectProperty:
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 138 "/home/user/owlChrpp/owlrules.chrpp"
+#line 138 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -15217,7 +15217,7 @@ chr::ES_CHR OWL2::do_owlInverseObjectProperty(typename owlInverseObjectProperty:
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 330 "/home/user/owlChrpp/owlrules.chrpp"
+#line 330 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlObjectPropertyAssertion( Y, P2, X )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -15251,7 +15251,7 @@ chr::ES_CHR OWL2::do_owlInverseObjectProperty(typename owlInverseObjectProperty:
 			c_it.lock();
 			// Body
 			chr::Statistics::inc_nb_rules();
-#line 331 "/home/user/owlChrpp/owlrules.chrpp"
+#line 331 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			if (chr::ES_CHR::FAILURE == owlInverseObjectProperty( P2, P1 )) return chr::ES_CHR::FAILURE;
 			assert(c_stored_before);
 			if (!c_it.alive()) {
@@ -15283,7 +15283,7 @@ chr::ES_CHR OWL2::do_owlIrreflexiveObjectProperty(typename owlIrreflexiveObjectP
 		auto& P = std::get<1>(c_args);
 		auto it0_0 = owlIrreflexiveObjectProperty_constraint_store->template begin<0>(P);
 		while ( !it0_0.at_end() ) {
-#line 144 "/home/user/owlChrpp/owlrules.chrpp"
+#line 144 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -15293,7 +15293,7 @@ chr::ES_CHR OWL2::do_owlIrreflexiveObjectProperty(typename owlIrreflexiveObjectP
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 144 "/home/user/owlChrpp/owlrules.chrpp"
+#line 144 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -15310,7 +15310,7 @@ chr::ES_CHR OWL2::do_owlIrreflexiveObjectProperty(typename owlIrreflexiveObjectP
 		while ( !it1_0.at_end() ) {
 			auto X(std::get<1>(*it1_0));
 			auto _LV_0_(std::get<3>(*it1_0));
-#line 223 "/home/user/owlChrpp/owlrules.chrpp"
+#line 223 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( _LV_0_ == X )
@@ -15321,7 +15321,7 @@ chr::ES_CHR OWL2::do_owlIrreflexiveObjectProperty(typename owlIrreflexiveObjectP
 				it1_0.kill();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 223 "/home/user/owlChrpp/owlrules.chrpp"
+#line 223 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				return chr::failure();
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -15349,7 +15349,7 @@ chr::ES_CHR OWL2::do_owlNamedIndividual(typename owlNamedIndividual::Type c_args
 		auto& C = std::get<1>(c_args);
 		auto it0_0 = owlNamedIndividual_constraint_store->template begin<0>(C);
 		while ( !it0_0.at_end() ) {
-#line 122 "/home/user/owlChrpp/owlrules.chrpp"
+#line 122 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -15359,7 +15359,7 @@ chr::ES_CHR OWL2::do_owlNamedIndividual(typename owlNamedIndividual::Type c_args
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 122 "/home/user/owlChrpp/owlrules.chrpp"
+#line 122 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -15388,7 +15388,7 @@ chr::ES_CHR OWL2::do_owlNamedIndividual(typename owlNamedIndividual::Type c_args
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 421 "/home/user/owlChrpp/owlrules.chrpp"
+#line 421 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlClassAssertion( X, NOTA, false )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -15427,7 +15427,7 @@ chr::ES_CHR OWL2::do_owlNegativeDataAssertion(typename owlNegativeDataAssertion:
 		auto& Y = std::get<3>(c_args);
 		auto it0_0 = owlNegativeDataAssertion_constraint_store->template begin<0>(X,P,Y);
 		while ( !it0_0.at_end() ) {
-#line 150 "/home/user/owlChrpp/owlrules.chrpp"
+#line 150 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -15437,7 +15437,7 @@ chr::ES_CHR OWL2::do_owlNegativeDataAssertion(typename owlNegativeDataAssertion:
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 150 "/home/user/owlChrpp/owlrules.chrpp"
+#line 150 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -15460,7 +15460,7 @@ chr::ES_CHR OWL2::do_owlNegativeDataAssertion(typename owlNegativeDataAssertion:
 			it1_0.kill();
 			// Body
 			chr::Statistics::inc_nb_rules();
-#line 220 "/home/user/owlChrpp/owlrules.chrpp"
+#line 220 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			return chr::failure();
 			return chr::ES_CHR::SUCCESS;
 		}
@@ -15489,7 +15489,7 @@ chr::ES_CHR OWL2::do_owlNegativeObjectAssertion(typename owlNegativeObjectAssert
 		auto& Y = std::get<3>(c_args);
 		auto it0_0 = owlNegativeObjectAssertion_constraint_store->template begin<0>(X,P,Y);
 		while ( !it0_0.at_end() ) {
-#line 134 "/home/user/owlChrpp/owlrules.chrpp"
+#line 134 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -15499,7 +15499,7 @@ chr::ES_CHR OWL2::do_owlNegativeObjectAssertion(typename owlNegativeObjectAssert
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 134 "/home/user/owlChrpp/owlrules.chrpp"
+#line 134 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -15522,7 +15522,7 @@ chr::ES_CHR OWL2::do_owlNegativeObjectAssertion(typename owlNegativeObjectAssert
 			it1_0.kill();
 			// Body
 			chr::Statistics::inc_nb_rules();
-#line 211 "/home/user/owlChrpp/owlrules.chrpp"
+#line 211 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			return chr::failure();
 			return chr::ES_CHR::SUCCESS;
 		}
@@ -15552,7 +15552,7 @@ chr::ES_CHR OWL2::do_owlObjectAllValuesFrom(typename owlObjectAllValuesFrom::Typ
 		auto& Y = std::get<3>(c_args);
 		auto it0_0 = owlObjectAllValuesFrom_constraint_store->template begin<0>(C,P,Y);
 		while ( !it0_0.at_end() ) {
-#line 159 "/home/user/owlChrpp/owlrules.chrpp"
+#line 159 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -15562,7 +15562,7 @@ chr::ES_CHR OWL2::do_owlObjectAllValuesFrom(typename owlObjectAllValuesFrom::Typ
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 159 "/home/user/owlChrpp/owlrules.chrpp"
+#line 159 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -15594,7 +15594,7 @@ chr::ES_CHR OWL2::do_owlObjectMaxCardinality(typename owlObjectMaxCardinality::T
 		auto& N = std::get<3>(c_args);
 		auto it0_0 = owlObjectMaxCardinality_constraint_store->template begin<1>(C,P,N);
 		while ( !it0_0.at_end() ) {
-#line 198 "/home/user/owlChrpp/owlrules.chrpp"
+#line 198 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -15604,7 +15604,7 @@ chr::ES_CHR OWL2::do_owlObjectMaxCardinality(typename owlObjectMaxCardinality::T
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 198 "/home/user/owlChrpp/owlrules.chrpp"
+#line 198 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -15632,7 +15632,7 @@ chr::ES_CHR OWL2::do_owlObjectMaxCardinality(typename owlObjectMaxCardinality::T
 				it1_1.kill();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 453 "/home/user/owlChrpp/owlrules.chrpp"
+#line 453 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				return chr::failure();
 				return chr::ES_CHR::SUCCESS;
 			}
@@ -15658,7 +15658,7 @@ chr::ES_CHR OWL2::do_owlObjectMaxCardinality(typename owlObjectMaxCardinality::T
 				auto it2_2 = owlObjectPropertyAssertion_constraint_store->template begin<0>(U,P);
 				while ( !it2_2.at_end() ) {
 					auto Y2(std::get<3>(*it2_2));
-#line 456 "/home/user/owlChrpp/owlrules.chrpp"
+#line 456 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					// Begin guard
 					if (
 						( std::get<0>(*it2_2) != std::get<0>(*it2_1) )
@@ -15672,7 +15672,7 @@ chr::ES_CHR OWL2::do_owlObjectMaxCardinality(typename owlObjectMaxCardinality::T
 						it2_2.kill();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 456 "/home/user/owlChrpp/owlrules.chrpp"
+#line 456 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlSameIndividual( Y1, Y2 )) return chr::ES_CHR::FAILURE;
 						return chr::ES_CHR::SUCCESS;
 					} // End guard
@@ -15705,7 +15705,7 @@ chr::ES_CHR OWL2::do_owlObjectProperty(typename owlObjectProperty::Type c_args, 
 		auto& P = std::get<1>(c_args);
 		auto it0_0 = owlObjectProperty_constraint_store->template begin<0>(P);
 		while ( !it0_0.at_end() ) {
-#line 120 "/home/user/owlChrpp/owlrules.chrpp"
+#line 120 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -15715,7 +15715,7 @@ chr::ES_CHR OWL2::do_owlObjectProperty(typename owlObjectProperty::Type c_args, 
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 120 "/home/user/owlChrpp/owlrules.chrpp"
+#line 120 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -15738,9 +15738,9 @@ chr::ES_CHR OWL2::do_owlObjectProperty(typename owlObjectProperty::Type c_args, 
 			c_it.lock();
 			// Body
 			chr::Statistics::inc_nb_rules();
-#line 255 "/home/user/owlChrpp/owlrules.chrpp"
+#line 255 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			if (chr::ES_CHR::FAILURE == owlSubObjectPropertyOf( P, P )) return chr::ES_CHR::FAILURE;
-#line 255 "/home/user/owlChrpp/owlrules.chrpp"
+#line 255 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			if (chr::ES_CHR::FAILURE == owlEquivalentObjectProperty( P, P )) return chr::ES_CHR::FAILURE;
 			assert(c_stored_before);
 			if (!c_it.alive()) {
@@ -15777,7 +15777,7 @@ chr::ES_CHR OWL2::do_owlObjectProperty(typename owlObjectProperty::Type c_args, 
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 465 "/home/user/owlChrpp/owlrules.chrpp"
+#line 465 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlObjectPropertyAssertion( U, P, Y )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -15826,7 +15826,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 		auto& Y = std::get<3>(c_args);
 		auto it0_0 = owlObjectPropertyAssertion_constraint_store->template begin<2>(X,P,Y);
 		while ( !it0_0.at_end() ) {
-#line 135 "/home/user/owlChrpp/owlrules.chrpp"
+#line 135 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -15836,7 +15836,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 135 "/home/user/owlChrpp/owlrules.chrpp"
+#line 135 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -15859,7 +15859,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 			it1_0.kill();
 			// Body
 			chr::Statistics::inc_nb_rules();
-#line 211 "/home/user/owlChrpp/owlrules.chrpp"
+#line 211 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			return chr::failure();
 			return chr::ES_CHR::SUCCESS;
 		}
@@ -15876,7 +15876,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 		auto it2_0 = owlObjectPropertyAssertion_constraint_store->template begin<5>(X,Y);
 		while ( !it2_0.at_end() ) {
 			auto B(std::get<2>(*it2_0));
-#line 214 "/home/user/owlChrpp/owlrules.chrpp"
+#line 214 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it2_0) != std::get<0>(c_args) )
@@ -15890,7 +15890,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 					it2_1.kill();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 214 "/home/user/owlChrpp/owlrules.chrpp"
+#line 214 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					return chr::failure();
 					return chr::ES_CHR::SUCCESS;
 				}
@@ -15910,7 +15910,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 		auto it3_0 = owlObjectPropertyAssertion_constraint_store->template begin<5>(X,Y);
 		while ( !it3_0.at_end() ) {
 			auto A(std::get<2>(*it3_0));
-#line 214 "/home/user/owlChrpp/owlrules.chrpp"
+#line 214 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it3_0) != std::get<0>(c_args) )
@@ -15924,7 +15924,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 					it3_1.kill();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 214 "/home/user/owlChrpp/owlrules.chrpp"
+#line 214 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					return chr::failure();
 					return chr::ES_CHR::SUCCESS;
 				}
@@ -15948,7 +15948,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 			it4_0.kill();
 			// Body
 			chr::Statistics::inc_nb_rules();
-#line 223 "/home/user/owlChrpp/owlrules.chrpp"
+#line 223 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			return chr::failure();
 			return chr::ES_CHR::SUCCESS;
 		}
@@ -15964,7 +15964,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 		auto it5_0 = owlSubObjectPropertyOf_constraint_store->template begin<0>(P2);
 		while ( !it5_0.at_end() ) {
 			auto P1(std::get<2>(*it5_0));
-#line 308 "/home/user/owlChrpp/owlrules.chrpp"
+#line 308 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				(!( P2 == P1 ) )
@@ -15983,7 +15983,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 308 "/home/user/owlChrpp/owlrules.chrpp"
+#line 308 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlObjectPropertyAssertion( X, P1, Y )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -16029,7 +16029,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 313 "/home/user/owlChrpp/owlrules.chrpp"
+#line 313 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlClassAssertion( X, DP, true )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -16070,7 +16070,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 314 "/home/user/owlChrpp/owlrules.chrpp"
+#line 314 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlClassAssertion( Y, DP, true )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -16097,7 +16097,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 		auto it8_0 = owlSameIndividual_constraint_store->template begin<0>(X);
 		while ( !it8_0.at_end() ) {
 			auto Y(std::get<2>(*it8_0));
-#line 319 "/home/user/owlChrpp/owlrules.chrpp"
+#line 319 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				(!( X == Y ) )
@@ -16116,7 +16116,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 319 "/home/user/owlChrpp/owlrules.chrpp"
+#line 319 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlObjectPropertyAssertion( Y, P, O )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -16148,7 +16148,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 		auto it9_0 = owlSameIndividual_constraint_store->template begin<0>(O1);
 		while ( !it9_0.at_end() ) {
 			auto O2(std::get<2>(*it9_0));
-#line 321 "/home/user/owlChrpp/owlrules.chrpp"
+#line 321 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				(!( O1 == O2 ) )
@@ -16167,7 +16167,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 321 "/home/user/owlChrpp/owlrules.chrpp"
+#line 321 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlObjectPropertyAssertion( X, P, O2 )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -16213,7 +16213,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 330 "/home/user/owlChrpp/owlrules.chrpp"
+#line 330 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlObjectPropertyAssertion( Y, P2, X )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -16253,7 +16253,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 334 "/home/user/owlChrpp/owlrules.chrpp"
+#line 334 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlObjectPropertyAssertion( Y, P, X )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -16293,7 +16293,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 338 "/home/user/owlChrpp/owlrules.chrpp"
+#line 338 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlNegativeObjectAssertion( Y, P, X )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -16333,9 +16333,9 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 341 "/home/user/owlChrpp/owlrules.chrpp"
+#line 341 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlObjectPropertyAssertion( X, P, X )) return chr::ES_CHR::FAILURE;
-#line 341 "/home/user/owlChrpp/owlrules.chrpp"
+#line 341 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlObjectPropertyAssertion( Y, P, Y )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -16363,7 +16363,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 		auto it14_0 = owlObjectPropertyAssertion_constraint_store->template begin<0>(X,P);
 		while ( !it14_0.at_end() ) {
 			auto Z(std::get<3>(*it14_0));
-#line 344 "/home/user/owlChrpp/owlrules.chrpp"
+#line 344 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it14_0) != std::get<0>(c_args) )
@@ -16386,7 +16386,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 344 "/home/user/owlChrpp/owlrules.chrpp"
+#line 344 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlSameIndividual( Y, Z )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -16425,7 +16425,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 		auto it15_0 = owlObjectPropertyAssertion_constraint_store->template begin<0>(X,P);
 		while ( !it15_0.at_end() ) {
 			auto Y(std::get<3>(*it15_0));
-#line 344 "/home/user/owlChrpp/owlrules.chrpp"
+#line 344 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it15_0) != std::get<0>(c_args) )
@@ -16448,7 +16448,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 344 "/home/user/owlChrpp/owlrules.chrpp"
+#line 344 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlSameIndividual( Y, Z )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -16487,7 +16487,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 		auto it16_0 = owlObjectPropertyAssertion_constraint_store->template begin<4>(P,Z);
 		while ( !it16_0.at_end() ) {
 			auto Y(std::get<1>(*it16_0));
-#line 352 "/home/user/owlChrpp/owlrules.chrpp"
+#line 352 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it16_0) != std::get<0>(c_args) )
@@ -16510,7 +16510,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 352 "/home/user/owlChrpp/owlrules.chrpp"
+#line 352 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlSameIndividual( X, Y )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -16549,7 +16549,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 		auto it17_0 = owlObjectPropertyAssertion_constraint_store->template begin<4>(P,Z);
 		while ( !it17_0.at_end() ) {
 			auto X(std::get<1>(*it17_0));
-#line 352 "/home/user/owlChrpp/owlrules.chrpp"
+#line 352 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it17_0) != std::get<0>(c_args) )
@@ -16572,7 +16572,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 352 "/home/user/owlChrpp/owlrules.chrpp"
+#line 352 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlSameIndividual( X, Y )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -16629,7 +16629,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 434 "/home/user/owlChrpp/owlrules.chrpp"
+#line 434 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlClassAssertion( U, C, true )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -16675,14 +16675,14 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 				auto it19_2 = owlClassAssertion_constraint_store->template begin<1>(Y,true);
 				while ( !it19_2.at_end() ) {
 					auto W(std::get<1>(*it19_2));
-#line 440 "/home/user/owlChrpp/owlrules.chrpp"
+#line 440 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					// Begin guard
 					if (
 						( std::get<0>(*it19_2) != std::get<0>(*it19_1) )
 					) {
 						auto it19_3 = owlObjectPropertyAssertion_constraint_store->template begin<2>(U,P,W);
 						while ( !it19_3.at_end() ) {
-#line 440 "/home/user/owlChrpp/owlrules.chrpp"
+#line 440 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 							// Begin guard
 							if (
 								( std::get<0>(*it19_3) != std::get<0>(c_args) )
@@ -16690,7 +16690,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 								auto it19_4 = logicalName_constraint_store->template begin<1>(W);
 								while ( !it19_4.at_end() ) {
 									auto URI(std::get<1>(*it19_4));
-#line 440 "/home/user/owlChrpp/owlrules.chrpp"
+#line 440 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 									// Begin guard
 									if (
 										( std::get<0>(*it19_4) != std::get<0>(*it19_0) )
@@ -16703,7 +16703,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 										it19_1.kill();
 										// Body
 										chr::Statistics::inc_nb_rules();
-#line 440 "/home/user/owlChrpp/owlrules.chrpp"
+#line 440 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 
 										return chr::ES_CHR::SUCCESS;
 									} // End guard
@@ -16738,7 +16738,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 			auto it20_1 = owlClassAssertion_constraint_store->template begin<1>(Y,true);
 			while ( !it20_1.at_end() ) {
 				auto V(std::get<1>(*it20_1));
-#line 440 "/home/user/owlChrpp/owlrules.chrpp"
+#line 440 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it20_1) != std::get<0>(*it20_0) )
@@ -16747,7 +16747,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 					while ( !it20_2.at_end() ) {
 						auto it20_3 = owlObjectPropertyAssertion_constraint_store->template begin<2>(U,P,V);
 						while ( !it20_3.at_end() ) {
-#line 440 "/home/user/owlChrpp/owlrules.chrpp"
+#line 440 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 							// Begin guard
 							if (
 								( std::get<0>(*it20_3) != std::get<0>(c_args) )
@@ -16755,7 +16755,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 								auto it20_4 = logicalName_constraint_store->template begin<1>(W);
 								while ( !it20_4.at_end() ) {
 									auto URI(std::get<1>(*it20_4));
-#line 440 "/home/user/owlChrpp/owlrules.chrpp"
+#line 440 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 									// Begin guard
 									if (
 										( std::get<0>(*it20_4) != std::get<0>(*it20_2) )
@@ -16777,7 +16777,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 										it20_3.kill();
 										// Body
 										chr::Statistics::inc_nb_rules();
-#line 440 "/home/user/owlChrpp/owlrules.chrpp"
+#line 440 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 
 										assert(c_stored_before);
 										if (!c_it.alive()) {
@@ -16831,7 +16831,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 				it21_1.kill();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 453 "/home/user/owlChrpp/owlrules.chrpp"
+#line 453 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				return chr::failure();
 				return chr::ES_CHR::SUCCESS;
 			}
@@ -16856,7 +16856,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 				auto it22_2 = owlObjectPropertyAssertion_constraint_store->template begin<0>(U,P);
 				while ( !it22_2.at_end() ) {
 					auto Y2(std::get<3>(*it22_2));
-#line 456 "/home/user/owlChrpp/owlrules.chrpp"
+#line 456 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					// Begin guard
 					if (
 						( std::get<0>(*it22_2) != std::get<0>(c_args) )
@@ -16870,7 +16870,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 						it22_2.kill();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 456 "/home/user/owlChrpp/owlrules.chrpp"
+#line 456 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlSameIndividual( Y1, Y2 )) return chr::ES_CHR::FAILURE;
 						return chr::ES_CHR::SUCCESS;
 					} // End guard
@@ -16899,7 +16899,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 				auto it23_2 = owlObjectPropertyAssertion_constraint_store->template begin<0>(U,P);
 				while ( !it23_2.at_end() ) {
 					auto Y1(std::get<3>(*it23_2));
-#line 456 "/home/user/owlChrpp/owlrules.chrpp"
+#line 456 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					// Begin guard
 					if (
 						( std::get<0>(*it23_2) != std::get<0>(c_args) )
@@ -16913,7 +16913,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 						it23_2.kill();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 456 "/home/user/owlChrpp/owlrules.chrpp"
+#line 456 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlSameIndividual( Y1, Y2 )) return chr::ES_CHR::FAILURE;
 						return chr::ES_CHR::SUCCESS;
 					} // End guard
@@ -16949,7 +16949,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 468 "/home/user/owlChrpp/owlrules.chrpp"
+#line 468 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlClassAssertion( U, C, true )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -16991,7 +16991,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 515 "/home/user/owlChrpp/owlrules.chrpp"
+#line 515 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == constructPropertyChain( PC, 0, X, Y, N )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -17025,7 +17025,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 			while ( !it26_1.at_end() ) {
 				auto I(std::get<2>(*it26_1));
 				auto X(std::get<3>(*it26_1));
-#line 516 "/home/user/owlChrpp/owlrules.chrpp"
+#line 516 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( I < N )
@@ -17046,7 +17046,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 516 "/home/user/owlChrpp/owlrules.chrpp"
+#line 516 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == constructPropertyChain( PC, ( I + 1 ), X, Z, N )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -17090,7 +17090,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 		auto it27_0 = owlObjectPropertyAssertion_constraint_store->template begin<4>(P,V);
 		while ( !it27_0.at_end() ) {
 			auto Y(std::get<1>(*it27_0));
-#line 523 "/home/user/owlChrpp/owlrules.chrpp"
+#line 523 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it27_0) != std::get<0>(c_args) )
@@ -17116,7 +17116,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 						it27_1.kill();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 523 "/home/user/owlChrpp/owlrules.chrpp"
+#line 523 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlHasKeyCheck( C, X, Y, ( I + 1 ), N )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -17156,7 +17156,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 		auto it28_0 = owlObjectPropertyAssertion_constraint_store->template begin<4>(P,V);
 		while ( !it28_0.at_end() ) {
 			auto X(std::get<1>(*it28_0));
-#line 523 "/home/user/owlChrpp/owlrules.chrpp"
+#line 523 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it28_0) != std::get<0>(c_args) )
@@ -17182,7 +17182,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 						it28_1.kill();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 523 "/home/user/owlChrpp/owlrules.chrpp"
+#line 523 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlHasKeyCheck( C, X, Y, ( I + 1 ), N )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -17228,7 +17228,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 				auto it29_2 = logicalName_constraint_store->template begin<1>(Y);
 				while ( !it29_2.at_end() ) {
 					auto URIY(std::get<1>(*it29_2));
-#line 596 "/home/user/owlChrpp/owlrules.chrpp"
+#line 596 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					// Begin guard
 					if (
 						( std::get<0>(*it29_2) != std::get<0>(*it29_1) )
@@ -17249,7 +17249,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 							c_it.lock();
 							// Body
 							chr::Statistics::inc_nb_rules();
-#line 596 "/home/user/owlChrpp/owlrules.chrpp"
+#line 596 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 							if (chr::ES_CHR::FAILURE == ResultVec( makeVec( URIX, URIY ), ID )) return chr::ES_CHR::FAILURE;
 							assert(c_stored_before);
 							if (!c_it.alive()) {
@@ -17321,7 +17321,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 598 "/home/user/owlChrpp/owlrules.chrpp"
+#line 598 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == ResultVec( makeVec( URIX, URIX ), ID )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -17377,7 +17377,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 619 "/home/user/owlChrpp/owlrules.chrpp"
+#line 619 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == ResultVec( makeVec( URIX, emptyString ), ID )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -17422,7 +17422,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 				auto it32_2 = logicalName_constraint_store->template begin<1>(Y);
 				while ( !it32_2.at_end() ) {
 					auto URIY(std::get<1>(*it32_2));
-#line 626 "/home/user/owlChrpp/owlrules.chrpp"
+#line 626 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					// Begin guard
 					if (
 						( std::get<0>(*it32_2) != std::get<0>(*it32_1) )
@@ -17443,7 +17443,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 							c_it.lock();
 							// Body
 							chr::Statistics::inc_nb_rules();
-#line 626 "/home/user/owlChrpp/owlrules.chrpp"
+#line 626 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 							if (chr::ES_CHR::FAILURE == ResultVec( makeVec( URIX, URIY ), ID )) return chr::ES_CHR::FAILURE;
 							assert(c_stored_before);
 							if (!c_it.alive()) {
@@ -17510,14 +17510,14 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 				auto it33_2 = owlObjectPropertyAssertion_constraint_store->template begin<0>(Y,G);
 				while ( !it33_2.at_end() ) {
 					auto Z(std::get<3>(*it33_2));
-#line 634 "/home/user/owlChrpp/owlrules.chrpp"
+#line 634 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					// Begin guard
 					if (
 						( std::get<0>(*it33_2) != std::get<0>(c_args) )
 					) {
 						auto it33_3 = owlObjectPropertyAssertion_constraint_store->template begin<2>(Z,H,K);
 						while ( !it33_3.at_end() ) {
-#line 634 "/home/user/owlChrpp/owlrules.chrpp"
+#line 634 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 							// Begin guard
 							if (
 								( std::get<0>(*it33_3) != std::get<0>(c_args) )
@@ -17529,7 +17529,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 									auto it33_5 = logicalName_constraint_store->template begin<1>(Y);
 									while ( !it33_5.at_end() ) {
 										auto URIY(std::get<1>(*it33_5));
-#line 634 "/home/user/owlChrpp/owlrules.chrpp"
+#line 634 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 										// Begin guard
 										if (
 											( std::get<0>(*it33_5) != std::get<0>(*it33_4) )
@@ -17553,7 +17553,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 												c_it.lock();
 												// Body
 												chr::Statistics::inc_nb_rules();
-#line 634 "/home/user/owlChrpp/owlrules.chrpp"
+#line 634 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 												if (chr::ES_CHR::FAILURE == ResultVec( makeVec( URIX, URIY ), ID )) return chr::ES_CHR::FAILURE;
 												assert(c_stored_before);
 												if (!c_it.alive()) {
@@ -17661,14 +17661,14 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 				auto ID(std::get<6>(*it34_1));
 				auto it34_2 = owlObjectPropertyAssertion_constraint_store->template begin<2>(X,F,Y);
 				while ( !it34_2.at_end() ) {
-#line 634 "/home/user/owlChrpp/owlrules.chrpp"
+#line 634 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					// Begin guard
 					if (
 						( std::get<0>(*it34_2) != std::get<0>(c_args) )
 					) {
 						auto it34_3 = owlObjectPropertyAssertion_constraint_store->template begin<2>(Z,H,K);
 						while ( !it34_3.at_end() ) {
-#line 634 "/home/user/owlChrpp/owlrules.chrpp"
+#line 634 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 							// Begin guard
 							if (
 								( std::get<0>(*it34_3) != std::get<0>(c_args) )
@@ -17680,7 +17680,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 									auto it34_5 = logicalName_constraint_store->template begin<1>(Y);
 									while ( !it34_5.at_end() ) {
 										auto URIY(std::get<1>(*it34_5));
-#line 634 "/home/user/owlChrpp/owlrules.chrpp"
+#line 634 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 										// Begin guard
 										if (
 											( std::get<0>(*it34_5) != std::get<0>(*it34_4) )
@@ -17704,7 +17704,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 												c_it.lock();
 												// Body
 												chr::Statistics::inc_nb_rules();
-#line 634 "/home/user/owlChrpp/owlrules.chrpp"
+#line 634 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 												if (chr::ES_CHR::FAILURE == ResultVec( makeVec( URIX, URIY ), ID )) return chr::ES_CHR::FAILURE;
 												assert(c_stored_before);
 												if (!c_it.alive()) {
@@ -17812,14 +17812,14 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 				auto it35_2 = owlObjectPropertyAssertion_constraint_store->template begin<0>(X,F);
 				while ( !it35_2.at_end() ) {
 					auto Y(std::get<3>(*it35_2));
-#line 634 "/home/user/owlChrpp/owlrules.chrpp"
+#line 634 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					// Begin guard
 					if (
 						( std::get<0>(*it35_2) != std::get<0>(c_args) )
 					) {
 						auto it35_3 = owlObjectPropertyAssertion_constraint_store->template begin<2>(Y,G,Z);
 						while ( !it35_3.at_end() ) {
-#line 634 "/home/user/owlChrpp/owlrules.chrpp"
+#line 634 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 							// Begin guard
 							if (
 								( std::get<0>(*it35_3) != std::get<0>(c_args) )
@@ -17831,7 +17831,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 									auto it35_5 = logicalName_constraint_store->template begin<1>(Y);
 									while ( !it35_5.at_end() ) {
 										auto URIY(std::get<1>(*it35_5));
-#line 634 "/home/user/owlChrpp/owlrules.chrpp"
+#line 634 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 										// Begin guard
 										if (
 											( std::get<0>(*it35_5) != std::get<0>(*it35_4) )
@@ -17855,7 +17855,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 												c_it.lock();
 												// Body
 												chr::Statistics::inc_nb_rules();
-#line 634 "/home/user/owlChrpp/owlrules.chrpp"
+#line 634 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 												if (chr::ES_CHR::FAILURE == ResultVec( makeVec( URIX, URIY ), ID )) return chr::ES_CHR::FAILURE;
 												assert(c_stored_before);
 												if (!c_it.alive()) {
@@ -17959,7 +17959,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 			while ( !it36_1.at_end() ) {
 				auto S(std::get<1>(*it36_1));
 				auto E(std::get<2>(*it36_1));
-#line 642 "/home/user/owlChrpp/owlrules.chrpp"
+#line 642 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it36_1) != std::get<0>(*it36_0) )
@@ -17972,14 +17972,14 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 						auto it36_3 = owlObjectPropertyAssertion_constraint_store->template begin<0>(Z,H);
 						while ( !it36_3.at_end() ) {
 							auto C(std::get<3>(*it36_3));
-#line 642 "/home/user/owlChrpp/owlrules.chrpp"
+#line 642 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 							// Begin guard
 							if (
 								( std::get<0>(*it36_3) != std::get<0>(c_args) )
 							) {
 								auto it36_4 = owlObjectPropertyAssertion_constraint_store->template begin<2>(S,K,C);
 								while ( !it36_4.at_end() ) {
-#line 642 "/home/user/owlChrpp/owlrules.chrpp"
+#line 642 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 									// Begin guard
 									if (
 										( std::get<0>(*it36_4) != std::get<0>(c_args) )
@@ -17991,7 +17991,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 											auto it36_6 = logicalName_constraint_store->template begin<1>(C);
 											while ( !it36_6.at_end() ) {
 												auto URIC(std::get<1>(*it36_6));
-#line 642 "/home/user/owlChrpp/owlrules.chrpp"
+#line 642 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 												// Begin guard
 												if (
 													( std::get<0>(*it36_6) != std::get<0>(*it36_5) )
@@ -18016,7 +18016,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 														c_it.lock();
 														// Body
 														chr::Statistics::inc_nb_rules();
-#line 642 "/home/user/owlChrpp/owlrules.chrpp"
+#line 642 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 														if (chr::ES_CHR::FAILURE == ResultVec( makeVec( URIS, URIC ), ID )) return chr::ES_CHR::FAILURE;
 														assert(c_stored_before);
 														if (!c_it.alive()) {
@@ -18137,7 +18137,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 			while ( !it37_1.at_end() ) {
 				auto X(std::get<1>(*it37_1));
 				auto F(std::get<2>(*it37_1));
-#line 642 "/home/user/owlChrpp/owlrules.chrpp"
+#line 642 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it37_1) != std::get<0>(*it37_0) )
@@ -18149,14 +18149,14 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 						auto ID(std::get<6>(*it37_2));
 						auto it37_3 = owlObjectPropertyAssertion_constraint_store->template begin<2>(X,G,Z);
 						while ( !it37_3.at_end() ) {
-#line 642 "/home/user/owlChrpp/owlrules.chrpp"
+#line 642 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 							// Begin guard
 							if (
 								( std::get<0>(*it37_3) != std::get<0>(c_args) )
 							) {
 								auto it37_4 = owlObjectPropertyAssertion_constraint_store->template begin<2>(S,K,C);
 								while ( !it37_4.at_end() ) {
-#line 642 "/home/user/owlChrpp/owlrules.chrpp"
+#line 642 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 									// Begin guard
 									if (
 										( std::get<0>(*it37_4) != std::get<0>(c_args) )
@@ -18168,7 +18168,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 											auto it37_6 = logicalName_constraint_store->template begin<1>(C);
 											while ( !it37_6.at_end() ) {
 												auto URIC(std::get<1>(*it37_6));
-#line 642 "/home/user/owlChrpp/owlrules.chrpp"
+#line 642 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 												// Begin guard
 												if (
 													( std::get<0>(*it37_6) != std::get<0>(*it37_5) )
@@ -18193,7 +18193,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 														c_it.lock();
 														// Body
 														chr::Statistics::inc_nb_rules();
-#line 642 "/home/user/owlChrpp/owlrules.chrpp"
+#line 642 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 														if (chr::ES_CHR::FAILURE == ResultVec( makeVec( URIS, URIC ), ID )) return chr::ES_CHR::FAILURE;
 														assert(c_stored_before);
 														if (!c_it.alive()) {
@@ -18313,7 +18313,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 			while ( !it38_1.at_end() ) {
 				auto X(std::get<1>(*it38_1));
 				auto F(std::get<2>(*it38_1));
-#line 642 "/home/user/owlChrpp/owlrules.chrpp"
+#line 642 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it38_1) != std::get<0>(*it38_0) )
@@ -18326,14 +18326,14 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 						auto it38_3 = owlObjectPropertyAssertion_constraint_store->template begin<0>(X,G);
 						while ( !it38_3.at_end() ) {
 							auto Z(std::get<3>(*it38_3));
-#line 642 "/home/user/owlChrpp/owlrules.chrpp"
+#line 642 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 							// Begin guard
 							if (
 								( std::get<0>(*it38_3) != std::get<0>(c_args) )
 							) {
 								auto it38_4 = owlObjectPropertyAssertion_constraint_store->template begin<2>(Z,H,C);
 								while ( !it38_4.at_end() ) {
-#line 642 "/home/user/owlChrpp/owlrules.chrpp"
+#line 642 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 									// Begin guard
 									if (
 										( std::get<0>(*it38_4) != std::get<0>(c_args) )
@@ -18345,7 +18345,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 											auto it38_6 = logicalName_constraint_store->template begin<1>(C);
 											while ( !it38_6.at_end() ) {
 												auto URIC(std::get<1>(*it38_6));
-#line 642 "/home/user/owlChrpp/owlrules.chrpp"
+#line 642 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 												// Begin guard
 												if (
 													( std::get<0>(*it38_6) != std::get<0>(*it38_5) )
@@ -18370,7 +18370,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyAssertion(typename owlObjectPropertyAssert
 														c_it.lock();
 														// Body
 														chr::Statistics::inc_nb_rules();
-#line 642 "/home/user/owlChrpp/owlrules.chrpp"
+#line 642 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 														if (chr::ES_CHR::FAILURE == ResultVec( makeVec( URIS, URIC ), ID )) return chr::ES_CHR::FAILURE;
 														assert(c_stored_before);
 														if (!c_it.alive()) {
@@ -18510,7 +18510,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyChain(typename owlObjectPropertyChain::Typ
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 515 "/home/user/owlChrpp/owlrules.chrpp"
+#line 515 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == constructPropertyChain( PC, 0, X, Y, N )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -18541,7 +18541,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyChain(typename owlObjectPropertyChain::Typ
 			auto I(std::get<2>(*it1_0));
 			auto X(std::get<3>(*it1_0));
 			auto Y(std::get<4>(*it1_0));
-#line 516 "/home/user/owlChrpp/owlrules.chrpp"
+#line 516 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( I < N )
@@ -18564,7 +18564,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyChain(typename owlObjectPropertyChain::Typ
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 516 "/home/user/owlChrpp/owlrules.chrpp"
+#line 516 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == constructPropertyChain( PC, ( I + 1 ), X, Z, N )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -18614,7 +18614,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyDomain(typename owlObjectPropertyDomain::T
 		auto& C = std::get<2>(c_args);
 		auto it0_0 = owlObjectPropertyDomain_constraint_store->template begin<1>(P,C);
 		while ( !it0_0.at_end() ) {
-#line 129 "/home/user/owlChrpp/owlrules.chrpp"
+#line 129 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -18624,7 +18624,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyDomain(typename owlObjectPropertyDomain::T
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 129 "/home/user/owlChrpp/owlrules.chrpp"
+#line 129 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -18641,7 +18641,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyDomain(typename owlObjectPropertyDomain::T
 		auto it1_0 = owlSubclassOf_constraint_store->template begin<1>(C1);
 		while ( !it1_0.at_end() ) {
 			auto C2(std::get<2>(*it1_0));
-#line 274 "/home/user/owlChrpp/owlrules.chrpp"
+#line 274 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				(!( C1 == C2 ) )
@@ -18659,7 +18659,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyDomain(typename owlObjectPropertyDomain::T
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 274 "/home/user/owlChrpp/owlrules.chrpp"
+#line 274 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlObjectPropertyDomain( P, C2 )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -18690,7 +18690,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyDomain(typename owlObjectPropertyDomain::T
 		auto it2_0 = owlSubObjectPropertyOf_constraint_store->template begin<1>(P2);
 		while ( !it2_0.at_end() ) {
 			auto P1(std::get<1>(*it2_0));
-#line 277 "/home/user/owlChrpp/owlrules.chrpp"
+#line 277 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				(!( P1 == P2 ) )
@@ -18708,7 +18708,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyDomain(typename owlObjectPropertyDomain::T
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 277 "/home/user/owlChrpp/owlrules.chrpp"
+#line 277 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlObjectPropertyDomain( P1, C )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -18753,7 +18753,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyDomain(typename owlObjectPropertyDomain::T
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 313 "/home/user/owlChrpp/owlrules.chrpp"
+#line 313 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlClassAssertion( X, DP, true )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -18792,7 +18792,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyRange(typename owlObjectPropertyRange::Typ
 		auto& C = std::get<2>(c_args);
 		auto it0_0 = owlObjectPropertyRange_constraint_store->template begin<1>(P,C);
 		while ( !it0_0.at_end() ) {
-#line 131 "/home/user/owlChrpp/owlrules.chrpp"
+#line 131 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -18802,7 +18802,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyRange(typename owlObjectPropertyRange::Typ
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 131 "/home/user/owlChrpp/owlrules.chrpp"
+#line 131 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -18819,7 +18819,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyRange(typename owlObjectPropertyRange::Typ
 		auto it1_0 = owlSubclassOf_constraint_store->template begin<1>(C1);
 		while ( !it1_0.at_end() ) {
 			auto C2(std::get<2>(*it1_0));
-#line 280 "/home/user/owlChrpp/owlrules.chrpp"
+#line 280 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				(!( C1 == C2 ) )
@@ -18837,7 +18837,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyRange(typename owlObjectPropertyRange::Typ
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 280 "/home/user/owlChrpp/owlrules.chrpp"
+#line 280 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlObjectPropertyRange( P, C2 )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -18868,7 +18868,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyRange(typename owlObjectPropertyRange::Typ
 		auto it2_0 = owlSubObjectPropertyOf_constraint_store->template begin<1>(P2);
 		while ( !it2_0.at_end() ) {
 			auto P1(std::get<1>(*it2_0));
-#line 283 "/home/user/owlChrpp/owlrules.chrpp"
+#line 283 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				(!( P1 == P2 ) )
@@ -18886,7 +18886,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyRange(typename owlObjectPropertyRange::Typ
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 283 "/home/user/owlChrpp/owlrules.chrpp"
+#line 283 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlObjectPropertyRange( P1, C )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -18931,7 +18931,7 @@ chr::ES_CHR OWL2::do_owlObjectPropertyRange(typename owlObjectPropertyRange::Typ
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 314 "/home/user/owlChrpp/owlrules.chrpp"
+#line 314 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlClassAssertion( Y, DP, true )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -18971,7 +18971,7 @@ chr::ES_CHR OWL2::do_owlObjectSomeValuesFrom(typename owlObjectSomeValuesFrom::T
 		auto& Y = std::get<3>(c_args);
 		auto it0_0 = owlObjectSomeValuesFrom_constraint_store->template begin<3>(C,P,Y);
 		while ( !it0_0.at_end() ) {
-#line 161 "/home/user/owlChrpp/owlrules.chrpp"
+#line 161 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -18981,7 +18981,7 @@ chr::ES_CHR OWL2::do_owlObjectSomeValuesFrom(typename owlObjectSomeValuesFrom::T
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 161 "/home/user/owlChrpp/owlrules.chrpp"
+#line 161 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -18999,7 +18999,7 @@ chr::ES_CHR OWL2::do_owlObjectSomeValuesFrom(typename owlObjectSomeValuesFrom::T
 		auto it1_0 = owlObjectSomeValuesFrom_constraint_store->template begin<2>(P,Y);
 		while ( !it1_0.at_end() ) {
 			auto C2(std::get<1>(*it1_0));
-#line 431 "/home/user/owlChrpp/owlrules.chrpp"
+#line 431 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it1_0) != std::get<0>(c_args) )
@@ -19019,7 +19019,7 @@ chr::ES_CHR OWL2::do_owlObjectSomeValuesFrom(typename owlObjectSomeValuesFrom::T
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 431 "/home/user/owlChrpp/owlrules.chrpp"
+#line 431 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlEquivalentClass( C1, C2 )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -19051,7 +19051,7 @@ chr::ES_CHR OWL2::do_owlObjectSomeValuesFrom(typename owlObjectSomeValuesFrom::T
 		auto it2_0 = owlObjectSomeValuesFrom_constraint_store->template begin<2>(P,Y);
 		while ( !it2_0.at_end() ) {
 			auto C1(std::get<1>(*it2_0));
-#line 431 "/home/user/owlChrpp/owlrules.chrpp"
+#line 431 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it2_0) != std::get<0>(c_args) )
@@ -19071,7 +19071,7 @@ chr::ES_CHR OWL2::do_owlObjectSomeValuesFrom(typename owlObjectSomeValuesFrom::T
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 431 "/home/user/owlChrpp/owlrules.chrpp"
+#line 431 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlEquivalentClass( C1, C2 )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -19122,7 +19122,7 @@ chr::ES_CHR OWL2::do_owlObjectSomeValuesFrom(typename owlObjectSomeValuesFrom::T
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 434 "/home/user/owlChrpp/owlrules.chrpp"
+#line 434 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlClassAssertion( U, C, true )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -19174,11 +19174,11 @@ chr::ES_CHR OWL2::do_owlObjectSomeValuesFrom(typename owlObjectSomeValuesFrom::T
 				// Body
 				chr::Statistics::inc_nb_rules();
 				typename std::tuple_element<3,typename owlObjectPropertyAssertion::Type>::type V;
-#line 437 "/home/user/owlChrpp/owlrules.chrpp"
+#line 437 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlObjectPropertyAssertion( U, P, V )) return chr::ES_CHR::FAILURE;
-#line 437 "/home/user/owlChrpp/owlrules.chrpp"
+#line 437 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == logicalName( emptyString, V )) return chr::ES_CHR::FAILURE;
-#line 437 "/home/user/owlChrpp/owlrules.chrpp"
+#line 437 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlClassAssertion( V, Y, true )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -19224,7 +19224,7 @@ chr::ES_CHR OWL2::do_owlObjectSomeValuesFrom(typename owlObjectSomeValuesFrom::T
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 476 "/home/user/owlChrpp/owlrules.chrpp"
+#line 476 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlSubclassOf( C, SV )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -19285,7 +19285,7 @@ chr::ES_CHR OWL2::do_owlObjectSomeValuesFrom(typename owlObjectSomeValuesFrom::T
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 484 "/home/user/owlChrpp/owlrules.chrpp"
+#line 484 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlSubclassOf( C, SV )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -19357,7 +19357,7 @@ chr::ES_CHR OWL2::do_owlObjectSomeValuesFrom(typename owlObjectSomeValuesFrom::T
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 492 "/home/user/owlChrpp/owlrules.chrpp"
+#line 492 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlSubclassOf( C, SV )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -19434,7 +19434,7 @@ chr::ES_CHR OWL2::do_owlObjectSomeValuesFrom(typename owlObjectSomeValuesFrom::T
 							c_it.lock();
 							// Body
 							chr::Statistics::inc_nb_rules();
-#line 501 "/home/user/owlChrpp/owlrules.chrpp"
+#line 501 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 							if (chr::ES_CHR::FAILURE == owlSubclassOf( C, SV )) return chr::ES_CHR::FAILURE;
 							assert(c_stored_before);
 							if (!c_it.alive()) {
@@ -19507,7 +19507,7 @@ chr::ES_CHR OWL2::do_owlOneOf(typename owlOneOf::Type c_args, typename owlOneOf:
 		auto& S = std::get<2>(c_args);
 		auto it0_0 = owlOneOf_constraint_store->template begin<0>(C,S);
 		while ( !it0_0.at_end() ) {
-#line 201 "/home/user/owlChrpp/owlrules.chrpp"
+#line 201 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -19517,7 +19517,7 @@ chr::ES_CHR OWL2::do_owlOneOf(typename owlOneOf::Type c_args, typename owlOneOf:
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 201 "/home/user/owlChrpp/owlrules.chrpp"
+#line 201 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -19541,7 +19541,7 @@ chr::ES_CHR OWL2::do_owlOneOf(typename owlOneOf::Type c_args, typename owlOneOf:
 			c_it.lock();
 			// Body
 			chr::Statistics::inc_nb_rules();
-#line 504 "/home/user/owlChrpp/owlrules.chrpp"
+#line 504 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			if (chr::ES_CHR::FAILURE == owlOneOfLoop( C, (*S ) . begin(  ), (*S ) . end(  ) )) return chr::ES_CHR::FAILURE;
 			assert(c_stored_before);
 			if (!c_it.alive()) {
@@ -19572,7 +19572,7 @@ chr::ES_CHR OWL2::do_owlOneOfLoop(typename owlOneOfLoop::Type c_args) {
 		if (ITEND != std::get<3>(c_args)) goto owlOneOfLoop_2;
 		// Body
 		chr::Statistics::inc_nb_rules();
-#line 507 "/home/user/owlChrpp/owlrules.chrpp"
+#line 507 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 
 		return chr::ES_CHR::SUCCESS;
 	}
@@ -19585,9 +19585,9 @@ chr::ES_CHR OWL2::do_owlOneOfLoop(typename owlOneOfLoop::Type c_args) {
 		auto& ITEND = std::get<3>(c_args);
 		// Body
 		chr::Statistics::inc_nb_rules();
-#line 510 "/home/user/owlChrpp/owlrules.chrpp"
+#line 510 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		if (chr::ES_CHR::FAILURE == owlClassAssertion( (*(*IT ) ), C, true )) return chr::ES_CHR::FAILURE;
-#line 510 "/home/user/owlChrpp/owlrules.chrpp"
+#line 510 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		c_args = std::make_tuple(next_free_constraint_id++, C, ( std :: next( (*IT ) ) ), ITEND);
 		goto owlOneOfLoop_call;
 
@@ -19610,7 +19610,7 @@ chr::ES_CHR OWL2::do_owlPrefix(typename owlPrefix::Type c_args, typename owlPref
 		auto& Y = std::get<2>(c_args);
 		auto it0_0 = owlPrefix_constraint_store->template begin<0>(X,Y);
 		while ( !it0_0.at_end() ) {
-#line 118 "/home/user/owlChrpp/owlrules.chrpp"
+#line 118 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -19620,7 +19620,7 @@ chr::ES_CHR OWL2::do_owlPrefix(typename owlPrefix::Type c_args, typename owlPref
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 118 "/home/user/owlChrpp/owlrules.chrpp"
+#line 118 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -19649,7 +19649,7 @@ chr::ES_CHR OWL2::do_owlReflexiveObjectProperty(typename owlReflexiveObjectPrope
 		auto& P = std::get<1>(c_args);
 		auto it0_0 = owlReflexiveObjectProperty_constraint_store->template begin<0>(P);
 		while ( !it0_0.at_end() ) {
-#line 143 "/home/user/owlChrpp/owlrules.chrpp"
+#line 143 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -19659,7 +19659,7 @@ chr::ES_CHR OWL2::do_owlReflexiveObjectProperty(typename owlReflexiveObjectPrope
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 143 "/home/user/owlChrpp/owlrules.chrpp"
+#line 143 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -19688,9 +19688,9 @@ chr::ES_CHR OWL2::do_owlReflexiveObjectProperty(typename owlReflexiveObjectPrope
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 341 "/home/user/owlChrpp/owlrules.chrpp"
+#line 341 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlObjectPropertyAssertion( X, P, X )) return chr::ES_CHR::FAILURE;
-#line 341 "/home/user/owlChrpp/owlrules.chrpp"
+#line 341 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlObjectPropertyAssertion( Y, P, Y )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -19728,7 +19728,7 @@ chr::ES_CHR OWL2::do_owlSameIndividual(typename owlSameIndividual::Type c_args, 
 		auto& Y = std::get<2>(c_args);
 		auto it0_0 = owlSameIndividual_constraint_store->template begin<1>(X,Y);
 		while ( !it0_0.at_end() ) {
-#line 136 "/home/user/owlChrpp/owlrules.chrpp"
+#line 136 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -19738,7 +19738,7 @@ chr::ES_CHR OWL2::do_owlSameIndividual(typename owlSameIndividual::Type c_args, 
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 136 "/home/user/owlChrpp/owlrules.chrpp"
+#line 136 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -19751,7 +19751,7 @@ chr::ES_CHR OWL2::do_owlSameIndividual(typename owlSameIndividual::Type c_args, 
 	{
 		auto& X = std::get<1>(c_args);
 		auto& Y = std::get<2>(c_args);
-#line 317 "/home/user/owlChrpp/owlrules.chrpp"
+#line 317 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			(!( X == Y ) )
@@ -19768,7 +19768,7 @@ chr::ES_CHR OWL2::do_owlSameIndividual(typename owlSameIndividual::Type c_args, 
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 317 "/home/user/owlChrpp/owlrules.chrpp"
+#line 317 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlSameIndividual( Y, X )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -19786,7 +19786,7 @@ chr::ES_CHR OWL2::do_owlSameIndividual(typename owlSameIndividual::Type c_args, 
 		if (owlSameIndividual_constraint_store->empty()) goto owlSameIndividual_3;
 		auto& X = std::get<1>(c_args);
 		auto& Y = std::get<2>(c_args);
-#line 318 "/home/user/owlChrpp/owlrules.chrpp"
+#line 318 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			(!( X == Y ) )
@@ -19794,7 +19794,7 @@ chr::ES_CHR OWL2::do_owlSameIndividual(typename owlSameIndividual::Type c_args, 
 			auto it2_0 = owlSameIndividual_constraint_store->template begin<0>(Y);
 			while ( !it2_0.at_end() ) {
 				auto Z(std::get<2>(*it2_0));
-#line 318 "/home/user/owlChrpp/owlrules.chrpp"
+#line 318 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it2_0) != std::get<0>(c_args) )
@@ -19814,7 +19814,7 @@ chr::ES_CHR OWL2::do_owlSameIndividual(typename owlSameIndividual::Type c_args, 
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 318 "/home/user/owlChrpp/owlrules.chrpp"
+#line 318 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlSameIndividual( X, Z )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -19843,7 +19843,7 @@ chr::ES_CHR OWL2::do_owlSameIndividual(typename owlSameIndividual::Type c_args, 
 		if (owlSameIndividual_constraint_store->empty()) goto owlSameIndividual_4;
 		auto& Y = std::get<1>(c_args);
 		auto& Z = std::get<2>(c_args);
-#line 318 "/home/user/owlChrpp/owlrules.chrpp"
+#line 318 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			(!( Y == Z ) )
@@ -19851,7 +19851,7 @@ chr::ES_CHR OWL2::do_owlSameIndividual(typename owlSameIndividual::Type c_args, 
 			auto it3_0 = owlSameIndividual_constraint_store->template begin<2>(Y);
 			while ( !it3_0.at_end() ) {
 				auto X(std::get<1>(*it3_0));
-#line 318 "/home/user/owlChrpp/owlrules.chrpp"
+#line 318 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it3_0) != std::get<0>(c_args) )
@@ -19871,7 +19871,7 @@ chr::ES_CHR OWL2::do_owlSameIndividual(typename owlSameIndividual::Type c_args, 
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 318 "/home/user/owlChrpp/owlrules.chrpp"
+#line 318 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlSameIndividual( X, Z )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -19900,7 +19900,7 @@ chr::ES_CHR OWL2::do_owlSameIndividual(typename owlSameIndividual::Type c_args, 
 		if (owlObjectPropertyAssertion_constraint_store->empty()) goto owlSameIndividual_5;
 		auto& X = std::get<1>(c_args);
 		auto& Y = std::get<2>(c_args);
-#line 319 "/home/user/owlChrpp/owlrules.chrpp"
+#line 319 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			(!( X == Y ) )
@@ -19922,7 +19922,7 @@ chr::ES_CHR OWL2::do_owlSameIndividual(typename owlSameIndividual::Type c_args, 
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 319 "/home/user/owlChrpp/owlrules.chrpp"
+#line 319 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlObjectPropertyAssertion( Y, P, O )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -19946,7 +19946,7 @@ chr::ES_CHR OWL2::do_owlSameIndividual(typename owlSameIndividual::Type c_args, 
 		if (owlDataPropertyAssertion_constraint_store->empty()) goto owlSameIndividual_6;
 		auto& X = std::get<1>(c_args);
 		auto& Y = std::get<2>(c_args);
-#line 320 "/home/user/owlChrpp/owlrules.chrpp"
+#line 320 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			(!( X == Y ) )
@@ -19968,7 +19968,7 @@ chr::ES_CHR OWL2::do_owlSameIndividual(typename owlSameIndividual::Type c_args, 
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 320 "/home/user/owlChrpp/owlrules.chrpp"
+#line 320 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlDataPropertyAssertion( Y, P, O )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -19992,7 +19992,7 @@ chr::ES_CHR OWL2::do_owlSameIndividual(typename owlSameIndividual::Type c_args, 
 		if (owlObjectPropertyAssertion_constraint_store->empty()) goto owlSameIndividual_7;
 		auto& O1 = std::get<1>(c_args);
 		auto& O2 = std::get<2>(c_args);
-#line 321 "/home/user/owlChrpp/owlrules.chrpp"
+#line 321 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			(!( O1 == O2 ) )
@@ -20014,7 +20014,7 @@ chr::ES_CHR OWL2::do_owlSameIndividual(typename owlSameIndividual::Type c_args, 
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 321 "/home/user/owlChrpp/owlrules.chrpp"
+#line 321 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlObjectPropertyAssertion( X, P, O2 )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -20038,7 +20038,7 @@ chr::ES_CHR OWL2::do_owlSameIndividual(typename owlSameIndividual::Type c_args, 
 		if (owlClassAssertion_constraint_store->empty()) goto owlSameIndividual_8;
 		auto& X = std::get<1>(c_args);
 		auto& Y = std::get<2>(c_args);
-#line 322 "/home/user/owlChrpp/owlrules.chrpp"
+#line 322 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			(!( X == Y ) )
@@ -20060,7 +20060,7 @@ chr::ES_CHR OWL2::do_owlSameIndividual(typename owlSameIndividual::Type c_args, 
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 322 "/home/user/owlChrpp/owlrules.chrpp"
+#line 322 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlClassAssertion( Y, C, B )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -20092,7 +20092,7 @@ chr::ES_CHR OWL2::do_owlSameIndividual(typename owlSameIndividual::Type c_args, 
 			it8_0.kill();
 			// Body
 			chr::Statistics::inc_nb_rules();
-#line 326 "/home/user/owlChrpp/owlrules.chrpp"
+#line 326 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			return chr::failure();
 			return chr::ES_CHR::SUCCESS;
 		}
@@ -20120,7 +20120,7 @@ chr::ES_CHR OWL2::do_owlSubDataPropertyOf(typename owlSubDataPropertyOf::Type c_
 		auto& B = std::get<2>(c_args);
 		auto it0_0 = owlSubDataPropertyOf_constraint_store->template begin<2>(A,B);
 		while ( !it0_0.at_end() ) {
-#line 125 "/home/user/owlChrpp/owlrules.chrpp"
+#line 125 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -20130,7 +20130,7 @@ chr::ES_CHR OWL2::do_owlSubDataPropertyOf(typename owlSubDataPropertyOf::Type c_
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 125 "/home/user/owlChrpp/owlrules.chrpp"
+#line 125 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -20147,7 +20147,7 @@ chr::ES_CHR OWL2::do_owlSubDataPropertyOf(typename owlSubDataPropertyOf::Type c_
 		auto it1_0 = owlSubDataPropertyOf_constraint_store->template begin<0>(B);
 		while ( !it1_0.at_end() ) {
 			auto C(std::get<2>(*it1_0));
-#line 262 "/home/user/owlChrpp/owlrules.chrpp"
+#line 262 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it1_0) != std::get<0>(c_args) )
@@ -20166,7 +20166,7 @@ chr::ES_CHR OWL2::do_owlSubDataPropertyOf(typename owlSubDataPropertyOf::Type c_
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 262 "/home/user/owlChrpp/owlrules.chrpp"
+#line 262 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlSubDataPropertyOf( A, C )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -20197,7 +20197,7 @@ chr::ES_CHR OWL2::do_owlSubDataPropertyOf(typename owlSubDataPropertyOf::Type c_
 		auto it2_0 = owlSubDataPropertyOf_constraint_store->template begin<1>(B);
 		while ( !it2_0.at_end() ) {
 			auto A(std::get<1>(*it2_0));
-#line 262 "/home/user/owlChrpp/owlrules.chrpp"
+#line 262 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it2_0) != std::get<0>(c_args) )
@@ -20216,7 +20216,7 @@ chr::ES_CHR OWL2::do_owlSubDataPropertyOf(typename owlSubDataPropertyOf::Type c_
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 262 "/home/user/owlChrpp/owlrules.chrpp"
+#line 262 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlSubDataPropertyOf( A, C )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -20244,14 +20244,14 @@ chr::ES_CHR OWL2::do_owlSubDataPropertyOf(typename owlSubDataPropertyOf::Type c_
 		if (owlSubDataPropertyOf_constraint_store->empty()) goto owlSubDataPropertyOf_4;
 		auto& A = std::get<1>(c_args);
 		auto& B = std::get<2>(c_args);
-#line 270 "/home/user/owlChrpp/owlrules.chrpp"
+#line 270 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			(!( A == B ) )
 		) {
 			auto it3_0 = owlSubDataPropertyOf_constraint_store->template begin<2>(B,A);
 			while ( !it3_0.at_end() ) {
-#line 270 "/home/user/owlChrpp/owlrules.chrpp"
+#line 270 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it3_0) != std::get<0>(c_args) )
@@ -20269,7 +20269,7 @@ chr::ES_CHR OWL2::do_owlSubDataPropertyOf(typename owlSubDataPropertyOf::Type c_
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 270 "/home/user/owlChrpp/owlrules.chrpp"
+#line 270 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlEquivalentDataProperty( A, B )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -20298,14 +20298,14 @@ chr::ES_CHR OWL2::do_owlSubDataPropertyOf(typename owlSubDataPropertyOf::Type c_
 		if (owlSubDataPropertyOf_constraint_store->empty()) goto owlSubDataPropertyOf_5;
 		auto& B = std::get<1>(c_args);
 		auto& A = std::get<2>(c_args);
-#line 270 "/home/user/owlChrpp/owlrules.chrpp"
+#line 270 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			(!( A == B ) )
 		) {
 			auto it4_0 = owlSubDataPropertyOf_constraint_store->template begin<2>(A,B);
 			while ( !it4_0.at_end() ) {
-#line 270 "/home/user/owlChrpp/owlrules.chrpp"
+#line 270 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it4_0) != std::get<0>(c_args) )
@@ -20323,7 +20323,7 @@ chr::ES_CHR OWL2::do_owlSubDataPropertyOf(typename owlSubDataPropertyOf::Type c_
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 270 "/home/user/owlChrpp/owlrules.chrpp"
+#line 270 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlEquivalentDataProperty( A, B )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -20352,7 +20352,7 @@ chr::ES_CHR OWL2::do_owlSubDataPropertyOf(typename owlSubDataPropertyOf::Type c_
 		if (owlDataPropertyDomain_constraint_store->empty()) goto owlSubDataPropertyOf_6;
 		auto& P1 = std::get<1>(c_args);
 		auto& P2 = std::get<2>(c_args);
-#line 286 "/home/user/owlChrpp/owlrules.chrpp"
+#line 286 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			(!( P1 == P2 ) )
@@ -20373,7 +20373,7 @@ chr::ES_CHR OWL2::do_owlSubDataPropertyOf(typename owlSubDataPropertyOf::Type c_
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 286 "/home/user/owlChrpp/owlrules.chrpp"
+#line 286 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlDataPropertyDomain( P1, C )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -20397,7 +20397,7 @@ chr::ES_CHR OWL2::do_owlSubDataPropertyOf(typename owlSubDataPropertyOf::Type c_
 		if (owlDataPropertyRange_constraint_store->empty()) goto owlSubDataPropertyOf_7;
 		auto& P1 = std::get<1>(c_args);
 		auto& P2 = std::get<2>(c_args);
-#line 289 "/home/user/owlChrpp/owlrules.chrpp"
+#line 289 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			(!( P1 == P2 ) )
@@ -20418,7 +20418,7 @@ chr::ES_CHR OWL2::do_owlSubDataPropertyOf(typename owlSubDataPropertyOf::Type c_
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 289 "/home/user/owlChrpp/owlrules.chrpp"
+#line 289 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlDataPropertyRange( P1, C )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -20442,7 +20442,7 @@ chr::ES_CHR OWL2::do_owlSubDataPropertyOf(typename owlSubDataPropertyOf::Type c_
 		if (owlDataPropertyAssertion_constraint_store->empty()) goto owlSubDataPropertyOf_store;
 		auto& P2 = std::get<1>(c_args);
 		auto& P1 = std::get<2>(c_args);
-#line 309 "/home/user/owlChrpp/owlrules.chrpp"
+#line 309 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			(!( P2 == P1 ) )
@@ -20464,7 +20464,7 @@ chr::ES_CHR OWL2::do_owlSubDataPropertyOf(typename owlSubDataPropertyOf::Type c_
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 309 "/home/user/owlChrpp/owlrules.chrpp"
+#line 309 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlDataPropertyAssertion( X, P1, Y )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -20504,7 +20504,7 @@ chr::ES_CHR OWL2::do_owlSubObjectPropertyOf(typename owlSubObjectPropertyOf::Typ
 		auto& B = std::get<2>(c_args);
 		auto it0_0 = owlSubObjectPropertyOf_constraint_store->template begin<2>(A,B);
 		while ( !it0_0.at_end() ) {
-#line 126 "/home/user/owlChrpp/owlrules.chrpp"
+#line 126 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -20514,7 +20514,7 @@ chr::ES_CHR OWL2::do_owlSubObjectPropertyOf(typename owlSubObjectPropertyOf::Typ
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 126 "/home/user/owlChrpp/owlrules.chrpp"
+#line 126 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -20531,7 +20531,7 @@ chr::ES_CHR OWL2::do_owlSubObjectPropertyOf(typename owlSubObjectPropertyOf::Typ
 		auto it1_0 = owlSubObjectPropertyOf_constraint_store->template begin<0>(B);
 		while ( !it1_0.at_end() ) {
 			auto C(std::get<2>(*it1_0));
-#line 261 "/home/user/owlChrpp/owlrules.chrpp"
+#line 261 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it1_0) != std::get<0>(c_args) )
@@ -20550,7 +20550,7 @@ chr::ES_CHR OWL2::do_owlSubObjectPropertyOf(typename owlSubObjectPropertyOf::Typ
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 261 "/home/user/owlChrpp/owlrules.chrpp"
+#line 261 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlSubObjectPropertyOf( A, C )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -20581,7 +20581,7 @@ chr::ES_CHR OWL2::do_owlSubObjectPropertyOf(typename owlSubObjectPropertyOf::Typ
 		auto it2_0 = owlSubObjectPropertyOf_constraint_store->template begin<1>(B);
 		while ( !it2_0.at_end() ) {
 			auto A(std::get<1>(*it2_0));
-#line 261 "/home/user/owlChrpp/owlrules.chrpp"
+#line 261 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it2_0) != std::get<0>(c_args) )
@@ -20600,7 +20600,7 @@ chr::ES_CHR OWL2::do_owlSubObjectPropertyOf(typename owlSubObjectPropertyOf::Typ
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 261 "/home/user/owlChrpp/owlrules.chrpp"
+#line 261 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlSubObjectPropertyOf( A, C )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -20628,14 +20628,14 @@ chr::ES_CHR OWL2::do_owlSubObjectPropertyOf(typename owlSubObjectPropertyOf::Typ
 		if (owlSubObjectPropertyOf_constraint_store->empty()) goto owlSubObjectPropertyOf_4;
 		auto& A = std::get<1>(c_args);
 		auto& B = std::get<2>(c_args);
-#line 269 "/home/user/owlChrpp/owlrules.chrpp"
+#line 269 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			(!( A == B ) )
 		) {
 			auto it3_0 = owlSubObjectPropertyOf_constraint_store->template begin<2>(B,A);
 			while ( !it3_0.at_end() ) {
-#line 269 "/home/user/owlChrpp/owlrules.chrpp"
+#line 269 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it3_0) != std::get<0>(c_args) )
@@ -20653,7 +20653,7 @@ chr::ES_CHR OWL2::do_owlSubObjectPropertyOf(typename owlSubObjectPropertyOf::Typ
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 269 "/home/user/owlChrpp/owlrules.chrpp"
+#line 269 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlEquivalentObjectProperty( A, B )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -20682,14 +20682,14 @@ chr::ES_CHR OWL2::do_owlSubObjectPropertyOf(typename owlSubObjectPropertyOf::Typ
 		if (owlSubObjectPropertyOf_constraint_store->empty()) goto owlSubObjectPropertyOf_5;
 		auto& B = std::get<1>(c_args);
 		auto& A = std::get<2>(c_args);
-#line 269 "/home/user/owlChrpp/owlrules.chrpp"
+#line 269 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			(!( A == B ) )
 		) {
 			auto it4_0 = owlSubObjectPropertyOf_constraint_store->template begin<2>(A,B);
 			while ( !it4_0.at_end() ) {
-#line 269 "/home/user/owlChrpp/owlrules.chrpp"
+#line 269 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it4_0) != std::get<0>(c_args) )
@@ -20707,7 +20707,7 @@ chr::ES_CHR OWL2::do_owlSubObjectPropertyOf(typename owlSubObjectPropertyOf::Typ
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 269 "/home/user/owlChrpp/owlrules.chrpp"
+#line 269 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlEquivalentObjectProperty( A, B )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -20736,7 +20736,7 @@ chr::ES_CHR OWL2::do_owlSubObjectPropertyOf(typename owlSubObjectPropertyOf::Typ
 		if (owlObjectPropertyDomain_constraint_store->empty()) goto owlSubObjectPropertyOf_6;
 		auto& P1 = std::get<1>(c_args);
 		auto& P2 = std::get<2>(c_args);
-#line 277 "/home/user/owlChrpp/owlrules.chrpp"
+#line 277 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			(!( P1 == P2 ) )
@@ -20757,7 +20757,7 @@ chr::ES_CHR OWL2::do_owlSubObjectPropertyOf(typename owlSubObjectPropertyOf::Typ
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 277 "/home/user/owlChrpp/owlrules.chrpp"
+#line 277 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlObjectPropertyDomain( P1, C )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -20781,7 +20781,7 @@ chr::ES_CHR OWL2::do_owlSubObjectPropertyOf(typename owlSubObjectPropertyOf::Typ
 		if (owlObjectPropertyRange_constraint_store->empty()) goto owlSubObjectPropertyOf_7;
 		auto& P1 = std::get<1>(c_args);
 		auto& P2 = std::get<2>(c_args);
-#line 283 "/home/user/owlChrpp/owlrules.chrpp"
+#line 283 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			(!( P1 == P2 ) )
@@ -20802,7 +20802,7 @@ chr::ES_CHR OWL2::do_owlSubObjectPropertyOf(typename owlSubObjectPropertyOf::Typ
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 283 "/home/user/owlChrpp/owlrules.chrpp"
+#line 283 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlObjectPropertyRange( P1, C )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -20826,7 +20826,7 @@ chr::ES_CHR OWL2::do_owlSubObjectPropertyOf(typename owlSubObjectPropertyOf::Typ
 		if (owlObjectPropertyAssertion_constraint_store->empty()) goto owlSubObjectPropertyOf_8;
 		auto& P2 = std::get<1>(c_args);
 		auto& P1 = std::get<2>(c_args);
-#line 308 "/home/user/owlChrpp/owlrules.chrpp"
+#line 308 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			(!( P2 == P1 ) )
@@ -20848,7 +20848,7 @@ chr::ES_CHR OWL2::do_owlSubObjectPropertyOf(typename owlSubObjectPropertyOf::Typ
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 308 "/home/user/owlChrpp/owlrules.chrpp"
+#line 308 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlObjectPropertyAssertion( X, P1, Y )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -20899,7 +20899,7 @@ chr::ES_CHR OWL2::do_owlSubObjectPropertyOf(typename owlSubObjectPropertyOf::Typ
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 492 "/home/user/owlChrpp/owlrules.chrpp"
+#line 492 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlSubclassOf( C, SV )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -20975,7 +20975,7 @@ chr::ES_CHR OWL2::do_owlSubObjectPropertyOf(typename owlSubObjectPropertyOf::Typ
 							c_it.lock();
 							// Body
 							chr::Statistics::inc_nb_rules();
-#line 501 "/home/user/owlChrpp/owlrules.chrpp"
+#line 501 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 							if (chr::ES_CHR::FAILURE == owlSubclassOf( C, SV )) return chr::ES_CHR::FAILURE;
 							assert(c_stored_before);
 							if (!c_it.alive()) {
@@ -21047,7 +21047,7 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 		auto& B = std::get<2>(c_args);
 		auto it0_0 = owlSubclassOf_constraint_store->template begin<0>(A,B);
 		while ( !it0_0.at_end() ) {
-#line 123 "/home/user/owlChrpp/owlrules.chrpp"
+#line 123 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -21057,7 +21057,7 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 123 "/home/user/owlChrpp/owlrules.chrpp"
+#line 123 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -21082,9 +21082,9 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 			c_it.lock();
 			// Body
 			chr::Statistics::inc_nb_rules();
-#line 231 "/home/user/owlChrpp/owlrules.chrpp"
+#line 231 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			if (chr::ES_CHR::FAILURE == owlClass( C1 )) return chr::ES_CHR::FAILURE;
-#line 231 "/home/user/owlChrpp/owlrules.chrpp"
+#line 231 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			if (chr::ES_CHR::FAILURE == owlClass( C2 )) return chr::ES_CHR::FAILURE;
 			assert(c_stored_before);
 			if (!c_it.alive()) {
@@ -21104,7 +21104,7 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 		auto it2_0 = owlSubclassOf_constraint_store->template begin<1>(B);
 		while ( !it2_0.at_end() ) {
 			auto C(std::get<2>(*it2_0));
-#line 238 "/home/user/owlChrpp/owlrules.chrpp"
+#line 238 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it2_0) != std::get<0>(c_args) )
@@ -21123,7 +21123,7 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 238 "/home/user/owlChrpp/owlrules.chrpp"
+#line 238 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlSubclassOf( A, C )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -21154,7 +21154,7 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 		auto it3_0 = owlSubclassOf_constraint_store->template begin<2>(B);
 		while ( !it3_0.at_end() ) {
 			auto A(std::get<1>(*it3_0));
-#line 238 "/home/user/owlChrpp/owlrules.chrpp"
+#line 238 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it3_0) != std::get<0>(c_args) )
@@ -21173,7 +21173,7 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 238 "/home/user/owlChrpp/owlrules.chrpp"
+#line 238 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlSubclassOf( A, C )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -21201,14 +21201,14 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 		if (owlSubclassOf_constraint_store->empty()) goto owlSubclassOf_5;
 		auto& A = std::get<1>(c_args);
 		auto& B = std::get<2>(c_args);
-#line 244 "/home/user/owlChrpp/owlrules.chrpp"
+#line 244 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			(!( A == B ) )
 		) {
 			auto it4_0 = owlSubclassOf_constraint_store->template begin<0>(B,A);
 			while ( !it4_0.at_end() ) {
-#line 244 "/home/user/owlChrpp/owlrules.chrpp"
+#line 244 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it4_0) != std::get<0>(c_args) )
@@ -21226,7 +21226,7 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 244 "/home/user/owlChrpp/owlrules.chrpp"
+#line 244 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlEquivalentClass( A, B )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -21255,14 +21255,14 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 		if (owlSubclassOf_constraint_store->empty()) goto owlSubclassOf_6;
 		auto& B = std::get<1>(c_args);
 		auto& A = std::get<2>(c_args);
-#line 244 "/home/user/owlChrpp/owlrules.chrpp"
+#line 244 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			(!( A == B ) )
 		) {
 			auto it5_0 = owlSubclassOf_constraint_store->template begin<0>(A,B);
 			while ( !it5_0.at_end() ) {
-#line 244 "/home/user/owlChrpp/owlrules.chrpp"
+#line 244 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it5_0) != std::get<0>(c_args) )
@@ -21280,7 +21280,7 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 244 "/home/user/owlChrpp/owlrules.chrpp"
+#line 244 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlEquivalentClass( A, B )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -21309,7 +21309,7 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 		if (owlObjectPropertyDomain_constraint_store->empty()) goto owlSubclassOf_7;
 		auto& C1 = std::get<1>(c_args);
 		auto& C2 = std::get<2>(c_args);
-#line 274 "/home/user/owlChrpp/owlrules.chrpp"
+#line 274 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			(!( C1 == C2 ) )
@@ -21330,7 +21330,7 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 274 "/home/user/owlChrpp/owlrules.chrpp"
+#line 274 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlObjectPropertyDomain( P, C2 )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -21354,7 +21354,7 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 		if (owlObjectPropertyRange_constraint_store->empty()) goto owlSubclassOf_8;
 		auto& C1 = std::get<1>(c_args);
 		auto& C2 = std::get<2>(c_args);
-#line 280 "/home/user/owlChrpp/owlrules.chrpp"
+#line 280 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			(!( C1 == C2 ) )
@@ -21375,7 +21375,7 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 280 "/home/user/owlChrpp/owlrules.chrpp"
+#line 280 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlObjectPropertyRange( P, C2 )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -21399,7 +21399,7 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 		if (owlClassAssertion_constraint_store->empty()) goto owlSubclassOf_9;
 		auto& A = std::get<1>(c_args);
 		auto& B = std::get<2>(c_args);
-#line 299 "/home/user/owlChrpp/owlrules.chrpp"
+#line 299 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			(!( A == B ) )
@@ -21420,7 +21420,7 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 299 "/home/user/owlChrpp/owlrules.chrpp"
+#line 299 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlClassAssertion( X, B, true )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -21447,7 +21447,7 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 		auto it9_0 = owlUnionClass_constraint_store->template begin<0>(V);
 		while ( !it9_0.at_end() ) {
 			auto C(std::get<1>(*it9_0));
-#line 375 "/home/user/owlChrpp/owlrules.chrpp"
+#line 375 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				(!( C == A ) )
@@ -21465,7 +21465,7 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 375 "/home/user/owlChrpp/owlrules.chrpp"
+#line 375 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlSubclassOf( A, C )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -21493,7 +21493,7 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 		if (owlIntersectionClass_constraint_store->empty()) goto owlSubclassOf_11;
 		auto& C2 = std::get<1>(c_args);
 		auto& C1 = std::get<2>(c_args);
-#line 400 "/home/user/owlChrpp/owlrules.chrpp"
+#line 400 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			(!( C1 == C2 ) )
@@ -21514,7 +21514,7 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 400 "/home/user/owlChrpp/owlrules.chrpp"
+#line 400 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlSubclassOf( C2, Component )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -21554,7 +21554,7 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 410 "/home/user/owlChrpp/owlrules.chrpp"
+#line 410 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == intersectionSubclassCheck( C, A, 1 )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -21582,7 +21582,7 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 		while ( !it12_0.at_end() ) {
 			auto C(std::get<1>(*it12_0));
 			auto I(std::get<3>(*it12_0));
-#line 413 "/home/user/owlChrpp/owlrules.chrpp"
+#line 413 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( I > 0 )
@@ -21603,7 +21603,7 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 413 "/home/user/owlChrpp/owlrules.chrpp"
+#line 413 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == intersectionSubclassCheck( C, A, ( I + 1 ) )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -21664,7 +21664,7 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 484 "/home/user/owlChrpp/owlrules.chrpp"
+#line 484 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == owlSubclassOf( C, SV )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -21740,7 +21740,7 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 							c_it.lock();
 							// Body
 							chr::Statistics::inc_nb_rules();
-#line 501 "/home/user/owlChrpp/owlrules.chrpp"
+#line 501 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 							if (chr::ES_CHR::FAILURE == owlSubclassOf( C, SV )) return chr::ES_CHR::FAILURE;
 							assert(c_stored_before);
 							if (!c_it.alive()) {
@@ -21796,7 +21796,7 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 		if (querySuperClassOf_constraint_store->empty()) goto owlSubclassOf_16;
 		auto& X = std::get<1>(c_args);
 		auto& Y = std::get<2>(c_args);
-#line 539 "/home/user/owlChrpp/owlrules.chrpp"
+#line 539 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			(!( X == Y ) )
@@ -21816,9 +21816,9 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 539 "/home/user/owlChrpp/owlrules.chrpp"
+#line 539 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == querySuperClassOf( Y )) return chr::ES_CHR::FAILURE;
-#line 539 "/home/user/owlChrpp/owlrules.chrpp"
+#line 539 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == queryEquivalentClass( X )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -21843,7 +21843,7 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 		if (logicalName_constraint_store->empty()) goto owlSubclassOf_17;
 		auto& Y = std::get<1>(c_args);
 		auto& X = std::get<2>(c_args);
-#line 548 "/home/user/owlChrpp/owlrules.chrpp"
+#line 548 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			(!( X == Y ) )
@@ -21867,11 +21867,11 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 549 "/home/user/owlChrpp/owlrules.chrpp"
+#line 549 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == querySubClassOf( Y )) return chr::ES_CHR::FAILURE;
-#line 549 "/home/user/owlChrpp/owlrules.chrpp"
+#line 549 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == queryEquivalentClass( X )) return chr::ES_CHR::FAILURE;
-#line 549 "/home/user/owlChrpp/owlrules.chrpp"
+#line 549 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == res( URIY )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -21914,7 +21914,7 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 			auto it17_1 = logicalName_constraint_store->template begin<1>(X);
 			while ( !it17_1.at_end() ) {
 				auto URIX(std::get<1>(*it17_1));
-#line 581 "/home/user/owlChrpp/owlrules.chrpp"
+#line 581 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it17_1) != std::get<0>(*it17_0) )
@@ -21923,7 +21923,7 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 					auto it17_2 = logicalName_constraint_store->template begin<1>(Y);
 					while ( !it17_2.at_end() ) {
 						auto URIY(std::get<1>(*it17_2));
-#line 581 "/home/user/owlChrpp/owlrules.chrpp"
+#line 581 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						// Begin guard
 						if (
 							( std::get<0>(*it17_2) != std::get<0>(*it17_0) )
@@ -21947,7 +21947,7 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 									c_it.lock();
 									// Body
 									chr::Statistics::inc_nb_rules();
-#line 581 "/home/user/owlChrpp/owlrules.chrpp"
+#line 581 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 									if (chr::ES_CHR::FAILURE == resultClassification( URIX, URIY )) return chr::ES_CHR::FAILURE;
 									assert(c_stored_before);
 									if (!c_it.alive()) {
@@ -22025,7 +22025,7 @@ chr::ES_CHR OWL2::do_owlSubclassOf(typename owlSubclassOf::Type c_args, typename
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 582 "/home/user/owlChrpp/owlrules.chrpp"
+#line 582 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == resultClassification( URIX, URIX )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -22073,7 +22073,7 @@ chr::ES_CHR OWL2::do_owlSymmetricObjectProperty(typename owlSymmetricObjectPrope
 		auto& P = std::get<1>(c_args);
 		auto it0_0 = owlSymmetricObjectProperty_constraint_store->template begin<0>(P);
 		while ( !it0_0.at_end() ) {
-#line 139 "/home/user/owlChrpp/owlrules.chrpp"
+#line 139 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -22083,7 +22083,7 @@ chr::ES_CHR OWL2::do_owlSymmetricObjectProperty(typename owlSymmetricObjectPrope
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 139 "/home/user/owlChrpp/owlrules.chrpp"
+#line 139 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -22112,7 +22112,7 @@ chr::ES_CHR OWL2::do_owlSymmetricObjectProperty(typename owlSymmetricObjectPrope
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 334 "/home/user/owlChrpp/owlrules.chrpp"
+#line 334 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == owlObjectPropertyAssertion( Y, P, X )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -22149,7 +22149,7 @@ chr::ES_CHR OWL2::do_owlTransitiveObjectProperty(typename owlTransitiveObjectPro
 		auto& P = std::get<1>(c_args);
 		auto it0_0 = owlTransitiveObjectProperty_constraint_store->template begin<0>(P);
 		while ( !it0_0.at_end() ) {
-#line 148 "/home/user/owlChrpp/owlrules.chrpp"
+#line 148 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -22159,7 +22159,7 @@ chr::ES_CHR OWL2::do_owlTransitiveObjectProperty(typename owlTransitiveObjectPro
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 148 "/home/user/owlChrpp/owlrules.chrpp"
+#line 148 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -22188,7 +22188,7 @@ chr::ES_CHR OWL2::do_owlUnionClass(typename owlUnionClass::Type c_args, typename
 		auto& V = std::get<2>(c_args);
 		auto it0_0 = owlUnionClass_constraint_store->template begin<1>(C,V);
 		while ( !it0_0.at_end() ) {
-#line 152 "/home/user/owlChrpp/owlrules.chrpp"
+#line 152 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -22198,7 +22198,7 @@ chr::ES_CHR OWL2::do_owlUnionClass(typename owlUnionClass::Type c_args, typename
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 152 "/home/user/owlChrpp/owlrules.chrpp"
+#line 152 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -22220,7 +22220,7 @@ chr::ES_CHR OWL2::do_owlUnionClass(typename owlUnionClass::Type c_args, typename
 			}
 			// Body
 			chr::Statistics::inc_nb_rules();
-#line 372 "/home/user/owlChrpp/owlrules.chrpp"
+#line 372 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			if (chr::ES_CHR::FAILURE == owlClassAssertion( X, C, true )) return chr::ES_CHR::FAILURE;
 			return chr::ES_CHR::SUCCESS;
 		}
@@ -22235,7 +22235,7 @@ chr::ES_CHR OWL2::do_owlUnionClass(typename owlUnionClass::Type c_args, typename
 		auto it2_0 = owlSubclassOf_constraint_store->template begin<2>(V);
 		while ( !it2_0.at_end() ) {
 			auto A(std::get<1>(*it2_0));
-#line 375 "/home/user/owlChrpp/owlrules.chrpp"
+#line 375 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				(!( C == A ) )
@@ -22253,7 +22253,7 @@ chr::ES_CHR OWL2::do_owlUnionClass(typename owlUnionClass::Type c_args, typename
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 375 "/home/user/owlChrpp/owlrules.chrpp"
+#line 375 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlSubclassOf( A, C )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -22297,7 +22297,7 @@ chr::ES_CHR OWL2::do_owlUnionOf(typename owlUnionOf::Type c_args, typename owlUn
 		auto& S = std::get<2>(c_args);
 		auto it0_0 = owlUnionOf_constraint_store->template begin<0>(C,S);
 		while ( !it0_0.at_end() ) {
-#line 153 "/home/user/owlChrpp/owlrules.chrpp"
+#line 153 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -22307,7 +22307,7 @@ chr::ES_CHR OWL2::do_owlUnionOf(typename owlUnionOf::Type c_args, typename owlUn
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 153 "/home/user/owlChrpp/owlrules.chrpp"
+#line 153 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -22331,7 +22331,7 @@ chr::ES_CHR OWL2::do_owlUnionOf(typename owlUnionOf::Type c_args, typename owlUn
 			c_it.lock();
 			// Body
 			chr::Statistics::inc_nb_rules();
-#line 363 "/home/user/owlChrpp/owlrules.chrpp"
+#line 363 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			if (chr::ES_CHR::FAILURE == owlUnionOfLoop( C, (*S ) . begin(  ), (*S ) . end(  ) )) return chr::ES_CHR::FAILURE;
 			assert(c_stored_before);
 			if (!c_it.alive()) {
@@ -22351,7 +22351,7 @@ chr::ES_CHR OWL2::do_owlUnionOf(typename owlUnionOf::Type c_args, typename owlUn
 		auto it2_0 = owlUnionOf_constraint_store->template begin<1>(S);
 		while ( !it2_0.at_end() ) {
 			auto C2(std::get<1>(*it2_0));
-#line 378 "/home/user/owlChrpp/owlrules.chrpp"
+#line 378 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it2_0) != std::get<0>(c_args) )
@@ -22368,7 +22368,7 @@ chr::ES_CHR OWL2::do_owlUnionOf(typename owlUnionOf::Type c_args, typename owlUn
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 378 "/home/user/owlChrpp/owlrules.chrpp"
+#line 378 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlEquivalentClass( C1, C2 )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -22399,7 +22399,7 @@ chr::ES_CHR OWL2::do_owlUnionOf(typename owlUnionOf::Type c_args, typename owlUn
 		auto it3_0 = owlUnionOf_constraint_store->template begin<1>(S);
 		while ( !it3_0.at_end() ) {
 			auto C1(std::get<1>(*it3_0));
-#line 378 "/home/user/owlChrpp/owlrules.chrpp"
+#line 378 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it3_0) != std::get<0>(c_args) )
@@ -22416,7 +22416,7 @@ chr::ES_CHR OWL2::do_owlUnionOf(typename owlUnionOf::Type c_args, typename owlUn
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 378 "/home/user/owlChrpp/owlrules.chrpp"
+#line 378 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == owlEquivalentClass( C1, C2 )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -22458,7 +22458,7 @@ chr::ES_CHR OWL2::do_owlUnionOfLoop(typename owlUnionOfLoop::Type c_args) {
 		if (ITEND != std::get<3>(c_args)) goto owlUnionOfLoop_1;
 		// Body
 		chr::Statistics::inc_nb_rules();
-#line 366 "/home/user/owlChrpp/owlrules.chrpp"
+#line 366 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 
 		return chr::ES_CHR::SUCCESS;
 	}
@@ -22471,9 +22471,9 @@ chr::ES_CHR OWL2::do_owlUnionOfLoop(typename owlUnionOfLoop::Type c_args) {
 		auto& ITEND = std::get<3>(c_args);
 		// Body
 		chr::Statistics::inc_nb_rules();
-#line 369 "/home/user/owlChrpp/owlrules.chrpp"
+#line 369 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		if (chr::ES_CHR::FAILURE == owlUnionClass( C, (*(*IT ) ) )) return chr::ES_CHR::FAILURE;
-#line 369 "/home/user/owlChrpp/owlrules.chrpp"
+#line 369 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		c_args = std::make_tuple(next_free_constraint_id++, C, ( std :: next( (*IT ) ) ), ITEND);
 		goto owlUnionOfLoop_call;
 
@@ -22495,7 +22495,7 @@ chr::ES_CHR OWL2::do_queryClassification(typename queryClassification::Type c_ar
 		auto& X = std::get<1>(c_args);
 		auto it0_0 = queryClassification_constraint_store->template begin<0>(X);
 		while ( !it0_0.at_end() ) {
-#line 169 "/home/user/owlChrpp/owlrules.chrpp"
+#line 169 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -22505,7 +22505,7 @@ chr::ES_CHR OWL2::do_queryClassification(typename queryClassification::Type c_ar
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 169 "/home/user/owlChrpp/owlrules.chrpp"
+#line 169 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -22538,11 +22538,11 @@ chr::ES_CHR OWL2::do_queryClassification(typename queryClassification::Type c_ar
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 558 "/home/user/owlChrpp/owlrules.chrpp"
+#line 558 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == res( URIC )) return chr::ES_CHR::FAILURE;
-#line 558 "/home/user/owlChrpp/owlrules.chrpp"
+#line 558 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == querySuperClassOf( C )) return chr::ES_CHR::FAILURE;
-#line 558 "/home/user/owlChrpp/owlrules.chrpp"
+#line 558 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == queryEquivalentClass( C )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -22589,7 +22589,7 @@ chr::ES_CHR OWL2::do_queryClassificationReal(typename queryClassificationReal::T
 		auto& X = std::get<1>(c_args);
 		auto it0_0 = queryClassificationReal_constraint_store->template begin<0>(X);
 		while ( !it0_0.at_end() ) {
-#line 189 "/home/user/owlChrpp/owlrules.chrpp"
+#line 189 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -22599,7 +22599,7 @@ chr::ES_CHR OWL2::do_queryClassificationReal(typename queryClassificationReal::T
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 189 "/home/user/owlChrpp/owlrules.chrpp"
+#line 189 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -22627,7 +22627,7 @@ chr::ES_CHR OWL2::do_queryClassificationTemp(typename queryClassificationTemp::T
 		auto& X = std::get<1>(c_args);
 		auto it0_0 = queryClassificationTemp_constraint_store->template begin<0>(X);
 		while ( !it0_0.at_end() ) {
-#line 171 "/home/user/owlChrpp/owlrules.chrpp"
+#line 171 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -22637,7 +22637,7 @@ chr::ES_CHR OWL2::do_queryClassificationTemp(typename queryClassificationTemp::T
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 171 "/home/user/owlChrpp/owlrules.chrpp"
+#line 171 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -22665,7 +22665,7 @@ chr::ES_CHR OWL2::do_queryClassificationTempUri(typename queryClassificationTemp
 		auto& URI = std::get<1>(c_args);
 		auto it0_0 = queryClassificationTempUri_constraint_store->template begin<0>(URI);
 		while ( !it0_0.at_end() ) {
-#line 172 "/home/user/owlChrpp/owlrules.chrpp"
+#line 172 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -22675,7 +22675,7 @@ chr::ES_CHR OWL2::do_queryClassificationTempUri(typename queryClassificationTemp
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 172 "/home/user/owlChrpp/owlrules.chrpp"
+#line 172 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -22701,7 +22701,7 @@ chr::ES_CHR OWL2::do_queryClassificationUri(typename queryClassificationUri::Typ
 		auto& URI = std::get<1>(c_args);
 		auto it0_0 = queryClassificationUri_constraint_store->template begin<0>(URI);
 		while ( !it0_0.at_end() ) {
-#line 170 "/home/user/owlChrpp/owlrules.chrpp"
+#line 170 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -22711,7 +22711,7 @@ chr::ES_CHR OWL2::do_queryClassificationUri(typename queryClassificationUri::Typ
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 170 "/home/user/owlChrpp/owlrules.chrpp"
+#line 170 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -22737,7 +22737,7 @@ chr::ES_CHR OWL2::do_queryClassificationUri(typename queryClassificationUri::Typ
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 554 "/home/user/owlChrpp/owlrules.chrpp"
+#line 554 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == queryClassification( X )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -22787,7 +22787,7 @@ chr::ES_CHR OWL2::do_queryComplexStudents(typename queryComplexStudents::Type c_
 			auto it0_1 = owlClassAssertion_constraint_store->template begin<1>(F,true);
 			while ( !it0_1.at_end() ) {
 				auto X(std::get<1>(*it0_1));
-#line 642 "/home/user/owlChrpp/owlrules.chrpp"
+#line 642 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it0_1) != std::get<0>(*it0_0) )
@@ -22798,14 +22798,14 @@ chr::ES_CHR OWL2::do_queryComplexStudents(typename queryComplexStudents::Type c_
 						auto it0_3 = owlObjectPropertyAssertion_constraint_store->template begin<0>(Z,H);
 						while ( !it0_3.at_end() ) {
 							auto C(std::get<3>(*it0_3));
-#line 642 "/home/user/owlChrpp/owlrules.chrpp"
+#line 642 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 							// Begin guard
 							if (
 								( std::get<0>(*it0_3) != std::get<0>(*it0_2) )
 							) {
 								auto it0_4 = owlObjectPropertyAssertion_constraint_store->template begin<2>(S,K,C);
 								while ( !it0_4.at_end() ) {
-#line 642 "/home/user/owlChrpp/owlrules.chrpp"
+#line 642 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 									// Begin guard
 									if (
 										( std::get<0>(*it0_4) != std::get<0>(*it0_2) )
@@ -22817,7 +22817,7 @@ chr::ES_CHR OWL2::do_queryComplexStudents(typename queryComplexStudents::Type c_
 											auto it0_6 = logicalName_constraint_store->template begin<1>(C);
 											while ( !it0_6.at_end() ) {
 												auto URIC(std::get<1>(*it0_6));
-#line 642 "/home/user/owlChrpp/owlrules.chrpp"
+#line 642 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 												// Begin guard
 												if (
 													( std::get<0>(*it0_6) != std::get<0>(*it0_5) )
@@ -22844,7 +22844,7 @@ chr::ES_CHR OWL2::do_queryComplexStudents(typename queryComplexStudents::Type c_
 														c_it.lock();
 														// Body
 														chr::Statistics::inc_nb_rules();
-#line 642 "/home/user/owlChrpp/owlrules.chrpp"
+#line 642 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 														if (chr::ES_CHR::FAILURE == ResultVec( makeVec( URIS, URIC ), ID )) return chr::ES_CHR::FAILURE;
 														assert(c_stored_before);
 														if (!c_it.alive()) {
@@ -22958,7 +22958,7 @@ chr::ES_CHR OWL2::do_queryComplexStudents(typename queryComplexStudents::Type c_
 		}
 		// Body
 		chr::Statistics::inc_nb_rules();
-#line 643 "/home/user/owlChrpp/owlrules.chrpp"
+#line 643 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 
 		return chr::ES_CHR::SUCCESS;
 	}
@@ -22989,7 +22989,7 @@ chr::ES_CHR OWL2::do_queryComplexStudentsUri(typename queryComplexStudentsUri::T
 		auto& URIK = std::get<5>(c_args);
 		// Body
 		chr::Statistics::inc_nb_rules();
-#line 638 "/home/user/owlChrpp/owlrules.chrpp"
+#line 638 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		if (chr::ES_CHR::FAILURE == queryComplexStudentsWithId( URIE, URIF, URIG, URIH, URIK, get_next_id(  ) )) return chr::ES_CHR::FAILURE;
 		return chr::ES_CHR::SUCCESS;
 	}
@@ -23021,7 +23021,7 @@ chr::ES_CHR OWL2::do_queryComplexStudentsWithId(typename queryComplexStudentsWit
 			auto it0_1 = logicalName_constraint_store->template begin<0>(URIF);
 			while ( !it0_1.at_end() ) {
 				auto F(std::get<2>(*it0_1));
-#line 640 "/home/user/owlChrpp/owlrules.chrpp"
+#line 640 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it0_1) != std::get<0>(*it0_0) )
@@ -23029,7 +23029,7 @@ chr::ES_CHR OWL2::do_queryComplexStudentsWithId(typename queryComplexStudentsWit
 					auto it0_2 = logicalName_constraint_store->template begin<0>(URIG);
 					while ( !it0_2.at_end() ) {
 						auto G(std::get<2>(*it0_2));
-#line 640 "/home/user/owlChrpp/owlrules.chrpp"
+#line 640 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						// Begin guard
 						if (
 							( std::get<0>(*it0_2) != std::get<0>(*it0_0) )
@@ -23038,7 +23038,7 @@ chr::ES_CHR OWL2::do_queryComplexStudentsWithId(typename queryComplexStudentsWit
 							auto it0_3 = logicalName_constraint_store->template begin<0>(URIH);
 							while ( !it0_3.at_end() ) {
 								auto H(std::get<2>(*it0_3));
-#line 640 "/home/user/owlChrpp/owlrules.chrpp"
+#line 640 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 								// Begin guard
 								if (
 									( std::get<0>(*it0_3) != std::get<0>(*it0_0) )
@@ -23048,7 +23048,7 @@ chr::ES_CHR OWL2::do_queryComplexStudentsWithId(typename queryComplexStudentsWit
 									auto it0_4 = logicalName_constraint_store->template begin<0>(URIK);
 									while ( !it0_4.at_end() ) {
 										auto K(std::get<2>(*it0_4));
-#line 640 "/home/user/owlChrpp/owlrules.chrpp"
+#line 640 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 										// Begin guard
 										if (
 											( std::get<0>(*it0_4) != std::get<0>(*it0_0) )
@@ -23058,7 +23058,7 @@ chr::ES_CHR OWL2::do_queryComplexStudentsWithId(typename queryComplexStudentsWit
 										) {
 											// Body
 											chr::Statistics::inc_nb_rules();
-#line 640 "/home/user/owlChrpp/owlrules.chrpp"
+#line 640 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 											if (chr::ES_CHR::FAILURE == queryComplexStudents( E, F, G, H, K, ID )) return chr::ES_CHR::FAILURE;
 											return chr::ES_CHR::SUCCESS;
 										} // End guard
@@ -23088,7 +23088,7 @@ chr::ES_CHR OWL2::do_queryComplexStudentsWithId(typename queryComplexStudentsWit
 		auto& ID = std::get<6>(c_args);
 		// Body
 		chr::Statistics::inc_nb_rules();
-#line 641 "/home/user/owlChrpp/owlrules.chrpp"
+#line 641 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 
 		return chr::ES_CHR::SUCCESS;
 	}
@@ -23109,7 +23109,7 @@ chr::ES_CHR OWL2::do_queryDataAssertion(typename queryDataAssertion::Type c_args
 		auto& ID = std::get<2>(c_args);
 		auto it0_0 = queryDataAssertion_constraint_store->template begin<1>(P,ID);
 		while ( !it0_0.at_end() ) {
-#line 182 "/home/user/owlChrpp/owlrules.chrpp"
+#line 182 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -23119,7 +23119,7 @@ chr::ES_CHR OWL2::do_queryDataAssertion(typename queryDataAssertion::Type c_args
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 182 "/home/user/owlChrpp/owlrules.chrpp"
+#line 182 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -23154,7 +23154,7 @@ chr::ES_CHR OWL2::do_queryDataAssertion(typename queryDataAssertion::Type c_args
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 605 "/home/user/owlChrpp/owlrules.chrpp"
+#line 605 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == ResultVec( makeVec( URIX, valueToString( Y ) ), ID )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -23191,7 +23191,7 @@ chr::ES_CHR OWL2::do_queryDataAssertion(typename queryDataAssertion::Type c_args
 		}
 		// Body
 		chr::Statistics::inc_nb_rules();
-#line 606 "/home/user/owlChrpp/owlrules.chrpp"
+#line 606 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 
 		return chr::ES_CHR::SUCCESS;
 	}
@@ -23214,7 +23214,7 @@ chr::ES_CHR OWL2::do_queryDataAssertionUri(typename queryDataAssertionUri::Type 
 		auto& URIP = std::get<1>(c_args);
 		// Body
 		chr::Statistics::inc_nb_rules();
-#line 602 "/home/user/owlChrpp/owlrules.chrpp"
+#line 602 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		if (chr::ES_CHR::FAILURE == queryDataAssertionWithId( URIP, get_next_id(  ) )) return chr::ES_CHR::FAILURE;
 		return chr::ES_CHR::SUCCESS;
 	}
@@ -23237,7 +23237,7 @@ chr::ES_CHR OWL2::do_queryDataAssertionWithId(typename queryDataAssertionWithId:
 			auto P(std::get<2>(*it0_0));
 			// Body
 			chr::Statistics::inc_nb_rules();
-#line 603 "/home/user/owlChrpp/owlrules.chrpp"
+#line 603 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			if (chr::ES_CHR::FAILURE == queryDataAssertion( P, ID )) return chr::ES_CHR::FAILURE;
 			return chr::ES_CHR::SUCCESS;
 		}
@@ -23250,7 +23250,7 @@ chr::ES_CHR OWL2::do_queryDataAssertionWithId(typename queryDataAssertionWithId:
 		auto& ID = std::get<2>(c_args);
 		// Body
 		chr::Statistics::inc_nb_rules();
-#line 604 "/home/user/owlChrpp/owlrules.chrpp"
+#line 604 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 
 		return chr::ES_CHR::SUCCESS;
 	}
@@ -23287,14 +23287,14 @@ chr::ES_CHR OWL2::do_queryEngineeringStudents(typename queryEngineeringStudents:
 				auto it0_2 = owlObjectPropertyAssertion_constraint_store->template begin<0>(Y,G);
 				while ( !it0_2.at_end() ) {
 					auto Z(std::get<3>(*it0_2));
-#line 634 "/home/user/owlChrpp/owlrules.chrpp"
+#line 634 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					// Begin guard
 					if (
 						( std::get<0>(*it0_2) != std::get<0>(*it0_1) )
 					) {
 						auto it0_3 = owlObjectPropertyAssertion_constraint_store->template begin<2>(Z,H,K);
 						while ( !it0_3.at_end() ) {
-#line 634 "/home/user/owlChrpp/owlrules.chrpp"
+#line 634 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 							// Begin guard
 							if (
 								( std::get<0>(*it0_3) != std::get<0>(*it0_1) )
@@ -23306,7 +23306,7 @@ chr::ES_CHR OWL2::do_queryEngineeringStudents(typename queryEngineeringStudents:
 									auto it0_5 = logicalName_constraint_store->template begin<1>(Y);
 									while ( !it0_5.at_end() ) {
 										auto URIY(std::get<1>(*it0_5));
-#line 634 "/home/user/owlChrpp/owlrules.chrpp"
+#line 634 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 										// Begin guard
 										if (
 											( std::get<0>(*it0_5) != std::get<0>(*it0_4) )
@@ -23332,7 +23332,7 @@ chr::ES_CHR OWL2::do_queryEngineeringStudents(typename queryEngineeringStudents:
 												c_it.lock();
 												// Body
 												chr::Statistics::inc_nb_rules();
-#line 634 "/home/user/owlChrpp/owlrules.chrpp"
+#line 634 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 												if (chr::ES_CHR::FAILURE == ResultVec( makeVec( URIX, URIY ), ID )) return chr::ES_CHR::FAILURE;
 												assert(c_stored_before);
 												if (!c_it.alive()) {
@@ -23430,7 +23430,7 @@ chr::ES_CHR OWL2::do_queryEngineeringStudents(typename queryEngineeringStudents:
 		}
 		// Body
 		chr::Statistics::inc_nb_rules();
-#line 635 "/home/user/owlChrpp/owlrules.chrpp"
+#line 635 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 
 		return chr::ES_CHR::SUCCESS;
 	}
@@ -23461,7 +23461,7 @@ chr::ES_CHR OWL2::do_queryEngineeringStudentsUri(typename queryEngineeringStuden
 		auto& URIK = std::get<5>(c_args);
 		// Body
 		chr::Statistics::inc_nb_rules();
-#line 630 "/home/user/owlChrpp/owlrules.chrpp"
+#line 630 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		if (chr::ES_CHR::FAILURE == queryEngineeringStudentsWithId( URIE, URIF, URIG, URIH, URIK, get_next_id(  ) )) return chr::ES_CHR::FAILURE;
 		return chr::ES_CHR::SUCCESS;
 	}
@@ -23493,7 +23493,7 @@ chr::ES_CHR OWL2::do_queryEngineeringStudentsWithId(typename queryEngineeringStu
 			auto it0_1 = logicalName_constraint_store->template begin<0>(URIF);
 			while ( !it0_1.at_end() ) {
 				auto F(std::get<2>(*it0_1));
-#line 632 "/home/user/owlChrpp/owlrules.chrpp"
+#line 632 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it0_1) != std::get<0>(*it0_0) )
@@ -23501,7 +23501,7 @@ chr::ES_CHR OWL2::do_queryEngineeringStudentsWithId(typename queryEngineeringStu
 					auto it0_2 = logicalName_constraint_store->template begin<0>(URIG);
 					while ( !it0_2.at_end() ) {
 						auto G(std::get<2>(*it0_2));
-#line 632 "/home/user/owlChrpp/owlrules.chrpp"
+#line 632 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						// Begin guard
 						if (
 							( std::get<0>(*it0_2) != std::get<0>(*it0_0) )
@@ -23510,7 +23510,7 @@ chr::ES_CHR OWL2::do_queryEngineeringStudentsWithId(typename queryEngineeringStu
 							auto it0_3 = logicalName_constraint_store->template begin<0>(URIH);
 							while ( !it0_3.at_end() ) {
 								auto H(std::get<2>(*it0_3));
-#line 632 "/home/user/owlChrpp/owlrules.chrpp"
+#line 632 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 								// Begin guard
 								if (
 									( std::get<0>(*it0_3) != std::get<0>(*it0_0) )
@@ -23520,7 +23520,7 @@ chr::ES_CHR OWL2::do_queryEngineeringStudentsWithId(typename queryEngineeringStu
 									auto it0_4 = logicalName_constraint_store->template begin<0>(URIK);
 									while ( !it0_4.at_end() ) {
 										auto K(std::get<2>(*it0_4));
-#line 632 "/home/user/owlChrpp/owlrules.chrpp"
+#line 632 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 										// Begin guard
 										if (
 											( std::get<0>(*it0_4) != std::get<0>(*it0_0) )
@@ -23530,7 +23530,7 @@ chr::ES_CHR OWL2::do_queryEngineeringStudentsWithId(typename queryEngineeringStu
 										) {
 											// Body
 											chr::Statistics::inc_nb_rules();
-#line 632 "/home/user/owlChrpp/owlrules.chrpp"
+#line 632 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 											if (chr::ES_CHR::FAILURE == queryEngineeringStudents( E, F, G, H, K, ID )) return chr::ES_CHR::FAILURE;
 											return chr::ES_CHR::SUCCESS;
 										} // End guard
@@ -23560,7 +23560,7 @@ chr::ES_CHR OWL2::do_queryEngineeringStudentsWithId(typename queryEngineeringStu
 		auto& ID = std::get<6>(c_args);
 		// Body
 		chr::Statistics::inc_nb_rules();
-#line 633 "/home/user/owlChrpp/owlrules.chrpp"
+#line 633 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 
 		return chr::ES_CHR::SUCCESS;
 	}
@@ -23580,7 +23580,7 @@ chr::ES_CHR OWL2::do_queryEquivalentClass(typename queryEquivalentClass::Type c_
 		auto& X = std::get<1>(c_args);
 		auto it0_0 = queryEquivalentClass_constraint_store->template begin<0>(X);
 		while ( !it0_0.at_end() ) {
-#line 188 "/home/user/owlChrpp/owlrules.chrpp"
+#line 188 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -23590,7 +23590,7 @@ chr::ES_CHR OWL2::do_queryEquivalentClass(typename queryEquivalentClass::Type c_
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 188 "/home/user/owlChrpp/owlrules.chrpp"
+#line 188 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -23607,7 +23607,7 @@ chr::ES_CHR OWL2::do_queryEquivalentClass(typename queryEquivalentClass::Type c_
 		auto it1_0 = owlEquivalentClass_constraint_store->template begin<0>(X);
 		while ( !it1_0.at_end() ) {
 			auto Y(std::get<2>(*it1_0));
-#line 542 "/home/user/owlChrpp/owlrules.chrpp"
+#line 542 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				(!( X == Y ) )
@@ -23628,7 +23628,7 @@ chr::ES_CHR OWL2::do_queryEquivalentClass(typename queryEquivalentClass::Type c_
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 542 "/home/user/owlChrpp/owlrules.chrpp"
+#line 542 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == res( URIY )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -23677,7 +23677,7 @@ chr::ES_CHR OWL2::do_queryEquivalentClassReal(typename queryEquivalentClassReal:
 		auto& X = std::get<2>(c_args);
 		auto it0_0 = queryEquivalentClassReal_constraint_store->template begin<0>(I,X);
 		while ( !it0_0.at_end() ) {
-#line 191 "/home/user/owlChrpp/owlrules.chrpp"
+#line 191 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -23687,7 +23687,7 @@ chr::ES_CHR OWL2::do_queryEquivalentClassReal(typename queryEquivalentClassReal:
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 191 "/home/user/owlChrpp/owlrules.chrpp"
+#line 191 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -23716,7 +23716,7 @@ chr::ES_CHR OWL2::do_queryFullUri(typename queryFullUri::Type c_args, typename q
 		auto& X = std::get<1>(c_args);
 		auto it0_0 = queryFullUri_constraint_store->template begin<0>(X);
 		while ( !it0_0.at_end() ) {
-#line 196 "/home/user/owlChrpp/owlrules.chrpp"
+#line 196 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -23726,7 +23726,7 @@ chr::ES_CHR OWL2::do_queryFullUri(typename queryFullUri::Type c_args, typename q
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 196 "/home/user/owlChrpp/owlrules.chrpp"
+#line 196 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -23756,7 +23756,7 @@ chr::ES_CHR OWL2::do_queryInstance(typename queryInstance::Type c_args) {
 		if ( !it1_0.at_end() ) {
 			// Body
 			chr::Statistics::inc_nb_rules();
-#line 564 "/home/user/owlChrpp/owlrules.chrpp"
+#line 564 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			CHECK_ES( afficher( "true" ) );
 			return chr::ES_CHR::SUCCESS;
 		}
@@ -23769,7 +23769,7 @@ chr::ES_CHR OWL2::do_queryInstance(typename queryInstance::Type c_args) {
 		auto& C = std::get<2>(c_args);
 		// Body
 		chr::Statistics::inc_nb_rules();
-#line 565 "/home/user/owlChrpp/owlrules.chrpp"
+#line 565 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		CHECK_ES( afficher( "false" ) );
 		return chr::ES_CHR::SUCCESS;
 	}
@@ -23790,7 +23790,7 @@ chr::ES_CHR OWL2::do_queryInstanceURI(typename queryInstanceURI::Type c_args, ty
 		auto& URIC = std::get<2>(c_args);
 		auto it0_0 = queryInstanceURI_constraint_store->template begin<0>(URIX,URIC);
 		while ( !it0_0.at_end() ) {
-#line 173 "/home/user/owlChrpp/owlrules.chrpp"
+#line 173 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -23800,7 +23800,7 @@ chr::ES_CHR OWL2::do_queryInstanceURI(typename queryInstanceURI::Type c_args, ty
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 173 "/home/user/owlChrpp/owlrules.chrpp"
+#line 173 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -23821,7 +23821,7 @@ chr::ES_CHR OWL2::do_queryInstanceURI(typename queryInstanceURI::Type c_args, ty
 			auto it1_1 = logicalName_constraint_store->template begin<0>(URIX);
 			while ( !it1_1.at_end() ) {
 				auto X(std::get<2>(*it1_1));
-#line 563 "/home/user/owlChrpp/owlrules.chrpp"
+#line 563 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it1_1) != std::get<0>(*it1_0) )
@@ -23831,7 +23831,7 @@ chr::ES_CHR OWL2::do_queryInstanceURI(typename queryInstanceURI::Type c_args, ty
 					}
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 563 "/home/user/owlChrpp/owlrules.chrpp"
+#line 563 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == queryInstance( X, C )) return chr::ES_CHR::FAILURE;
 					return chr::ES_CHR::SUCCESS;
 				} // End guard
@@ -23860,7 +23860,7 @@ chr::ES_CHR OWL2::do_queryInstances(typename queryInstances::Type c_args, typena
 		auto& ID = std::get<2>(c_args);
 		auto it0_0 = queryInstances_constraint_store->template begin<1>(C,ID);
 		while ( !it0_0.at_end() ) {
-#line 176 "/home/user/owlChrpp/owlrules.chrpp"
+#line 176 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -23870,7 +23870,7 @@ chr::ES_CHR OWL2::do_queryInstances(typename queryInstances::Type c_args, typena
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 176 "/home/user/owlChrpp/owlrules.chrpp"
+#line 176 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -23904,7 +23904,7 @@ chr::ES_CHR OWL2::do_queryInstances(typename queryInstances::Type c_args, typena
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 612 "/home/user/owlChrpp/owlrules.chrpp"
+#line 612 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == ResultVec( makeVec( URIX, emptyString ), ID )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -23941,7 +23941,7 @@ chr::ES_CHR OWL2::do_queryInstances(typename queryInstances::Type c_args, typena
 		}
 		// Body
 		chr::Statistics::inc_nb_rules();
-#line 613 "/home/user/owlChrpp/owlrules.chrpp"
+#line 613 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 
 		return chr::ES_CHR::SUCCESS;
 	}
@@ -23964,7 +23964,7 @@ chr::ES_CHR OWL2::do_queryInstancesURI(typename queryInstancesURI::Type c_args) 
 		auto& URIC = std::get<1>(c_args);
 		// Body
 		chr::Statistics::inc_nb_rules();
-#line 609 "/home/user/owlChrpp/owlrules.chrpp"
+#line 609 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		if (chr::ES_CHR::FAILURE == queryInstancesWithId( URIC, get_next_id(  ) )) return chr::ES_CHR::FAILURE;
 		return chr::ES_CHR::SUCCESS;
 	}
@@ -23987,7 +23987,7 @@ chr::ES_CHR OWL2::do_queryInstancesWithId(typename queryInstancesWithId::Type c_
 			auto C(std::get<2>(*it0_0));
 			// Body
 			chr::Statistics::inc_nb_rules();
-#line 610 "/home/user/owlChrpp/owlrules.chrpp"
+#line 610 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			if (chr::ES_CHR::FAILURE == queryInstances( C, ID )) return chr::ES_CHR::FAILURE;
 			return chr::ES_CHR::SUCCESS;
 		}
@@ -24000,7 +24000,7 @@ chr::ES_CHR OWL2::do_queryInstancesWithId(typename queryInstancesWithId::Type c_
 		auto& ID = std::get<2>(c_args);
 		// Body
 		chr::Statistics::inc_nb_rules();
-#line 611 "/home/user/owlChrpp/owlrules.chrpp"
+#line 611 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 
 		return chr::ES_CHR::SUCCESS;
 	}
@@ -24021,7 +24021,7 @@ chr::ES_CHR OWL2::do_queryObjAssertion(typename queryObjAssertion::Type c_args, 
 		auto& ID = std::get<2>(c_args);
 		auto it0_0 = queryObjAssertion_constraint_store->template begin<1>(P,ID);
 		while ( !it0_0.at_end() ) {
-#line 178 "/home/user/owlChrpp/owlrules.chrpp"
+#line 178 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -24031,7 +24031,7 @@ chr::ES_CHR OWL2::do_queryObjAssertion(typename queryObjAssertion::Type c_args, 
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 178 "/home/user/owlChrpp/owlrules.chrpp"
+#line 178 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -24057,7 +24057,7 @@ chr::ES_CHR OWL2::do_queryObjAssertion(typename queryObjAssertion::Type c_args, 
 				auto it1_2 = logicalName_constraint_store->template begin<1>(Y);
 				while ( !it1_2.at_end() ) {
 					auto URIY(std::get<1>(*it1_2));
-#line 596 "/home/user/owlChrpp/owlrules.chrpp"
+#line 596 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					// Begin guard
 					if (
 						( std::get<0>(*it1_2) != std::get<0>(*it1_1) )
@@ -24076,7 +24076,7 @@ chr::ES_CHR OWL2::do_queryObjAssertion(typename queryObjAssertion::Type c_args, 
 							c_it.lock();
 							// Body
 							chr::Statistics::inc_nb_rules();
-#line 596 "/home/user/owlChrpp/owlrules.chrpp"
+#line 596 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 							if (chr::ES_CHR::FAILURE == ResultVec( makeVec( URIX, URIY ), ID )) return chr::ES_CHR::FAILURE;
 							assert(c_stored_before);
 							if (!c_it.alive()) {
@@ -24130,7 +24130,7 @@ chr::ES_CHR OWL2::do_queryObjAssertion(typename queryObjAssertion::Type c_args, 
 		while ( !it2_0.at_end() ) {
 			auto X(std::get<1>(*it2_0));
 			auto _LV_0_(std::get<3>(*it2_0));
-#line 598 "/home/user/owlChrpp/owlrules.chrpp"
+#line 598 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( _LV_0_ == X )
@@ -24151,7 +24151,7 @@ chr::ES_CHR OWL2::do_queryObjAssertion(typename queryObjAssertion::Type c_args, 
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 598 "/home/user/owlChrpp/owlrules.chrpp"
+#line 598 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == ResultVec( makeVec( URIX, URIX ), ID )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -24189,7 +24189,7 @@ chr::ES_CHR OWL2::do_queryObjAssertion(typename queryObjAssertion::Type c_args, 
 		}
 		// Body
 		chr::Statistics::inc_nb_rules();
-#line 599 "/home/user/owlChrpp/owlrules.chrpp"
+#line 599 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 
 		return chr::ES_CHR::SUCCESS;
 	}
@@ -24215,7 +24215,7 @@ chr::ES_CHR OWL2::do_queryObjAssertionClass(typename queryObjAssertionClass::Typ
 		auto& C = std::get<2>(c_args);
 		auto it0_0 = queryObjAssertionClass_constraint_store->template begin<0>(P,C);
 		while ( !it0_0.at_end() ) {
-#line 186 "/home/user/owlChrpp/owlrules.chrpp"
+#line 186 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -24225,7 +24225,7 @@ chr::ES_CHR OWL2::do_queryObjAssertionClass(typename queryObjAssertionClass::Typ
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 186 "/home/user/owlChrpp/owlrules.chrpp"
+#line 186 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -24255,7 +24255,7 @@ chr::ES_CHR OWL2::do_queryObjAssertionClassUri(typename queryObjAssertionClassUr
 		auto& URIC = std::get<2>(c_args);
 		auto it0_0 = queryObjAssertionClassUri_constraint_store->template begin<0>(URIP,URIC);
 		while ( !it0_0.at_end() ) {
-#line 185 "/home/user/owlChrpp/owlrules.chrpp"
+#line 185 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -24265,7 +24265,7 @@ chr::ES_CHR OWL2::do_queryObjAssertionClassUri(typename queryObjAssertionClassUr
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 185 "/home/user/owlChrpp/owlrules.chrpp"
+#line 185 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -24296,7 +24296,7 @@ chr::ES_CHR OWL2::do_queryObjAssertionSubject(typename queryObjAssertionSubject:
 		auto& ID = std::get<3>(c_args);
 		auto it0_0 = queryObjAssertionSubject_constraint_store->template begin<1>(P,O,ID);
 		while ( !it0_0.at_end() ) {
-#line 184 "/home/user/owlChrpp/owlrules.chrpp"
+#line 184 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -24306,7 +24306,7 @@ chr::ES_CHR OWL2::do_queryObjAssertionSubject(typename queryObjAssertionSubject:
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 184 "/home/user/owlChrpp/owlrules.chrpp"
+#line 184 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -24323,7 +24323,7 @@ chr::ES_CHR OWL2::do_queryObjAssertionSubject(typename queryObjAssertionSubject:
 		auto& ID = std::get<3>(c_args);
 		auto it1_0 = queryObjAssertionSubject_constraint_store->template begin<1>(P,O,ID);
 		while ( !it1_0.at_end() ) {
-#line 187 "/home/user/owlChrpp/owlrules.chrpp"
+#line 187 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it1_0) != std::get<0>(c_args) )
@@ -24333,7 +24333,7 @@ chr::ES_CHR OWL2::do_queryObjAssertionSubject(typename queryObjAssertionSubject:
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 187 "/home/user/owlChrpp/owlrules.chrpp"
+#line 187 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -24369,7 +24369,7 @@ chr::ES_CHR OWL2::do_queryObjAssertionSubject(typename queryObjAssertionSubject:
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 619 "/home/user/owlChrpp/owlrules.chrpp"
+#line 619 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == ResultVec( makeVec( URIX, emptyString ), ID )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -24407,7 +24407,7 @@ chr::ES_CHR OWL2::do_queryObjAssertionSubject(typename queryObjAssertionSubject:
 		}
 		// Body
 		chr::Statistics::inc_nb_rules();
-#line 620 "/home/user/owlChrpp/owlrules.chrpp"
+#line 620 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 
 		return chr::ES_CHR::SUCCESS;
 	}
@@ -24432,7 +24432,7 @@ chr::ES_CHR OWL2::do_queryObjAssertionSubjectUri(typename queryObjAssertionSubje
 		auto& URIO = std::get<2>(c_args);
 		// Body
 		chr::Statistics::inc_nb_rules();
-#line 616 "/home/user/owlChrpp/owlrules.chrpp"
+#line 616 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		if (chr::ES_CHR::FAILURE == queryObjAssertionSubjectWithId( URIP, URIO, get_next_id(  ) )) return chr::ES_CHR::FAILURE;
 		return chr::ES_CHR::SUCCESS;
 	}
@@ -24458,14 +24458,14 @@ chr::ES_CHR OWL2::do_queryObjAssertionSubjectWithId(typename queryObjAssertionSu
 			auto it0_1 = logicalName_constraint_store->template begin<0>(URIO);
 			while ( !it0_1.at_end() ) {
 				auto O(std::get<2>(*it0_1));
-#line 617 "/home/user/owlChrpp/owlrules.chrpp"
+#line 617 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				// Begin guard
 				if (
 					( std::get<0>(*it0_1) != std::get<0>(*it0_0) )
 				) {
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 617 "/home/user/owlChrpp/owlrules.chrpp"
+#line 617 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == queryObjAssertionSubject( P, O, ID )) return chr::ES_CHR::FAILURE;
 					return chr::ES_CHR::SUCCESS;
 				} // End guard
@@ -24483,7 +24483,7 @@ chr::ES_CHR OWL2::do_queryObjAssertionSubjectWithId(typename queryObjAssertionSu
 		auto& ID = std::get<3>(c_args);
 		// Body
 		chr::Statistics::inc_nb_rules();
-#line 618 "/home/user/owlChrpp/owlrules.chrpp"
+#line 618 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 
 		return chr::ES_CHR::SUCCESS;
 	}
@@ -24501,7 +24501,7 @@ chr::ES_CHR OWL2::do_queryObjAssertionUri(typename queryObjAssertionUri::Type c_
 		auto& URIP = std::get<1>(c_args);
 		// Body
 		chr::Statistics::inc_nb_rules();
-#line 590 "/home/user/owlChrpp/owlrules.chrpp"
+#line 590 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		if (chr::ES_CHR::FAILURE == queryObjAssertionWithId( URIP, get_next_id(  ) )) return chr::ES_CHR::FAILURE;
 		return chr::ES_CHR::SUCCESS;
 	}
@@ -24524,7 +24524,7 @@ chr::ES_CHR OWL2::do_queryObjAssertionWithId(typename queryObjAssertionWithId::T
 			auto P(std::get<2>(*it0_0));
 			// Body
 			chr::Statistics::inc_nb_rules();
-#line 592 "/home/user/owlChrpp/owlrules.chrpp"
+#line 592 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			if (chr::ES_CHR::FAILURE == queryObjAssertion( P, ID )) return chr::ES_CHR::FAILURE;
 			return chr::ES_CHR::SUCCESS;
 		}
@@ -24537,7 +24537,7 @@ chr::ES_CHR OWL2::do_queryObjAssertionWithId(typename queryObjAssertionWithId::T
 		auto& ID = std::get<2>(c_args);
 		// Body
 		chr::Statistics::inc_nb_rules();
-#line 594 "/home/user/owlChrpp/owlrules.chrpp"
+#line 594 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 
 		return chr::ES_CHR::SUCCESS;
 	}
@@ -24557,7 +24557,7 @@ chr::ES_CHR OWL2::do_querySubClassOf(typename querySubClassOf::Type c_args, type
 		auto& X = std::get<1>(c_args);
 		auto it0_0 = querySubClassOf_constraint_store->template begin<0>(X);
 		while ( !it0_0.at_end() ) {
-#line 167 "/home/user/owlChrpp/owlrules.chrpp"
+#line 167 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -24567,7 +24567,7 @@ chr::ES_CHR OWL2::do_querySubClassOf(typename querySubClassOf::Type c_args, type
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 167 "/home/user/owlChrpp/owlrules.chrpp"
+#line 167 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -24584,7 +24584,7 @@ chr::ES_CHR OWL2::do_querySubClassOf(typename querySubClassOf::Type c_args, type
 		auto it1_0 = owlSubclassOf_constraint_store->template begin<2>(X);
 		while ( !it1_0.at_end() ) {
 			auto Y(std::get<1>(*it1_0));
-#line 548 "/home/user/owlChrpp/owlrules.chrpp"
+#line 548 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				(!( X == Y ) )
@@ -24605,11 +24605,11 @@ chr::ES_CHR OWL2::do_querySubClassOf(typename querySubClassOf::Type c_args, type
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 549 "/home/user/owlChrpp/owlrules.chrpp"
+#line 549 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == querySubClassOf( Y )) return chr::ES_CHR::FAILURE;
-#line 549 "/home/user/owlChrpp/owlrules.chrpp"
+#line 549 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == queryEquivalentClass( X )) return chr::ES_CHR::FAILURE;
-#line 549 "/home/user/owlChrpp/owlrules.chrpp"
+#line 549 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == res( URIY )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -24657,7 +24657,7 @@ chr::ES_CHR OWL2::do_querySubClassOfUri(typename querySubClassOfUri::Type c_args
 		auto& URI = std::get<1>(c_args);
 		auto it0_0 = querySubClassOfUri_constraint_store->template begin<0>(URI);
 		while ( !it0_0.at_end() ) {
-#line 168 "/home/user/owlChrpp/owlrules.chrpp"
+#line 168 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -24667,7 +24667,7 @@ chr::ES_CHR OWL2::do_querySubClassOfUri(typename querySubClassOfUri::Type c_args
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 168 "/home/user/owlChrpp/owlrules.chrpp"
+#line 168 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -24693,9 +24693,9 @@ chr::ES_CHR OWL2::do_querySubClassOfUri(typename querySubClassOfUri::Type c_args
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 545 "/home/user/owlChrpp/owlrules.chrpp"
+#line 545 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == querySubClassOf( X )) return chr::ES_CHR::FAILURE;
-#line 545 "/home/user/owlChrpp/owlrules.chrpp"
+#line 545 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == res( URIC )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -24731,7 +24731,7 @@ chr::ES_CHR OWL2::do_querySubjectByObject(typename querySubjectByObject::Type c_
 		auto& ID = std::get<2>(c_args);
 		auto it0_0 = querySubjectByObject_constraint_store->template begin<1>(P,ID);
 		while ( !it0_0.at_end() ) {
-#line 180 "/home/user/owlChrpp/owlrules.chrpp"
+#line 180 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -24741,7 +24741,7 @@ chr::ES_CHR OWL2::do_querySubjectByObject(typename querySubjectByObject::Type c_
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 180 "/home/user/owlChrpp/owlrules.chrpp"
+#line 180 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -24767,7 +24767,7 @@ chr::ES_CHR OWL2::do_querySubjectByObject(typename querySubjectByObject::Type c_
 				auto it1_2 = logicalName_constraint_store->template begin<1>(Y);
 				while ( !it1_2.at_end() ) {
 					auto URIY(std::get<1>(*it1_2));
-#line 626 "/home/user/owlChrpp/owlrules.chrpp"
+#line 626 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					// Begin guard
 					if (
 						( std::get<0>(*it1_2) != std::get<0>(*it1_1) )
@@ -24786,7 +24786,7 @@ chr::ES_CHR OWL2::do_querySubjectByObject(typename querySubjectByObject::Type c_
 							c_it.lock();
 							// Body
 							chr::Statistics::inc_nb_rules();
-#line 626 "/home/user/owlChrpp/owlrules.chrpp"
+#line 626 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 							if (chr::ES_CHR::FAILURE == ResultVec( makeVec( URIX, URIY ), ID )) return chr::ES_CHR::FAILURE;
 							assert(c_stored_before);
 							if (!c_it.alive()) {
@@ -24839,7 +24839,7 @@ chr::ES_CHR OWL2::do_querySubjectByObject(typename querySubjectByObject::Type c_
 		}
 		// Body
 		chr::Statistics::inc_nb_rules();
-#line 627 "/home/user/owlChrpp/owlrules.chrpp"
+#line 627 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 
 		return chr::ES_CHR::SUCCESS;
 	}
@@ -24862,7 +24862,7 @@ chr::ES_CHR OWL2::do_querySubjectByObjectUri(typename querySubjectByObjectUri::T
 		auto& URIP = std::get<1>(c_args);
 		// Body
 		chr::Statistics::inc_nb_rules();
-#line 623 "/home/user/owlChrpp/owlrules.chrpp"
+#line 623 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		if (chr::ES_CHR::FAILURE == querySubjectByObjectWithId( URIP, get_next_id(  ) )) return chr::ES_CHR::FAILURE;
 		return chr::ES_CHR::SUCCESS;
 	}
@@ -24885,7 +24885,7 @@ chr::ES_CHR OWL2::do_querySubjectByObjectWithId(typename querySubjectByObjectWit
 			auto P(std::get<2>(*it0_0));
 			// Body
 			chr::Statistics::inc_nb_rules();
-#line 624 "/home/user/owlChrpp/owlrules.chrpp"
+#line 624 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			if (chr::ES_CHR::FAILURE == querySubjectByObject( P, ID )) return chr::ES_CHR::FAILURE;
 			return chr::ES_CHR::SUCCESS;
 		}
@@ -24898,7 +24898,7 @@ chr::ES_CHR OWL2::do_querySubjectByObjectWithId(typename querySubjectByObjectWit
 		auto& ID = std::get<2>(c_args);
 		// Body
 		chr::Statistics::inc_nb_rules();
-#line 625 "/home/user/owlChrpp/owlrules.chrpp"
+#line 625 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 
 		return chr::ES_CHR::SUCCESS;
 	}
@@ -24918,7 +24918,7 @@ chr::ES_CHR OWL2::do_querySuperClassOf(typename querySuperClassOf::Type c_args, 
 		auto& X = std::get<1>(c_args);
 		auto it0_0 = querySuperClassOf_constraint_store->template begin<0>(X);
 		while ( !it0_0.at_end() ) {
-#line 166 "/home/user/owlChrpp/owlrules.chrpp"
+#line 166 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -24928,7 +24928,7 @@ chr::ES_CHR OWL2::do_querySuperClassOf(typename querySuperClassOf::Type c_args, 
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 166 "/home/user/owlChrpp/owlrules.chrpp"
+#line 166 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -24956,7 +24956,7 @@ chr::ES_CHR OWL2::do_querySuperClassOf(typename querySuperClassOf::Type c_args, 
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 536 "/home/user/owlChrpp/owlrules.chrpp"
+#line 536 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == res( URIC )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -24981,7 +24981,7 @@ chr::ES_CHR OWL2::do_querySuperClassOf(typename querySuperClassOf::Type c_args, 
 		auto it2_0 = owlSubclassOf_constraint_store->template begin<1>(X);
 		while ( !it2_0.at_end() ) {
 			auto Y(std::get<2>(*it2_0));
-#line 539 "/home/user/owlChrpp/owlrules.chrpp"
+#line 539 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				(!( X == Y ) )
@@ -24998,9 +24998,9 @@ chr::ES_CHR OWL2::do_querySuperClassOf(typename querySuperClassOf::Type c_args, 
 					c_it.lock();
 					// Body
 					chr::Statistics::inc_nb_rules();
-#line 539 "/home/user/owlChrpp/owlrules.chrpp"
+#line 539 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == querySuperClassOf( Y )) return chr::ES_CHR::FAILURE;
-#line 539 "/home/user/owlChrpp/owlrules.chrpp"
+#line 539 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					if (chr::ES_CHR::FAILURE == queryEquivalentClass( X )) return chr::ES_CHR::FAILURE;
 					assert(c_stored_before);
 					if (!c_it.alive()) {
@@ -25043,7 +25043,7 @@ chr::ES_CHR OWL2::do_querySuperClassOfReal(typename querySuperClassOfReal::Type 
 		auto& C = std::get<2>(c_args);
 		auto it0_0 = querySuperClassOfReal_constraint_store->template begin<0>(I,C);
 		while ( !it0_0.at_end() ) {
-#line 190 "/home/user/owlChrpp/owlrules.chrpp"
+#line 190 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -25053,7 +25053,7 @@ chr::ES_CHR OWL2::do_querySuperClassOfReal(typename querySuperClassOfReal::Type 
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 190 "/home/user/owlChrpp/owlrules.chrpp"
+#line 190 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -25082,7 +25082,7 @@ chr::ES_CHR OWL2::do_querySuperClassOfUri(typename querySuperClassOfUri::Type c_
 		auto& URI = std::get<1>(c_args);
 		auto it0_0 = querySuperClassOfUri_constraint_store->template begin<0>(URI);
 		while ( !it0_0.at_end() ) {
-#line 165 "/home/user/owlChrpp/owlrules.chrpp"
+#line 165 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -25092,7 +25092,7 @@ chr::ES_CHR OWL2::do_querySuperClassOfUri(typename querySuperClassOfUri::Type c_
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 165 "/home/user/owlChrpp/owlrules.chrpp"
+#line 165 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -25118,9 +25118,9 @@ chr::ES_CHR OWL2::do_querySuperClassOfUri(typename querySuperClassOfUri::Type c_
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 533 "/home/user/owlChrpp/owlrules.chrpp"
+#line 533 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == querySuperClassOf( X )) return chr::ES_CHR::FAILURE;
-#line 533 "/home/user/owlChrpp/owlrules.chrpp"
+#line 533 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				if (chr::ES_CHR::FAILURE == res( ( std :: string( "owl:Thing" ) ) )) return chr::ES_CHR::FAILURE;
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -25164,7 +25164,7 @@ chr::ES_CHR OWL2::do_realisation(typename realisation::Type c_args, typename rea
 				auto it0_2 = logicalName_constraint_store->template begin<1>(X);
 				while ( !it0_2.at_end() ) {
 					auto URIX(std::get<1>(*it0_2));
-#line 572 "/home/user/owlChrpp/owlrules.chrpp"
+#line 572 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					// Begin guard
 					if (
 						( std::get<0>(*it0_2) != std::get<0>(*it0_1) )
@@ -25181,7 +25181,7 @@ chr::ES_CHR OWL2::do_realisation(typename realisation::Type c_args, typename rea
 							c_it.lock();
 							// Body
 							chr::Statistics::inc_nb_rules();
-#line 572 "/home/user/owlChrpp/owlrules.chrpp"
+#line 572 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 							if (chr::ES_CHR::FAILURE == resultRealisation( URIX, URIC )) return chr::ES_CHR::FAILURE;
 							assert(c_stored_before);
 							if (!c_it.alive()) {
@@ -25233,7 +25233,7 @@ chr::ES_CHR OWL2::do_realisation(typename realisation::Type c_args, typename rea
 		while ( !it1_0.at_end() ) {
 			auto X(std::get<1>(*it1_0));
 			auto _LV_0_(std::get<2>(*it1_0));
-#line 574 "/home/user/owlChrpp/owlrules.chrpp"
+#line 574 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( _LV_0_ == X )
@@ -25252,7 +25252,7 @@ chr::ES_CHR OWL2::do_realisation(typename realisation::Type c_args, typename rea
 						c_it.lock();
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 574 "/home/user/owlChrpp/owlrules.chrpp"
+#line 574 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						if (chr::ES_CHR::FAILURE == resultRealisation( URI, URI )) return chr::ES_CHR::FAILURE;
 						assert(c_stored_before);
 						if (!c_it.alive()) {
@@ -25298,7 +25298,7 @@ chr::ES_CHR OWL2::do_res(typename res::Type c_args, typename res::Constraint_sto
 		auto& X = std::get<1>(c_args);
 		auto it0_0 = res_constraint_store->template begin<0>(X);
 		while ( !it0_0.at_end() ) {
-#line 192 "/home/user/owlChrpp/owlrules.chrpp"
+#line 192 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -25308,7 +25308,7 @@ chr::ES_CHR OWL2::do_res(typename res::Type c_args, typename res::Constraint_sto
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 192 "/home/user/owlChrpp/owlrules.chrpp"
+#line 192 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -25329,7 +25329,7 @@ chr::ES_CHR OWL2::do_res(typename res::Type c_args, typename res::Constraint_sto
 			c_it.lock();
 			// Body
 			chr::Statistics::inc_nb_rules();
-#line 530 "/home/user/owlChrpp/owlrules.chrpp"
+#line 530 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			CHECK_ES( afficher( URIC ) );
 			assert(c_stored_before);
 			if (!c_it.alive()) {
@@ -25359,7 +25359,7 @@ chr::ES_CHR OWL2::do_resultClassification(typename resultClassification::Type c_
 		auto& Y = std::get<2>(c_args);
 		auto it0_0 = resultClassification_constraint_store->template begin<1>(X,Y);
 		while ( !it0_0.at_end() ) {
-#line 194 "/home/user/owlChrpp/owlrules.chrpp"
+#line 194 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -25369,7 +25369,7 @@ chr::ES_CHR OWL2::do_resultClassification(typename resultClassification::Type c_
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 194 "/home/user/owlChrpp/owlrules.chrpp"
+#line 194 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -25393,7 +25393,7 @@ chr::ES_CHR OWL2::do_resultClassification(typename resultClassification::Type c_
 				auto Y(std::get<2>(*it1_1));
 				auto it1_2 = logicalName_constraint_store->template begin<2>(URIY,Y);
 				while ( !it1_2.at_end() ) {
-#line 578 "/home/user/owlChrpp/owlrules.chrpp"
+#line 578 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 					// Begin guard
 					if (
 						( std::get<0>(*it1_2) != std::get<0>(*it1_0) )
@@ -25403,7 +25403,7 @@ chr::ES_CHR OWL2::do_resultClassification(typename resultClassification::Type c_
 						}
 						// Body
 						chr::Statistics::inc_nb_rules();
-#line 578 "/home/user/owlChrpp/owlrules.chrpp"
+#line 578 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 						CHECK_ES( true );
 						return chr::ES_CHR::SUCCESS;
 					} // End guard
@@ -25420,7 +25420,7 @@ chr::ES_CHR OWL2::do_resultClassification(typename resultClassification::Type c_
 	{
 		auto& URIX = std::get<1>(c_args);
 		auto& URIY = std::get<2>(c_args);
-#line 579 "/home/user/owlChrpp/owlrules.chrpp"
+#line 579 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			(!prefixIntern( URIY ) )
@@ -25435,7 +25435,7 @@ chr::ES_CHR OWL2::do_resultClassification(typename resultClassification::Type c_
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 579 "/home/user/owlChrpp/owlrules.chrpp"
+#line 579 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( stockerClassification( URIX, URIY ) );
 				assert(c_stored_before);
 				if (!c_it.alive()) {
@@ -25466,7 +25466,7 @@ chr::ES_CHR OWL2::do_resultRealisation(typename resultRealisation::Type c_args, 
 		auto& Y = std::get<2>(c_args);
 		auto it0_0 = resultRealisation_constraint_store->template begin<0>(X,Y);
 		while ( !it0_0.at_end() ) {
-#line 193 "/home/user/owlChrpp/owlrules.chrpp"
+#line 193 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 			// Begin guard
 			if (
 				( std::get<0>(*it0_0) != std::get<0>(c_args) )
@@ -25476,7 +25476,7 @@ chr::ES_CHR OWL2::do_resultRealisation(typename resultRealisation::Type c_args, 
 				}
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 193 "/home/user/owlChrpp/owlrules.chrpp"
+#line 193 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( true );
 				return chr::ES_CHR::SUCCESS;
 			} // End guard
@@ -25489,7 +25489,7 @@ chr::ES_CHR OWL2::do_resultRealisation(typename resultRealisation::Type c_args, 
 	{
 		auto& URIX = std::get<1>(c_args);
 		auto& URIY = std::get<2>(c_args);
-#line 570 "/home/user/owlChrpp/owlrules.chrpp"
+#line 570 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 		// Begin guard
 		if (
 			(!prefixIntern( URIY ) )
@@ -25503,7 +25503,7 @@ chr::ES_CHR OWL2::do_resultRealisation(typename resultRealisation::Type c_args, 
 				c_it.lock();
 				// Body
 				chr::Statistics::inc_nb_rules();
-#line 570 "/home/user/owlChrpp/owlrules.chrpp"
+#line 570 "/home/user/owl-chr/owlChrpp/owlrules.chrpp"
 				CHECK_ES( stockerRealisation( URIX, URIY ) );
 				assert(c_stored_before);
 				if (!c_it.alive()) {

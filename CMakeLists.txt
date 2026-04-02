@@ -1,8 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-
 project(ParserProject LANGUAGES C CXX)
 
-# ── Standard C++17 ────────────────────────────────────────────────────────────
+# ── C++17 Standard ────────────────────────────────────────────────────────────
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
@@ -18,14 +17,7 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
     add_compile_options(-Wall -Wpedantic)
 endif()
 
-# === Profilage gprof (décommenter si besoin) ==================================
-# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pg")
-# set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -pg")
-
-# === Traces CHR++ (décommenter si besoin) =====================================
-# add_compile_definitions(TRACE_ON)
-
-# ── Localisation de CHR++ ─────────────────────────────────────────────────────
+# ── CHR++ paths ───────────────────────────────────────────────────────────────
 if(NOT DEFINED CHRPP_ROOT)
     if(DEFINED ENV{CHRPP_ROOT})
         set(CHRPP_ROOT "$ENV{CHRPP_ROOT}")
@@ -33,99 +25,76 @@ if(NOT DEFINED CHRPP_ROOT)
         set(CHRPP_ROOT "${CMAKE_SOURCE_DIR}/../chrpp")
     endif()
 endif()
-set(CHRPP_COMPILER ${CHRPP_ROOT}/chrppc/chrppc)
-set(CHRPP_RUNTIME  ${CHRPP_ROOT}/runtime)
+set(CHRPP_COMPILER      ${CHRPP_ROOT}/chrppc/chrppc)
+set(CHRPP_RUNTIME       ${CHRPP_ROOT}/runtime)
 set(CHRPP_RUNTIME_BUILD ${CHRPP_ROOT}/build/runtime)
 
-# ── Fichiers CHR source et C++ générés ────────────────────────────────────────
-# owlrules.chrpp  →  (chrppc --output_dir .)  →  owlrulesOWL2.cpp
-#                                                 owlrulesOWL2.hh
-#                                                 owlrules_chr.cpp  (ignoré)
+# ── CHR++ source and generated C++ files ──────────────────────────────────────
 set(CHR_FILE     ${CMAKE_CURRENT_SOURCE_DIR}/owlrules.chrpp)
 set(OWL2_CPP     ${CMAKE_CURRENT_SOURCE_DIR}/owlrulesOWL2.cpp)
 set(OWL2_HH      ${CMAKE_CURRENT_SOURCE_DIR}/owlrulesOWL2.hh)
 set(OWL2_CHR_CPP ${CMAKE_CURRENT_SOURCE_DIR}/owlrules_chr.cpp)
+set(OWL2_O       ${CMAKE_CURRENT_BINARY_DIR}/owlrulesOWL2.o)
 
-# ── Sous-module COWL ──────────────────────────────────────────────────────────
-add_subdirectory(lib/cowl EXCLUDE_FROM_ALL)
+# ── Submodule COWL ────────────────────────────────────────────────────────── 
+add_subdirectory(lib/cowl EXCLUDE_FROM_ALL) 
+link_directories(${CMAKE_SOURCE_DIR}/lib/cowl/build/lib/ulib)
 
-# Chemins vers les bibliothèques statiques COWL et ulib
-set(COWL_LIB ${CMAKE_SOURCE_DIR}/build/lib/cowl/libcowl.a)
-set(ULIB_LIB ${CMAKE_SOURCE_DIR}/build/lib/cowl/lib/ulib/ulib.a)
-
-# ─────────────────────────────────────────────────────────────────────────────
-# GÉNÉRATION : owlrules.chrpp → owlrulesOWL2.cpp + owlrulesOWL2.hh
-# ─────────────────────────────────────────────────────────────────────────────
+# ── Generate C++ files from CHR++ ─────────────────────────────────────────────
 if(EXISTS ${CHRPP_COMPILER})
-    message(STATUS "CHR++ trouvé : ${CHRPP_COMPILER} — génération de owlrulesOWL2.cpp/.hh")
-
+    message(STATUS "CHR++ found: ${CHRPP_COMPILER} - generating C++ files from ${CHR_FILE}")
+    # Include CHR++ runtime headers for the generated .cpp file
+    include_directories(${CHRPP_RUNTIME})
     add_custom_command(
-        OUTPUT  ${OWL2_CPP} ${OWL2_HH} ${OWL2_CHR_CPP}
+        OUTPUT ${OWL2_CPP} ${OWL2_HH}
         COMMAND ${CHRPP_COMPILER} --output_dir ${CMAKE_CURRENT_SOURCE_DIR} ${CHR_FILE}
         COMMAND ${CMAKE_COMMAND} -E remove ${OWL2_CHR_CPP}
         DEPENDS ${CHR_FILE}
-        COMMENT "Génération de owlrulesOWL2.cpp/.hh depuis owlrules.chrpp"
+        COMMENT "Generating owlrulesOWL2.cpp/.hh from owlrules.chrpp"
         VERBATIM
     )
 else()
-    message(STATUS "chrppc non trouvé — utilisation de owlrulesOWL2.cpp/.hh pré-générés")
-    set(OWL2_CPP ${CMAKE_CURRENT_SOURCE_DIR}/owlrulesOWL2.cpp)
-    set(OWL2_HH  ${CMAKE_CURRENT_SOURCE_DIR}/owlrulesOWL2.hh)
+    message(FATAL_ERROR "chrppc not found: ${CHRPP_COMPILER}")
 endif()
 
-# Cible manuelle pour forcer la régénération
-add_custom_target(generate_owl_cpp
+# ── Compile generated .o with explicit include paths ──────────────────────────
+
+add_custom_command(
+    OUTPUT ${OWL2_O}
+    COMMAND ${CMAKE_CXX_COMPILER} -c
+        -I${CMAKE_CURRENT_SOURCE_DIR} 
+        -I${CHRPP_RUNTIME} 
+        -I${CHRPP_RUNTIME_BUILD} 
+        -I${CMAKE_SOURCE_DIR}/lib/cowl/include 
+        -I${CMAKE_SOURCE_DIR}/lib/cowl/lib/ulib/include 
+        ${OWL2_CPP} -o ${OWL2_O}
     DEPENDS ${OWL2_CPP} ${OWL2_HH}
-    COMMENT "owlrulesOWL2.cpp/.hh régénérés depuis owlrules.chrpp"
+    COMMENT "Compiling owlrulesOWL2.o with all include paths"
+    VERBATIM
 )
 
-# ─────────────────────────────────────────────────────────────────────────────
-# TARGET 1 : libowl_rules  (owlrulesOWL2.cpp compilé séparément → .o → .a)
-# Recompilé seulement si owlrules.chrpp change.
-# ─────────────────────────────────────────────────────────────────────────────
-add_library(owl_rules STATIC
-    ${OWL2_CPP}
+# ── Static library owl_rules ──────────────────────────────────────────────────
+add_library(owl_rules STATIC ${OWL2_O})
+set_target_properties(owl_rules PROPERTIES LINKER_LANGUAGE CXX)
+add_custom_target(generate_rules
+    DEPENDS ${OWL2_CPP} ${OWL2_HH}
 )
+add_dependencies(owl_rules generate_rules)
 
-target_include_directories(owl_rules
-    PUBLIC
-        ${CMAKE_CURRENT_BINARY_DIR}          # owlrulesOWL2.hh (généré)
-        ${CMAKE_SOURCE_DIR}/include          # parsercowl.h, owlrules.h, etc.
-        ${CHRPP_RUNTIME}                     # ../chrpp/runtime
-        ${CHRPP_RUNTIME_BUILD}               # ../chrpp/build/runtime
-        lib/cowl/include
-        lib/cowl/lib/ulib/include
-)
+# # Static library using the object files
+# add_library(owl_rules STATIC $<TARGET_OBJECTS:owl_rules_obj>)
 
-target_link_libraries(owl_rules PUBLIC cowl ulib)
+# ── Main executable ParserProject ─────────────────────────────────────────────
 
-# ─────────────────────────────────────────────────────────────────────────────
-# TARGET 2 : ParserProject  (main.cpp + linkage con owl_rules)
-# Recompila solo main.cpp quando cambia, non le regole CHR.
-# ─────────────────────────────────────────────────────────────────────────────
-add_executable(ParserProject
-    main.cpp
-)
-
+add_executable(ParserProject  main.cpp)
 target_include_directories(ParserProject
     PRIVATE
-        ${CMAKE_CURRENT_BINARY_DIR}          # owlrulesOWL2.hh — da includere in main.cpp
-        ${CMAKE_SOURCE_DIR}/include
+        ${CMAKE_CURRENT_SOURCE_DIR}          # owlrulesOWL2.hh
+        ${CMAKE_SOURCE_DIR}/include          # project headers
         ${CHRPP_RUNTIME}
         ${CHRPP_RUNTIME_BUILD}
-        lib/cowl/include
-        lib/cowl/lib/ulib/include
+        ${CMAKE_SOURCE_DIR}/lib/cowl/include
+        ${CMAKE_SOURCE_DIR}/lib/cowl/lib/ulib/include
 )
 
-# ── Création des dossiers results et results/queries ─────────────────────────
-add_custom_target(create_output_dirs ALL
-    COMMAND ${CMAKE_COMMAND} -E make_directory ${CMAKE_SOURCE_DIR}/results
-    COMMAND ${CMAKE_COMMAND} -E make_directory ${CMAKE_SOURCE_DIR}/results/queries
-    COMMENT "Création des dossiers results/ et results/queries/"
-)
-
-# ParserProject dépend de la création des dossiers
-add_dependencies(ParserProject create_output_dirs)
-
-# Lier l'exécutable à owl_rules (e transitivamente a cowl/ulib)
-target_link_libraries(ParserProject PRIVATE owl_rules)
+target_link_libraries(ParserProject PRIVATE cowl ulib owl_rules)

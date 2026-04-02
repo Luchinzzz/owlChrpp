@@ -92,9 +92,9 @@ cmake -DCHRPP_ROOT=/absolute/path/to/chrpp -S . -B build
 
 The CMake workflow is based on two separate targets with distinct dependencies:
 ```bash
-owlrules.chr  ──(chrppc)──►  owlrules.cpp  ──►  libowl_rules.a
-                                                  │
-main.cpp  ─────(g++ -std=c++17 -O3)───────►  ParserProject  (executable)
+owlrules.chrpp ──(chrppc)──► owlrulesOWL2.cpp/.hh ──► [owlrulesOWL2.o library] ──► libowl_rules.a
+                                                                                        │
+main.cpp ───────────────(g++ -std=c++17 -O3)──────────────────────────────► ParserProject (executable)
 
 ```
 
@@ -109,14 +109,18 @@ When main.cpp changes, CMake recompiles only main.cpp and relinks, CHR rules rem
 Useful CMake Commands:
 
 ```bash
-# Standard build (compiles only changed files)
-cmake -B build && cmake --build build
+# Configure + build
+cmake -B build
+cmake --build build
 
-# Force regeneration of owlrules.cpp from owlrules.chrpp
-cmake --build build --target generate_owl_cpp
+# Force regeneration of CHR++ output (if changed)
+cmake --build build --target generate_rules
 
-# Recompile only main.cpp (after modifying main.cpp)
+# Build only the executable main.cpp (if changed)
 cmake --build build --target ParserProject
+
+# Clean build
+rm -rf build && cmake -B build && cmake --build build
 ```
 ---
 ## Input Format
@@ -374,7 +378,7 @@ python3 compare_query_results.py sortie.txt ../../../owl2bench/sparql_reference_
 
 1. Edit `owlrules.chrpp`
 2. Recreate `owlrules.hpp` by doing `chrppc owlrules.chrpp -sout > owlrules.hpp` or `/absolute/path/to/chrppc owlrules.chrpp -sout > owlrules.hpp`
-3. Recompile — `owlrules.cpp` is auto-regenerated: `cd build && make` or `cmake --build build --target generate_owl_cpp`
+3. Recompile — `owlrules.cpp` is auto-regenerated: `cd build && make` or `cmake --build build --target generate_rules`
 3. Commit the updated `owlrules.cpp` if sharing your changes
 
 ### Adding a New Query

@@ -284,7 +284,11 @@
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#University"/>
     </owl:Class>
     
+    <!-- http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#PhD_Student -->
 
+    <owl:Class rdf:about="http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#PhD_Student">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#Student"/>
+    </owl:Class>
 
     <!-- http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#TA -->
 

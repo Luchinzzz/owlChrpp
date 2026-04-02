@@ -17,6 +17,7 @@ Declaration(Class(:Lab_room))
 Declaration(Class(:Lecture_hall))
 Declaration(Class(:Lecturer))
 Declaration(Class(:Library))
+Declaration(Class(:PhD_Student))
 Declaration(Class(:Program))
 Declaration(Class(:Student))
 Declaration(Class(:TA))
@@ -177,6 +178,10 @@ SubClassOf(:Lecturer :University)
 # Class: :Library (:Library)
 
 SubClassOf(:Library :University)
+
+# Class: :PhD_Student (:PhD_Student)
+
+SubClassOf(:PhD_Student :Student)
 
 # Class: :Program (:Program)
 

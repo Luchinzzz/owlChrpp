@@ -26,14 +26,14 @@ void print(T &pb)
 }
 
 std::vector<Query> queries = {
-    // Superclass query: retrieve all individuals classified as Student
-    {"super", "<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#Student>"},
+    // Superclass query: Retrieves all superclasses of a class PhD_Student
+    {"super", "<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#PhD_Student>"},
 
     // Superclass query: retrieve all individuals classified as Lecturer
-    {"super", "<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#Lecturer>"},
+    //{"sub", "<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#Lecturer>"},
 
     // Superclass query: retrieve all individuals classified as TA
-    {"super", "<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#TA>"},
+    //{"super", "<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#TA>"},
 
     // Object property query: retrieve all (subject, object) pairs of is_studying
     {"obj", "<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#is_studying>"},
@@ -56,11 +56,10 @@ std::vector<Query> queries = {
     // Data property query: retrieve all (subject, value) pairs of course_code
     {"data", "<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#course_code>"},
 
-    // Subject query: retrieve all individuals that have an is_studying relationship
-    {"subj", "<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#is_studying>"},
 
-    // Subject query: retrieve all individuals that have an offered_by relationship
-    {"subj", "<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#offered_by>"},
+    {"inst", "<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#Student>"},
+
+    {"inst", "<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#TA>"},
 };
 
 int main(int argc, char *argv[])
