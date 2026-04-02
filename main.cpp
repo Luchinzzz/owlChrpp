@@ -64,7 +64,7 @@ std::vector<Query> queries = {
 
 int main(int argc, char *argv[])
 {
-
+    create_output_dirs();
     std::ofstream fileReal(output_file_Real);
     std::ofstream fileClassif(output_file_Classif);
 

@@ -9,6 +9,9 @@
 #include "parsercowl.h"
 #include "constants.h"
 #include "types.h"
+#include <filesystem>
+
+namespace fs = std::filesystem;
 
 // ── Display ───────────────────────────────────────────────────────────────────
 
@@ -136,3 +139,20 @@ inline bool checkClassification(T& pb, const std::string& x, const std::string& 
     return false;
 }
 
+
+
+
+// ── Create output directories if they don't exist ────────────────────────────
+void create_output_dirs() {
+    const std::vector<std::string> dirs = {
+        "results",
+        "results/queries"
+    };
+
+    for (const auto& dir : dirs) {
+        if (!fs::exists(dir)) {
+            fs::create_directories(dir);
+            std::cout << "Created directory: " << dir << std::endl;
+        }
+    }
+}
