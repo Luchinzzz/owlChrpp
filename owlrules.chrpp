@@ -67,10 +67,14 @@
         owlHasKey(?int,?int,+int,+int),
         owlHasKeyCheck(?int,?int,?int,+int,+int),
         querySuperClassOfUri(+std::string),
+        querySuperClassOfClassUri(+std::string,+std::string),
         querySubClassOfUri(+std::string),
+        querySubClassOfClassUri(+std::string,+std::string),
         querySuperClassOf(?int),
         querySuperClassOfReal(?int,?int),
         querySubClassOf(?int),
+        querySubClassOfClass(?int,?int),
+        querySuperClassOfClass(?int,?int),
         queryClassification(?int),
         queryClassificationReal(?int),
         queryClassificationUri(+std::string),
@@ -166,6 +170,10 @@ querySuperClassOfUri(URI) #passive \ querySuperClassOfUri(URI) <=> true ;;
 querySuperClassOf(X) #passive \ querySuperClassOf(X) <=> true ;;
 querySubClassOf(X) #passive \ querySubClassOf(X) <=> true ;;
 querySubClassOfUri(URI) #passive \ querySubClassOfUri(URI) <=> true ;;
+querySubClassOfClass(X,Y) #passive \ querySubClassOfClass(X,Y) <=> true ;;
+querySubClassOfClassUri(URIX,URIY) #passive \ querySubClassOfClassUri(URIX,URIY) <=> true ;;
+querySuperClassOfClass(X,Y) #passive \ querySuperClassOfClass(X,Y) <=> true ;;
+querySuperClassOfClassUri(URIX,URIY) #passive \ querySuperClassOfClassUri(URIX,URIY) <=> true ;;
 queryClassification(X) #passive \ queryClassification(X) <=> true ;;
 queryClassificationUri(URI) #passive \ queryClassificationUri(URI) <=> true ;;
 queryClassificationTemp(X) #passive \ queryClassificationTemp(X) <=> true ;;
@@ -529,25 +537,41 @@ owlHasKeyCheck(C,X,Y,N,N) <=> owlSameIndividual(X,Y) ;;
 //Display result: convert logical name to URI and display
 res(URIC) ==> afficher(URIC);;
 
+
 //querySuperClassOfUri: query to retrieve all superclasses of a class given its URI  
-querySuperClassOfUri(URIC) , logicalName(URIC,X) #passive ==> querySuperClassOf(X), res(std::string("owl:Thing")) ;;
-
-//querySuperClassOf: add current class to results first
-querySuperClassOf(X) , logicalName(URIC,X) #passive==> res(URIC) ;;
-
+//querySuperClassOfUri(URIC) , logicalName(URIC,X) #passive ==> querySuperClassOf(X), res(std::string("owl:Thing")) ;;
+querySuperClassOfUri(URIC) , logicalName(URIC,X) #passive ==> querySuperClassOf(X), res(URIC);;
 //querySuperClassOf: recursively follow subclass relationships to find all superclasses up to the root
-querySuperClassOf(X) , owlSubclassOf(X,Y) ==> !(X==Y) | querySuperClassOf(Y) , queryEquivalentClass(X) ;;
+querySuperClassOf(X) , owlSubclassOf(X,Y), logicalName(URIY,Y) #passive ==> !(X==Y) | querySuperClassOf(Y) , queryEquivalentClass(X), res(URIY) ;;
+
+
+//querySuperClassOfClass: return true if X is superclass of Y
+r_querySuperClassOfClassURI @ logicalName(URIX, X) #passive, logicalName(URIY, Y) #passive \ querySuperClassOfClassUri(URIX, URIY) <=>  querySuperClassOfClass(X, Y);;
+owlSubclassOf(Y, X)\ querySuperClassOfClass(X, Y) <=> afficher("true") ;;
+querySuperClassOfClass(X, Y) <=> afficher("false") ;;
 
 //retrieve the equivalent classes of a class X
 queryEquivalentClass(X) ,  owlEquivalentClass(X,Y), logicalName(URIY,Y)#passive ==> !(X==Y) | res(URIY) ;;
 
+
 //querySubClassOf: query to retrieve all subclasses of a class
 querySubClassOfUri(URIC) , logicalName(URIC,X) #passive ==> querySubClassOf(X) , res(URIC) ;;
-
 //querySubClassOf: recursively follow subclass relationships to find all subclasses  
 r_querySubClassOf1 @ querySubClassOf(X), owlSubclassOf(Y,X), logicalName(URIY,Y) #passive ==> 
-!(X==Y) | querySubClassOf(Y),queryEquivalentClass(X), res(URIY) ;;
+!(X==Y) | querySubClassOf(Y),queryEquivalentClass(X), res(URIY);;
 
+
+//querySubClassOfClass: return true if X is subclass of Y
+r_querySubClassOfClassURI @ logicalName(URIX, X) #passive, logicalName(URIY, Y) #passive \ querySubClassOfClassUri(URIX, URIY) <=>  querySubClassOfClass(X, Y);;
+owlSubclassOf(X, Y)\ querySubClassOfClass(X, Y) <=> afficher("true") ;;
+querySubClassOfClass(X, Y) <=> afficher("false") ;;
+
+
+// // ── Ricorsione: segui la catena X ⊑ Z, poi cerca Z ⊑ Y ──────────────────────
+// // r_querySubClassOfClassRecurse @
+// //     owlSubclassOf(X, Z)
+// //     \ querySubClassOfClass(X, Y)
+// //     <=> !(X == Z) && !(Z == Y) | querySubClassOfClass(Z, Y) ;;
 
 
 //queryClassification: query to retrieve all classes that an individual is instance of (with true classification)

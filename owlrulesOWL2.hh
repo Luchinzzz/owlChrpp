@@ -1,7 +1,7 @@
 #ifndef OWL2__GUARD
 #define OWL2__GUARD
 /*
-From line 9 to 644
+From line 9 to 668
 queryEngineeringStudents<queryEngineeringStudents( E, F, G, H, K, ID )> { logicalName<logicalName( URIX, X )>, owlObjectPropertyAssertion<owlObjectPropertyAssertion( X, F, Y )>, owlClassAssertion<owlClassAssertion( X, E, true )> } --> ResultVec<ResultVec( makeVec( URIX, URIY ), ID )>
 queryComplexStudents<queryComplexStudents( E, F, G, H, K, ID )> { logicalName<logicalName( URIS, S )>, owlObjectPropertyAssertion<owlObjectPropertyAssertion( X, G, Z )>, owlClassAssertion<owlClassAssertion( S, E, true )> } --> ResultVec<ResultVec( makeVec( URIS, URIC ), ID )>
 querySubjectByObjectWithId<querySubjectByObjectWithId( URIP, get_next_id(  ) )> { logicalName<logicalName( URIP, P )> } --> querySubjectByObject<querySubjectByObject( P, ID )>
@@ -27,9 +27,12 @@ queryDataAssertionUri<queryDataAssertionUri( URIP )> { queryDataAssertionUri<que
 querySubjectByObject<querySubjectByObject( P, ID )> { logicalName<logicalName( URIX, X )>, owlObjectPropertyAssertion<owlObjectPropertyAssertion( X, P, Y )>, querySubjectByObject<querySubjectByObject( P, ID )> } --> ResultVec<ResultVec( makeVec( URIX, URIY ), ID )>
 queryObjAssertion<queryObjAssertion( P, ID )> { logicalName<logicalName( URIX, X )>, owlObjectPropertyAssertion<owlObjectPropertyAssertion( X, P, Y )>, queryObjAssertion<queryObjAssertion( P, ID )> } --> ResultVec<ResultVec( makeVec( URIX, URIY ), ID )>
 queryObjAssertionUri<queryObjAssertionUri( URIP )> { queryObjAssertionUri<queryObjAssertionUri( URIP )> } --> queryObjAssertionWithId<queryObjAssertionWithId( URIP, get_next_id(  ) )>
+queryInstances<queryInstances( C, ID )> { logicalName<logicalName( URIX, X )>, owlClassAssertion<owlClassAssertion( X, C, true )>, queryInstances<queryInstances( C, ID )> } --> ResultVec<ResultVec( makeVec( URIX, emptyString ), ID )>
+querySuperClassOfReal<querySuperClassOfReal( I, C )> { querySuperClassOfReal<querySuperClassOfReal( I, C )> } -->
+queryInstancesURI<queryInstancesURI( URIC )> { queryInstancesURI<queryInstancesURI( URIC )> } --> queryInstancesWithId<queryInstancesWithId( URIC, get_next_id(  ) )>
 owlIrreflexiveObjectProperty<owlIrreflexiveObjectProperty( P )> { owlObjectPropertyAssertion<owlObjectPropertyAssertion( X, P, X )>, owlIrreflexiveObjectProperty<owlIrreflexiveObjectProperty( P )> } -->
 owlSubObjectPropertyOf<owlSubObjectPropertyOf( A, B )> { owlSubclassOf<owlSubclassOf( Y1, Y2 )>, owlObjectSomeValuesFrom<owlObjectSomeValuesFrom( SV, P2, Y )>, owlHasValueObject<owlHasValueObject( C, P1, A )>, owlObjectPropertyAssertion<owlObjectPropertyAssertion( X, P2, Y )>, owlClassAssertion<owlClassAssertion( A, Y, true )>, owlObjectPropertyRange<owlObjectPropertyRange( P2, C )>, owlObjectPropertyDomain<owlObjectPropertyDomain( P2, C )>, owlSubObjectPropertyOf<owlSubObjectPropertyOf( A, B )> } --> owlSubclassOf<owlSubclassOf( C, SV )>, owlObjectPropertyAssertion<owlObjectPropertyAssertion( X, P1, Y )>, owlObjectPropertyRange<owlObjectPropertyRange( P1, C )>, owlEquivalentObjectProperty<owlEquivalentObjectProperty( A, B )>, owlObjectPropertyDomain<owlObjectPropertyDomain( P1, C )>, owlSubObjectPropertyOf<owlSubObjectPropertyOf( A, C )>
-logicalName<logicalName( URI, X )> { queryComplexStudents<queryComplexStudents( E, F, G, H, K, ID )>, queryEngineeringStudents<queryEngineeringStudents( E, F, G, H, K, ID )>, queryComplexStudentsWithId<queryComplexStudentsWithId( URIE, URIF, URIG, URIH, URIK, ID )>, querySubClassOf<querySubClassOf( X )>, querySuperClassOfUri<querySuperClassOfUri( URIC )>, queryInstances<queryInstances( C, ID )>, querySubClassOfUri<querySubClassOfUri( URIC )>, querySuperClassOf<querySuperClassOf( X )>, logicalName<logicalName( URI, X )>, owlEquivalentClass<owlEquivalentClass( X, Y )>, queryClassification<queryClassification( X )>, queryEquivalentClass<queryEquivalentClass( X )>, queryObjAssertion<queryObjAssertion( P, ID )>, queryClassificationUri<queryClassificationUri( URIX )>, owlObjectPropertyAssertion<owlObjectPropertyAssertion( U, P, W )>, owlClass<owlClass( C )>, owlSubclassOf<owlSubclassOf( Y, X )>, querySubjectByObject<querySubjectByObject( P, ID )>, queryInstanceURI<queryInstanceURI( URIX, URIC )>, classification<classification(  )>, queryDataAssertion<queryDataAssertion( P, ID )>, owlDataPropertyAssertion<owlDataPropertyAssertion( X, P, Y )>, querySubjectByObjectWithId<querySubjectByObjectWithId( URIP, ID )>, queryDataAssertionWithId<queryDataAssertionWithId( URIP, ID )>, queryInstancesWithId<queryInstancesWithId( URIC, ID )>, realisation<realisation(  )>, queryObjAssertionWithId<queryObjAssertionWithId( URIP, ID )>, queryObjAssertionSubject<queryObjAssertionSubject( P, O, ID )>, owlClassAssertion<owlClassAssertion( W, Y, true )>, queryEngineeringStudentsWithId<queryEngineeringStudentsWithId( URIE, URIF, URIG, URIH, URIK, ID )>, resultClassification<resultClassification( URIX, URIY )>, queryObjAssertionSubjectWithId<queryObjAssertionSubjectWithId( URIP, URIO, ID )> } --> queryComplexStudents<queryComplexStudents( E, F, G, H, K, ID )>, queryEngineeringStudents<queryEngineeringStudents( E, F, G, H, K, ID )>, queryObjAssertionSubject<queryObjAssertionSubject( P, O, ID )>, querySubjectByObject<querySubjectByObject( P, ID )>, owlSubclassOf<owlSubclassOf( C, OwlThingVar )>, resultRealisation<resultRealisation( URIX, URIC )>, querySuperClassOf<querySuperClassOf( X )>, res<res( ( std :: string( "owl:Thing" ) ) )>, queryClassification<queryClassification( X )>, queryObjAssertion<queryObjAssertion( P, ID )>, queryEquivalentClass<queryEquivalentClass( X )>, queryInstance<queryInstance( X, C )>, resultClassification<resultClassification( URIX, URIY )>, ResultVec<ResultVec( makeVec( URIX, URIY ), ID )>, queryDataAssertion<queryDataAssertion( P, ID )>, querySubClassOf<querySubClassOf( X )>, queryInstances<queryInstances( C, ID )>
+logicalName<logicalName( URI, X )> { queryComplexStudents<queryComplexStudents( E, F, G, H, K, ID )>, queryEngineeringStudents<queryEngineeringStudents( E, F, G, H, K, ID )>, querySubjectByObject<querySubjectByObject( P, ID )>, queryComplexStudentsWithId<queryComplexStudentsWithId( URIE, URIF, URIG, URIH, URIK, ID )>, querySubClassOf<querySubClassOf( X )>, querySuperClassOfUri<querySuperClassOfUri( URIC )>, queryInstances<queryInstances( C, ID )>, querySubClassOfUri<querySubClassOfUri( URIC )>, querySuperClassOf<querySuperClassOf( X )>, logicalName<logicalName( URI, X )>, owlEquivalentClass<owlEquivalentClass( X, Y )>, queryObjAssertion<queryObjAssertion( P, ID )>, querySuperClassOfClassUri<querySuperClassOfClassUri( URIX, URIY )>, owlObjectPropertyAssertion<owlObjectPropertyAssertion( U, P, W )>, queryEngineeringStudentsWithId<queryEngineeringStudentsWithId( URIE, URIF, URIG, URIH, URIK, ID )>, owlClassAssertion<owlClassAssertion( W, Y, true )>, owlClass<owlClass( C )>, querySubClassOfClassUri<querySubClassOfClassUri( URIX, URIY )>, owlSubclassOf<owlSubclassOf( X, Y )>, queryClassificationUri<queryClassificationUri( URIX )>, queryEquivalentClass<queryEquivalentClass( X )>, queryClassification<queryClassification( X )>, queryInstanceURI<queryInstanceURI( URIX, URIC )>, queryObjAssertionSubjectWithId<queryObjAssertionSubjectWithId( URIP, URIO, ID )>, resultClassification<resultClassification( URIX, URIY )>, classification<classification(  )>, queryDataAssertion<queryDataAssertion( P, ID )>, owlDataPropertyAssertion<owlDataPropertyAssertion( X, P, Y )>, querySubjectByObjectWithId<querySubjectByObjectWithId( URIP, ID )>, queryDataAssertionWithId<queryDataAssertionWithId( URIP, ID )>, queryInstancesWithId<queryInstancesWithId( URIC, ID )>, realisation<realisation(  )>, queryObjAssertionWithId<queryObjAssertionWithId( URIP, ID )>, queryObjAssertionSubject<queryObjAssertionSubject( P, O, ID )> } --> queryComplexStudents<queryComplexStudents( E, F, G, H, K, ID )>, queryEngineeringStudents<queryEngineeringStudents( E, F, G, H, K, ID )>, queryObjAssertionSubject<queryObjAssertionSubject( P, O, ID )>, queryDataAssertion<queryDataAssertion( P, ID )>, querySubjectByObject<querySubjectByObject( P, ID )>, owlSubclassOf<owlSubclassOf( C, OwlThingVar )>, resultRealisation<resultRealisation( URIX, URIC )>, querySuperClassOf<querySuperClassOf( X )>, res<res( URIC )>, queryClassification<queryClassification( X )>, queryObjAssertion<queryObjAssertion( P, ID )>, queryEquivalentClass<queryEquivalentClass( X )>, queryInstances<queryInstances( C, ID )>, querySuperClassOfClass<querySuperClassOfClass( X, Y )>, querySubClassOf<querySubClassOf( X )>, querySubClassOfClass<querySubClassOfClass( X, Y )>, queryInstance<queryInstance( X, C )>, resultClassification<resultClassification( URIX, URIY )>, ResultVec<ResultVec( makeVec( URIX, URIY ), ID )>
 owlDataProperty<owlDataProperty( P )> { owlDataProperty<owlDataProperty( P )> } --> owlSubDataPropertyOf<owlSubDataPropertyOf( P, P )>, owlEquivalentDataProperty<owlEquivalentDataProperty( P, P )>
 owlDataValue<owlDataValue( V, S, T )> { owlDataPropertyAssertion<owlDataPropertyAssertion( U, P, W )>, owlDataValue<owlDataValue( V, S, T )> } -->
 ResultVec<ResultVec( S, ID )> { ResultVec<ResultVec( S, ID )> } --> built-in<afficherResultatSet( S, ID )>
@@ -37,7 +40,8 @@ owlDisjointDataProperty<owlDisjointDataProperty( A, B )> { owlDataPropertyAssert
 owlOneOf<owlOneOf( C, S )> { owlOneOf<owlOneOf( C, S )> } --> owlOneOfLoop<owlOneOfLoop( C, ( ( *S ) . begin(  ) ), ( ( *S ) . end(  ) ) )>
 owlInverseObjectProperty<owlInverseObjectProperty( P1, P2 )> { owlObjectPropertyAssertion<owlObjectPropertyAssertion( X, P1, Y )>, owlInverseObjectProperty<owlInverseObjectProperty( P1, P2 )> } --> owlInverseObjectProperty<owlInverseObjectProperty( P2, P1 )>, owlObjectPropertyAssertion<owlObjectPropertyAssertion( Y, P2, X )>
 owlComplementOf<owlComplementOf( A, NOTA )> { owlNamedIndividual<owlNamedIndividual( X )>, owlClassAssertion<owlClassAssertion( X, A, true )>, owlComplementOf<owlComplementOf( A, NOTA )> } --> owlClassAssertion<owlClassAssertion( X, NOTA, false )>
-queryClassificationTemp<queryClassificationTemp( X )> { queryClassificationTemp<queryClassificationTemp( X )> } -->
+queryInstanceURI<queryInstanceURI( URIX, URIC )> { logicalName<logicalName( URIC, C )>, queryInstanceURI<queryInstanceURI( URIX, URIC )> } --> queryInstance<queryInstance( X, C )>
+queryClassificationTempUri<queryClassificationTempUri( URI )> { queryClassificationTempUri<queryClassificationTempUri( URI )> } -->
 owlCandidatsIntersection<owlCandidatsIntersection( X, C, I )> { owlIntersectionOfLoop<owlIntersectionOfLoop( C, ITEND, ITEND, I )>, owlClassAssertion<owlClassAssertion( X, V, true )>, owlIntersectionClass<owlIntersectionClass( C, V, I )>, owlCandidatsIntersection<owlCandidatsIntersection( X, C, I )> } --> owlClassAssertion<owlClassAssertion( X, C, true )>, owlCandidatsIntersection<owlCandidatsIntersection( X, C, ( I + 1 ) )>
 owlNegativeObjectAssertion<owlNegativeObjectAssertion( X, P, Y )> { owlObjectPropertyAssertion<owlObjectPropertyAssertion( X, P, Y )>, owlNegativeObjectAssertion<owlNegativeObjectAssertion( X, P, Y )> } -->
 owlObjectProperty<owlObjectProperty( P )> { owlClassAssertion<owlClassAssertion( U, C, true )>, owlHasValueObject<owlHasValueObject( C, P, Y )>, owlObjectProperty<owlObjectProperty( P )> } --> owlObjectPropertyAssertion<owlObjectPropertyAssertion( U, P, Y )>, owlEquivalentObjectProperty<owlEquivalentObjectProperty( P, P )>, owlSubObjectPropertyOf<owlSubObjectPropertyOf( P, P )>
@@ -57,12 +61,15 @@ queryDataAssertion<queryDataAssertion( P, ID )> { logicalName<logicalName( URIX,
 owlNegativeDataAssertion<owlNegativeDataAssertion( X, P, Y )> { owlDataPropertyAssertion<owlDataPropertyAssertion( X, P, Y )>, owlNegativeDataAssertion<owlNegativeDataAssertion( X, P, Y )> } -->
 owlClass<owlClass( C )> { logicalName<logicalName( URIC, C )>, owlClass<owlClass( C )> } --> owlSubclassOf<owlSubclassOf( C, OwlThingVar )>, owlEquivalentClass<owlEquivalentClass( C, C )>
 owlObjectPropertyDomain<owlObjectPropertyDomain( P, C )> { owlObjectPropertyAssertion<owlObjectPropertyAssertion( X, P, Y )>, owlSubclassOf<owlSubclassOf( C1, C2 )>, owlSubObjectPropertyOf<owlSubObjectPropertyOf( P1, P2 )>, owlObjectPropertyDomain<owlObjectPropertyDomain( P, C )> } --> owlClassAssertion<owlClassAssertion( X, DP, true )>, owlObjectPropertyDomain<owlObjectPropertyDomain( P, C2 )>
+querySubClassOfClassUri<querySubClassOfClassUri( URIX, URIY )> { logicalName<logicalName( URIX, X )>, querySubClassOfClassUri<querySubClassOfClassUri( URIX, URIY )> } --> querySubClassOfClass<querySubClassOfClass( X, Y )>
 owlSubDataPropertyOf<owlSubDataPropertyOf( A, B )> { owlDataPropertyAssertion<owlDataPropertyAssertion( X, P2, Y )>, owlDataPropertyRange<owlDataPropertyRange( P2, C )>, owlDataPropertyDomain<owlDataPropertyDomain( P2, C )>, owlSubDataPropertyOf<owlSubDataPropertyOf( A, B )> } --> owlDataPropertyAssertion<owlDataPropertyAssertion( X, P1, Y )>, owlDataPropertyRange<owlDataPropertyRange( P1, C )>, owlDataPropertyDomain<owlDataPropertyDomain( P1, C )>, owlEquivalentDataProperty<owlEquivalentDataProperty( A, B )>, owlSubDataPropertyOf<owlSubDataPropertyOf( A, C )>
 queryObjAssertionWithId<queryObjAssertionWithId( URIP, get_next_id(  ) )> { logicalName<logicalName( URIP, P )> } --> queryObjAssertion<queryObjAssertion( P, ID )>
 resultClassification<resultClassification( X, Y )> { logicalName<logicalName( URIX, X )>, owlEquivalentClass<owlEquivalentClass( X, Y )>, resultClassification<resultClassification( X, Y )> } --> built-in<stockerClassification( URIX, URIY )>
 owlDisjointObjectProperty<owlDisjointObjectProperty( A, B )> { owlObjectPropertyAssertion<owlObjectPropertyAssertion( X, A, Y )>, owlDisjointObjectProperty<owlDisjointObjectProperty( A, B )> } -->
 owlObjectPropertyAssertion<owlObjectPropertyAssertion( X, P, Y )> { querySubjectByObject<querySubjectByObject( P, ID )>, queryObjAssertion<queryObjAssertion( P, ID )>, owlHasKeyCheck<owlHasKeyCheck( C, X, Y, I, N )>, queryComplexStudents<queryComplexStudents( E, F, G, H, K, ID )>, owlHasKey<owlHasKey( C, P, I, N )>, owlObjectPropertyChain<owlObjectPropertyChain( PC, P, 0, N )>, owlObjectMaxCardinality<owlObjectMaxCardinality( C, P, 0 )>, owlClassAssertion<owlClassAssertion( V, Y, true )>, owlObjectSomeValuesFrom<owlObjectSomeValuesFrom( C, P, Y )>, owlObjectPropertyAssertion<owlObjectPropertyAssertion( X, P, Y )>, owlSameIndividual<owlSameIndividual( X, Y )>, queryObjAssertionSubject<queryObjAssertionSubject( P, O, ID )>, owlNegativeObjectAssertion<owlNegativeObjectAssertion( X, P, Y )>, owlReflexiveObjectProperty<owlReflexiveObjectProperty( P )>, owlFunctionalObjectProperty<owlFunctionalObjectProperty( P )>, logicalName<logicalName( URI, W )>, owlIrreflexiveObjectProperty<owlIrreflexiveObjectProperty( P )>, constructPropertyChain<constructPropertyChain( PC, I, X, Y, N )>, owlInverseObjectProperty<owlInverseObjectProperty( P1, P2 )>, queryEngineeringStudents<queryEngineeringStudents( E, F, G, H, K, ID )>, owlDisjointObjectProperty<owlDisjointObjectProperty( A, B )>, owlAsymmetricObjectProperty<owlAsymmetricObjectProperty( P )>, owlInverseFunctionalObjectProperty<owlInverseFunctionalObjectProperty( P )>, owlSubObjectPropertyOf<owlSubObjectPropertyOf( P2, P1 )>, owlHasValueObject<owlHasValueObject( C, P, Y )>, owlObjectPropertyDomain<owlObjectPropertyDomain( P, DP )>, owlObjectPropertyRange<owlObjectPropertyRange( P, DP )>, owlSymmetricObjectProperty<owlSymmetricObjectProperty( P )> } --> owlHasKeyCheck<owlHasKeyCheck( C, X, Y, ( I + 1 ), N )>, ResultVec<ResultVec( makeVec( URIX, URIY ), ID )>, owlNegativeObjectAssertion<owlNegativeObjectAssertion( Y, P, X )>, owlClassAssertion<owlClassAssertion( X, DP, true )>, constructPropertyChain<constructPropertyChain( PC, 0, X, Y, N )>, owlSameIndividual<owlSameIndividual( Y, Z )>, owlObjectPropertyAssertion<owlObjectPropertyAssertion( X, P1, Y )>
 owlSymmetricObjectProperty<owlSymmetricObjectProperty( P )> { owlObjectPropertyAssertion<owlObjectPropertyAssertion( X, P, Y )>, owlSymmetricObjectProperty<owlSymmetricObjectProperty( P )> } --> owlObjectPropertyAssertion<owlObjectPropertyAssertion( Y, P, X )>
+queryClassificationTemp<queryClassificationTemp( X )> { queryClassificationTemp<queryClassificationTemp( X )> } -->
+querySuperClassOfClassUri<querySuperClassOfClassUri( URIX, URIY )> { logicalName<logicalName( URIX, X )>, querySuperClassOfClassUri<querySuperClassOfClassUri( URIX, URIY )> } --> querySuperClassOfClass<querySuperClassOfClass( X, Y )>
 owlEquivalentDataProperty<owlEquivalentDataProperty( A, B )> { owlEquivalentDataProperty<owlEquivalentDataProperty( A, B )> } --> owlSubDataPropertyOf<owlSubDataPropertyOf( A, B )>
 owlEquivalentObjectProperty<owlEquivalentObjectProperty( A, B )> { owlEquivalentObjectProperty<owlEquivalentObjectProperty( A, B )> } --> owlSubObjectPropertyOf<owlSubObjectPropertyOf( A, B )>
 owlDifferentIndividual<owlDifferentIndividual( X, Y )> { owlSameIndividual<owlSameIndividual( X, Y )>, owlDifferentIndividual<owlDifferentIndividual( X, Y )> } -->
@@ -72,10 +79,10 @@ owlClassAssertion<owlClassAssertion( X, A, B )> { queryInstances<queryInstances(
 queryObjAssertionClassUri<queryObjAssertionClassUri( URIP, URIC )> { queryObjAssertionClassUri<queryObjAssertionClassUri( URIP, URIC )> } -->
 owlDataPropertyDomain<owlDataPropertyDomain( P, C )> { owlDataPropertyAssertion<owlDataPropertyAssertion( X, P, _ )>, owlSubDataPropertyOf<owlSubDataPropertyOf( P1, P2 )>, owlDataPropertyDomain<owlDataPropertyDomain( P, C )> } --> owlClassAssertion<owlClassAssertion( X, DP, true )>, owlDataPropertyDomain<owlDataPropertyDomain( P1, C )>
 owlTransitiveObjectProperty<owlTransitiveObjectProperty( P )> { owlTransitiveObjectProperty<owlTransitiveObjectProperty( P )> } -->
-querySuperClassOfReal<querySuperClassOfReal( I, C )> { querySuperClassOfReal<querySuperClassOfReal( I, C )> } -->
-queryInstancesURI<queryInstancesURI( URIC )> { queryInstancesURI<queryInstancesURI( URIC )> } --> queryInstancesWithId<queryInstancesWithId( URIC, get_next_id(  ) )>
-queryObjAssertionSubjectUri<queryObjAssertionSubjectUri( URIP, URIO )> { queryObjAssertionSubjectUri<queryObjAssertionSubjectUri( URIP, URIO )> } --> queryObjAssertionSubjectWithId<queryObjAssertionSubjectWithId( URIP, URIO, get_next_id(  ) )>
-owlDataPropertyRange<owlDataPropertyRange( P, R )> { owlDataPropertyAssertion<owlDataPropertyAssertion( _, P, Y )>, owlSubDataPropertyOf<owlSubDataPropertyOf( P1, P2 )>, owlDataPropertyRange<owlDataPropertyRange( P, R )> } --> owlDataPropertyRange<owlDataPropertyRange( P1, C )>
+queryComplexStudentsWithId<queryComplexStudentsWithId( URIE, URIF, URIG, URIH, URIK, get_next_id(  ) )> { logicalName<logicalName( URIE, E )> } --> queryComplexStudents<queryComplexStudents( E, F, G, H, K, ID )>
+queryInstance<queryInstance( X, C )> { owlClassAssertion<owlClassAssertion( X, C, true )>, queryInstance<queryInstance( X, C )> } --> built-in<afficher( "true" )>
+owlDataPropertyAssertion<owlDataPropertyAssertion( X, P, Y )> { logicalName<logicalName( URIX, X )>, queryDataAssertion<queryDataAssertion( P, ID )>, owlDataPropertyAssertion<owlDataPropertyAssertion( X, P, Y )>, owlDisjointDataProperty<owlDisjointDataProperty( A, B )>, owlSameIndividual<owlSameIndividual( X, Y )>, owlDataValue<owlDataValue( W, ValW, TypeW )>, owlDataPropertyRange<owlDataPropertyRange( P, DR )>, owlSubDataPropertyOf<owlSubDataPropertyOf( P2, P1 )>, owlHasKeyCheck<owlHasKeyCheck( C, X, Y, I, N )>, owlFunctionalDataProperty<owlFunctionalDataProperty( P )>, owlDataMaxCardinality<owlDataMaxCardinality( C, P, 0 )>, owlDataSomeValuesFrom<owlDataSomeValuesFrom( C, P, DR )>, owlDataPropertyDomain<owlDataPropertyDomain( P, DP )>, owlClassAssertion<owlClassAssertion( U, C, true )>, owlNegativeDataAssertion<owlNegativeDataAssertion( X, P, Y )>, owlHasKey<owlHasKey( C, P, I, N )> } --> owlHasKeyCheck<owlHasKeyCheck( C, X, Y, ( I + 1 ), N )>, owlDataValue<owlDataValue( Y, ( ( *Y ) . val ), ( ( *Y ) . typeVal ) )>, ResultVec<ResultVec( makeVec( URIX, valueToString( Y ) ), ID )>, owlDataPropertyAssertion<owlDataPropertyAssertion( X, P1, Y )>, owlClassAssertion<owlClassAssertion( X, DP, true )>
+querySubClassOfClass<querySubClassOfClass( X, Y )> { owlSubclassOf<owlSubclassOf( X, Y )>, querySubClassOfClass<querySubClassOfClass( X, Y )> } --> built-in<afficher( "true" )>
 queryComplexStudentsUri<queryComplexStudentsUri( URIE, URIF, URIG, URIH, URIK )> --> queryComplexStudentsWithId<queryComplexStudentsWithId( URIE, URIF, URIG, URIH, URIK, get_next_id(  ) )>
 owlFunctionalObjectProperty<owlFunctionalObjectProperty( P )> { owlObjectPropertyAssertion<owlObjectPropertyAssertion( X, P, Y )>, owlFunctionalObjectProperty<owlFunctionalObjectProperty( P )> } --> owlSameIndividual<owlSameIndividual( Y, Z )>
 queryClassification<queryClassification( X )> { logicalName<logicalName( URIC, C )>, owlClassAssertion<owlClassAssertion( X, C, true )>, queryClassification<queryClassification( X )> } --> queryEquivalentClass<queryEquivalentClass( C )>, querySuperClassOf<querySuperClassOf( C )>, res<res( URIC )>
@@ -90,20 +97,17 @@ owlInverseFunctionalObjectProperty<owlInverseFunctionalObjectProperty( P )> { ow
 owlObjectAllValuesFrom<owlObjectAllValuesFrom( C, P, Y )> { owlObjectAllValuesFrom<owlObjectAllValuesFrom( C, P, Y )> } -->
 owlDataAllValuesFrom<owlDataAllValuesFrom( C, P, DR )> { owlDataAllValuesFrom<owlDataAllValuesFrom( C, P, DR )> } -->
 queryEngineeringStudentsWithId<queryEngineeringStudentsWithId( URIE, URIF, URIG, URIH, URIK, get_next_id(  ) )> { logicalName<logicalName( URIE, E )> } --> queryEngineeringStudents<queryEngineeringStudents( E, F, G, H, K, ID )>
-owlSubclassOf<owlSubclassOf( A, B )> { classification<classification(  )>, owlSubclassOf<owlSubclassOf( A, B )>, owlSubObjectPropertyOf<owlSubObjectPropertyOf( P1, P2 )>, owlObjectPropertyRange<owlObjectPropertyRange( P, C1 )>, owlClassAssertion<owlClassAssertion( X, A, true )>, owlIntersectionClass<owlIntersectionClass( C1, Component, _ )>, owlObjectPropertyDomain<owlObjectPropertyDomain( P, C1 )>, intersectionSubclassCheck<intersectionSubclassCheck( C, A, I )>, owlHasValueObject<owlHasValueObject( C, P, A )>, owlUnionClass<owlUnionClass( C, V )>, owlObjectSomeValuesFrom<owlObjectSomeValuesFrom( SV, P, Y2 )>, logicalName<logicalName( URIY, Y )>, querySuperClassOf<querySuperClassOf( X )>, querySubClassOf<querySubClassOf( X )> } --> resultClassification<resultClassification( URIX, URIY )>, querySubClassOf<querySubClassOf( Y )>, queryEquivalentClass<queryEquivalentClass( X )>, querySuperClassOf<querySuperClassOf( Y )>, intersectionSubclassCheck<intersectionSubclassCheck( C, A, 1 )>, res<res( URIY )>, owlObjectPropertyDomain<owlObjectPropertyDomain( P, C2 )>, owlEquivalentClass<owlEquivalentClass( A, B )>, owlSubclassOf<owlSubclassOf( A, C )>, owlClassAssertion<owlClassAssertion( X, B, true )>, owlObjectPropertyRange<owlObjectPropertyRange( P, C2 )>, owlClass<owlClass( C1 )>
-querySuperClassOfUri<querySuperClassOfUri( URI )> { logicalName<logicalName( URIC, X )>, querySuperClassOfUri<querySuperClassOfUri( URI )> } --> res<res( ( std :: string( "owl:Thing" ) ) )>, querySuperClassOf<querySuperClassOf( X )>
+owlSubclassOf<owlSubclassOf( A, B )> { classification<classification(  )>, querySubClassOfClass<querySubClassOfClass( X, Y )>, owlSubclassOf<owlSubclassOf( A, B )>, owlSubObjectPropertyOf<owlSubObjectPropertyOf( P1, P2 )>, owlObjectPropertyRange<owlObjectPropertyRange( P, C1 )>, owlClassAssertion<owlClassAssertion( X, A, true )>, querySubClassOf<querySubClassOf( X )>, querySuperClassOfClass<querySuperClassOfClass( X, Y )>, owlIntersectionClass<owlIntersectionClass( C1, Component, _ )>, owlObjectPropertyDomain<owlObjectPropertyDomain( P, C1 )>, intersectionSubclassCheck<intersectionSubclassCheck( C, A, I )>, owlHasValueObject<owlHasValueObject( C, P, A )>, owlUnionClass<owlUnionClass( C, V )>, owlObjectSomeValuesFrom<owlObjectSomeValuesFrom( SV, P, Y2 )>, logicalName<logicalName( URIY, Y )>, querySuperClassOf<querySuperClassOf( X )> } --> querySubClassOf<querySubClassOf( Y )>, resultClassification<resultClassification( URIX, URIY )>, built-in<afficher( "true" )>, queryEquivalentClass<queryEquivalentClass( X )>, querySuperClassOf<querySuperClassOf( Y )>, intersectionSubclassCheck<intersectionSubclassCheck( C, A, 1 )>, res<res( URIY )>, owlObjectPropertyDomain<owlObjectPropertyDomain( P, C2 )>, owlEquivalentClass<owlEquivalentClass( A, B )>, owlSubclassOf<owlSubclassOf( A, C )>, owlClassAssertion<owlClassAssertion( X, B, true )>, owlObjectPropertyRange<owlObjectPropertyRange( P, C2 )>, owlClass<owlClass( C1 )>
+querySuperClassOfUri<querySuperClassOfUri( URI )> { logicalName<logicalName( URIC, X )>, querySuperClassOfUri<querySuperClassOfUri( URI )> } --> res<res( URIC )>, querySuperClassOf<querySuperClassOf( X )>
+queryObjAssertionSubjectUri<queryObjAssertionSubjectUri( URIP, URIO )> { queryObjAssertionSubjectUri<queryObjAssertionSubjectUri( URIP, URIO )> } --> queryObjAssertionSubjectWithId<queryObjAssertionSubjectWithId( URIP, URIO, get_next_id(  ) )>
+owlDataPropertyRange<owlDataPropertyRange( P, R )> { owlDataPropertyAssertion<owlDataPropertyAssertion( _, P, Y )>, owlSubDataPropertyOf<owlSubDataPropertyOf( P1, P2 )>, owlDataPropertyRange<owlDataPropertyRange( P, R )> } --> owlDataPropertyRange<owlDataPropertyRange( P1, C )>
+querySuperClassOfClass<querySuperClassOfClass( X, Y )> { owlSubclassOf<owlSubclassOf( Y, X )>, querySuperClassOfClass<querySuperClassOfClass( X, Y )> } --> built-in<afficher( "true" )>
 owlReflexiveObjectProperty<owlReflexiveObjectProperty( P )> { owlObjectPropertyAssertion<owlObjectPropertyAssertion( X, P, Y )>, owlReflexiveObjectProperty<owlReflexiveObjectProperty( P )> } --> owlObjectPropertyAssertion<owlObjectPropertyAssertion( X, P, X )>
-querySuperClassOf<querySuperClassOf( X )> { owlSubclassOf<owlSubclassOf( X, Y )>, logicalName<logicalName( URIC, X )>, querySuperClassOf<querySuperClassOf( X )> } --> queryEquivalentClass<queryEquivalentClass( X )>, querySuperClassOf<querySuperClassOf( Y )>, res<res( URIC )>
+querySuperClassOf<querySuperClassOf( X )> { logicalName<logicalName( URIY, Y )>, owlSubclassOf<owlSubclassOf( X, Y )>, querySuperClassOf<querySuperClassOf( X )> } --> res<res( URIY )>, queryEquivalentClass<queryEquivalentClass( X )>, querySuperClassOf<querySuperClassOf( Y )>
 owlAsymmetricObjectProperty<owlAsymmetricObjectProperty( P )> { owlObjectPropertyAssertion<owlObjectPropertyAssertion( X, P, Y )>, owlAsymmetricObjectProperty<owlAsymmetricObjectProperty( P )> } --> owlNegativeObjectAssertion<owlNegativeObjectAssertion( Y, P, X )>
 querySubClassOf<querySubClassOf( X )> { logicalName<logicalName( URIY, Y )>, owlSubclassOf<owlSubclassOf( Y, X )>, querySubClassOf<querySubClassOf( X )> } --> res<res( URIY )>, queryEquivalentClass<queryEquivalentClass( X )>, querySubClassOf<querySubClassOf( Y )>
 querySubClassOfUri<querySubClassOfUri( URI )> { logicalName<logicalName( URIC, X )>, querySubClassOfUri<querySubClassOfUri( URI )> } --> res<res( URIC )>, querySubClassOf<querySubClassOf( X )>
 queryClassificationUri<queryClassificationUri( URI )> { logicalName<logicalName( URIX, X )>, queryClassificationUri<queryClassificationUri( URI )> } --> queryClassification<queryClassification( X )>
-queryClassificationTempUri<queryClassificationTempUri( URI )> { queryClassificationTempUri<queryClassificationTempUri( URI )> } -->
-queryInstanceURI<queryInstanceURI( URIX, URIC )> { logicalName<logicalName( URIC, C )>, queryInstanceURI<queryInstanceURI( URIX, URIC )> } --> queryInstance<queryInstance( X, C )>
-queryComplexStudentsWithId<queryComplexStudentsWithId( URIE, URIF, URIG, URIH, URIK, get_next_id(  ) )> { logicalName<logicalName( URIE, E )> } --> queryComplexStudents<queryComplexStudents( E, F, G, H, K, ID )>
-owlDataPropertyAssertion<owlDataPropertyAssertion( X, P, Y )> { logicalName<logicalName( URIX, X )>, queryDataAssertion<queryDataAssertion( P, ID )>, owlDataPropertyAssertion<owlDataPropertyAssertion( X, P, Y )>, owlDisjointDataProperty<owlDisjointDataProperty( A, B )>, owlSameIndividual<owlSameIndividual( X, Y )>, owlDataValue<owlDataValue( W, ValW, TypeW )>, owlDataPropertyRange<owlDataPropertyRange( P, DR )>, owlSubDataPropertyOf<owlSubDataPropertyOf( P2, P1 )>, owlHasKeyCheck<owlHasKeyCheck( C, X, Y, I, N )>, owlFunctionalDataProperty<owlFunctionalDataProperty( P )>, owlDataMaxCardinality<owlDataMaxCardinality( C, P, 0 )>, owlDataSomeValuesFrom<owlDataSomeValuesFrom( C, P, DR )>, owlDataPropertyDomain<owlDataPropertyDomain( P, DP )>, owlClassAssertion<owlClassAssertion( U, C, true )>, owlNegativeDataAssertion<owlNegativeDataAssertion( X, P, Y )>, owlHasKey<owlHasKey( C, P, I, N )> } --> owlHasKeyCheck<owlHasKeyCheck( C, X, Y, ( I + 1 ), N )>, owlDataValue<owlDataValue( Y, ( ( *Y ) . val ), ( ( *Y ) . typeVal ) )>, ResultVec<ResultVec( makeVec( URIX, valueToString( Y ) ), ID )>, owlDataPropertyAssertion<owlDataPropertyAssertion( X, P1, Y )>, owlClassAssertion<owlClassAssertion( X, DP, true )>
-queryInstance<queryInstance( X, C )> { owlClassAssertion<owlClassAssertion( X, C, true )>, queryInstance<queryInstance( X, C )> } --> built-in<afficher( "true" )>
-queryInstances<queryInstances( C, ID )> { logicalName<logicalName( URIX, X )>, owlClassAssertion<owlClassAssertion( X, C, true )>, queryInstances<queryInstances( C, ID )> } --> ResultVec<ResultVec( makeVec( URIX, emptyString ), ID )>
 
 (constraint) owlPrefix( ( ?int ), ( ?int ) ), indexes: { <0,1> }, persistent
 (constraint) owlClass( ( ?int ) ), indexes: { <0> }, persistent
@@ -163,10 +167,14 @@ queryInstances<queryInstances( C, ID )> { logicalName<logicalName( URIX, X )>, o
 (constraint) owlHasKey( ( ?int ), ( ?int ), ( +int ), ( +int ) ), indexes: { <0,2>, <0,1,2,3>, <0,2,3> }, persistent
 (constraint) owlHasKeyCheck( ( ?int ), ( ?int ), ( ?int ), ( +int ), ( +int ) ), indexes: { <1,2>, <0,3,4>, <0,1,2,3,4> }, persistent
 (constraint) querySuperClassOfUri( ( +( std :: string ) ) ), indexes: { <0> }, persistent
+(constraint) querySuperClassOfClassUri( ( +( std :: string ) ), ( +( std :: string ) ) ), indexes: { <0,1> }, persistent
 (constraint) querySubClassOfUri( ( +( std :: string ) ) ), indexes: { <0> }, persistent
+(constraint) querySubClassOfClassUri( ( +( std :: string ) ), ( +( std :: string ) ) ), indexes: { <0,1> }, persistent
 (constraint) querySuperClassOf( ( ?int ) ), indexes: { <0> }, persistent
 (constraint) querySuperClassOfReal( ( ?int ), ( ?int ) ), indexes: { <0,1> }, persistent
 (constraint) querySubClassOf( ( ?int ) ), indexes: { <0> }, persistent
+(constraint) ##querySubClassOfClass( ( ?int ), ( ?int ) ), indexes: { <0,1> }, persistent
+(constraint) ##querySuperClassOfClass( ( ?int ), ( ?int ) ), indexes: { <0,1> }, persistent
 (constraint) queryClassification( ( ?int ) ), indexes: { <0> }, persistent
 (constraint) queryClassificationReal( ( ?int ) ), indexes: { <0> }, persistent
 (constraint) queryClassificationUri( ( +( std :: string ) ) ), indexes: { <0> }, persistent
@@ -259,6 +267,10 @@ queryInstances<queryInstances( C, ID )> { logicalName<logicalName( URIX, X )>, o
 (rule) querySuperClassOf( X ) \ querySuperClassOf( X ) <=> true ;;
 (rule) querySubClassOf( X ) \ querySubClassOf( X ) <=> true ;;
 (rule) querySubClassOfUri( URI ) \ querySubClassOfUri( URI ) <=> true ;;
+(rule) querySubClassOfClass( X, Y ) \ querySubClassOfClass( X, Y ) <=> true ;;
+(rule) querySubClassOfClassUri( URIX, URIY ) \ querySubClassOfClassUri( URIX, URIY ) <=> true ;;
+(rule) querySuperClassOfClass( X, Y ) \ querySuperClassOfClass( X, Y ) <=> true ;;
+(rule) querySuperClassOfClassUri( URIX, URIY ) \ querySuperClassOfClassUri( URIX, URIY ) <=> true ;;
 (rule) queryClassification( X ) \ queryClassification( X ) <=> true ;;
 (rule) queryClassificationUri( URI ) \ queryClassificationUri( URI ) <=> true ;;
 (rule) queryClassificationTemp( X ) \ queryClassificationTemp( X ) <=> true ;;
@@ -398,12 +410,17 @@ queryInstances<queryInstances( C, ID )> { logicalName<logicalName( URIX, X )>, o
 (rule) owlDataPropertyAssertion( X, P, V ), owlDataPropertyAssertion( Y, P, V ), owlHasKey( C, P, I, N ) \ owlHasKeyCheck( C, X, Y, I, N ) <=> owlHasKeyCheck( C, X, Y, ( I + 1 ), N ) ;;
 (rule) owlHasKeyCheck( C, X, Y, N, N ) <=> owlSameIndividual( X, Y ) ;;
 (rule) res( URIC ) ==> afficher( URIC ) ;;
-(rule) querySuperClassOfUri( URIC ), logicalName( URIC, X ) ==> ( querySuperClassOf( X ), res( ( std :: string( "owl:Thing" ) ) ) ) ;;
-(rule) querySuperClassOf( X ), logicalName( URIC, X ) ==> res( URIC ) ;;
-(rule) querySuperClassOf( X ), owlSubclassOf( X, Y ) ==> ( !( X == Y ) ) | ( querySuperClassOf( Y ), queryEquivalentClass( X ) ) ;;
+(rule) querySuperClassOfUri( URIC ), logicalName( URIC, X ) ==> ( querySuperClassOf( X ), res( URIC ) ) ;;
+(rule) querySuperClassOf( X ), owlSubclassOf( X, Y ), logicalName( URIY, Y ) ==> ( !( X == Y ) ) | ( querySuperClassOf( Y ), queryEquivalentClass( X ), res( URIY ) ) ;;
+(rule) r_querySuperClassOfClassURI @ logicalName( URIX, X ), logicalName( URIY, Y ) \ querySuperClassOfClassUri( URIX, URIY ) <=> querySuperClassOfClass( X, Y ) ;;
+(rule) owlSubclassOf( Y, X ) \ querySuperClassOfClass( X, Y ) <=> afficher( "true" ) ;;
+(rule) querySuperClassOfClass( X, Y ) <=> afficher( "false" ) ;;
 (rule) queryEquivalentClass( X ), owlEquivalentClass( X, Y ), logicalName( URIY, Y ) ==> ( !( X == Y ) ) | res( URIY ) ;;
 (rule) querySubClassOfUri( URIC ), logicalName( URIC, X ) ==> ( querySubClassOf( X ), res( URIC ) ) ;;
 (rule) r_querySubClassOf1 @ querySubClassOf( X ), owlSubclassOf( Y, X ), logicalName( URIY, Y ) ==> ( !( X == Y ) ) | ( querySubClassOf( Y ), queryEquivalentClass( X ), res( URIY ) ) ;;
+(rule) r_querySubClassOfClassURI @ logicalName( URIX, X ), logicalName( URIY, Y ) \ querySubClassOfClassUri( URIX, URIY ) <=> querySubClassOfClass( X, Y ) ;;
+(rule) owlSubclassOf( X, Y ) \ querySubClassOfClass( X, Y ) <=> afficher( "true" ) ;;
+(rule) querySubClassOfClass( X, Y ) <=> afficher( "false" ) ;;
 (rule) queryClassificationUri( URIX ), logicalName( URIX, X ) ==> queryClassification( X ) ;;
 (rule) r_queryClassification1 @ queryClassification( X ), owlClassAssertion( X, C, true ), logicalName( URIC, C ) ==> ( res( URIC ), querySuperClassOf( C ), queryEquivalentClass( C ) ) ;;
 (rule) rule1 @ logicalName( URIC, C ), logicalName( URIX, X ) \ queryInstanceURI( URIX, URIC ) <=> queryInstance( X, C ) ;;
@@ -739,10 +756,10 @@ queryInstances<queryInstances( C, ID )> { logicalName<logicalName( URIX, X )>, o
 (occ rule) r8b @ [+owlSubclassOf( A, V )#12][+owlIntersectionClass( C, V, I )<idx#3>, ( I > 0 ), +intersectionSubclassCheck( C, A, I )<idx#0>] --> intersectionSubclassCheck( C, A, ( I + 1 ) ) ;;
 (occ rule) hasValueSubsumptionClass @ [+owlSubclassOf( Y1, Y2 )#13][+owlClassAssertion( A, Y1, true )<idx#1>, +owlHasValueObject( C, P, A )<idx#1>, +owlObjectSomeValuesFrom( SV, P, Y2 )<idx#2>] --> owlSubclassOf( C, SV ) ;;
 (occ rule) hasValueSubsumptionPropClass @ [+owlSubclassOf( Y1, Y2 )#14][+owlClassAssertion( A, Y1, true )<idx#1>, +owlHasValueObject( C, P1, A )<idx#1>, +owlSubObjectPropertyOf( P1, P2 )<idx#0>, +owlObjectSomeValuesFrom( SV, P2, Y2 )<idx#2>] --> owlSubclassOf( C, SV ) ;;
-(occ rule) [+owlSubclassOf( X, Y )#15][( !( X == Y ) ), +querySuperClassOf( X )<idx#0>] --> ( querySuperClassOf( Y ), queryEquivalentClass( X ) ) ;;
-(occ rule) r_querySubClassOf1 @ [+owlSubclassOf( Y, X )#16][( !( X == Y ) ), +querySubClassOf( X )<idx#0>, +logicalName( URIY, Y )<idx#1>#passive] --> ( querySubClassOf( Y ), queryEquivalentClass( X ), res( URIY ) ) ;;
-(occ rule) [+owlSubclassOf( X, Y )#17][+logicalName( owlNothing, OwlNothingVar )<idx#0>#passive, +logicalName( URIX, X )<idx#1>#passive, ( !( URIX == owlNothing ) ), +logicalName( URIY, Y )<idx#1>#passive, +classification(  )] --> resultClassification( URIX, URIY ) ;;
-(occ rule) [+owlSubclassOf( X, X )#18][+logicalName( URIX, X )<idx#1>#passive, +classification(  )] --> resultClassification( URIX, URIX ) ;;
+(occ rule) [+owlSubclassOf( X, Y )#15][( !( X == Y ) ), +querySuperClassOf( X )<idx#0>, +logicalName( URIY, Y )<idx#1>#passive] --> ( querySuperClassOf( Y ), queryEquivalentClass( X ), res( URIY ) ) ;;
+(occ rule) r_querySubClassOf1 @ [+owlSubclassOf( Y, X )#17][( !( X == Y ) ), +querySubClassOf( X )<idx#0>, +logicalName( URIY, Y )<idx#1>#passive] --> ( querySubClassOf( Y ), queryEquivalentClass( X ), res( URIY ) ) ;;
+(occ rule) [+owlSubclassOf( X, Y )#19][+logicalName( owlNothing, OwlNothingVar )<idx#0>#passive, +logicalName( URIX, X )<idx#1>#passive, ( !( URIX == owlNothing ) ), +logicalName( URIY, Y )<idx#1>#passive, +classification(  )] --> resultClassification( URIX, URIY ) ;;
+(occ rule) [+owlSubclassOf( X, X )#20][+logicalName( URIX, X )<idx#1>#passive, +classification(  )] --> resultClassification( URIX, URIX ) ;;
 (occ rule) [-owlSymmetricObjectProperty( P )#0][+owlSymmetricObjectProperty( P )<idx#0>#passive] --> true ;;
 (occ rule) symmetricProperty @ [+owlSymmetricObjectProperty( P )#1][+owlObjectPropertyAssertion( X, P, Y )<idx#3>] --> owlObjectPropertyAssertion( Y, P, X ) ;;
 (occ rule) [-owlTransitiveObjectProperty( P )#0][+owlTransitiveObjectProperty( P )<idx#0>#passive] --> true ;;
@@ -810,6 +827,10 @@ queryInstances<queryInstances( C, ID )> { logicalName<logicalName( URIX, X )>, o
 (occ rule) [-queryObjAssertionWithId( URIP, ID )#1][] --> success ;;
 (occ rule) [-querySubClassOf( X )#0][+querySubClassOf( X )<idx#0>#passive] --> true ;;
 (occ rule) r_querySubClassOf1 @ [+querySubClassOf( X )#1][+owlSubclassOf( Y, X )<idx#2>, ( !( X == Y ) ), +logicalName( URIY, Y )<idx#1>#passive] --> ( querySubClassOf( Y ), queryEquivalentClass( X ), res( URIY ) ) ;;
+(occ rule) [-querySubClassOfClass( X, Y )#1][+owlSubclassOf( X, Y )<idx#0>] --> afficher( "true" ) ;;
+(occ rule) [-querySubClassOfClass( X, Y )#2][] --> afficher( "false" ) ;;
+(occ rule) [-querySubClassOfClassUri( URIX, URIY )#0][+querySubClassOfClassUri( URIX, URIY )<idx#0>#passive] --> true ;;
+(occ rule) r_querySubClassOfClassURI @ [-querySubClassOfClassUri( URIX, URIY )#1][+logicalName( URIX, X )<idx#0>#passive, +logicalName( URIY, Y )<idx#0>#passive] --> querySubClassOfClass( X, Y ) ;;
 (occ rule) [-querySubClassOfUri( URI )#0][+querySubClassOfUri( URI )<idx#0>#passive] --> true ;;
 (occ rule) [+querySubClassOfUri( URIC )#1][+logicalName( URIC, X )<idx#0>#passive] --> ( querySubClassOf( X ), res( URIC ) ) ;;
 (occ rule) [-querySubjectByObject( P, ID )#0][+querySubjectByObject( P, ID )<idx#1>#passive] --> true ;;
@@ -819,11 +840,14 @@ queryInstances<queryInstances( C, ID )> { logicalName<logicalName( URIX, X )>, o
 (occ rule) [-querySubjectByObjectWithId( URIP, ID )#0][+logicalName( URIP, P )<idx#0>] --> querySubjectByObject( P, ID ) ;;
 (occ rule) [-querySubjectByObjectWithId( URIP, ID )#1][] --> success ;;
 (occ rule) [-querySuperClassOf( X )#0][+querySuperClassOf( X )<idx#0>#passive] --> true ;;
-(occ rule) [+querySuperClassOf( X )#1][+logicalName( URIC, X )<idx#1>#passive] --> res( URIC ) ;;
-(occ rule) [+querySuperClassOf( X )#2][+owlSubclassOf( X, Y )<idx#1>, ( !( X == Y ) )] --> ( querySuperClassOf( Y ), queryEquivalentClass( X ) ) ;;
+(occ rule) [+querySuperClassOf( X )#1][+owlSubclassOf( X, Y )<idx#1>, ( !( X == Y ) ), +logicalName( URIY, Y )<idx#1>#passive] --> ( querySuperClassOf( Y ), queryEquivalentClass( X ), res( URIY ) ) ;;
+(occ rule) [-querySuperClassOfClass( X, Y )#1][+owlSubclassOf( Y, X )<idx#0>] --> afficher( "true" ) ;;
+(occ rule) [-querySuperClassOfClass( X, Y )#2][] --> afficher( "false" ) ;;
+(occ rule) [-querySuperClassOfClassUri( URIX, URIY )#0][+querySuperClassOfClassUri( URIX, URIY )<idx#0>#passive] --> true ;;
+(occ rule) r_querySuperClassOfClassURI @ [-querySuperClassOfClassUri( URIX, URIY )#1][+logicalName( URIX, X )<idx#0>#passive, +logicalName( URIY, Y )<idx#0>#passive] --> querySuperClassOfClass( X, Y ) ;;
 (occ rule) [-querySuperClassOfReal( I, C )#0][+querySuperClassOfReal( I, C )<idx#0>#passive] --> true ;;
 (occ rule) [-querySuperClassOfUri( URI )#0][+querySuperClassOfUri( URI )<idx#0>#passive] --> true ;;
-(occ rule) [+querySuperClassOfUri( URIC )#1][+logicalName( URIC, X )<idx#0>#passive] --> ( querySuperClassOf( X ), res( ( std :: string( "owl:Thing" ) ) ) ) ;;
+(occ rule) [+querySuperClassOfUri( URIC )#1][+logicalName( URIC, X )<idx#0>#passive] --> ( querySuperClassOf( X ), res( URIC ) ) ;;
 (occ rule) realisation @ [+realisation(  )#0][+owlClassAssertion( X, C, true )<idx#3>, +logicalName( URIC, C )<idx#1>#passive, +logicalName( URIX, X )<idx#1>#passive] --> resultRealisation( URIX, URIC ) ;;
 (occ rule) realisationPunning @ [+realisation(  )#1][+owlClassAssertion( X, X, true )<idx#3>, +logicalName( URI, X )<idx#1>#passive] --> resultRealisation( URI, URI ) ;;
 (occ rule) [-res( X )#0][+res( X )<idx#0>#passive] --> true ;;
@@ -892,10 +916,14 @@ queryInstances<queryInstances( C, ID )> { logicalName<logicalName( URIX, X )>, o
 (constraint store) owlHasKey( ( ?int ), ( ?int ), ( +int ), ( +int ) ), indexes: { <0,2>, <0,1,2,3>, <0,2,3> }, persistent
 (constraint store) owlHasKeyCheck( ( ?int ), ( ?int ), ( ?int ), ( +int ), ( +int ) ), indexes: { <1,2>, <0,3,4>, <0,1,2,3,4> }, persistent
 (constraint store) querySuperClassOfUri( ( +( std :: string ) ) ), indexes: { <0> }, persistent
+(constraint store) querySuperClassOfClassUri( ( +( std :: string ) ), ( +( std :: string ) ) ), indexes: { <0,1> }, persistent
 (constraint store) querySubClassOfUri( ( +( std :: string ) ) ), indexes: { <0> }, persistent
+(constraint store) querySubClassOfClassUri( ( +( std :: string ) ), ( +( std :: string ) ) ), indexes: { <0,1> }, persistent
 (constraint store) querySuperClassOf( ( ?int ) ), indexes: { <0> }, persistent
 (constraint store) querySuperClassOfReal( ( ?int ), ( ?int ) ), indexes: { <0,1> }, persistent
 (constraint store) querySubClassOf( ( ?int ) ), indexes: { <0> }, persistent
+(constraint store) querySubClassOfClass( ( ?int ), ( ?int ) ), indexes: { <0,1> }, persistent
+(constraint store) querySuperClassOfClass( ( ?int ), ( ?int ) ), indexes: { <0,1> }, persistent
 (constraint store) queryClassification( ( ?int ) ), indexes: { <0> }, persistent
 (constraint store) queryClassificationReal( ( ?int ) ), indexes: { <0> }, persistent
 (constraint store) queryClassificationUri( ( +( std :: string ) ) ), indexes: { <0> }, persistent
@@ -2364,6 +2392,31 @@ public:
 	};
 private:
 	chr::Shared_obj< typename querySuperClassOfUri::Constraint_store_t > querySuperClassOfUri_constraint_store{ chr::make_shared< typename querySuperClassOfUri::Constraint_store_t >("querySuperClassOfUri") };
+	//(constraint store) querySuperClassOfClassUri( ( +( std :: string ) ), ( +( std :: string ) ) ), indexes: { <0,1> }, persistent
+public:
+	struct querySuperClassOfClassUri {
+		using Type = typename std::tuple< unsigned long int, chr::Logical_var_ground< std :: string >, chr::Logical_var_ground< std :: string > >;
+		using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,1> >, false >;
+		class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+		public:
+			Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it) : _space(space), _it( std::move(it) ) { assert((space != nullptr) && _it.alive()); _it.lock(); }
+			Constraint_callback(const Constraint_callback&) =delete;
+			void operator=(const Constraint_callback&) =delete;
+			~Constraint_callback() { if (!_space.expired() && _space->querySuperClassOfClassUri_constraint_store && _space->querySuperClassOfClassUri_constraint_store->depth() >= chr::Backtrack::depth()) _it.unlock(); }
+			unsigned char run() override {
+				if (_space.expired()) return 0;
+				if (!_it.alive()) return 0;
+				auto& cc = const_cast< Type& >(*_it);
+				if ( _space->do_querySuperClassOfClassUri(cc, _it) == chr::ES_CHR::FAILURE ) { return 2; }
+				return 1;
+			}
+		private:
+			chr::Weak_obj< OWL2 > _space;
+			typename Constraint_store_t::iterator _it;
+		};
+	};
+private:
+	chr::Shared_obj< typename querySuperClassOfClassUri::Constraint_store_t > querySuperClassOfClassUri_constraint_store{ chr::make_shared< typename querySuperClassOfClassUri::Constraint_store_t >("querySuperClassOfClassUri") };
 	//(constraint store) querySubClassOfUri( ( +( std :: string ) ) ), indexes: { <0> }, persistent
 public:
 	struct querySubClassOfUri {
@@ -2389,6 +2442,31 @@ public:
 	};
 private:
 	chr::Shared_obj< typename querySubClassOfUri::Constraint_store_t > querySubClassOfUri_constraint_store{ chr::make_shared< typename querySubClassOfUri::Constraint_store_t >("querySubClassOfUri") };
+	//(constraint store) querySubClassOfClassUri( ( +( std :: string ) ), ( +( std :: string ) ) ), indexes: { <0,1> }, persistent
+public:
+	struct querySubClassOfClassUri {
+		using Type = typename std::tuple< unsigned long int, chr::Logical_var_ground< std :: string >, chr::Logical_var_ground< std :: string > >;
+		using Constraint_store_t = typename chr::Constraint_store_index< Type, std::tuple< chr::LNS::Index<0,1> >, false >;
+		class Constraint_callback : public chr::Logical_var_imp_observer_constraint {
+		public:
+			Constraint_callback(OWL2* space, typename Constraint_store_t::iterator& it) : _space(space), _it( std::move(it) ) { assert((space != nullptr) && _it.alive()); _it.lock(); }
+			Constraint_callback(const Constraint_callback&) =delete;
+			void operator=(const Constraint_callback&) =delete;
+			~Constraint_callback() { if (!_space.expired() && _space->querySubClassOfClassUri_constraint_store && _space->querySubClassOfClassUri_constraint_store->depth() >= chr::Backtrack::depth()) _it.unlock(); }
+			unsigned char run() override {
+				if (_space.expired()) return 0;
+				if (!_it.alive()) return 0;
+				auto& cc = const_cast< Type& >(*_it);
+				if ( _space->do_querySubClassOfClassUri(cc, _it) == chr::ES_CHR::FAILURE ) { return 2; }
+				return 1;
+			}
+		private:
+			chr::Weak_obj< OWL2 > _space;
+			typename Constraint_store_t::iterator _it;
+		};
+	};
+private:
+	chr::Shared_obj< typename querySubClassOfClassUri::Constraint_store_t > querySubClassOfClassUri_constraint_store{ chr::make_shared< typename querySubClassOfClassUri::Constraint_store_t >("querySubClassOfClassUri") };
 	//(constraint store) querySuperClassOf( ( ?int ) ), indexes: { <0> }, persistent
 public:
 	struct querySuperClassOf {
@@ -2464,6 +2542,16 @@ public:
 	};
 private:
 	chr::Shared_obj< typename querySubClassOf::Constraint_store_t > querySubClassOf_constraint_store{ chr::make_shared< typename querySubClassOf::Constraint_store_t >("querySubClassOf") };
+	//(constraint store) querySubClassOfClass( ( ?int ), ( ?int ) ), indexes: { <0,1> }, persistent
+public:
+	struct querySubClassOfClass {
+		using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int > >;
+	};
+	//(constraint store) querySuperClassOfClass( ( ?int ), ( ?int ) ), indexes: { <0,1> }, persistent
+public:
+	struct querySuperClassOfClass {
+		using Type = typename std::tuple< unsigned long int, chr::Logical_var< int >, chr::Logical_var< int > >;
+	};
 	//(constraint store) queryClassification( ( ?int ) ), indexes: { <0> }, persistent
 public:
 	struct queryClassification {
@@ -3250,7 +3338,9 @@ public:
 		owlHasKey_constraint_store.release();
 		owlHasKeyCheck_constraint_store.release();
 		querySuperClassOfUri_constraint_store.release();
+		querySuperClassOfClassUri_constraint_store.release();
 		querySubClassOfUri_constraint_store.release();
+		querySubClassOfClassUri_constraint_store.release();
 		querySuperClassOf_constraint_store.release();
 		querySuperClassOfReal_constraint_store.release();
 		querySubClassOf_constraint_store.release();
@@ -3282,7 +3372,7 @@ public:
 		ResultVec_constraint_store.release();
 	}
 	static chr::Shared_obj<OWL2> create() { return chr::make_shared<OWL2>(); }
-	chr::Constraint_stores_iterator<chr::Shared_obj<typename owlPrefix::Constraint_store_t>,chr::Shared_obj<typename owlClass::Constraint_store_t>,chr::Shared_obj<typename owlObjectProperty::Constraint_store_t>,chr::Shared_obj<typename owlDataProperty::Constraint_store_t>,chr::Shared_obj<typename owlNamedIndividual::Constraint_store_t>,chr::Shared_obj<typename owlSubclassOf::Constraint_store_t>,chr::Shared_obj<typename owlEquivalentClass::Constraint_store_t>,chr::Shared_obj<typename owlSubDataPropertyOf::Constraint_store_t>,chr::Shared_obj<typename owlSubObjectPropertyOf::Constraint_store_t>,chr::Shared_obj<typename owlEquivalentDataProperty::Constraint_store_t>,chr::Shared_obj<typename owlEquivalentObjectProperty::Constraint_store_t>,chr::Shared_obj<typename owlObjectPropertyDomain::Constraint_store_t>,chr::Shared_obj<typename owlDataPropertyDomain::Constraint_store_t>,chr::Shared_obj<typename owlObjectPropertyRange::Constraint_store_t>,chr::Shared_obj<typename owlClassAssertion::Constraint_store_t>,chr::Shared_obj<typename owlDisjointClass::Constraint_store_t>,chr::Shared_obj<typename owlNegativeObjectAssertion::Constraint_store_t>,chr::Shared_obj<typename owlObjectPropertyAssertion::Constraint_store_t>,chr::Shared_obj<typename owlSameIndividual::Constraint_store_t>,chr::Shared_obj<typename owlDifferentIndividual::Constraint_store_t>,chr::Shared_obj<typename owlInverseObjectProperty::Constraint_store_t>,chr::Shared_obj<typename owlSymmetricObjectProperty::Constraint_store_t>,chr::Shared_obj<typename owlAsymmetricObjectProperty::Constraint_store_t>,chr::Shared_obj<typename owlDisjointObjectProperty::Constraint_store_t>,chr::Shared_obj<typename owlDisjointDataProperty::Constraint_store_t>,chr::Shared_obj<typename owlReflexiveObjectProperty::Constraint_store_t>,chr::Shared_obj<typename owlIrreflexiveObjectProperty::Constraint_store_t>,chr::Shared_obj<typename owlFunctionalObjectProperty::Constraint_store_t>,chr::Shared_obj<typename owlFunctionalDataProperty::Constraint_store_t>,chr::Shared_obj<typename owlInverseFunctionalObjectProperty::Constraint_store_t>,chr::Shared_obj<typename owlTransitiveObjectProperty::Constraint_store_t>,chr::Shared_obj<typename owlDataPropertyAssertion::Constraint_store_t>,chr::Shared_obj<typename owlNegativeDataAssertion::Constraint_store_t>,chr::Shared_obj<typename owlDataPropertyRange::Constraint_store_t>,chr::Shared_obj<typename owlUnionClass::Constraint_store_t>,chr::Shared_obj<typename owlUnionOf::Constraint_store_t>,chr::Shared_obj<typename owlIntersectionOf::Constraint_store_t>,chr::Shared_obj<typename owlIntersectionClass::Constraint_store_t>,chr::Shared_obj<typename owlIntersectionOfLoop::Constraint_store_t>,chr::Shared_obj<typename intersectionSubclassCheck::Constraint_store_t>,chr::Shared_obj<typename owlCandidatsIntersection::Constraint_store_t>,chr::Shared_obj<typename owlObjectAllValuesFrom::Constraint_store_t>,chr::Shared_obj<typename owlDataAllValuesFrom::Constraint_store_t>,chr::Shared_obj<typename owlObjectSomeValuesFrom::Constraint_store_t>,chr::Shared_obj<typename owlDataSomeValuesFrom::Constraint_store_t>,chr::Shared_obj<typename owlDataValue::Constraint_store_t>,chr::Shared_obj<typename owlComplementOf::Constraint_store_t>,chr::Shared_obj<typename owlObjectMaxCardinality::Constraint_store_t>,chr::Shared_obj<typename owlDataMaxCardinality::Constraint_store_t>,chr::Shared_obj<typename owlHasValueObject::Constraint_store_t>,chr::Shared_obj<typename owlOneOf::Constraint_store_t>,chr::Shared_obj<typename owlObjectPropertyChain::Constraint_store_t>,chr::Shared_obj<typename constructPropertyChain::Constraint_store_t>,chr::Shared_obj<typename owlHasKey::Constraint_store_t>,chr::Shared_obj<typename owlHasKeyCheck::Constraint_store_t>,chr::Shared_obj<typename querySuperClassOfUri::Constraint_store_t>,chr::Shared_obj<typename querySubClassOfUri::Constraint_store_t>,chr::Shared_obj<typename querySuperClassOf::Constraint_store_t>,chr::Shared_obj<typename querySuperClassOfReal::Constraint_store_t>,chr::Shared_obj<typename querySubClassOf::Constraint_store_t>,chr::Shared_obj<typename queryClassification::Constraint_store_t>,chr::Shared_obj<typename queryClassificationReal::Constraint_store_t>,chr::Shared_obj<typename queryClassificationUri::Constraint_store_t>,chr::Shared_obj<typename queryClassificationTemp::Constraint_store_t>,chr::Shared_obj<typename queryClassificationTempUri::Constraint_store_t>,chr::Shared_obj<typename queryInstanceURI::Constraint_store_t>,chr::Shared_obj<typename queryInstances::Constraint_store_t>,chr::Shared_obj<typename queryObjAssertion::Constraint_store_t>,chr::Shared_obj<typename querySubjectByObject::Constraint_store_t>,chr::Shared_obj<typename queryDataAssertion::Constraint_store_t>,chr::Shared_obj<typename queryEngineeringStudents::Constraint_store_t>,chr::Shared_obj<typename queryComplexStudents::Constraint_store_t>,chr::Shared_obj<typename queryObjAssertionSubject::Constraint_store_t>,chr::Shared_obj<typename queryObjAssertionClassUri::Constraint_store_t>,chr::Shared_obj<typename queryObjAssertionClass::Constraint_store_t>,chr::Shared_obj<typename queryEquivalentClass::Constraint_store_t>,chr::Shared_obj<typename queryEquivalentClassReal::Constraint_store_t>,chr::Shared_obj<typename res::Constraint_store_t>,chr::Shared_obj<typename resultRealisation::Constraint_store_t>,chr::Shared_obj<typename classification::Constraint_store_t>,chr::Shared_obj<typename resultClassification::Constraint_store_t>,chr::Shared_obj<typename queryFullUri::Constraint_store_t>,chr::Shared_obj<typename logicalName::Constraint_store_t>,chr::Shared_obj<typename realisation::Constraint_store_t>,chr::Shared_obj<typename queryisMemberOf::Constraint_store_t>,chr::Shared_obj<typename ResultVec::Constraint_store_t>> chr_store_begin() { return chr::Constraint_stores_iterator(owlPrefix_constraint_store,owlClass_constraint_store,owlObjectProperty_constraint_store,owlDataProperty_constraint_store,owlNamedIndividual_constraint_store,owlSubclassOf_constraint_store,owlEquivalentClass_constraint_store,owlSubDataPropertyOf_constraint_store,owlSubObjectPropertyOf_constraint_store,owlEquivalentDataProperty_constraint_store,owlEquivalentObjectProperty_constraint_store,owlObjectPropertyDomain_constraint_store,owlDataPropertyDomain_constraint_store,owlObjectPropertyRange_constraint_store,owlClassAssertion_constraint_store,owlDisjointClass_constraint_store,owlNegativeObjectAssertion_constraint_store,owlObjectPropertyAssertion_constraint_store,owlSameIndividual_constraint_store,owlDifferentIndividual_constraint_store,owlInverseObjectProperty_constraint_store,owlSymmetricObjectProperty_constraint_store,owlAsymmetricObjectProperty_constraint_store,owlDisjointObjectProperty_constraint_store,owlDisjointDataProperty_constraint_store,owlReflexiveObjectProperty_constraint_store,owlIrreflexiveObjectProperty_constraint_store,owlFunctionalObjectProperty_constraint_store,owlFunctionalDataProperty_constraint_store,owlInverseFunctionalObjectProperty_constraint_store,owlTransitiveObjectProperty_constraint_store,owlDataPropertyAssertion_constraint_store,owlNegativeDataAssertion_constraint_store,owlDataPropertyRange_constraint_store,owlUnionClass_constraint_store,owlUnionOf_constraint_store,owlIntersectionOf_constraint_store,owlIntersectionClass_constraint_store,owlIntersectionOfLoop_constraint_store,intersectionSubclassCheck_constraint_store,owlCandidatsIntersection_constraint_store,owlObjectAllValuesFrom_constraint_store,owlDataAllValuesFrom_constraint_store,owlObjectSomeValuesFrom_constraint_store,owlDataSomeValuesFrom_constraint_store,owlDataValue_constraint_store,owlComplementOf_constraint_store,owlObjectMaxCardinality_constraint_store,owlDataMaxCardinality_constraint_store,owlHasValueObject_constraint_store,owlOneOf_constraint_store,owlObjectPropertyChain_constraint_store,constructPropertyChain_constraint_store,owlHasKey_constraint_store,owlHasKeyCheck_constraint_store,querySuperClassOfUri_constraint_store,querySubClassOfUri_constraint_store,querySuperClassOf_constraint_store,querySuperClassOfReal_constraint_store,querySubClassOf_constraint_store,queryClassification_constraint_store,queryClassificationReal_constraint_store,queryClassificationUri_constraint_store,queryClassificationTemp_constraint_store,queryClassificationTempUri_constraint_store,queryInstanceURI_constraint_store,queryInstances_constraint_store,queryObjAssertion_constraint_store,querySubjectByObject_constraint_store,queryDataAssertion_constraint_store,queryEngineeringStudents_constraint_store,queryComplexStudents_constraint_store,queryObjAssertionSubject_constraint_store,queryObjAssertionClassUri_constraint_store,queryObjAssertionClass_constraint_store,queryEquivalentClass_constraint_store,queryEquivalentClassReal_constraint_store,res_constraint_store,resultRealisation_constraint_store,classification_constraint_store,resultClassification_constraint_store,queryFullUri_constraint_store,logicalName_constraint_store,realisation_constraint_store,queryisMemberOf_constraint_store,ResultVec_constraint_store); }
+	chr::Constraint_stores_iterator<chr::Shared_obj<typename owlPrefix::Constraint_store_t>,chr::Shared_obj<typename owlClass::Constraint_store_t>,chr::Shared_obj<typename owlObjectProperty::Constraint_store_t>,chr::Shared_obj<typename owlDataProperty::Constraint_store_t>,chr::Shared_obj<typename owlNamedIndividual::Constraint_store_t>,chr::Shared_obj<typename owlSubclassOf::Constraint_store_t>,chr::Shared_obj<typename owlEquivalentClass::Constraint_store_t>,chr::Shared_obj<typename owlSubDataPropertyOf::Constraint_store_t>,chr::Shared_obj<typename owlSubObjectPropertyOf::Constraint_store_t>,chr::Shared_obj<typename owlEquivalentDataProperty::Constraint_store_t>,chr::Shared_obj<typename owlEquivalentObjectProperty::Constraint_store_t>,chr::Shared_obj<typename owlObjectPropertyDomain::Constraint_store_t>,chr::Shared_obj<typename owlDataPropertyDomain::Constraint_store_t>,chr::Shared_obj<typename owlObjectPropertyRange::Constraint_store_t>,chr::Shared_obj<typename owlClassAssertion::Constraint_store_t>,chr::Shared_obj<typename owlDisjointClass::Constraint_store_t>,chr::Shared_obj<typename owlNegativeObjectAssertion::Constraint_store_t>,chr::Shared_obj<typename owlObjectPropertyAssertion::Constraint_store_t>,chr::Shared_obj<typename owlSameIndividual::Constraint_store_t>,chr::Shared_obj<typename owlDifferentIndividual::Constraint_store_t>,chr::Shared_obj<typename owlInverseObjectProperty::Constraint_store_t>,chr::Shared_obj<typename owlSymmetricObjectProperty::Constraint_store_t>,chr::Shared_obj<typename owlAsymmetricObjectProperty::Constraint_store_t>,chr::Shared_obj<typename owlDisjointObjectProperty::Constraint_store_t>,chr::Shared_obj<typename owlDisjointDataProperty::Constraint_store_t>,chr::Shared_obj<typename owlReflexiveObjectProperty::Constraint_store_t>,chr::Shared_obj<typename owlIrreflexiveObjectProperty::Constraint_store_t>,chr::Shared_obj<typename owlFunctionalObjectProperty::Constraint_store_t>,chr::Shared_obj<typename owlFunctionalDataProperty::Constraint_store_t>,chr::Shared_obj<typename owlInverseFunctionalObjectProperty::Constraint_store_t>,chr::Shared_obj<typename owlTransitiveObjectProperty::Constraint_store_t>,chr::Shared_obj<typename owlDataPropertyAssertion::Constraint_store_t>,chr::Shared_obj<typename owlNegativeDataAssertion::Constraint_store_t>,chr::Shared_obj<typename owlDataPropertyRange::Constraint_store_t>,chr::Shared_obj<typename owlUnionClass::Constraint_store_t>,chr::Shared_obj<typename owlUnionOf::Constraint_store_t>,chr::Shared_obj<typename owlIntersectionOf::Constraint_store_t>,chr::Shared_obj<typename owlIntersectionClass::Constraint_store_t>,chr::Shared_obj<typename owlIntersectionOfLoop::Constraint_store_t>,chr::Shared_obj<typename intersectionSubclassCheck::Constraint_store_t>,chr::Shared_obj<typename owlCandidatsIntersection::Constraint_store_t>,chr::Shared_obj<typename owlObjectAllValuesFrom::Constraint_store_t>,chr::Shared_obj<typename owlDataAllValuesFrom::Constraint_store_t>,chr::Shared_obj<typename owlObjectSomeValuesFrom::Constraint_store_t>,chr::Shared_obj<typename owlDataSomeValuesFrom::Constraint_store_t>,chr::Shared_obj<typename owlDataValue::Constraint_store_t>,chr::Shared_obj<typename owlComplementOf::Constraint_store_t>,chr::Shared_obj<typename owlObjectMaxCardinality::Constraint_store_t>,chr::Shared_obj<typename owlDataMaxCardinality::Constraint_store_t>,chr::Shared_obj<typename owlHasValueObject::Constraint_store_t>,chr::Shared_obj<typename owlOneOf::Constraint_store_t>,chr::Shared_obj<typename owlObjectPropertyChain::Constraint_store_t>,chr::Shared_obj<typename constructPropertyChain::Constraint_store_t>,chr::Shared_obj<typename owlHasKey::Constraint_store_t>,chr::Shared_obj<typename owlHasKeyCheck::Constraint_store_t>,chr::Shared_obj<typename querySuperClassOfUri::Constraint_store_t>,chr::Shared_obj<typename querySuperClassOfClassUri::Constraint_store_t>,chr::Shared_obj<typename querySubClassOfUri::Constraint_store_t>,chr::Shared_obj<typename querySubClassOfClassUri::Constraint_store_t>,chr::Shared_obj<typename querySuperClassOf::Constraint_store_t>,chr::Shared_obj<typename querySuperClassOfReal::Constraint_store_t>,chr::Shared_obj<typename querySubClassOf::Constraint_store_t>,chr::Shared_obj<typename queryClassification::Constraint_store_t>,chr::Shared_obj<typename queryClassificationReal::Constraint_store_t>,chr::Shared_obj<typename queryClassificationUri::Constraint_store_t>,chr::Shared_obj<typename queryClassificationTemp::Constraint_store_t>,chr::Shared_obj<typename queryClassificationTempUri::Constraint_store_t>,chr::Shared_obj<typename queryInstanceURI::Constraint_store_t>,chr::Shared_obj<typename queryInstances::Constraint_store_t>,chr::Shared_obj<typename queryObjAssertion::Constraint_store_t>,chr::Shared_obj<typename querySubjectByObject::Constraint_store_t>,chr::Shared_obj<typename queryDataAssertion::Constraint_store_t>,chr::Shared_obj<typename queryEngineeringStudents::Constraint_store_t>,chr::Shared_obj<typename queryComplexStudents::Constraint_store_t>,chr::Shared_obj<typename queryObjAssertionSubject::Constraint_store_t>,chr::Shared_obj<typename queryObjAssertionClassUri::Constraint_store_t>,chr::Shared_obj<typename queryObjAssertionClass::Constraint_store_t>,chr::Shared_obj<typename queryEquivalentClass::Constraint_store_t>,chr::Shared_obj<typename queryEquivalentClassReal::Constraint_store_t>,chr::Shared_obj<typename res::Constraint_store_t>,chr::Shared_obj<typename resultRealisation::Constraint_store_t>,chr::Shared_obj<typename classification::Constraint_store_t>,chr::Shared_obj<typename resultClassification::Constraint_store_t>,chr::Shared_obj<typename queryFullUri::Constraint_store_t>,chr::Shared_obj<typename logicalName::Constraint_store_t>,chr::Shared_obj<typename realisation::Constraint_store_t>,chr::Shared_obj<typename queryisMemberOf::Constraint_store_t>,chr::Shared_obj<typename ResultVec::Constraint_store_t>> chr_store_begin() { return chr::Constraint_stores_iterator(owlPrefix_constraint_store,owlClass_constraint_store,owlObjectProperty_constraint_store,owlDataProperty_constraint_store,owlNamedIndividual_constraint_store,owlSubclassOf_constraint_store,owlEquivalentClass_constraint_store,owlSubDataPropertyOf_constraint_store,owlSubObjectPropertyOf_constraint_store,owlEquivalentDataProperty_constraint_store,owlEquivalentObjectProperty_constraint_store,owlObjectPropertyDomain_constraint_store,owlDataPropertyDomain_constraint_store,owlObjectPropertyRange_constraint_store,owlClassAssertion_constraint_store,owlDisjointClass_constraint_store,owlNegativeObjectAssertion_constraint_store,owlObjectPropertyAssertion_constraint_store,owlSameIndividual_constraint_store,owlDifferentIndividual_constraint_store,owlInverseObjectProperty_constraint_store,owlSymmetricObjectProperty_constraint_store,owlAsymmetricObjectProperty_constraint_store,owlDisjointObjectProperty_constraint_store,owlDisjointDataProperty_constraint_store,owlReflexiveObjectProperty_constraint_store,owlIrreflexiveObjectProperty_constraint_store,owlFunctionalObjectProperty_constraint_store,owlFunctionalDataProperty_constraint_store,owlInverseFunctionalObjectProperty_constraint_store,owlTransitiveObjectProperty_constraint_store,owlDataPropertyAssertion_constraint_store,owlNegativeDataAssertion_constraint_store,owlDataPropertyRange_constraint_store,owlUnionClass_constraint_store,owlUnionOf_constraint_store,owlIntersectionOf_constraint_store,owlIntersectionClass_constraint_store,owlIntersectionOfLoop_constraint_store,intersectionSubclassCheck_constraint_store,owlCandidatsIntersection_constraint_store,owlObjectAllValuesFrom_constraint_store,owlDataAllValuesFrom_constraint_store,owlObjectSomeValuesFrom_constraint_store,owlDataSomeValuesFrom_constraint_store,owlDataValue_constraint_store,owlComplementOf_constraint_store,owlObjectMaxCardinality_constraint_store,owlDataMaxCardinality_constraint_store,owlHasValueObject_constraint_store,owlOneOf_constraint_store,owlObjectPropertyChain_constraint_store,constructPropertyChain_constraint_store,owlHasKey_constraint_store,owlHasKeyCheck_constraint_store,querySuperClassOfUri_constraint_store,querySuperClassOfClassUri_constraint_store,querySubClassOfUri_constraint_store,querySubClassOfClassUri_constraint_store,querySuperClassOf_constraint_store,querySuperClassOfReal_constraint_store,querySubClassOf_constraint_store,queryClassification_constraint_store,queryClassificationReal_constraint_store,queryClassificationUri_constraint_store,queryClassificationTemp_constraint_store,queryClassificationTempUri_constraint_store,queryInstanceURI_constraint_store,queryInstances_constraint_store,queryObjAssertion_constraint_store,querySubjectByObject_constraint_store,queryDataAssertion_constraint_store,queryEngineeringStudents_constraint_store,queryComplexStudents_constraint_store,queryObjAssertionSubject_constraint_store,queryObjAssertionClassUri_constraint_store,queryObjAssertionClass_constraint_store,queryEquivalentClass_constraint_store,queryEquivalentClassReal_constraint_store,res_constraint_store,resultRealisation_constraint_store,classification_constraint_store,resultClassification_constraint_store,queryFullUri_constraint_store,logicalName_constraint_store,realisation_constraint_store,queryisMemberOf_constraint_store,ResultVec_constraint_store); }
 	typename owlPrefix::Constraint_store_t& get_owlPrefix_store() { return *owlPrefix_constraint_store; }
 	typename owlClass::Constraint_store_t& get_owlClass_store() { return *owlClass_constraint_store; }
 	typename owlObjectProperty::Constraint_store_t& get_owlObjectProperty_store() { return *owlObjectProperty_constraint_store; }
@@ -3339,7 +3429,9 @@ public:
 	typename owlHasKey::Constraint_store_t& get_owlHasKey_store() { return *owlHasKey_constraint_store; }
 	typename owlHasKeyCheck::Constraint_store_t& get_owlHasKeyCheck_store() { return *owlHasKeyCheck_constraint_store; }
 	typename querySuperClassOfUri::Constraint_store_t& get_querySuperClassOfUri_store() { return *querySuperClassOfUri_constraint_store; }
+	typename querySuperClassOfClassUri::Constraint_store_t& get_querySuperClassOfClassUri_store() { return *querySuperClassOfClassUri_constraint_store; }
 	typename querySubClassOfUri::Constraint_store_t& get_querySubClassOfUri_store() { return *querySubClassOfUri_constraint_store; }
+	typename querySubClassOfClassUri::Constraint_store_t& get_querySubClassOfClassUri_store() { return *querySubClassOfClassUri_constraint_store; }
 	typename querySuperClassOf::Constraint_store_t& get_querySuperClassOf_store() { return *querySuperClassOf_constraint_store; }
 	typename querySuperClassOfReal::Constraint_store_t& get_querySuperClassOfReal_store() { return *querySuperClassOfReal_constraint_store; }
 	typename querySubClassOf::Constraint_store_t& get_querySubClassOf_store() { return *querySubClassOf_constraint_store; }
@@ -3370,101 +3462,100 @@ public:
 	typename queryisMemberOf::Constraint_store_t& get_queryisMemberOf_store() { return *queryisMemberOf_constraint_store; }
 	typename ResultVec::Constraint_store_t& get_ResultVec_store() { return *ResultVec_constraint_store; }
 	struct History {
-		typename chr::Shared_obj< chr::History_dyn< 1 > > rule_93{ chr::make_shared< typename chr::History_dyn< 1 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 1 > > rule_94{ chr::make_shared< typename chr::History_dyn< 1 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_95{ chr::make_shared< typename chr::History_dyn< 2 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 1 > > rule_96{ chr::make_shared< typename chr::History_dyn< 1 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_97{ chr::make_shared< typename chr::History_dyn< 2 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_98{ chr::make_shared< typename chr::History_dyn< 3 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_99{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 1 > > rule_97{ chr::make_shared< typename chr::History_dyn< 1 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 1 > > rule_98{ chr::make_shared< typename chr::History_dyn< 1 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_99{ chr::make_shared< typename chr::History_dyn< 2 > >() };
 		typename chr::Shared_obj< chr::History_dyn< 1 > > rule_100{ chr::make_shared< typename chr::History_dyn< 1 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 1 > > rule_101{ chr::make_shared< typename chr::History_dyn< 1 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_102{ chr::make_shared< typename chr::History_dyn< 2 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_103{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_101{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_102{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_103{ chr::make_shared< typename chr::History_dyn< 3 > >() };
 		typename chr::Shared_obj< chr::History_dyn< 1 > > rule_104{ chr::make_shared< typename chr::History_dyn< 1 > >() };
 		typename chr::Shared_obj< chr::History_dyn< 1 > > rule_105{ chr::make_shared< typename chr::History_dyn< 1 > >() };
 		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_106{ chr::make_shared< typename chr::History_dyn< 2 > >() };
 		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_107{ chr::make_shared< typename chr::History_dyn< 2 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_108{ chr::make_shared< typename chr::History_dyn< 2 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_109{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 1 > > rule_108{ chr::make_shared< typename chr::History_dyn< 1 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 1 > > rule_109{ chr::make_shared< typename chr::History_dyn< 1 > >() };
 		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_110{ chr::make_shared< typename chr::History_dyn< 2 > >() };
 		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_111{ chr::make_shared< typename chr::History_dyn< 2 > >() };
 		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_112{ chr::make_shared< typename chr::History_dyn< 2 > >() };
 		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_113{ chr::make_shared< typename chr::History_dyn< 2 > >() };
 		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_114{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_115{ chr::make_shared< typename chr::History_dyn< 2 > >() };
 		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_116{ chr::make_shared< typename chr::History_dyn< 2 > >() };
 		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_117{ chr::make_shared< typename chr::History_dyn< 2 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 1 > > rule_118{ chr::make_shared< typename chr::History_dyn< 1 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_119{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_118{ chr::make_shared< typename chr::History_dyn< 2 > >() };
 		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_120{ chr::make_shared< typename chr::History_dyn< 2 > >() };
 		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_121{ chr::make_shared< typename chr::History_dyn< 2 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_122{ chr::make_shared< typename chr::History_dyn< 2 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 1 > > rule_123{ chr::make_shared< typename chr::History_dyn< 1 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 1 > > rule_122{ chr::make_shared< typename chr::History_dyn< 1 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_123{ chr::make_shared< typename chr::History_dyn< 2 > >() };
 		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_124{ chr::make_shared< typename chr::History_dyn< 2 > >() };
 		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_125{ chr::make_shared< typename chr::History_dyn< 2 > >() };
 		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_126{ chr::make_shared< typename chr::History_dyn< 2 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_127{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 1 > > rule_127{ chr::make_shared< typename chr::History_dyn< 1 > >() };
 		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_128{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_129{ chr::make_shared< typename chr::History_dyn< 2 > >() };
 		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_130{ chr::make_shared< typename chr::History_dyn< 2 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 1 > > rule_131{ chr::make_shared< typename chr::History_dyn< 1 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_131{ chr::make_shared< typename chr::History_dyn< 2 > >() };
 		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_132{ chr::make_shared< typename chr::History_dyn< 2 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_133{ chr::make_shared< typename chr::History_dyn< 2 > >() };
 		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_134{ chr::make_shared< typename chr::History_dyn< 2 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_135{ chr::make_shared< typename chr::History_dyn< 3 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_137{ chr::make_shared< typename chr::History_dyn< 3 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 1 > > rule_138{ chr::make_shared< typename chr::History_dyn< 1 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 1 > > rule_139{ chr::make_shared< typename chr::History_dyn< 1 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_143{ chr::make_shared< typename chr::History_dyn< 2 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_144{ chr::make_shared< typename chr::History_dyn< 2 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 1 > > rule_145{ chr::make_shared< typename chr::History_dyn< 1 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 1 > > rule_135{ chr::make_shared< typename chr::History_dyn< 1 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_136{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_137{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_138{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_139{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_141{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 1 > > rule_142{ chr::make_shared< typename chr::History_dyn< 1 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 1 > > rule_143{ chr::make_shared< typename chr::History_dyn< 1 > >() };
 		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_147{ chr::make_shared< typename chr::History_dyn< 2 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_148{ chr::make_shared< typename chr::History_dyn< 3 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_149{ chr::make_shared< typename chr::History_dyn< 2 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_150{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_148{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 1 > > rule_149{ chr::make_shared< typename chr::History_dyn< 1 > >() };
 		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_151{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_152{ chr::make_shared< typename chr::History_dyn< 3 > >() };
 		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_153{ chr::make_shared< typename chr::History_dyn< 2 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_154{ chr::make_shared< typename chr::History_dyn< 3 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_156{ chr::make_shared< typename chr::History_dyn< 2 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_159{ chr::make_shared< typename chr::History_dyn< 2 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_160{ chr::make_shared< typename chr::History_dyn< 3 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_161{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_154{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_155{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_157{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_158{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_160{ chr::make_shared< typename chr::History_dyn< 2 > >() };
 		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_163{ chr::make_shared< typename chr::History_dyn< 2 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_164{ chr::make_shared< typename chr::History_dyn< 2 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_170{ chr::make_shared< typename chr::History_dyn< 3 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_171{ chr::make_shared< typename chr::History_dyn< 2 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_172{ chr::make_shared< typename chr::History_dyn< 3 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 4 > > rule_173{ chr::make_shared< typename chr::History_dyn< 4 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 4 > > rule_174{ chr::make_shared< typename chr::History_dyn< 4 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 5 > > rule_175{ chr::make_shared< typename chr::History_dyn< 5 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 1 > > rule_176{ chr::make_shared< typename chr::History_dyn< 1 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_180{ chr::make_shared< typename chr::History_dyn< 2 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_181{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_164{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_165{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_167{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_168{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_174{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_175{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_176{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 4 > > rule_177{ chr::make_shared< typename chr::History_dyn< 4 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 4 > > rule_178{ chr::make_shared< typename chr::History_dyn< 4 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 5 > > rule_179{ chr::make_shared< typename chr::History_dyn< 5 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 1 > > rule_180{ chr::make_shared< typename chr::History_dyn< 1 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_184{ chr::make_shared< typename chr::History_dyn< 2 > >() };
 		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_185{ chr::make_shared< typename chr::History_dyn< 3 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 1 > > rule_189{ chr::make_shared< typename chr::History_dyn< 1 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_190{ chr::make_shared< typename chr::History_dyn< 2 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_191{ chr::make_shared< typename chr::History_dyn< 2 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_192{ chr::make_shared< typename chr::History_dyn< 2 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_193{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_189{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 1 > > rule_193{ chr::make_shared< typename chr::History_dyn< 1 > >() };
 		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_194{ chr::make_shared< typename chr::History_dyn< 2 > >() };
 		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_195{ chr::make_shared< typename chr::History_dyn< 3 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_196{ chr::make_shared< typename chr::History_dyn< 2 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_197{ chr::make_shared< typename chr::History_dyn< 3 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 1 > > rule_201{ chr::make_shared< typename chr::History_dyn< 1 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 4 > > rule_202{ chr::make_shared< typename chr::History_dyn< 4 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_203{ chr::make_shared< typename chr::History_dyn< 3 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 1 > > rule_205{ chr::make_shared< typename chr::History_dyn< 1 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 5 > > rule_206{ chr::make_shared< typename chr::History_dyn< 5 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_207{ chr::make_shared< typename chr::History_dyn< 3 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 1 > > rule_208{ chr::make_shared< typename chr::History_dyn< 1 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 1 > > rule_209{ chr::make_shared< typename chr::History_dyn< 1 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 4 > > rule_213{ chr::make_shared< typename chr::History_dyn< 4 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_214{ chr::make_shared< typename chr::History_dyn< 3 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_219{ chr::make_shared< typename chr::History_dyn< 3 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_224{ chr::make_shared< typename chr::History_dyn< 3 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_229{ chr::make_shared< typename chr::History_dyn< 3 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 4 > > rule_234{ chr::make_shared< typename chr::History_dyn< 4 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 7 > > rule_239{ chr::make_shared< typename chr::History_dyn< 7 > >() };
-		typename chr::Shared_obj< chr::History_dyn< 8 > > rule_244{ chr::make_shared< typename chr::History_dyn< 8 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_199{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_200{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_201{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 2 > > rule_205{ chr::make_shared< typename chr::History_dyn< 2 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_206{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 1 > > rule_210{ chr::make_shared< typename chr::History_dyn< 1 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 4 > > rule_211{ chr::make_shared< typename chr::History_dyn< 4 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_212{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 1 > > rule_214{ chr::make_shared< typename chr::History_dyn< 1 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 5 > > rule_215{ chr::make_shared< typename chr::History_dyn< 5 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_216{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 1 > > rule_217{ chr::make_shared< typename chr::History_dyn< 1 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 1 > > rule_218{ chr::make_shared< typename chr::History_dyn< 1 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 4 > > rule_222{ chr::make_shared< typename chr::History_dyn< 4 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_223{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_228{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_233{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 3 > > rule_238{ chr::make_shared< typename chr::History_dyn< 3 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 4 > > rule_243{ chr::make_shared< typename chr::History_dyn< 4 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 7 > > rule_248{ chr::make_shared< typename chr::History_dyn< 7 > >() };
+		typename chr::Shared_obj< chr::History_dyn< 8 > > rule_253{ chr::make_shared< typename chr::History_dyn< 8 > >() };
 	};
 	History _history;
 	chr::ES_CHR do_owlPrefix(typename owlPrefix::Type c_args, typename owlPrefix::Constraint_store_t::iterator c_it);
@@ -3815,11 +3906,23 @@ public:
 		auto c_args = std::make_tuple(next_free_constraint_id++, arg0);
 		return do_querySuperClassOfUri(std::move(c_args), querySuperClassOfUri_constraint_store->end());
 	}
+	chr::ES_CHR do_querySuperClassOfClassUri(typename querySuperClassOfClassUri::Type c_args, typename querySuperClassOfClassUri::Constraint_store_t::iterator c_it);
+	chr::ES_CHR querySuperClassOfClassUri( chr::Logical_var_ground< std :: string > arg0, chr::Logical_var_ground< std :: string > arg1) {
+		assert(!chr::failed() && (_ref_use_count >= 1));
+		auto c_args = std::make_tuple(next_free_constraint_id++, arg0, arg1);
+		return do_querySuperClassOfClassUri(std::move(c_args), querySuperClassOfClassUri_constraint_store->end());
+	}
 	chr::ES_CHR do_querySubClassOfUri(typename querySubClassOfUri::Type c_args, typename querySubClassOfUri::Constraint_store_t::iterator c_it);
 	chr::ES_CHR querySubClassOfUri( chr::Logical_var_ground< std :: string > arg0) {
 		assert(!chr::failed() && (_ref_use_count >= 1));
 		auto c_args = std::make_tuple(next_free_constraint_id++, arg0);
 		return do_querySubClassOfUri(std::move(c_args), querySubClassOfUri_constraint_store->end());
+	}
+	chr::ES_CHR do_querySubClassOfClassUri(typename querySubClassOfClassUri::Type c_args, typename querySubClassOfClassUri::Constraint_store_t::iterator c_it);
+	chr::ES_CHR querySubClassOfClassUri( chr::Logical_var_ground< std :: string > arg0, chr::Logical_var_ground< std :: string > arg1) {
+		assert(!chr::failed() && (_ref_use_count >= 1));
+		auto c_args = std::make_tuple(next_free_constraint_id++, arg0, arg1);
+		return do_querySubClassOfClassUri(std::move(c_args), querySubClassOfClassUri_constraint_store->end());
 	}
 	chr::ES_CHR do_querySuperClassOf(typename querySuperClassOf::Type c_args, typename querySuperClassOf::Constraint_store_t::iterator c_it);
 	chr::ES_CHR querySuperClassOf( chr::Logical_var< int > arg0) {
@@ -3838,6 +3941,18 @@ public:
 		assert(!chr::failed() && (_ref_use_count >= 1));
 		auto c_args = std::make_tuple(next_free_constraint_id++, arg0);
 		return do_querySubClassOf(std::move(c_args), querySubClassOf_constraint_store->end());
+	}
+	chr::ES_CHR do_querySubClassOfClass(typename querySubClassOfClass::Type c_args);
+	chr::ES_CHR querySubClassOfClass( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1) {
+		assert(!chr::failed() && (_ref_use_count >= 1));
+		auto c_args = std::make_tuple(next_free_constraint_id++, arg0, arg1);
+		return do_querySubClassOfClass(std::move(c_args));
+	}
+	chr::ES_CHR do_querySuperClassOfClass(typename querySuperClassOfClass::Type c_args);
+	chr::ES_CHR querySuperClassOfClass( chr::Logical_var< int > arg0, chr::Logical_var< int > arg1) {
+		assert(!chr::failed() && (_ref_use_count >= 1));
+		auto c_args = std::make_tuple(next_free_constraint_id++, arg0, arg1);
+		return do_querySuperClassOfClass(std::move(c_args));
 	}
 	chr::ES_CHR do_queryClassification(typename queryClassification::Type c_args, typename queryClassification::Constraint_store_t::iterator c_it);
 	chr::ES_CHR queryClassification( chr::Logical_var< int > arg0) {

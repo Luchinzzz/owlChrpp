@@ -15,11 +15,11 @@ namespace fs = std::filesystem;
 
 // ── Display ───────────────────────────────────────────────────────────────────
 
-inline void afficher(std::string x) {
+inline void afficher(const std::string& x) {
     std::cout << x << std::endl;
 }
 
-inline void afficher(std::string x, std::string y) {
+inline void afficher(const std::string& x, const std::string& y) {
     std::cout << x << "    " << y << std::endl;
 }
 
@@ -143,16 +143,16 @@ inline bool checkClassification(T& pb, const std::string& x, const std::string& 
 
 
 // ── Create output directories if they don't exist ────────────────────────────
-void create_output_dirs() {
-    const std::vector<std::string> dirs = {
-        "results",
-        "results/queries"
-    };
+// void create_output_dirs() {
+//     const std::vector<std::string> dirs = {
+//         "results",
+//         "results/queries"
+//     };
 
-    for (const auto& dir : dirs) {
-        if (!fs::exists(dir)) {
-            fs::create_directories(dir);
-            std::cout << "Created directory: " << dir << std::endl;
-        }
-    }
-}
+//     for (const auto& dir : dirs) {
+//         if (!fs::exists(dir)) {
+//             fs::create_directories(dir);
+//             std::cout << "Created directory: " << dir << std::endl;
+//         }
+//     }
+// }

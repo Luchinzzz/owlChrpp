@@ -2,14 +2,14 @@
 #include <iostream>
 #include <string>
 #include <chrono>
-#include <chrpp.hh>
-#include "include/AnySimpleType.h"
-#include "include/parsercowl.h"
+#include <fstream>             
+#include <filesystem>          
 
-#include "include/constants.h"
-#include "include/types.h"
-#include "include/chr_traits.h"
-#include "include/utils.h"
+#include <chrpp.hh>
+#include "include/parsercowl.h"
+#include "include/constants.h" 
+#include "include/types.h"    
+#include "include/utils.h"    
 #include "owlrulesOWL2.hh"
 
 // ── Store printer ─────────────────────────────────────────────────────────────
@@ -25,12 +25,13 @@ void print(T &pb)
     }
 }
 
-std::vector<Query> queries = {
+/*std::vector<Query> queries = {
     // Superclass query: Retrieves all superclasses of a class PhD_Student
     {"super", "<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#PhD_Student>"},
 
-    // Superclass query: retrieve all individuals classified as Lecturer
-    //{"sub", "<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#Lecturer>"},
+    // Subclass query: retrieve all subclasses of Person
+    {"sub", "<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#Person>"},
+    {"sub", "<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#Lecturer>"},
 
     // Superclass query: retrieve all individuals classified as TA
     //{"super", "<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#TA>"},
@@ -61,10 +62,10 @@ std::vector<Query> queries = {
 
     {"inst", "<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#TA>"},
 };
-
+*/
 int main(int argc, char *argv[])
 {
-    create_output_dirs();
+    
     std::ofstream fileReal(output_file_Real);
     std::ofstream fileClassif(output_file_Classif);
 
@@ -89,47 +90,58 @@ int main(int argc, char *argv[])
         int counter = 0;
 
  
-        for (const auto &q : queries) {
-            if (q.type == "obj")
-            {
-                space->queryObjAssertionUri(q.uri);
-            }
-            else if (q.type == "super")
-            {
-                space->querySuperClassOfUri(q.uri);
-            }
-            else if (q.type == "data")
-            {
-                space->queryDataAssertionUri(q.uri);
-            }
-            else if (q.type == "subj")
-            {
-                // querySubjectByObjectUri
-                space->querySubjectByObjectUri(q.uri);
-            }
-            // else if (q.type == "obj-subject")
-            // {
-            //     // obj assertion con soggetto specifico
-            //     space->queryObjAssertionSubjectUri(q.uri);
-            // }
-            else if (q.type == "inst")
-            {
-                // queryInstancesURI
-                space->queryInstancesURI(q.uri);
-            }
-            else
-            {
-                std::cerr << "Type of query not recognized: " << q.type << std::endl;
-                continue;
-            }
-        };
+        // for (const auto &q : queries) {
+        //     if (q.type == "obj")
+        //     {
+        //         space->queryObjAssertionUri(q.uri);
+        //     }
+        //     else if (q.type == "super")
+        //     {
+        //         space->querySuperClassOfUri(q.uri);
+        //     }
+        //     else if (q.type == "data")
+        //     {
+        //         space->queryDataAssertionUri(q.uri);
+        //     }
+        //     else if (q.type == "subj")
+        //     {
+        //         // querySubjectByObjectUri
+        //         space->querySubjectByObjectUri(q.uri);
+        //     }
+        //     // else if (q.type == "obj-subject")
+        //     // {
+        //     //     // obj assertion con soggetto specifico
+        //     //     space->queryObjAssertionSubjectUri(q.uri);
+        //     // }
+        //     else if (q.type == "inst")
+        //     {
+        //         // queryInstancesURI
+        //         space->queryInstancesURI(q.uri);
+        //     }
+        //     else
+        //     {
+        //         std::cerr << "Type of query not recognized: " << q.type << std::endl;
+        //         continue;
+        //     }
+        // };
 
-
-        // space->querySuperClassOfUri(std::string("http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#TA"));
-        // space->queryObjAssertionUri(std::string("<https://kracr.iiitd.edu.in/OWL2Bench#isMemberOf>"));
-        // space->queryObjAssertionUri(std::string("<https://kracr.iiitd.edu.in/OWL2Bench#isPartOf>"));
+        //space->queryObjAssertionSubjectUri(std::string("<https://kracr.iiitd.edu.in/OWL2Bench#hasCollegeDiscipline>"),std::string("<https://kracr.iiitd.edu.in/OWL2Bench#NonScience>"));
+        //space->queryInstanceURI(std::string("<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#TA4>"), std::string("<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#TA>"));
+        //space->querySubClassOfClassUri(std::string("<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#Student>"), std::string("<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#University>"));
+        //space->querySubClassOfClassUri(std::string("<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#PhD_Student>"), std::string("<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#Student>"));
+        //space->querySubClassOfClassUri(std::string("<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#PhD_Student>"), std::string("<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#University>"));
+        //space->querySubClassOfClassUri(std::string("<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#Student>"), std::string("<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#PhD_Student>"));
+        // space->querySuperClassOfUri(std::string("<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#PhD_Student>"));
+        space->querySuperClassOfUri(std::string("<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#PhD_Student>"));
+        space->querySuperClassOfClassUri(std::string("<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#Student>"), std::string("<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#PhD_Student>"));
+        space->querySuperClassOfClassUri(std::string("<http://www.w3.org/2002/07/owl#Thing>"), std::string("<http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#PhD_Student>"));
         space->realisation();
         space->classification();
+        
+        
+        
+        
+        
         // space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#isMemberOf"));
         // space->queryObjAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#isPartOf"));
         // space->queryDataAssertionUri(std::string("https://kracr.iiitd.edu.in/OWL2Bench#hasAge"));
